@@ -1,0 +1,6 @@
+﻿Treatment,Sieving,Storage time,Storage temperature,Independent samples,Replicates per sample,SR25 (μg CO2 h−1 g−1 soil),Q10 value
+Control,No,No,–,14,5,3.04 ± 1.64a,2.20 ± 0.23ab
+Sieved/non-stored,Yes,No,–,14,3,3.38 ± 1.62a,1.94 ± 0.28b
+Sieved/freeze-storage,Yes,7 weeks,– 18 °C,14,3,3.57 ± 1.71a,1.94 ± 0.23b
+Sieved/cold-storage,Yes,7 weeks,4 °C,14,3,2.57 ± 1.15a,2.37 ± 0.29a
+Sieved/dry-storage,Yes,7 weeks,40 °C,14,3,6.46 ± 3.07b,1.94 ± 0.40b
