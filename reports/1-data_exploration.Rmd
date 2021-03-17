@@ -1,0 +1,93 @@
+---
+title: "data exploration"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      collapse = TRUE,
+                      warning = FALSE,
+                      message = FALSE,
+                      comment = "#>"
+                      )
+```
+
+---
+
+## SRDB data
+
+examining the different variables/levels in the dataset
+
+```{r}
+loadd(srdb_q10, srdb_r10)
+```
+
+**Biome**
+```{r}
+levels(as.factor(srdb_q10$Biome))
+```
+
+**Ecosystem_type**
+```{r}
+levels(as.factor(srdb_q10$Ecosystem_type))
+```
+
+**Meas_method**
+```{r}
+levels(as.factor(srdb_q10$Meas_method))
+```
+
+**Q10 temp_range**
+
+number of observations per temperature range 
+
+```{r}
+srdb_q10_n = 
+  srdb_q10 %>%
+  group_by(temp_range) %>% 
+  dplyr::summarise(n = n()) %>% 
+#  mutate(range2 = temp_range) %>% 
+#  separate(range2, sep = "_", into = c("min", "max")) %>% 
+#  mutate(temp_range = fct_reorder(temp_range, min)) %>% 
+  force()
+
+srdb_q10_n %>% knitr::kable()
+```
+
+```{r}
+srdb_q10_n %>% 
+  ggplot()+
+  geom_point(aes(y = temp_range, x = n))
+```
+
+
+Q10 values by temperature range
+
+```{r}
+srdb_q10 %>% 
+  ggplot(aes(x = temp_range, y = Q10))+
+  geom_point()+
+  #facet_wrap(~Biome)+
+  theme(axis.text.x = element_text(angle = 90))+
+  coord_flip()+
+  NULL
+```
+
+
+
+
+
+
+
+---
+
+<details>   
+   <summary>Session Info</summary>
+   
+Date run: `r Sys.Date()`
+
+```{r}
+sessionInfo()
+```
+
+</details> 
