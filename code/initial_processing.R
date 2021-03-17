@@ -51,19 +51,10 @@ clean_srdb_dataset = function(){
   }
   q10 = process_q10_data(srdb_v5_equations)
   
-  r10_sites = sites %>% left_join(r10)
-  q10_sites = sites %>% left_join(q10)
+  r10_sites = sites %>% left_join(r10) %>% filter(!is.na(Q10))
+  q10_sites = sites %>% left_join(q10) %>% filter(!is.na(Q10))
 
   list(r10_sites = r10_sites,
        q10_sites = q10_sites)
   
 }
-srdb_q10 = clean_srdb_dataset()$q10_sites
-srdb_r10 = clean_srdb_dataset()$r10_sites
-
-srdb_q10 %>% 
-  ggplot(aes(x = temp_range, y = Q10))+
-  geom_point()+
-  #facet_wrap(~Biome)+
-  theme(axis.text.x = element_text(angle = 90))+
-  NULL
