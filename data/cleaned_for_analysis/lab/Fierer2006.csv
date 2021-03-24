@@ -1,0 +1,78 @@
+﻿Source,Incubation,Record_number,Site_name,Latitude,Longitude,Elevation_m,Species,MAT_C,MMT_C,MAP_mm,Organic_C_perc,Texture,pH,B,Q10,Temp_range
+Fierer2006,lab,BB1,"Bear Brook, ME, USA",44.87,-68.1,400,Picea rubens,6.1,18,1200,12.8,sandy loam,4.3,0.4,2.7,10_30
+Fierer2006,lab,BB2,"Bear Brook, ME, USA",44.87,-68.1,400,"Fagus grandifolia, Acer rubrum, Acer saccharum, Betula alleghaniensis",6.1,18,1200,5.2,sandy loam,4.6,0.4,2.8,10_30
+Fierer2006,lab,BF1,"Bousson Forest, PA USA",41.58,-80.05,390,"Acer saccharum, Fagus grandifolia, Prunus serotina",7.8,18,1000,6.4,loam,4.1,1.1,3,10_30
+Fierer2006,lab,BF2,"Bousson Forest, PA USA",41.58,-80.05,390,"Acer saccharum, Fagus grandifolia, Prunus serotina",7.8,18,1000,9.5,loam,3.6,0.6,3.5,10_30
+Fierer2006,lab,BP1,"Badlands National Park, SD",43.75,-102.38,1000,"Agropyron smithii, Schizachyrium scoparium",6.6,18,450,3.1,silt loam,7.5,3,2.8,10_30
+Fierer2006,lab,BZ1,"Bonanza Creek LTER, AK USA",64.8,-148.25,300,Picea glauca,-2.9,11,260,3,silt loam,5.1,1.8,2.6,10_30
+Fierer2006,lab,BZ2,"Bonanza Creek LTER, AK USA",64.8,-148.25,300,Picea glauca,-2.9,11,260,3,silt loam,5.2,2.8,2.6,10_30
+Fierer2006,lab,BZ3,"Bonanza Creek LTER, AK USA",64.8,-148.25,300,Picea glauca,-2.9,11,260,3.7,silt loam,5.4,3.3,2.4,10_30
+Fierer2006,lab,CA1,"Cedar Mtn., AZ USA",36.05,-111.77,2003,Pinus edulis,10.3,15,400,1.7,silt loam,7.3,2.7,2.6,10_30
+Fierer2006,lab,CA2,"Cedar Mtn., AZ USA",36.05,-111.77,2003,Juniperus monosperma,10.3,15,400,2.2,silt loam,8,0.5,4.1,10_30
+Fierer2006,lab,CC1,"Cedar Creek LTER, MN USA",45.4,-93.2,110,"Carex muhlenbergii, Andropogon gerardii, Poa pratensis,Schizachyrium scoparium",5.8,18,720,1.9,sand,6.1,2,2.6,10_30
+Fierer2006,lab,CF1,"Catskills, NY USA",42.17,-74.26,800,"Acer saccharum, Fagus grandifolia, Acer rubrum ",5.3,16,1300,2.6,loam,3.9,0.6,3.2,10_30
+Fierer2006,lab,CF2,"Catskills, NY USA",41.93,-74.35,800,"Fagus grandifolia, Betula alleghaniensis, Acer saccharum",5.3,16,1300,4.1,sandy loam,3.6,0.6,3.1,10_30
+Fierer2006,lab,CF3,"Catskills, NY USA",42.12,-74.1,800,Tsuga canadensis,5.3,16,1300,4.3,silt loam,3.6,0.4,3.5,10_30
+Fierer2006,lab,CL1,"Calhoun Experimental Forest, SC USA",34.62,-81.67,150,"Quercus spp., Carya spp., Acer rubrum",15.9,22,1250,2.3,sandy loam,5.7,3,2.6,10_30
+Fierer2006,lab,CL2,"Calhoun Experimental Forest, SC USA",34.62,-81.67,150,Bromus spp.,15.9,22,1250,2.3,sandy loam,5.6,1.9,3,10_30
+Fierer2006,lab,CL3,"Calhoun Experimental Forest, SC USA",34.62,-81.67,150,Pinus taeda,15.9,22,1250,1.2,loamy sand,4.9,4,2.7,10_30
+Fierer2006,lab,CL4,"Calhoun Experimental Forest, SC USA",34.62,-81.67,150,Hordeum sp.,15.9,22,1250,1.7,sandy loam,5,1.6,3,10_30
+Fierer2006,lab,CM1,"Clymer Meadow Preserve, TX USA",33.3,-96.23,200,"Andropogon gerardii, Sorghastrum nutans, Schizachyrium scoparium",18.5,25,850,3,silty clay,7.9,1,2.7,10_30
+Fierer2006,lab,CO1,"Fort Collins, CO USA",40.4,-105.7,3800,"Geum rossii, Primula spp., Silene acaulis, Poa spp.",-3,8,600,1.6,sand,6.1,5.5,2.6,10_30
+Fierer2006,lab,CO2,"Fort Collins, CO USA",40.58,-105.33,2400,Pinus contorta,6.1,10,350,1.8,sandy loam,5.7,6,2.5,10_30
+Fierer2006,lab,CO3,"Shortgrass Steppe LTER, CO USA",40.8,-104.83,1500,"Bouteloua gracilis, Buchloe dactyloides, Sphaeralcea coccinea",9.3,14,322,0.8,sandy loam,6,4,3,10_30
+Fierer2006,lab,CR1,"Coffey Ranch, TX USA",33.93,-97.23,250,"Schizachyrium scoparium, Andropogon gerardii, Panicum virgatum",18.4,25,850,2.8,loam,8,0.6,4.1,10_30
+Fierer2006,lab,DF1,"Duke Forest, NC USA",35.97,-79.08,163,"Pinus taeda, Liquidambar styraciflua, Liriodendron tulipifera, Cornus florida",14.6,18,1100,2.8,sandy loam,5.4,5.5,2.4,10_30
+Fierer2006,lab,DF2,"Duke Forest, NC USA",35.97,-79.08,163,"Liriodendron tulipifera, Liquidambar styraciflua, Carya sp., Ostrya virginiana",14.6,18,1100,5.5,loam,6.8,4.2,2.7,10_30
+Fierer2006,lab,DF3,"Duke Forest, NC USA",35.97,-79.08,150,Quercus alba,14.6,27,1100,1.7,loamy sand,5.1,2.1,2.7,10_30
+Fierer2006,lab,GB1,"Great Basin Experimental Range, UT USA",39.33,-111.45,3750,"Poa spp., Achillea millefolium",2,10,400,2.8,clay loam,6.8,1.5,2.9,10_30
+Fierer2006,lab,GB2,"Great Basin Experimental Range, UT USA",39.32,-111.47,3290,"Populus tremuloides, Vicia americana,  Bromus inermis understory",2,13,400,6.9,loam,7.6,0.3,3.8,10_30
+Fierer2006,lab,GB3,"Great Basin Experimental Range, UT USA",39.32,-111.48,3270,"Abies concolor, Picea engelmannii",2,13,400,5.7,clay loam,7.2,0.6,3,10_30
+Fierer2006,lab,GB4,"Great Basin Experimental Range, UT USA",39.27,-111.47,3735,"Penstemon rydbergii, Geranium richardsonii, Achillea millefolium",2,10,400,3.6,clay loam,6.9,0.9,2.9,10_30
+Fierer2006,lab,GB5,"Great Basin Experimental Range, UT USA",39.35,-111.58,2160,"Juniperus osteosperma, Artemisia tridentata, Bromus tectorum",4.8,15,400,1.7,silt loam,8.2,1.9,3.2,10_30
+Fierer2006,lab,GB6,"Great Basin Experimental Range, UT USA",39.33,-111.45,3750,"Lupinus perennis, Bromus inermis, Achillea millifolium, Taraxicum officinales",2,10,400,2.2,clay,7.2,1.6,2.5,10_30
+Fierer2006,lab,HF1,"Harvard Forest, MA USA",42.5,-72.17,300,"Quercus rubra, Acer rubrum, Quercus velutina",7,15,1100,12.7,sandy loam,4.3,1.4,2.8,10_30
+Fierer2006,lab,HF2,"Harvard Forest, MA USA",42.5,-72.17,300,Pinus resinosa,7,15,1100,9.6,sandy loam,4,1,3.4,10_30
+Fierer2006,lab,HI1,"Kohala Peninsula, HI USA",20.08,-155.7,200,Pennisetum clandestinum,22.8,25,250,1.1,loam,6.5,0.4,4,10_30
+Fierer2006,lab,HI2,"Kohala Peninsula, HI USA",20.08,-155.7,700,Pennisetum clandestinum,22,25,750,15.8,sandy loam,6.3,0.5,3.1,10_30
+Fierer2006,lab,HI3,"Kohala Peninsula, HI USA",20.08,-155.7,1000,Pennisetum clandestinum,22,25,1000,18.2,loamy sand,6.5,0.3,3.6,10_30
+Fierer2006,lab,HI4,"Kohala Peninsula, HI USA",20.1,-155.7,1500,Pennisetum clandestinum,21.2,25,1500,10.8,loam,4.9,1.1,2.9,10_30
+Fierer2006,lab,HJ1,"H.J. Andrews Experimental Forest, OR USA",44.22,-122.15,700,"Pseudotsuga menziesii, Tsuga heterophylla, Thuja plicata",9.4,17,2000,6.9,sandy loam,5.4,0.5,3.1,10_30
+Fierer2006,lab,HJ2,"H.J. Andrews Experimental Forest, OR USA",44.22,-122.15,700,"Alnus rubra, Rhododendron macrophyllum",9.4,17,2000,7.6,sandy loam,5.4,0.4,3.2,10_30
+Fierer2006,lab,IE1,"Institute for Ecosystem Studies, NY USA",41.8,-73.75,75,"Poa pratensis, Galium aparine, Solidago sp.",8.6,21,1200,2.7,sandy loam,5.3,2.9,3,10_30
+Fierer2006,lab,IE2,"Institute for Ecosystem Studies, NY USA",41.8,-73.75,75,"Anthoxanthum odoratum, Coronilla varia, Galium aparine, Schizachyrium scoparium",8.6,21,1200,4.1,sandy loam,5.5,3,2.6,10_30
+Fierer2006,lab,IE3,"Institute for Ecosystem Studies, NY USA",41.8,-73.75,75,"Galium aparine, Solidago sp., Phleum pratensis, Poa pratensis",8.6,21,1200,6.4,sandy loam,5.7,2.1,2.8,10_30
+Fierer2006,lab,IE4,"Institute for Ecosystem Studies, NY USA",41.8,-73.75,75,"Dactylis glomerata, Phleum pratensis, Poa pratensis, Anthoxanthum odoratum, Galium aparine",8.6,21,1200,3.3,sandy loam,6.3,3,2.9,10_30
+Fierer2006,lab,IE5,"Institute for Ecosystem Studies, NY USA",41.8,-73.75,75,"Anthoxanthum odoratum, Datcylis glomerata, Galium aparine, Solidago sp.",8.6,21,1200,5.3,sandy loam,5.6,3.8,2.9,10_30
+Fierer2006,lab,IT1,"Itasca Lake State Park, MN USA",47.17,-95.17,550,"Acer saccharum, Corylus cornuta, Populus tremuloides",3,18,750,6.3,sandy loam,5.8,2,2.5,10_30
+Fierer2006,lab,IT2,"Itasca Lake State Park, MN USA",47.18,-95.17,550,Pinus resinosa,3,18,750,3.9,loamy sand,5.4,2.2,2.8,10_30
+Fierer2006,lab,KP1,"Konza Prairie LTER, KS USA",39.1,-96.6,100,"Andropogon gerardii, Sorghastrum nutans, Poa pratensis",12.5,20,835,6.1,silt loam,6.4,1,2.7,10_30
+Fierer2006,lab,KP2,"Konza Prairie LTER, KS USA",39.1,-96.6,100,"Andropogon gerardii, Sorghastrum nutans, Schizachyrium scoparium",12.5,20,835,4.6,silt loam,6.5,1,2.9,10_30
+Fierer2006,lab,KP3,"Konza Prairie LTER, KS USA",39.1,-96.6,100,Juniperus virginiana,12.5,20,835,6.9,silt loam,7.9,0.2,3.9,10_30
+Fierer2006,lab,LQ1,"Luquillo LTER, Puerto Rico",18.3,-65.83,1000,Tabebuia rigida,19.3,25,5000,13.9,silt loam,4.9,0.4,3.5,10_30
+Fierer2006,lab,LQ2,"Luquillo LTER, Puerto Rico",18.3,-65.83,400,Dacryodes excelsa,21.5,28,3500,4.1,silty clay loam,5,1.8,3,10_30
+Fierer2006,lab,LQ3,"Luquillo LTER, Puerto Rico",18.3,-65.83,700,Cyrilla racemiflora,20.5,27,4500,6.4,sandy loam,4.7,1.7,3,10_30
+Fierer2006,lab,MD1,"Mojave Desert, CA USA",34.9,-115.6,1171,"Larrea tridentata, Ambrosia dumosa, Yucca schidigera",21,16,150,0.4,sandy loam,7.7,10.2,2.4,10_30
+Fierer2006,lab,MD2,"Mojave Desert, CA USA",34.9,-115.65,967,"Larrea tridentata, Ambrosia dumosa, Yucca shidigera",21,16,150,0.1,loamy sand,7.9,16.3,2.3,10_30
+Fierer2006,lab,MD3,"Mojave Desert, CA USA",35.2,-115.87,776,"Larrea tridentata, Ambrosia dumosa",21,16,150,0.6,loamy sand,8.1,11.9,2.9,10_30
+Fierer2006,lab,MP1,"Mary's Peak, OR USA",49.47,-123.53,1300,"Poa spp., Bromus spp.",8.8,17,2200,10.7,sandy loam,4.6,0.4,3.1,10_30
+Fierer2006,lab,MP2,"Mary's Peak, OR USA",49.47,-123.53,1300,Abies procera,8.8,17,2200,9.9,sandy loam,4.4,0.6,3,10_30
+Fierer2006,lab,RT1,"USDA Grassland Research Center, Riesel, TX USA",31.47,-96.87,50,"Prosopis glandulosa, Gleditsia triacanthos, Ulmus crassifolia",18.1,27,840,3.9,silty clay loam,7.9,0.3,3.9,10_30
+Fierer2006,lab,RT2,"USDA Grassland Research Center, Riesel, TX USA",31.47,-96.87,50,"Andropogon gerardii, Schizachyrium scoparium",18.1,27,840,3.8,silty clay loam,8.1,0.2,4.6,10_30
+Fierer2006,lab,SA1,"Sunset Crater, AZ USA",35.37,-111.55,1905,Pinus edulis,10.3,15,400,2.3,sand,6.9,3,2.2,10_30
+Fierer2006,lab,SA2,"Sunset Crater, AZ USA",35.37,-111.55,1905,Juniperus monosperma,10.3,15,400,2.5,sand,8.1,1.4,3.1,10_30
+Fierer2006,lab,SB1,"Santa Barbara, CA USA",34.47,-119.8,500,"Ceanothus megacarpus, Adenostoma fasciculatum",15,15,550,2.7,loam,7.9,2.6,3,10_30
+Fierer2006,lab,SN1,"Sierra Nevada Mts., CA USA",36.45,-118.17,3000,"Pinus jeffreyi, Abies concolor",3.6,8,600,4.3,loamy sand,5,2.8,2.5,10_30
+Fierer2006,lab,SN2,"Sierra Nevada Mts., CA USA",36.45,-118.17,3000,"Artemisia tridentata, Ceanothus prostratus",3.6,8,600,1.7,loamy sand,5.7,4.9,2.6,10_30
+Fierer2006,lab,SP1,"Sequoia National Park, CA USA",36.62,-118.63,3215,"Calamagrostis breweri, Carex spp., Salix arctica, Vaccinium caespitosum",3.6,9,750,8.1,loamy sand,5.1,0.8,2.6,10_30
+Fierer2006,lab,SR1,"Sedgwick Reserve, CA USA",34.7,-120.05,300,"Quercus douglasii, Bromus spp.",17.2,15,500,4.6,loam,6.8,1.4,2.8,10_30
+Fierer2006,lab,SR2,"Sedgwick Reserve, CA USA",34.68,-120.05,300,"Bromus spp., Hordeum murinum",17.2,15,500,3.3,loam,7,3.3,2.8,10_30
+Fierer2006,lab,SV1,"Sevilleta LTER, NM USA",34.33,-106.73,1480,Larrea tridentata,13.5,20,210,0.3,sandy loam,8.3,7.2,3.2,10_30
+Fierer2006,lab,SV2,"Sevilleta LTER, NM USA",34.33,-106.73,1480,"Bouteloua eriopoda, Bouteloua gracilis",13.5,20,210,0.2,loamy sand,8.4,9.2,2.9,10_30
+Fierer2006,lab,SV3,"Sevilleta LTER, NM USA",34.33,-106.73,1480,"Larrea tridentata, Bouteloua eriopoda",13.5,20,210,0.3,loamy sand,8.3,8.3,3,10_30
+Fierer2006,lab,SV4,"Sevilleta LTER, NM USA",34.33,-106.73,1480,"Larrea tridentata, Bouteloua eriopoda",13.5,20,210,0.3,loamy sand,8.3,9.3,3.1,10_30
+Fierer2006,lab,TL1,"Toolik Lake LTER, AK USA",68.63,-149.58,894,Eriophorum vaginatum,-9.3,6,400,7,loam,4.6,1.2,2.7,10_30
+Fierer2006,lab,TL2,"Toolik Lake LTER, AK USA",68.63,-149.58,894,"Salix spp., Betula nana",-9.3,6,400,15.8,silt loam,6.5,0.5,3.2,10_30
+Fierer2006,lab,TL3,"Toolik Lake LTER, AK USA",68.63,-149.58,894,Vaccinium spp.,-9.3,6,400,5.4,loam,4.2,3.1,2.4,10_30
+Fierer2006,lab,VC1,"Valles Caldera, NM USA",35.9,-106.55,2746,"Picea engelmannii, Populus tremuloides",2.5,7,500,5.7,sandy loam,5.6,3,2.8,10_30
+Fierer2006,lab,VC2,"Valles Caldera, NM USA",35.9,-106.55,2733,"Blepharoneuron tricholepis, Potentilla fruticosa, Poa pratensis, Achillea millefolium",2.5,7,500,3.4,loam,6,2,2.9,10_30
