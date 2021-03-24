@@ -1,4 +1,4 @@
-Year,Species,plot,Temp_mean,mean volumetric water content,Q10,R10,Latitude,Longitude,Manipulation,Ecosystem_type,Biome,Study,Incubation
+Year,Species,plot,Temp_mean,mean volumetric water content,Q10,R10,Latitude,Longitude,Manipulation,Ecosystem_type,Biome,Source,Incubation
 2015,birch,b1,14.37538508,22.935,4.664590271,1.823941831,,,None,Forest,,Ignace2019,field
 2015,birch,b2,14.81307322,20.945,3.004166024,3.037394271,,,None,Forest,,Ignace2019,field
 2015,birch,b3,14.95123004,21.995,3.632786556,2.188026509,,,None,Forest,,Ignace2019,field
