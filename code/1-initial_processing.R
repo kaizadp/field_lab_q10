@@ -105,7 +105,7 @@ import_individual_studies = function(){
   
 }
 
-## misc code
+## misc code ----
 more_data = import_individual_studies()
 
 more_data_srdb = more_data %>% 
@@ -159,3 +159,9 @@ hamdi2 =
          )
 
 
+
+# SIDb --------------------------------------------------------------------
+
+library(sidb)
+load("data/sidb.RData")
+sidb_flat = flatterSIDb(sidb)
