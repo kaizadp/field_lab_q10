@@ -162,7 +162,7 @@ hamdi2 =
 
 # SIDb --------------------------------------------------------------------
 
-import_sidb_data = function(){
+# import_sidb_data = function(){
   
   library(sidb)
   library(data.table)
@@ -178,13 +178,13 @@ import_sidb_data = function(){
   sidb_vars = rbindlist(sidb_flat$vars, fill = TRUE)
   
   ## next steps:
-  # - combine data with metadata, using ID
-  # - exclude time > 350 d?
-  # - exclude 13C/14C data
-  # - exclude glucose additions
+  # - combine data with metadata, using ID - done
+  # - exclude time > 350 d? - done
+  # - exclude 13C/14C data - done
+  # - exclude glucose additions - done
   # - exclude data with only a single temperature level
   
-  clean_sidb_data = function(){
+  clean_sidb_data = function(sidb_vars, sidb_timeseries){
     sidb_vars_clean = 
       sidb_vars %>% 
       filter(!units %in% c("permille", "percentC14Remaining")) %>% 
@@ -202,13 +202,27 @@ import_sidb_data = function(){
     list(sidb_vars_clean = sidb_vars_clean,
          sidb_timeseries_clean = sidb_timeseries_clean)
   }
+  sidb_vars_clean = clean_sidb_data(sidb_vars, sidb_timeseries)$sidb_vars_clean
+  sidb_timeseries_clean = clean_sidb_data(sidb_vars, sidb_timeseries)$sidb_timeseries_clean
   
-  
-}
+  calculate_sidb_q10_r10 = function(sidb_timeseries_clean){
+    # using equations from Meyer et al. 2018. https://doi.org/10.1002/2017GB005644
+    fit_q10_parameters = function(sidb_timeseries_clean){
+      curve.nls = nlsLM(response ~ a*exp(temperature * b),
+                        start=list(a=1,
+                                   b=0),
+                        data = sidb_timeseries_clean)
+      coef1 = coef(curve.nls) %>% as.data.frame() 
+      coef_transpose = coef1 %>% transpose() %>% `colnames<-`(rownames(coef1))
+      coef_transpose
+    }
+    
+    a =   
+      sidb_timeseries_clean %>% 
+      group_by(ID) %>% 
+      do(fit_q10_parameters(.))
+    
+  }
 
 
-sidb_df %>% 
-  ggplot(aes(x = time, y = response, color = ID))+
-  geom_point()+ geom_path()+
-  theme(legend.position = "none",
-        strip.text = element_blank())
+
