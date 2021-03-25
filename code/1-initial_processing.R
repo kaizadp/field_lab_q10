@@ -162,6 +162,53 @@ hamdi2 =
 
 # SIDb --------------------------------------------------------------------
 
-library(sidb)
-load("data/sidb.RData")
-sidb_flat = flatterSIDb(sidb)
+import_sidb_data = function(){
+  
+  library(sidb)
+  library(data.table)
+  
+  # use the `sidb` package to load the data and then
+  # flatten the large list into a list with two nested lists 
+  load("data/sidb.RData")
+  sidb_flat = flatterSIDb(sidb)
+  
+  # convert the two lists into dataframes
+  # vars needs data.table::rbindlist because it is a different format 
+  sidb_timeseries = dplyr::bind_rows(sidb_flat$timeseries)
+  sidb_vars = rbindlist(sidb_flat$vars, fill = TRUE)
+  
+  ## next steps:
+  # - combine data with metadata, using ID
+  # - exclude time > 350 d?
+  # - exclude 13C/14C data
+  # - exclude glucose additions
+  # - exclude data with only a single temperature level
+  
+  clean_sidb_data = function(){
+    sidb_vars_clean = 
+      sidb_vars %>% 
+      filter(!units %in% c("permille", "percentC14Remaining")) %>% 
+      filter(is.na(elevatedCO2) | elevatedCO2 == "control") %>% 
+      filter(is.na(glucose)) %>% 
+      filter(is.na(cellulose) | cellulose == "control")
+    
+    sidb_timeseries_clean = 
+      sidb_timeseries %>% 
+      filter(time <= 370) %>% 
+      left_join(sidb_vars_clean %>% dplyr::select(ID, temperature)) %>% 
+      drop_na()
+    
+    
+    list(sidb_vars_clean = sidb_vars_clean,
+         sidb_timeseries_clean = sidb_timeseries_clean)
+  }
+  
+  
+}
+
+
+sidb_df %>% 
+  ggplot(aes(x = time, y = response, color = ID))+
+  geom_point()+ geom_path()+
+  theme(legend.position = "none",
+        strip.text = element_blank())
