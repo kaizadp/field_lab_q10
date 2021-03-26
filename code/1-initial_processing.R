@@ -232,7 +232,7 @@ hamdi2 =
     
     a =   
       sidb_timeseries_clean %>% 
-      group_by(ID, time) %>% 
+      group_by(citationKey, time) %>% 
       do(fit_q10_parameters(.))
     
   }
