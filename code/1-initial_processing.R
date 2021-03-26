@@ -195,22 +195,35 @@ hamdi2 =
     sidb_timeseries_clean = 
       sidb_timeseries %>% 
       filter(time <= 370) %>% 
-      left_join(sidb_vars_clean %>% dplyr::select(ID, temperature)) %>% 
-      drop_na()
+      left_join(sidb_vars_clean %>% dplyr::select(ID, temperature, units, citationKey)) %>% 
+      drop_na() 
+    
+      # keep only data with multiple temperature levels
+      temp_count = 
+        sidb_timeseries_clean %>% 
+        distinct(citationKey, temperature) %>%
+        group_by(citationKey) %>% 
+        dplyr::mutate(n = n())
+      
+      sidb_timeseries_clean2 = 
+        sidb_timeseries_clean %>% 
+        left_join(temp_count) %>% 
+        filter(n > 1) %>% 
+        dplyr::select(-n)
     
     
     list(sidb_vars_clean = sidb_vars_clean,
-         sidb_timeseries_clean = sidb_timeseries_clean)
+         sidb_timeseries_clean2 = sidb_timeseries_clean2)
   }
   sidb_vars_clean = clean_sidb_data(sidb_vars, sidb_timeseries)$sidb_vars_clean
-  sidb_timeseries_clean = clean_sidb_data(sidb_vars, sidb_timeseries)$sidb_timeseries_clean
+  sidb_timeseries_clean = clean_sidb_data(sidb_vars, sidb_timeseries)$sidb_timeseries_clean2
   
   calculate_sidb_q10_r10 = function(sidb_timeseries_clean){
     # using equations from Meyer et al. 2018. https://doi.org/10.1002/2017GB005644
     fit_q10_parameters = function(sidb_timeseries_clean){
-      curve.nls = nlsLM(response ~ a*exp(temperature * b),
-                        start=list(a=1,
-                                   b=0),
+      curve.nls = nls(response ~ a*exp(temperature * b),
+                        start=list(a=5,
+                                   b=2),
                         data = sidb_timeseries_clean)
       coef1 = coef(curve.nls) %>% as.data.frame() 
       coef_transpose = coef1 %>% transpose() %>% `colnames<-`(rownames(coef1))
@@ -219,10 +232,8 @@ hamdi2 =
     
     a =   
       sidb_timeseries_clean %>% 
-      group_by(ID) %>% 
+      group_by(ID, time) %>% 
       do(fit_q10_parameters(.))
     
   }
-
-
 
