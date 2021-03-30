@@ -98,11 +98,8 @@ import_individual_studies = function(){
                   Temp_range, Temp_mean, Temp_min, Temp_max, Q10, R10) %>% 
     na_if("")
   
-# next:
-#  - fix lat/longtitude
-#  - fix temp ranges/temp_mean
-  
-  # clean temperature ranges
+fix_temp_and_latlon = function(){
+  # clean temperature ranges ----
   combined2 = 
     combined %>% 
     mutate(Temp_min = round(Temp_min/5)*5,
@@ -115,7 +112,7 @@ import_individual_studies = function(){
            Temp_diff = Temp_max - Temp_min) %>% 
     rownames_to_column("rownum")
   
-  # fix latitude/longitude
+  # fix latitude/longitude ----
   # subset only the columns needed, we will re-join later
   combined2_latlong = 
     combined2 %>% 
@@ -188,11 +185,11 @@ import_individual_studies = function(){
     # finally, subset the necessary columns and then join with the dataset
     dplyr::select(rownum, Latitude, Longitude)
   
-  combined3 = 
+  # combine ----
     combined2 %>% 
     dplyr::select(-Latitude, -Longitude, -Latitude_deg, -Longitude_deg) %>% 
     left_join(combined2_latlong)
-  
+}
   
 }
 
