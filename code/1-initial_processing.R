@@ -256,6 +256,33 @@ make_map_all_studies = function(combined_q10){
     theme(legend.position = "top")
 }
 
+compute_stats_q10 = function(combined_q10){
+  # LME ----
+  l = nlme::lme(Q10 ~ Incubation, random = ~1|Incubation, data = combined_q10) 
+  anova(l)
+  # NaNs produced
+  
+  # ANOVA/HSD ----
+  fit_aov = function(combined_q10){
+    a = aov(Q10 ~ Incubation, data = combined_q10)
+    # h = agricolae::HSD.test(a, "Incubation")
+    # h$groups %>% 
+    #   rownames_to_column("Incubation")
+    
+    broom::tidy(a) %>% 
+      filter(term == "Incubation") %>% 
+      rename(p_value = `p.value`) %>% 
+      mutate(label = case_when(p_value <= 0.05 ~ "*")) %>% 
+      dplyr::select(label)
+  }
+  
+  combined_q10 %>% 
+    group_by(Temp_range_new) %>% 
+    do(fit_aov(.))
+  # 5-15: lab > field
+  # 15-25, > 25: field > lab
+  
+  }
 
 
 #
