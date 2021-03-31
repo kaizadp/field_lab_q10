@@ -284,6 +284,18 @@ compute_stats_q10 = function(combined_q10){
   
   }
 
+make_graphs_q10 = function(combined_q10){
+
+  combined_q10 %>% 
+    ggplot(aes(x = Temp_range_new, y = Q10, color = Incubation))+
+    geom_point(position = position_dodge(width = 0.4))
+  
+  combined_q10 %>% 
+    ggplot(aes(x = Q10, y = Latitude, color = Incubation))+
+    geom_point(position = position_dodge(width = 0.4))+
+    facet_wrap(~Temp_range_new, scales = "free_x")+theme_bw()
+  
+}
 
 #
 ## misc code ----
