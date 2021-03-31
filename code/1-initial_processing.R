@@ -51,7 +51,7 @@ clean_srdb_dataset = function(){
   }
   q10 = process_q10_data(srdb_v5_equations)
   
-  r10_sites = sites %>% left_join(r10) %>% filter(!is.na(Q10))
+  r10_sites = sites %>% left_join(r10) %>% filter(!is.na(R10))
   q10_sites = sites %>% left_join(q10) %>% filter(!is.na(Q10))
 
   list(r10_sites = r10_sites,
@@ -285,16 +285,20 @@ compute_stats_q10 = function(combined_q10){
   }
 
 make_graphs_q10 = function(combined_q10){
-
-  combined_q10 %>% 
+  
+  resp_q10_temp = 
+    combined_q10 %>% 
     ggplot(aes(x = Temp_range_new, y = Q10, color = Incubation))+
     geom_point(position = position_dodge(width = 0.4))
   
-  combined_q10 %>% 
+  resp_q10_latitude = 
+    combined_q10 %>% 
     ggplot(aes(x = Q10, y = Latitude, color = Incubation))+
     geom_point(position = position_dodge(width = 0.4))+
     facet_wrap(~Temp_range_new, scales = "free_x")+theme_bw()
   
+  list(resp_q10_temp = resp_q10_temp,
+       resp_q10_latitude = resp_q10_latitude)
 }
 
 #
