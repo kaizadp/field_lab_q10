@@ -98,7 +98,7 @@ import_individual_studies = function(){
                   Temp_range, Temp_mean, Temp_min, Temp_max, Q10, R10) %>% 
     na_if("")
   
-fix_temp_and_latlon = function(){
+fix_temp_and_latlon = function(combined){
   # clean temperature ranges ----
   combined2 = 
     combined %>% 
@@ -190,9 +190,56 @@ fix_temp_and_latlon = function(){
     dplyr::select(-Latitude, -Longitude, -Latitude_deg, -Longitude_deg) %>% 
     left_join(combined2_latlong)
 }
-  
+  fix_temp_and_latlon(combined)
 }
 
+combine_all_q10_studies = function(indiv_studies, srdb_q10){
+  # combine the available data ----
+  q10_combined = 
+    indiv_studies %>% 
+    dplyr::select(Source, Incubation, Latitude, Longitude, Temp_range, Temp_mean, Q10) %>% 
+    bind_rows(srdb_q10 %>% 
+                mutate(Source = "SRDB", Incubation = "field") %>% 
+                rename(Temp_range = temp_range))
+  
+  # clean the temperature ranges ----
+  temp_ranges = 
+    q10_combined %>% 
+    dplyr::select(Temp_range) %>% 
+    distinct() %>% 
+    mutate(Temp_range2 = Temp_range) %>% 
+    separate(Temp_range2, sep = "_", into = c("Temp_min", "Temp_max")) %>% 
+    mutate(Temp_max = as.integer(Temp_max),
+           Temp_min = as.integer(Temp_min),
+           Temp_diff = Temp_max - Temp_min) %>% 
+    filter(Temp_diff <= 10) %>% 
+    mutate(Temp_range_new = 
+             case_when(Temp_max <= 0 ~ "< 0",
+                       Temp_min >= 0 & Temp_max <= 5 ~ "0_5",
+                       Temp_min >= 5 & Temp_max <= 15 ~ "5_15",
+                       Temp_min >= 15 & Temp_max <= 25 ~ "15_25",
+                       Temp_min >= 25 ~ "> 25"))
+  
+  # 
+  q10_combined_temp = 
+    q10_combined %>% 
+    left_join(temp_ranges %>% dplyr::select(Temp_range, Temp_range_new)) %>% 
+    mutate(Temp_range_new = if_else(is.na(Temp_range),
+                                    case_when(Temp_mean < 0 ~ "< 0",
+                                              Temp_mean >= 0 & Temp_mean < 5 ~ "0_5",
+                                              Temp_mean >= 5 & Temp_mean < 15 ~ "5_15",
+                                              Temp_mean >= 15 & Temp_mean <= 25 ~ "15_25",
+                                              Temp_mean >= 25 ~ "> 25"),
+                                    Temp_range_new)) %>% 
+    filter(!is.na(Temp_range_new)) %>% 
+    filter(!is.na(Q10)) %>% 
+    mutate(Temp_range_new = factor(Temp_range_new, levels = c("< 0", "0_5", "5_15", "15_25", "> 25")))
+  
+  q10_combined_temp
+}
+
+
+#
 ## misc code ----
 more_data = import_individual_studies()
 
@@ -324,4 +371,20 @@ hamdi2 =
       do(fit_q10_parameters(.))
     
   }
+
+
+  
+
+# -------------------------------------------------------------------------
+
+  
+  
+  
+ 
+
+
+
+
+
+
 
