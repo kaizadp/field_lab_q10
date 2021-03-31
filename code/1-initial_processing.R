@@ -238,6 +238,25 @@ combine_all_q10_studies = function(indiv_studies, srdb_q10){
   q10_combined_temp
 }
 
+make_map_all_studies = function(combined_q10){
+  library(rnaturalearth)
+  library(rnaturalearthdata)
+  library(sf)
+  
+  world = ne_countries(scale = "medium",  returnclass = "sf", type = "countries")
+  
+  world %>% 
+    ggplot()+
+    geom_sf(color = NA, alpha = 0.7)+
+    geom_point(data = combined_q10,
+               aes(x = Longitude, y = Latitude, color = Incubation), 
+               alpha = 0.5, size = 1)+
+    labs(color = "")+
+    theme_void()+
+    theme(legend.position = "top")
+}
+
+
 
 #
 ## misc code ----
