@@ -1,0 +1,47 @@
+---
+title: "data analysis"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      collapse = TRUE,
+                      warning = FALSE,
+                      message = FALSE,
+                      comment = "#>"
+                      )
+```
+
+## Respiration Q10
+
+### Study sites included
+
+```{r}
+readd(gg_map)
+```
+
+### Field vs. lab 
+
+- field vs. lab was significantly different (ANOVA) for:
+    - 5-15 °C (lab > field)
+    - 15-25 °C (field > lab)
+    - > 25 °C (field > lab)
+
+
+```{r}
+readd(gg_q10)
+```
+
+
+---
+
+<details>   
+   <summary>Session Info</summary>
+   
+Date run: `r Sys.Date()`
+
+```{r}
+sessionInfo()
+```
+
+</details> 
