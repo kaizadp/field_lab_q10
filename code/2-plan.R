@@ -20,7 +20,7 @@ q10_plan =
   
   report2 = rmarkdown::render(
     knitr_in("reports/2-data_analysis.Rmd"),
-    output_format = rmarkdown::github_document()), quiet = T
+    output_format = rmarkdown::github_document())
 )
 
 
