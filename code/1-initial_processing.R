@@ -432,7 +432,7 @@ calculate_sidb_q10_r10 <- function(sidb_timeseries_clean){
   
 }
 
-
+sidb_q10_calculated = calculate_sidb_q10_r10(sidb_timeseries_clean)
 
 
 # -------------------------------------------------------------------------
