@@ -301,59 +301,59 @@ make_graphs_q10 <- function(combined_q10){
 
 #
 ## misc code ----
-  # more_data <- import_individual_studies()
-  # 
-  # more_data_srdb <- more_data %>% 
-  #   bind_rows(srdb_q10 %>% 
-  #               mutate(Record_number = as.character(Record_number),
-  #                      Incubation = "field",
-  #                      Source = "SRDB") %>% 
-  #               rename(Temp_range = temp_range))
-  # 
-  # more_data2 <- 
-  #   more_data_srdb %>% 
-  #   dplyr::select(Source, Incubation, Q10, Temp_range, Temp_mean, Latitude, Longitude) %>% 
-  #   mutate(Temp_range2 = Temp_range) %>% 
-  #   separate(Temp_range2, sep = "_", into = c("Temp_min", "Temp_max")) %>% 
-  #   mutate(Temp_min = as.numeric(Temp_min),
-  #          Temp_max = as.numeric(Temp_max),
-  #          Temp_mean = if_else(is.na(Temp_mean), (Temp_min+Temp_max)/2, Temp_mean))
-  # 
-  # 
-  # 
-  # more_data2 %>% 
-  #   ggplot(aes(x = Temp_mean, y = Q10, color = Incubation))+
-  #   geom_point()+
-  #   geom_smooth()
-  # 
-  # more_data2 %>% 
-  #   ggplot(aes(y = Latitude, x = Q10, color = Incubation))+
-  #   geom_point()
-  # 
-  # hamdi <- read_csv("data/cleaned_for_analysis/lab/Hamdi2013.csv")
-  # 
-  # hamdi2 <- 
-  #   hamdi %>% 
-  #   dplyr::select(latitude_deg) %>% 
-  #   mutate(latitude_deg = if_else(grepl('"', latitude_deg), 
-  #                                 latitude_deg, 
-  #                                 str_replace_all(latitude_deg, "'", "'00")),
-  #          latitude_deg = if_else(grepl("'", latitude_deg), 
-  #                                 latitude_deg, 
-  #                                 str_replace_all(latitude_deg, "_", "_00'00")),
-  #   ) %>% 
-  #   rowwise() %>% 
-  #   mutate(
-  #     
-  #     
-  #     latitude_deg = str_replace_all(latitude_deg, "_", " "),
-  #     latitude_deg = str_replace_all(latitude_deg, "'", " "),
-  #     latitude_deg = str_replace_all(latitude_deg, '"', " "),
-  #     latitude_deg = str_remove(latitude_deg, "N"),
-  #     lat = measurements::conv_unit(latitude_deg, from = "deg_min_sec", to = "dec_deg")
-  #   )
-  # 
-  # 
+# more_data <- import_individual_studies()
+# 
+# more_data_srdb <- more_data %>% 
+#   bind_rows(srdb_q10 %>% 
+#               mutate(Record_number = as.character(Record_number),
+#                      Incubation = "field",
+#                      Source = "SRDB") %>% 
+#               rename(Temp_range = temp_range))
+# 
+# more_data2 <- 
+#   more_data_srdb %>% 
+#   dplyr::select(Source, Incubation, Q10, Temp_range, Temp_mean, Latitude, Longitude) %>% 
+#   mutate(Temp_range2 = Temp_range) %>% 
+#   separate(Temp_range2, sep = "_", into = c("Temp_min", "Temp_max")) %>% 
+#   mutate(Temp_min = as.numeric(Temp_min),
+#          Temp_max = as.numeric(Temp_max),
+#          Temp_mean = if_else(is.na(Temp_mean), (Temp_min+Temp_max)/2, Temp_mean))
+# 
+# 
+# 
+# more_data2 %>% 
+#   ggplot(aes(x = Temp_mean, y = Q10, color = Incubation))+
+#   geom_point()+
+#   geom_smooth()
+# 
+# more_data2 %>% 
+#   ggplot(aes(y = Latitude, x = Q10, color = Incubation))+
+#   geom_point()
+# 
+# hamdi <- read_csv("data/cleaned_for_analysis/lab/Hamdi2013.csv")
+# 
+# hamdi2 <- 
+#   hamdi %>% 
+#   dplyr::select(latitude_deg) %>% 
+#   mutate(latitude_deg = if_else(grepl('"', latitude_deg), 
+#                                 latitude_deg, 
+#                                 str_replace_all(latitude_deg, "'", "'00")),
+#          latitude_deg = if_else(grepl("'", latitude_deg), 
+#                                 latitude_deg, 
+#                                 str_replace_all(latitude_deg, "_", "_00'00")),
+#   ) %>% 
+#   rowwise() %>% 
+#   mutate(
+#     
+#     
+#     latitude_deg = str_replace_all(latitude_deg, "_", " "),
+#     latitude_deg = str_replace_all(latitude_deg, "'", " "),
+#     latitude_deg = str_replace_all(latitude_deg, '"', " "),
+#     latitude_deg = str_remove(latitude_deg, "N"),
+#     lat = measurements::conv_unit(latitude_deg, from = "deg_min_sec", to = "dec_deg")
+#   )
+# 
+# 
 
 # SIDb --------------------------------------------------------------------
 
@@ -415,14 +415,27 @@ sidb_timeseries_clean <- clean_sidb_data(sidb_vars, sidb_timeseries)$sidb_timese
 
 calculate_sidb_q10_r10 <- function(sidb_timeseries_clean){
   # using equations from Meyer et al. 2018. https://doi.org/10.1002/2017GB005644
-  fit_q10_parameters <- function(sidb_timeseries_clean){
-    curve.nls <- nls(response ~ a*exp(temperature * b),
-                     start=list(a=5,
-                                b=2),
-                     data = sidb_timeseries_clean)
-    coef1 <- coef(curve.nls) %>% as.data.frame() 
-    coef_transpose <- coef1 %>% transpose() %>% `colnames<-`(rownames(coef1))
-    coef_transpose
+  fit_q10_parameters <- function(x){
+    #browser()#    tryCatch()
+    coefs <- data.frame(n = nrow(x), err = NA_character_)
+    tryCatch({
+      # Estimate the a and b parameters using a linear model...
+      m <- lm(log(response) ~ temperature, data = test)
+      a_start <- exp(coef(m)[1])
+      b_start <- coef(m)[2]
+      
+      # ...and then fit the nonlinear model using these starting values
+      curve.nls <- nls(response ~ a * exp(temperature * b),
+                       start = list(a = a_start, b = b_start),
+                       data = x)
+      coefs <- cbind(coefs, data.frame(as.list(coef(curve.nls))))
+    },
+    error = function(e) {
+      coefs$err <<- e$message
+    }
+    )  # end of tryCatch
+    
+    coefs    
   }
   
   a <-   
@@ -432,7 +445,7 @@ calculate_sidb_q10_r10 <- function(sidb_timeseries_clean){
   
 }
 
-sidb_q10_calculated = calculate_sidb_q10_r10(sidb_timeseries_clean)
+sidb_q10_calculated <- calculate_sidb_q10_r10(sidb_timeseries_clean)
 
 
 # -------------------------------------------------------------------------
