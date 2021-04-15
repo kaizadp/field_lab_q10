@@ -438,24 +438,49 @@ calculate_sidb_q10_r10 <- function(sidb_timeseries_clean){
     coefs    
   }
 
-  a <-   
+  sidb_temps <-
+    sidb_timeseries_clean %>% 
+    group_by(citationKey) %>% 
+    dplyr::summarise(temp_range_min = min(temperature),
+                     temp_range_max = max(temperature))
+    
+  sidb_q10_calculated <-   
     sidb_timeseries_clean %>% 
     group_by(citationKey, units) %>% 
     do(fit_q10_parameters(.)) %>% 
+    left_join(sidb_temps) %>% 
     mutate(r10 = a * exp(b * 10),
            r0 = a * exp(b * 0),
            r5 = a * exp(b * 5),
            r15 = a * exp(b * 15),
            r20 = a * exp(b * 20),
            r25 = a * exp(b * 25),
-           
-           q10_5_15 = (r5+r15)/r5,
-           q10_15_25 = (r15+r25)/r15) %>% 
-    dplyr::select(citationKey, units, n, a, b, r10, starts_with("q10"))
+           r35 = a * exp(b * 35),
+           r40 = a * exp(b * 45)) %>% 
+    mutate(q10_5_15 = case_when(temp_range_min < 15 ~ (r5+r15)/r5),
+           q10_15_25 = case_when(temp_range_min < 25 ~ (r15+r25)/r15),
+           q10_25_35 = case_when(temp_range_min < 35 ~ (r25+r35)/r25),
+           q10_35_40 = case_when(temp_range_min < 40 & temp_range_max > 35 ~ (r35+r40)/r35)) %>% 
+    dplyr::select(citationKey, units, n, temp_range_min, temp_range_max, a, b, r10, starts_with("q10")) %>% 
+    force()
+  
+  sidb_q10_clean <-
+    sidb_q10_calculated %>% 
+    ungroup() %>% 
+    dplyr::select(citationKey, starts_with("Q10")) %>% 
+    pivot_longer(-citationKey, values_to = "Q10", names_to = "Temp_range") %>% 
+    drop_na() %>% 
+    mutate(Temp_range = str_remove(Temp_range, "q10_"),
+           source = "SIDb",
+           Incubation = "lab") %>% 
+    rename(reference = citationKey)
+  
+  list(sidb_q10_calculated = sidb_q10_calculated,
+       sidb_q10_clean = sidb_q10_clean)
   
 }
-
-sidb_q10_calculated <- calculate_sidb_q10_r10(sidb_timeseries_clean)
+sidb_q10_calculated <- calculate_sidb_q10_r10(sidb_timeseries_clean)$sidb_q10_calculated
+sidb_q10_clean <- calculate_sidb_q10_r10(sidb_timeseries_clean)$sidb_q10_clean
 
 
 # -------------------------------------------------------------------------
