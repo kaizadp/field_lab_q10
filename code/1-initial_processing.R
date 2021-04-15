@@ -1,5 +1,3 @@
-library(tidyverse)
-theme_set(theme_bw())
 
 
 clean_srdb_dataset <- function(){
@@ -195,27 +193,12 @@ import_individual_studies <- function(){
 
 # SIDb --------------------------------------------------------------------
 
-# import_sidb_data = function(){
-
-library(sidb)
-library(data.table)
-
-# use the `sidb` package to load the data and then
-# flatten the large list into a list with two nested lists 
-load("data/sidb.RData")
-sidb_flat <- flatterSIDb(sidb)
-
-# convert the two lists into dataframes
-# vars needs data.table::rbindlist because it is a different format 
-sidb_timeseries <- dplyr::bind_rows(sidb_flat$timeseries)
-sidb_vars <- rbindlist(sidb_flat$vars, fill = TRUE)
-
-## next steps:
-# - combine data with metadata, using ID - done
-# - exclude time > 350 d? - done
-# - exclude 13C/14C data - done
-# - exclude glucose additions - done
-# - exclude data with only a single temperature level
+      ## next steps:
+      # - combine data with metadata, using ID - done
+      # - exclude time > 350 d? - done
+      # - exclude 13C/14C data - done
+      # - exclude glucose additions - done
+      # - exclude data with only a single temperature level
 
 clean_sidb_data <- function(sidb_vars, sidb_timeseries){
   sidb_vars_clean <- 
@@ -248,12 +231,10 @@ clean_sidb_data <- function(sidb_vars, sidb_timeseries){
   list(sidb_vars_clean = sidb_vars_clean,
        sidb_timeseries_clean2 = sidb_timeseries_clean2)
 }
-sidb_vars_clean <- clean_sidb_data(sidb_vars, sidb_timeseries)$sidb_vars_clean
-sidb_timeseries_clean <- clean_sidb_data(sidb_vars, sidb_timeseries)$sidb_timeseries_clean2
 
-calculate_sidb_q10_r10 <- function(sidb_timeseries_clean){
+calculate_sidb_q10_r10 <- function(sidb_timeseries_clean, sidb_vars){
   # using equations from Meyer et al. 2018. https://doi.org/10.1002/2017GB005644
-  fit_q10_parameters_meyer <- function(x){
+  fit_q10_parameters <- function(x){
     #browser()#    tryCatch()
     coefs <- data.frame(n = nrow(x), err = NA_character_)
     tryCatch({
@@ -275,6 +256,11 @@ calculate_sidb_q10_r10 <- function(sidb_timeseries_clean){
     
     coefs    
   }
+#  sidb_timeseries_clean %>% 
+#    group_by(citationKey, units) %>% 
+#    do(fit_q10_parameters(.))
+  
+  
   
   sidb_temps <-
     sidb_timeseries_clean %>% 
@@ -325,8 +311,6 @@ calculate_sidb_q10_r10 <- function(sidb_timeseries_clean){
        sidb_q10_clean = sidb_q10_clean)
   
 }
-sidb_q10_calculated <- calculate_sidb_q10_r10(sidb_timeseries_clean)$sidb_q10_calculated
-sidb_q10_clean <- calculate_sidb_q10_r10(sidb_timeseries_clean)$sidb_q10_clean
 
 
 #
@@ -425,7 +409,6 @@ compute_stats_q10 <- function(combined_q10){
     do(fit_aov(.))
   # 5-15: lab > field
   # 15-25, > 25: field > lab
-  
 }
 
 make_graphs_q10 <- function(combined_q10){
