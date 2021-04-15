@@ -415,12 +415,12 @@ sidb_timeseries_clean <- clean_sidb_data(sidb_vars, sidb_timeseries)$sidb_timese
 
 calculate_sidb_q10_r10 <- function(sidb_timeseries_clean){
   # using equations from Meyer et al. 2018. https://doi.org/10.1002/2017GB005644
-  fit_q10_parameters <- function(x){
+  fit_q10_parameters_meyer <- function(x){
     #browser()#    tryCatch()
     coefs <- data.frame(n = nrow(x), err = NA_character_)
     tryCatch({
       # Estimate the a and b parameters using a linear model...
-      m <- lm(log(response) ~ temperature, data = test)
+      m <- lm(log(response) ~ temperature, data = x)
       a_start <- exp(coef(m)[1])
       b_start <- coef(m)[2]
       
@@ -437,11 +437,21 @@ calculate_sidb_q10_r10 <- function(sidb_timeseries_clean){
     
     coefs    
   }
-  
+
   a <-   
     sidb_timeseries_clean %>% 
-    group_by(citationKey, time) %>% 
-    do(fit_q10_parameters(.))
+    group_by(citationKey, units) %>% 
+    do(fit_q10_parameters(.)) %>% 
+    mutate(r10 = a * exp(b * 10),
+           r0 = a * exp(b * 0),
+           r5 = a * exp(b * 5),
+           r15 = a * exp(b * 15),
+           r20 = a * exp(b * 20),
+           r25 = a * exp(b * 25),
+           
+           q10_5_15 = (r5+r15)/r5,
+           q10_15_25 = (r15+r25)/r15) %>% 
+    dplyr::select(citationKey, units, n, a, b, r10, starts_with("q10"))
   
 }
 
