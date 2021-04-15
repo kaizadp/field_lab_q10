@@ -79,14 +79,16 @@ import_individual_studies <- function(){
   filePaths_field <- list.files(path = "data/cleaned_for_analysis/field",pattern = "*.csv", full.names = TRUE)
   filePaths_lab <- list.files(path = "data/cleaned_for_analysis/lab",pattern = "*.csv", full.names = TRUE)
   
-  lapply(filePaths_field, read.csv, stringsAsFactors = FALSE) %>% 
+  field_data <-
+    lapply(filePaths_field, read.csv, stringsAsFactors = FALSE) %>% 
     bind_rows() %>% 
-    mutate(Incubation = "field", Depth_cm = as.character(Depth_cm)) ->
-    field_data
-  lapply(filePaths_lab, read.csv, stringsAsFactors = FALSE) %>% 
+    mutate(Incubation = "field", Depth_cm = as.character(Depth_cm))
+    
+  lab_data <-
+    lapply(filePaths_lab, read.csv, stringsAsFactors = FALSE) %>% 
     bind_rows() %>% 
-    mutate(Incubation = "field", Depth_cm = as.character(Depth_cm)) ->
-    lab_data
+    mutate(Incubation = "lab", Depth_cm = as.character(Depth_cm))
+    
   
   combined <- 
     bind_rows(lab_data, field_data) %>% 
@@ -190,6 +192,149 @@ import_individual_studies <- function(){
   }
   fix_temp_and_latlon(combined)
 }
+
+# SIDb --------------------------------------------------------------------
+
+# import_sidb_data = function(){
+
+library(sidb)
+library(data.table)
+
+# use the `sidb` package to load the data and then
+# flatten the large list into a list with two nested lists 
+load("data/sidb.RData")
+sidb_flat <- flatterSIDb(sidb)
+
+# convert the two lists into dataframes
+# vars needs data.table::rbindlist because it is a different format 
+sidb_timeseries <- dplyr::bind_rows(sidb_flat$timeseries)
+sidb_vars <- rbindlist(sidb_flat$vars, fill = TRUE)
+
+## next steps:
+# - combine data with metadata, using ID - done
+# - exclude time > 350 d? - done
+# - exclude 13C/14C data - done
+# - exclude glucose additions - done
+# - exclude data with only a single temperature level
+
+clean_sidb_data <- function(sidb_vars, sidb_timeseries){
+  sidb_vars_clean <- 
+    sidb_vars %>% 
+    filter(!units %in% c("permille", "percentC14Remaining")) %>% 
+    filter(is.na(elevatedCO2) | elevatedCO2 == "control") %>% 
+    filter(is.na(glucose)) %>% 
+    filter(is.na(cellulose) | cellulose == "control")
+  
+  sidb_timeseries_clean <- 
+    sidb_timeseries %>% 
+    filter(time <= 370) %>% 
+    left_join(sidb_vars_clean %>% dplyr::select(ID, temperature, units, citationKey)) %>% 
+    drop_na() 
+  
+  # keep only data with multiple temperature levels
+  temp_count <-
+    sidb_timeseries_clean %>% 
+    distinct(citationKey, temperature) %>%
+    group_by(citationKey) %>% 
+    dplyr::mutate(n = n())
+  
+  sidb_timeseries_clean2 <- 
+    sidb_timeseries_clean %>% 
+    left_join(temp_count) %>% 
+    filter(n > 1) %>% 
+    dplyr::select(-n)
+  
+  
+  list(sidb_vars_clean = sidb_vars_clean,
+       sidb_timeseries_clean2 = sidb_timeseries_clean2)
+}
+sidb_vars_clean <- clean_sidb_data(sidb_vars, sidb_timeseries)$sidb_vars_clean
+sidb_timeseries_clean <- clean_sidb_data(sidb_vars, sidb_timeseries)$sidb_timeseries_clean2
+
+calculate_sidb_q10_r10 <- function(sidb_timeseries_clean){
+  # using equations from Meyer et al. 2018. https://doi.org/10.1002/2017GB005644
+  fit_q10_parameters_meyer <- function(x){
+    #browser()#    tryCatch()
+    coefs <- data.frame(n = nrow(x), err = NA_character_)
+    tryCatch({
+      # Estimate the a and b parameters using a linear model...
+      m <- lm(log(response) ~ temperature, data = x)
+      a_start <- exp(coef(m)[1])
+      b_start <- coef(m)[2]
+      
+      # ...and then fit the nonlinear model using these starting values
+      curve.nls <- nls(response ~ a * exp(temperature * b),
+                       start = list(a = a_start, b = b_start),
+                       data = x)
+      coefs <- cbind(coefs, data.frame(as.list(coef(curve.nls))))
+    },
+    error = function(e) {
+      coefs$err <<- e$message
+    }
+    )  # end of tryCatch
+    
+    coefs    
+  }
+  
+  sidb_temps <-
+    sidb_timeseries_clean %>% 
+    group_by(citationKey) %>% 
+    dplyr::summarise(temp_range_min = min(temperature),
+                     temp_range_max = max(temperature))
+  
+  sidb_latlon = 
+    sidb_vars %>% 
+    dplyr::select(citationKey, latitude, longitude) %>% 
+    group_by(citationKey) %>% 
+    dplyr::summarise(Latitude = mean(latitude),
+                     Longitude = mean(longitude))
+  
+  sidb_q10_calculated <-   
+    sidb_timeseries_clean %>% 
+    group_by(citationKey, units) %>% 
+    do(fit_q10_parameters(.)) %>% 
+    left_join(sidb_temps) %>% 
+    mutate(r10 = a * exp(b * 10),
+           r0 = a * exp(b * 0),
+           r5 = a * exp(b * 5),
+           r15 = a * exp(b * 15),
+           r20 = a * exp(b * 20),
+           r25 = a * exp(b * 25),
+           r35 = a * exp(b * 35),
+           r40 = a * exp(b * 45)) %>% 
+    mutate(q10_5_15 = case_when(temp_range_min < 15 ~ (r5+r15)/r5),
+           q10_15_25 = case_when(temp_range_min < 25 ~ (r15+r25)/r15),
+           q10_25_35 = case_when(temp_range_min < 35 ~ (r25+r35)/r25),
+           q10_35_40 = case_when(temp_range_min < 40 & temp_range_max > 35 ~ (r35+r40)/r35)) %>% 
+    dplyr::select(citationKey, units, n, temp_range_min, temp_range_max, a, b, r10, starts_with("q10")) %>% 
+    force()
+  
+  sidb_q10_clean <-
+    sidb_q10_calculated %>% 
+    ungroup() %>% 
+    dplyr::select(citationKey, starts_with("Q10")) %>% 
+    pivot_longer(-citationKey, values_to = "Q10", names_to = "Temp_range") %>% 
+    drop_na() %>% 
+    mutate(Temp_range = str_remove(Temp_range, "q10_"),
+           Source = "SIDb",
+           Incubation = "lab") %>% 
+    left_join(sidb_latlon) %>% 
+    rename(reference = citationKey)
+  
+  list(sidb_q10_calculated = sidb_q10_calculated,
+       sidb_q10_clean = sidb_q10_clean)
+  
+}
+sidb_q10_calculated <- calculate_sidb_q10_r10(sidb_timeseries_clean)$sidb_q10_calculated
+sidb_q10_clean <- calculate_sidb_q10_r10(sidb_timeseries_clean)$sidb_q10_clean
+
+
+#
+
+
+
+
+# COMBINE DATASETS --------------------------------------------------------
 
 combine_all_q10_studies <- function(indiv_studies, srdb_q10, sidb_q10_clean){
   # combine the available data ----
@@ -355,133 +500,5 @@ make_graphs_q10 <- function(combined_q10){
 #   )
 # 
 # 
-
-# SIDb --------------------------------------------------------------------
-
-# import_sidb_data = function(){
-
-library(sidb)
-library(data.table)
-
-# use the `sidb` package to load the data and then
-# flatten the large list into a list with two nested lists 
-load("data/sidb.RData")
-sidb_flat <- flatterSIDb(sidb)
-
-# convert the two lists into dataframes
-# vars needs data.table::rbindlist because it is a different format 
-sidb_timeseries <- dplyr::bind_rows(sidb_flat$timeseries)
-sidb_vars <- rbindlist(sidb_flat$vars, fill = TRUE)
-
-## next steps:
-# - combine data with metadata, using ID - done
-# - exclude time > 350 d? - done
-# - exclude 13C/14C data - done
-# - exclude glucose additions - done
-# - exclude data with only a single temperature level
-
-clean_sidb_data <- function(sidb_vars, sidb_timeseries){
-  sidb_vars_clean <- 
-    sidb_vars %>% 
-    filter(!units %in% c("permille", "percentC14Remaining")) %>% 
-    filter(is.na(elevatedCO2) | elevatedCO2 == "control") %>% 
-    filter(is.na(glucose)) %>% 
-    filter(is.na(cellulose) | cellulose == "control")
-  
-  sidb_timeseries_clean <- 
-    sidb_timeseries %>% 
-    filter(time <= 370) %>% 
-    left_join(sidb_vars_clean %>% dplyr::select(ID, temperature, units, citationKey)) %>% 
-    drop_na() 
-  
-  # keep only data with multiple temperature levels
-  temp_count <-
-    sidb_timeseries_clean %>% 
-    distinct(citationKey, temperature) %>%
-    group_by(citationKey) %>% 
-    dplyr::mutate(n = n())
-  
-  sidb_timeseries_clean2 <- 
-    sidb_timeseries_clean %>% 
-    left_join(temp_count) %>% 
-    filter(n > 1) %>% 
-    dplyr::select(-n)
-  
-  
-  list(sidb_vars_clean = sidb_vars_clean,
-       sidb_timeseries_clean2 = sidb_timeseries_clean2)
-}
-sidb_vars_clean <- clean_sidb_data(sidb_vars, sidb_timeseries)$sidb_vars_clean
-sidb_timeseries_clean <- clean_sidb_data(sidb_vars, sidb_timeseries)$sidb_timeseries_clean2
-
-calculate_sidb_q10_r10 <- function(sidb_timeseries_clean){
-  # using equations from Meyer et al. 2018. https://doi.org/10.1002/2017GB005644
-  fit_q10_parameters_meyer <- function(x){
-    #browser()#    tryCatch()
-    coefs <- data.frame(n = nrow(x), err = NA_character_)
-    tryCatch({
-      # Estimate the a and b parameters using a linear model...
-      m <- lm(log(response) ~ temperature, data = x)
-      a_start <- exp(coef(m)[1])
-      b_start <- coef(m)[2]
-      
-      # ...and then fit the nonlinear model using these starting values
-      curve.nls <- nls(response ~ a * exp(temperature * b),
-                       start = list(a = a_start, b = b_start),
-                       data = x)
-      coefs <- cbind(coefs, data.frame(as.list(coef(curve.nls))))
-    },
-    error = function(e) {
-      coefs$err <<- e$message
-    }
-    )  # end of tryCatch
-    
-    coefs    
-  }
-
-  sidb_temps <-
-    sidb_timeseries_clean %>% 
-    group_by(citationKey) %>% 
-    dplyr::summarise(temp_range_min = min(temperature),
-                     temp_range_max = max(temperature))
-    
-  sidb_q10_calculated <-   
-    sidb_timeseries_clean %>% 
-    group_by(citationKey, units) %>% 
-    do(fit_q10_parameters(.)) %>% 
-    left_join(sidb_temps) %>% 
-    mutate(r10 = a * exp(b * 10),
-           r0 = a * exp(b * 0),
-           r5 = a * exp(b * 5),
-           r15 = a * exp(b * 15),
-           r20 = a * exp(b * 20),
-           r25 = a * exp(b * 25),
-           r35 = a * exp(b * 35),
-           r40 = a * exp(b * 45)) %>% 
-    mutate(q10_5_15 = case_when(temp_range_min < 15 ~ (r5+r15)/r5),
-           q10_15_25 = case_when(temp_range_min < 25 ~ (r15+r25)/r15),
-           q10_25_35 = case_when(temp_range_min < 35 ~ (r25+r35)/r25),
-           q10_35_40 = case_when(temp_range_min < 40 & temp_range_max > 35 ~ (r35+r40)/r35)) %>% 
-    dplyr::select(citationKey, units, n, temp_range_min, temp_range_max, a, b, r10, starts_with("q10")) %>% 
-    force()
-  
-  sidb_q10_clean <-
-    sidb_q10_calculated %>% 
-    ungroup() %>% 
-    dplyr::select(citationKey, starts_with("Q10")) %>% 
-    pivot_longer(-citationKey, values_to = "Q10", names_to = "Temp_range") %>% 
-    drop_na() %>% 
-    mutate(Temp_range = str_remove(Temp_range, "q10_"),
-           Source = "SIDb",
-           Incubation = "lab") %>% 
-    rename(reference = citationKey)
-  
-  list(sidb_q10_calculated = sidb_q10_calculated,
-       sidb_q10_clean = sidb_q10_clean)
-  
-}
-sidb_q10_calculated <- calculate_sidb_q10_r10(sidb_timeseries_clean)$sidb_q10_calculated
-sidb_q10_clean <- calculate_sidb_q10_r10(sidb_timeseries_clean)$sidb_q10_clean
-
 
 # -------------------------------------------------------------------------
