@@ -13,7 +13,7 @@ q10_plan =
   indiv_studies =  import_individual_studies(),
   
   # SIDb
-  load("data/sidb.RData"),
+  load("data/CO2/sidb.RData"),
   sidb_flat = flatterSIDb(sidb),
   sidb_timeseries = dplyr::bind_rows(sidb_flat$timeseries),
   sidb_vars = rbindlist(sidb_flat$vars, fill = TRUE),

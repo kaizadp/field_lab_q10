@@ -1,8 +1,8 @@
 
 
 clean_srdb_dataset <- function(){
-  srdb_v5_data <- read.csv("data/SRDB_V5_1827/data/srdb-data-V5.csv")
-  srdb_v5_equations <- read.csv("data/SRDB_V5_1827/data/srdb-equations-V5.csv")
+  srdb_v5_data <- read.csv("data/CO2/SRDB_V5_1827/data/srdb-data-V5.csv")
+  srdb_v5_equations <- read.csv("data/CO2/SRDB_V5_1827/data/srdb-equations-V5.csv")
   
   sites <-
     srdb_v5_data %>% 
@@ -74,8 +74,8 @@ do_q10_exploration <- function(){
 
 import_individual_studies <- function(){
   
-  filePaths_field <- list.files(path = "data/cleaned_for_analysis/field",pattern = "*.csv", full.names = TRUE)
-  filePaths_lab <- list.files(path = "data/cleaned_for_analysis/lab",pattern = "*.csv", full.names = TRUE)
+  filePaths_field <- list.files(path = "data/CO2/cleaned_for_analysis/field",pattern = "*.csv", full.names = TRUE)
+  filePaths_lab <- list.files(path = "data/CO2/cleaned_for_analysis/lab",pattern = "*.csv", full.names = TRUE)
   
   field_data <-
     lapply(filePaths_field, read.csv, stringsAsFactors = FALSE) %>% 
