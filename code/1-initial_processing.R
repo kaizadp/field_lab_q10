@@ -191,14 +191,15 @@ import_individual_studies <- function(){
   fix_temp_and_latlon(combined)
 }
 
-combine_all_q10_studies <- function(indiv_studies, srdb_q10){
+combine_all_q10_studies <- function(indiv_studies, srdb_q10, sidb_q10_clean){
   # combine the available data ----
   q10_combined <- 
     indiv_studies %>% 
     dplyr::select(Source, Incubation, Latitude, Longitude, Temp_range, Temp_mean, Q10) %>% 
     bind_rows(srdb_q10 %>% 
                 mutate(Source = "SRDB", Incubation = "field") %>% 
-                rename(Temp_range = temp_range))
+                rename(Temp_range = temp_range)) %>% 
+    bind_rows(sidb_q10_clean)
   
   # clean the temperature ranges ----
   temp_ranges <- 
@@ -471,7 +472,7 @@ calculate_sidb_q10_r10 <- function(sidb_timeseries_clean){
     pivot_longer(-citationKey, values_to = "Q10", names_to = "Temp_range") %>% 
     drop_na() %>% 
     mutate(Temp_range = str_remove(Temp_range, "q10_"),
-           source = "SIDb",
+           Source = "SIDb",
            Incubation = "lab") %>% 
     rename(reference = citationKey)
   
