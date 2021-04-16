@@ -1,0 +1,5 @@
+﻿Year,Temp_range,moisture,moisture_units,Q10,N_species,Latitude,Longitude,Manipulation,Ecosystem_type,Biome,Source,Incubation
+2012,5_30,60,percent_wfps,,N2O,116°17′,42°02′,fertilizer,grassland,,Ding2019,lab
+2012,5_30,60,percent_wfps,1.98,N2O,115°26′,39°58′,fertilizer,forest,,Ding2019,lab
+2012,5_30,60,percent_wfps,2.24,N2O,117°49′,35°26′,fertilizer,cropland-upland,,Ding2019,lab
+2012,5_30,60,percent_wfps,2.95,N2O,112°33′,28°16′,fertilizer,cropland-paddy,,Ding2019,lab

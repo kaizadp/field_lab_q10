@@ -1,0 +1,5 @@
+﻿Year,Sample,Temp_range,moisture,moisture_units,Q10,N_species,Latitude,Longitude,Manipulation,Ecosystem_type,Biome,Source,Incubation,Meas_method,CO2_Q10
+2003,afforested,0.4_9.4,44_78,percent WFPS,1.9,NO,63°56′N,23°53′E,,,,Koponen2006,lab,GC,5.2
+2003,abandoned soil,0.4_9.4,71,percent WFPS,2.1,NO,63°54′ N,23°57′E,,,,Koponen2006,lab,GC,4.1
+2003,afforested,0.4_9.4,44_78,percent WFPS,6.4,N2O,63°56′N,23°53′E,,,,Koponen2006,lab,,
+2003,abandoned soil,0.4_9.4,71,percent WFPS,1.6,N2O,63°54′ N,23°57′E,,,,Koponen2006,lab,,
