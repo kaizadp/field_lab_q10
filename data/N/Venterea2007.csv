@@ -1,0 +1,7 @@
+﻿Year,Sample,Temp_range,moisture,moisture_units,Q10,N_species,Latitude,Longitude,Manipulation,Ecosystem_type,Biome,Source,Incubation,notes,StudyName,DOI
+,C1,25_35,80,percent WFPS,2.4,N2O,44°45′N,93°04′W,,cultivated,,Venterea2007,lab,5_perc_oxygen,Venterea2007,https://doi.org/10.1111/j.1365-2486.2007.01389.x
+,C2,25_35,80,percent WFPS,2.5,N2O,44°45′N,93°04′W,,cultivated,,Venterea2007,lab,5_perc_oxygen,Venterea2007,https://doi.org/10.1111/j.1365-2486.2007.01389.x
+,U1,25_35,80,percent WFPS,3,N2O,44°45′N,93°04′W,,uncultivated,,Venterea2007,lab,5_perc_oxygen,Venterea2007,https://doi.org/10.1111/j.1365-2486.2007.01389.x
+,C1,25_35,80,percent WFPS,2.1,N2O,44°45′N,93°04′W,,cultivated,,Venterea2007,lab,21_perc_oxygen,Venterea2007,https://doi.org/10.1111/j.1365-2486.2007.01389.x
+,C2,25_35,80,percent WFPS,2.2,N2O,44°45′N,93°04′W,,cultivated,,Venterea2007,lab,21_perc_oxygen,Venterea2007,https://doi.org/10.1111/j.1365-2486.2007.01389.x
+,U1,25_35,80,percent WFPS,2.8,N2O,44°45′N,93°04′W,,uncultivated,,Venterea2007,lab,21_perc_oxygen,Venterea2007,https://doi.org/10.1111/j.1365-2486.2007.01389.x

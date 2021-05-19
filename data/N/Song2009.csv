@@ -1,0 +1,4 @@
+﻿Year,Sample,Temp_range,moisture,moisture_units,Q10,N_species,Latitude,Longitude,Manipulation,Ecosystem_type,Biome,Source,Incubation,notes
+2002,PI,,100,percent WFPS,1.58,N2O,47°35′N,133°31′E,,"marsh, swamp",,Song2009,field,"marsh, so 100% saturation"
+2002,SI,,100,percent WFPS,2.82,N2O,47°35′N,133°31′E,,"marsh, swamp",,Song2009,field,"marsh, so 100% saturation"
+2002,SS,,100,percent WFPS,1.36,N2O,47°35′N,133°31′E,,"marsh, swamp",,Song2009,field,"marsh, so 100% saturation"

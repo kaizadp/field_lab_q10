@@ -1,0 +1,5 @@
+﻿Year,Sample,Temp_range,moisture,moisture_units,Q10,N_species,Latitude,Longitude,Manipulation,Ecosystem_type,Biome,Source,Incubation,notes
+2008,Co,5_30,39,percent WFPS,1.82,,45°41′ N,126°37′ E,control,,,Ni2012,field,
+2008,CN,5_30,39,percent WFPS,1.73,,,,fertilized,,,Ni2012,field,
+2008,Po,5_30,39,percent WFPS,1.8,,,,control,,,Ni2012,field,
+2008,PN,5_30,39,percent WFPS,2.27,,,,fertilized,,,Ni2012,field,

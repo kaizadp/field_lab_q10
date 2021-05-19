@@ -1,0 +1,6 @@
+﻿Year,Sample,Temp_range,moisture,moisture_units,Q10,N_species,Latitude,Longitude,Manipulation,Ecosystem_type,Biome,Source,Incubation,notes,StudyName,DOI
+,blueberry,,,,1.826,,,,,,,Behrendt2014,,Q10_P used,Behrendt2014,https://doi.org/10.5194/bg-11-5463-2014
+,spruce,,,,1.679,,,,,,,Behrendt2014,,Q10_P used,Behrendt2014,https://doi.org/10.5194/bg-11-5463-2014
+,grassland,,,,1.443,,,,,,,Behrendt2014,,Q10_P used,Behrendt2014,https://doi.org/10.5194/bg-11-5463-2014
+,wheat,,,,1.488,,,,,,,Behrendt2014,,Q10_P used,Behrendt2014,https://doi.org/10.5194/bg-11-5463-2014
+,desert,,,,2.034,,,,,,,Behrendt2014,,Q10_P used,Behrendt2014,https://doi.org/10.5194/bg-11-5463-2014
