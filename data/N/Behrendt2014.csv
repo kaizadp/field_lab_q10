@@ -1,6 +1,6 @@
 ﻿Year,Sample,Temp_range,moisture,moisture_units,Q10,N_species,Latitude,Longitude,Manipulation,Ecosystem_type,Biome,Source,Incubation,notes,StudyName,DOI
-,blueberry,,,,1.826,,,,,,,Behrendt2014,,Q10_P used,Behrendt2014,https://doi.org/10.5194/bg-11-5463-2014
-,spruce,,,,1.679,,,,,,,Behrendt2014,,Q10_P used,Behrendt2014,https://doi.org/10.5194/bg-11-5463-2014
-,grassland,,,,1.443,,,,,,,Behrendt2014,,Q10_P used,Behrendt2014,https://doi.org/10.5194/bg-11-5463-2014
-,wheat,,,,1.488,,,,,,,Behrendt2014,,Q10_P used,Behrendt2014,https://doi.org/10.5194/bg-11-5463-2014
-,desert,,,,2.034,,,,,,,Behrendt2014,,Q10_P used,Behrendt2014,https://doi.org/10.5194/bg-11-5463-2014
+,blueberry,10_30,,,1.826,,50.1425N,11.8665E,,spruce forest,,Behrendt2014,,Q10_P used,Behrendt2014,https://doi.org/10.5194/bg-11-5463-2014
+,spruce,10_30,,,1.679,,50.1420N,11.8673E,,spruce forest,,Behrendt2014,,Q10_P used,Behrendt2014,https://doi.org/10.5194/bg-11-5463-2014
+,grassland,10_30,,,1.443,,49.9685N,8.1479E,,grass-land steppe,,Behrendt2014,,Q10_P used,Behrendt2014,https://doi.org/10.5194/bg-11-5463-2014
+,wheat,10_30,,,1.488,,41.537N,82.8541E,,arid oasis agriculture,,Behrendt2014,,Q10_P used,Behrendt2014,https://doi.org/10.5194/bg-11-5463-2014
+,desert,10_30,,,2.034,,44.1367N,96.6314E,,hyper-arid desert,,Behrendt2014,,Q10_P used,Behrendt2014,https://doi.org/10.5194/bg-11-5463-2014
