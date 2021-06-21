@@ -1,5 +1,5 @@
 ﻿Year,Sample,Temp_range,moisture,moisture_units,Q10,Q10_type,N_species,Latitude,Longitude,Manipulation,Ecosystem_type,Biome,Source,Incubation
-,SapricHistosol,17_29,-40,"cm, GWL",1.15,Q10_s,N2O,47°57' N,8°07' E,,forest,,Vicca2009,lab
+,SapricHistosol,17_29,-40,"cm, GWL",1.15,Q10_s,N2O,47_57' N,8_07' E,,forest,,Vicca2009,lab
 ,SapricHistosol,17_29,-40,"cm, GWL",1.54,Q10_i,N2O,,,,,,,
 ,HisticGleysol,17_29,-40,"cm, GWL",1.2,Q10_s,N2O,,,,,,,
 ,HisticGleysol,17_29,-40,"cm, GWL",1.56,Q10_i,N2O,,,,,,,

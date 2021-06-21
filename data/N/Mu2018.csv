@@ -1,4 +1,4 @@
 ﻿Year,Sample,Temp_range,moisture,moisture_units,Q10,N_species,Latitude,Longitude,Manipulation,Ecosystem_type,Biome,Source,Incubation
-,A,,,,,,98.9627 38.9548,,,,,,
-,B,,,,,,98.9630 38.9030,,,,,,
-,C,,,,,,100.9163 37.9979,,,,,,
+,A,-2_10,14.7_45.7,percent WEOC,,N2O,98.9627 38.9548,,,meadows,,,lab
+,B,-2_10,4.9_58.7,percent WEOC,,N2O,98.9630 38.9030,,,meadows,,,lab
+,C,-2_10,51.2_91.0,percent WEOC,,N2O,100.9163 37.9979,,,meadows,,,lab
