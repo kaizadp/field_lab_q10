@@ -1,0 +1,17 @@
+﻿Year,Sample,Temp_range,moisture,moisture_units,Q10,Species,Latitude,Longitude,Manipulation,Ecosystem_type,Biome,Source,Incubation,notes,StudyName,DOI
+,DI,5_35,,,1.23,CH4,,,,oak,,Xu2009,lab,week1,Xu2009,https://doi.org/10.1007/s11434-009-0005-x
+,DII,5_35,,,1.74,CH4,,,,oak,,Xu2009,lab,week1,Xu2009,https://doi.org/10.1007/s11434-009-0005-x
+,CI,5_35,,,1.15,CH4,,,,cedar,,Xu2009,lab,week1,Xu2009,https://doi.org/10.1007/s11434-009-0005-x
+,CII,5_35,,,1.33,CH4,,,,cedar,,Xu2009,lab,week1,Xu2009,https://doi.org/10.1007/s11434-009-0005-x
+,DI,5_35,,,2.16,CH4,,,,oak,,Xu2009,lab,week2,Xu2009,https://doi.org/10.1007/s11434-009-0005-x
+,DII,5_35,,,8.37,CH4,,,,oak,,Xu2009,lab,week2,Xu2009,https://doi.org/10.1007/s11434-009-0005-x
+,CI,5_35,,,1.26,CH4,,,,cedar,,Xu2009,lab,week2,Xu2009,https://doi.org/10.1007/s11434-009-0005-x
+,CII,5_35,,,1.39,CH4,,,,cedar,,Xu2009,lab,week2,Xu2009,https://doi.org/10.1007/s11434-009-0005-x
+,DI,5_35,,,9.31,CH4,,,,oak,,Xu2009,lab,week3,Xu2009,https://doi.org/10.1007/s11434-009-0005-x
+,DII,5_35,,,14.92,CH4,,,,oak,,Xu2009,lab,week3,Xu2009,https://doi.org/10.1007/s11434-009-0005-x
+,CI,5_35,,,1.39,CH4,,,,cedar,,Xu2009,lab,week3,Xu2009,https://doi.org/10.1007/s11434-009-0005-x
+,CII,5_35,,,1.45,CH4,,,,cedar,,Xu2009,lab,week3,Xu2009,https://doi.org/10.1007/s11434-009-0005-x
+,DI,5_35,,,11.13,CH4,,,,oak,,Xu2009,lab,week4,Xu2009,https://doi.org/10.1007/s11434-009-0005-x
+,DII,5_35,,,17.51,CH4,,,,oak,,Xu2009,lab,week4,Xu2009,https://doi.org/10.1007/s11434-009-0005-x
+,CI,5_35,,,1.39,CH4,,,,cedar,,Xu2009,lab,week4,Xu2009,https://doi.org/10.1007/s11434-009-0005-x
+,CII,5_35,,,1.46,CH4,,,,cedar,,Xu2009,lab,week4,Xu2009,https://doi.org/10.1007/s11434-009-0005-x
