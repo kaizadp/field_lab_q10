@@ -1,18 +1,17 @@
 ﻿Year,Sample,Temp_range,moisture,moisture_units,Q10,Species,Latitude,Longitude,Manipulation,Ecosystem_type,Biome,Source,Incubation,notes,StudyName,DOI
-,surface peat,,,,4.7,CH4,,,,fen,,Lai2009,,,Valentine1994,https://doi.org/10.1029/93JD00391
-,subsurface peat,,,,1.7,CH4,,,,fen,,Lai2009,,,Valentine1994,https://doi.org/10.1029/93JD00391
-,KLTS,,,,16,CH4,,,,,,Lai2009,,,Dunfield1993,https://doi.org/10.1016/0038-0717(93)90130-4
-,CF,,,,6,CH4,,,,,,Lai2009,,,Dunfield1993,https://doi.org/10.1016/0038-0717(93)90130-4
-,F1,,,,5.3,CH4,,,,,,Lai2009,,,Dunfield1993,https://doi.org/10.1016/0038-0717(93)90130-4
-,B1,,,,6.3,CH4,,,,,,Lai2009,,,Dunfield1993,https://doi.org/10.1016/0038-0717(93)90130-4
-1985,,,,,4.99,CH4,,,,,,Dunfield1993,lab,,Westermann1987,https://doi.org/10.1128/AEM.53.10.2554-2559.1987
-1985,0_25,,,,4.06,CH4,,,,,,Dunfield1993,lab,,Westermann1987,https://doi.org/10.1128/AEM.53.10.2554-2559.1987
-1985,0_25,,,,5.43,CH4,,,,,,Dunfield1993,lab,,Westermann1987,https://doi.org/10.1128/AEM.53.10.2554-2559.1987
-1985,0_25,,,,3.84,CH4,,,,,,Dunfield1993,lab,,Westermann1987,https://doi.org/10.1128/AEM.53.10.2554-2559.1987
-1985,0_25,,,,2.89,DN,,,,,,Dunfield1993,lab,,Westermann1987,https://doi.org/10.1128/AEM.53.10.2554-2559.1987
-1985,0_25,,,,2.84,DN,,,,,,Dunfield1993,lab,,Westermann1987,https://doi.org/10.1128/AEM.53.10.2554-2559.1987
-1985,0_25,,,,2.9,DN,,,,,,Dunfield1993,lab,,Westermann1987,https://doi.org/10.1128/AEM.53.10.2554-2559.1987
-1985,0_25,,,,3.02,DN,,,,,,Dunfield1993,lab,,Westermann1987,https://doi.org/10.1128/AEM.53.10.2554-2559.1987
-1976,,9_29,,,2.4,CH4,42_17'N,83_40'W,,,,Dunfield1993,lab,,Kelly1981,https://doi.org/10.4319/lo.1981.26.5.0891
+1990,surface peat,10_20,,,4.7,CH4,51_28.2'N,80_37'W,,fen,,Lai2009,lab,,Valentine1994,https://doi.org/10.1029/93JD00391
+1990,subsurface peat,10_21,,,1.7,CH4,51_30.7'N,80_52.8'W,,fen,,Lai2009,lab,,Valentine1994,https://doi.org/10.1029/93JD00391
+,KLTS,0_35,,,16,CH4,,,,peatlands,,Lai2009,lab,,Dunfield1993,https://doi.org/10.1016/0038-0717(93)90130-4
+,CF,0_36,,,6,CH4,,,,peatlands,,Lai2009,lab,,Dunfield1993,https://doi.org/10.1016/0038-0717(93)90130-4
+,F1,0_37,,,5.3,CH4,,,,bog,,Lai2009,lab,,Dunfield1993,https://doi.org/10.1016/0038-0717(93)90130-4
+,B1,0_38,,,6.3,CH4,,,,bog,,Lai2009,lab,,Dunfield1993,https://doi.org/10.1016/0038-0717(93)90130-4
+1985,6/24/1985,0_25,,,4.99,CH4,,,,swamp,,Dunfield1993,lab,,Westermann1987,https://doi.org/10.1128/AEM.53.10.2554-2559.1987
+1985,10/1/1985,0_25,,,4.06,CH4,,,,swamp,,Dunfield1993,lab,,Westermann1987,https://doi.org/10.1128/AEM.53.10.2554-2559.1987
+1985,11/1/1985,0_25,,,5.43,CH4,,,,swamp,,Dunfield1993,lab,,Westermann1987,https://doi.org/10.1128/AEM.53.10.2554-2559.1987
+1985,1/26/1986,0_25,,,3.84,CH4,,,,swamp,,Dunfield1993,lab,,Westermann1987,https://doi.org/10.1128/AEM.53.10.2554-2559.1987
+1985,6/24/1985,0_25,,,2.89,DN,,,,swamp,,Dunfield1993,lab,,Westermann1987,https://doi.org/10.1128/AEM.53.10.2554-2559.1987
+1985,10/1/1985,0_25,,,2.84,DN,,,,swamp,,Dunfield1993,lab,,Westermann1987,https://doi.org/10.1128/AEM.53.10.2554-2559.1987
+1985,11/1/1985,0_25,,,2.9,DN,,,,swamp,,Dunfield1993,lab,,Westermann1987,https://doi.org/10.1128/AEM.53.10.2554-2559.1987
+1985,1/26/1986,0_25,,,3.02,DN,,,,swamp,,Dunfield1993,lab,,Westermann1987,https://doi.org/10.1128/AEM.53.10.2554-2559.1987
+1976,frains lake,9_29,,,2.4,CH4,42_17'N,83_40'W,,,,Dunfield1993,lab,,Kelly1981,https://doi.org/10.4319/lo.1981.26.5.0891
 ,,,,,2,DN,,,,,,Westermann1989,,,Stanford1975,https://doi.org/10.2136/sssaj1975.03615995003900050024x
-,,,,,,,,,,,,,,,,

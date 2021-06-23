@@ -1,5 +1,5 @@
 ﻿Year,Sample,Temp_range,moisture,moisture_units,Q10,Species,Latitude,Longitude,Manipulation,Ecosystem_type,Biome,Source,Incubation,notes,StudyName,DOI
-,surface peat,,,,4.7,CH4,,,,coastal fen,,Valentine1994,lab,,Valentine1994,https://doi.org/10.1029/93JD00391
-,subsurface peat,,,,1.7,CH4,,,,coastal fen,,Valentine1994,lab,,Valentine1994,https://doi.org/10.1029/93JD00391
-,surface peat,,,,2,CH4,,,,Kinosheo lake,,Valentine1994,lab,,Valentine1994,https://doi.org/10.1029/93JD00391
-,subsurface peat,,,,-2.1,CH4,,,,Kinosheo lake,,Valentine1994,lab,,Valentine1994,https://doi.org/10.1029/93JD00391
+1990,surface peat,10_20,,,4.7,CH4,51_28.2'N,80_37'W,,coastal fen,,Valentine1994,lab,,Valentine1994,https://doi.org/10.1029/93JD00391
+1990,subsurface peat,10_20,,,1.7,CH4,51_30.7'N,80_52.8'W,,coastal fen,,Valentine1994,lab,,Valentine1994,https://doi.org/10.1029/93JD00391
+1990,surface peat,10_20,,,2,CH4,51_33'N,81_49.5'W,,Kinosheo lake,,Valentine1994,lab,,Valentine1994,https://doi.org/10.1029/93JD00391
+1990,subsurface peat,10_20,,,-2.1,CH4,51_33'N,81_49.5'W,,Kinosheo lake,,Valentine1994,lab,,Valentine1994,https://doi.org/10.1029/93JD00391
