@@ -1,0 +1,11 @@
+﻿Year,Sample,Temp_range,moisture,moisture_units,Q10,Species,Latitude,Longitude,Manipulation,Ecosystem_type,Biome,Source,Incubation,notes,StudyName,DOI
+1992,spruce,,,,11.7,CO2,,,,,,Gulledge2000,,,Gulledge2000,https://doi.org/10.1007/s100210000025
+1993,spruce,,,,1.65,CO2,,,,,,Gulledge2000,,,Gulledge2000,https://doi.org/10.1007/s100210000025
+1992,birch,,,,2.9,CO2,,,,,,Gulledge2000,,,Gulledge2000,https://doi.org/10.1007/s100210000025
+1994,birch,,,,2,CO2,,,,,,Gulledge2000,,,Gulledge2000,https://doi.org/10.1007/s100210000025
+1993,birch,,,,1.4,CO2,,,,,,Gulledge2000,,,Gulledge2000,https://doi.org/10.1007/s100210000025
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,2.4,CH4,,,,,,Cao1996,,,Kelly1981,https://doi.org/10.4319/lo.1981.26.5.0891
+,,,,,,,,,,,,,,,,
+,,,,,3.62,CH4,,,,,,Xu-Ri2015,,,Xu-Ri2015,https://doi.org/10.1002/2015JG002974
