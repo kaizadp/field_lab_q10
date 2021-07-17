@@ -1,6 +1,6 @@
 library(tidyverse)
 
-# import N data from individual files
+# import N data from individual files ----
 filePaths_N <- list.files(path = "data/x-N",pattern = "*.csv", full.names = TRUE)
 
 field_data_N <-
@@ -33,11 +33,11 @@ field_data_N <-
     Longitude  = str_replace(Longitude, "′", "'")
   )
 
-write.csv(field_data_N, "data/0_N_data1.csv", row.names = FALSE, na = "")
+write.csv(field_data_N, "data/data_from_papers/0_N_data1.csv", row.names = FALSE, na = "")
 
 
 
-# import CH4 data from individual files
+# import CH4 data from individual files ----
 
 
 filePaths_CH4 <- list.files(path = "data/CH4",pattern = "*.csv", full.names = TRUE)
@@ -48,7 +48,9 @@ field_data_CH4 <-
                                                    Longitude = col_character(),
                                                    Sample = col_character())) %>% 
   bind_rows() 
+write.csv(field_data_CH4, "data/data_from_papers/0_CH4_data1.csv", row.names = FALSE, na = "")
 
+# misc ----
 
 a = read_csv("data/CH4/Jiang2010.csv")
 
