@@ -1,0 +1,31 @@
+﻿Year,Sample,Temp_range,moisture,moisture_units,Q10,N_species,Latitude,Longitude,Manipulation,Ecosystem_type,Biome,Source,Incubation,notes,StudyName,DOI
+1991,stand,7_12,20_855,hPa,-0.9,N2O,,,,forest,,Brumme1995,field,,Brumme1995,https://doi.org/10.1007/BF00029373
+1991,stand,7_12,20_200,hPa,-0.9,N2O,,,,forest,,Brumme1995,field,,Brumme1995,https://doi.org/10.1007/BF00029373
+1991,stand,7_12,200_400,hPa,,N2O,,,,forest,,Brumme1995,field,,Brumme1995,https://doi.org/10.1007/BF00029373
+1991,stand,7_12,400_600,hPa,,N2O,,,,forest,,Brumme1995,field,,Brumme1995,https://doi.org/10.1007/BF00029373
+1991,stand,10_14,20_855,hPa,8.8,N2O,,,,forest,,Brumme1995,field,,Brumme1995,https://doi.org/10.1007/BF00029373
+1991,stand,10_14,20_200,hPa,9.8,N2O,,,,forest,,Brumme1995,field,,Brumme1995,https://doi.org/10.1007/BF00029373
+1991,stand,10_14,200_400,hPa,,N2O,,,,forest,,Brumme1995,field,,Brumme1995,https://doi.org/10.1007/BF00029373
+1991,stand,10_14,400_600,hPa,3.7,N2O,,,,forest,,Brumme1995,field,,Brumme1995,https://doi.org/10.1007/BF00029373
+1991,stand,12_17,20_855,hPa,6.2,N2O,,,,forest,,Brumme1995,field,,Brumme1995,https://doi.org/10.1007/BF00029373
+1991,stand,12_17,20_200,hPa,6,N2O,,,,forest,,Brumme1995,field,,Brumme1995,https://doi.org/10.1007/BF00029373
+1991,stand,12_17,200_400,hPa,6.1,N2O,,,,forest,,Brumme1995,field,,Brumme1995,https://doi.org/10.1007/BF00029373
+1991,stand,12_17,400_600,hPa,-4.7,N2O,,,,forest,,Brumme1995,field,,Brumme1995,https://doi.org/10.1007/BF00029373
+1991,gap center,7_12,20_200,hPa,14.4,N2O,,,,forest,,Brumme1995,field,,Brumme1995,https://doi.org/10.1007/BF00029373
+1991,gap center,10_14,20_200,hPa,2.6,N2O,,,,forest,,Brumme1995,field,,Brumme1995,https://doi.org/10.1007/BF00029373
+1991,gap center,12_17,20_200,hPa,4.4,N2O,,,,forest,,Brumme1995,field,,Brumme1995,https://doi.org/10.1007/BF00029373
+1991,stand,7_12,20_855,hPa,2.3,CO2,,,,forest,,Brumme1995,field,,Brumme1995,https://doi.org/10.1007/BF00029373
+1991,stand,7_12,20_200,hPa,2.3,CO2,,,,forest,,Brumme1995,field,,Brumme1995,https://doi.org/10.1007/BF00029373
+1991,stand,7_12,200_400,hPa,,CO2,,,,forest,,Brumme1995,field,,Brumme1995,https://doi.org/10.1007/BF00029373
+1991,stand,7_12,400_600,hPa,,CO2,,,,forest,,Brumme1995,field,,Brumme1995,https://doi.org/10.1007/BF00029373
+1991,stand,10_14,20_855,hPa,2.5,CO2,,,,forest,,Brumme1995,field,,Brumme1995,https://doi.org/10.1007/BF00029373
+1991,stand,10_14,20_200,hPa,2.8,CO2,,,,forest,,Brumme1995,field,,Brumme1995,https://doi.org/10.1007/BF00029373
+1991,stand,10_14,200_400,hPa,,CO2,,,,forest,,Brumme1995,field,,Brumme1995,https://doi.org/10.1007/BF00029373
+1991,stand,10_14,400_600,hPa,2,CO2,,,,forest,,Brumme1995,field,,Brumme1995,https://doi.org/10.1007/BF00029373
+1991,stand,12_17,20_855,hPa,2.2,CO2,,,,forest,,Brumme1995,field,,Brumme1995,https://doi.org/10.1007/BF00029373
+1991,stand,12_17,20_200,hPa,2.5,CO2,,,,forest,,Brumme1995,field,,Brumme1995,https://doi.org/10.1007/BF00029373
+1991,stand,12_17,200_400,hPa,1.9,CO2,,,,forest,,Brumme1995,field,,Brumme1995,https://doi.org/10.1007/BF00029373
+1991,stand,12_17,400_600,hPa,2.7,CO2,,,,forest,,Brumme1995,field,,Brumme1995,https://doi.org/10.1007/BF00029373
+1991,gap center,7_12,20_200,hPa,1.3,CO2,,,,forest,,Brumme1995,field,,Brumme1995,https://doi.org/10.1007/BF00029373
+1991,gap center,10_14,20_200,hPa,2.4,CO2,,,,forest,,Brumme1995,field,,Brumme1995,https://doi.org/10.1007/BF00029373
+1991,gap center,12_17,20_200,hPa,2.1,CO2,,,,forest,,Brumme1995,field,,Brumme1995,https://doi.org/10.1007/BF00029373

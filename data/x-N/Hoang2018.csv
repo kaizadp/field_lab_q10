@@ -1,0 +1,30 @@
+﻿Year,Sample,Temp_range,moisture,moisture_units,Q10,N_species,Latitude,Longitude,Manipulation,Ecosystem_type,Biome,Source,Incubation,Meas_method
+2016,CT,25_30,60,percent WHC,3.4,N2O,"16_20'53""N","107_34'47""E",control,vegetable field,,Hoang2018,lab,GC
+2016,CT,30_35,60,percent WHC,0.9,N2O,"16_20'53""N","107_34'47""E",control,vegetable field,,Hoang2018,lab,GC
+2016,SH1,25_30,60,percent WHC,0.1,N2O,"16_20'53""N","107_34'47""E",compost,vegetable field,,Hoang2018,lab,GC
+2016,SH1,30_35,60,percent WHC,1.8,N2O,"16_20'53""N","107_34'47""E",compost,vegetable field,,Hoang2018,lab,GC
+2016,SH2,25_30,60,percent WHC,2,N2O,"16_20'53""N","107_34'47""E",compost,vegetable field,,Hoang2018,lab,GC
+2016,SH2,30_35,60,percent WHC,0.2,N2O,"16_20'53""N","107_34'47""E",compost,vegetable field,,Hoang2018,lab,GC
+2016,SH4,25_30,60,percent WHC,2.1,N2O,"16_20'53""N","107_34'47""E",compost,vegetable field,,Hoang2018,lab,GC
+2016,SH4,30_35,60,percent WHC,1.4,N2O,"16_20'53""N","107_34'47""E",compost,vegetable field,,Hoang2018,lab,GC
+2016,CC1,25_30,60,percent WHC,0.4,N2O,"16_20'53""N","107_34'47""E",compost,vegetable field,,Hoang2018,lab,GC
+2016,CC1,30_35,60,percent WHC,0.1,N2O,"16_20'53""N","107_34'47""E",compost,vegetable field,,Hoang2018,lab,GC
+2016,CC2,25_30,60,percent WHC,0.1,N2O,"16_20'53""N","107_34'47""E",compost,vegetable field,,Hoang2018,lab,GC
+2016,CC2,30_35,60,percent WHC,6.5,N2O,"16_20'53""N","107_34'47""E",compost,vegetable field,,Hoang2018,lab,GC
+2016,CC4,25_30,60,percent WHC,0.2,N2O,"16_20'53""N","107_34'47""E",compost,vegetable field,,Hoang2018,lab,GC
+2016,CC4,30_35,60,percent WHC,1.2,N2O,"16_20'53""N","107_34'47""E",compost,vegetable field,,Hoang2018,lab,GC
+,,,,,,,,,,,,,,
+2016,CT,25_30,60,percent WHC,1.3,CO2,"16_20'53""N","107_34'47""E",control,vegetable field,,Hoang2018,lab,
+2016,CT,30_35,60,percent WHC,0.7,CO2,"16_20'53""N","107_34'47""E",control,vegetable field,,Hoang2018,lab,
+2016,SH1,25_30,60,percent WHC,1,CO2,"16_20'53""N","107_34'47""E",compost,vegetable field,,Hoang2018,lab,
+2016,SH1,30_35,60,percent WHC,1.2,CO2,"16_20'53""N","107_34'47""E",compost,vegetable field,,Hoang2018,lab,
+2016,SH2,25_30,60,percent WHC,0.7,CO2,"16_20'53""N","107_34'47""E",compost,vegetable field,,Hoang2018,lab,
+2016,SH2,30_35,60,percent WHC,0.9,CO2,"16_20'53""N","107_34'47""E",compost,vegetable field,,Hoang2018,lab,
+2016,SH4,25_30,60,percent WHC,1.1,CO2,"16_20'53""N","107_34'47""E",compost,vegetable field,,Hoang2018,lab,
+2016,SH4,30_35,60,percent WHC,0.8,CO2,"16_20'53""N","107_34'47""E",compost,vegetable field,,Hoang2018,lab,
+2016,CC1,25_30,60,percent WHC,1.8,CO2,"16_20'53""N","107_34'47""E",compost,vegetable field,,Hoang2018,lab,
+2016,CC1,30_35,60,percent WHC,0.4,CO2,"16_20'53""N","107_34'47""E",compost,vegetable field,,Hoang2018,lab,
+2016,CC2,25_30,60,percent WHC,1.6,CO2,"16_20'53""N","107_34'47""E",compost,vegetable field,,Hoang2018,lab,
+2016,CC2,30_35,60,percent WHC,0.4,CO2,"16_20'53""N","107_34'47""E",compost,vegetable field,,Hoang2018,lab,
+2016,CC4,25_30,60,percent WHC,2,CO2,"16_20'53""N","107_34'47""E",compost,vegetable field,,Hoang2018,lab,
+2016,CC4,30_35,60,percent WHC,0.3,CO2,"16_20'53""N","107_34'47""E",compost,vegetable field,,Hoang2018,lab,

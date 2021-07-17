@@ -1,0 +1,9 @@
+﻿Year,Sample,Temp_range,moisture,moisture_units,Q10,N_species,Latitude,Longitude,Manipulation,Ecosystem_type,Biome,Source,Incubation
+,"Frenchville, ME",10_30,100,percent_fieldcapacity,1.4,N2O,N 47.2161028,W 68.412227,,agriculture,,Chatterjee2020,lab
+,"Jackson, TN",10_30,100,percent_fieldcapacity,10.1,N2O,N 35.6230,W 88.8465,,agriculture,,Chatterjee2020,
+,"Blackville, SC",10_30,100,percent_fieldcapacity,11.4,N2O,N 33.346539,W 81.297283,,agriculture,,Chatterjee2020,
+,"Downer, MN",10_30,100,percent_fieldcapacity,2.14,N2O,N 46.8655,W 96.396806,,agriculture,,Chatterjee2020,
+,"Bismarck, ND",10_30,100,percent_fieldcapacity,0.23,N2O,N 47.4630,W 101.2772,,agriculture,,Chatterjee2020,
+,"Dickinson, ND",10_30,100,percent_fieldcapacity,1.65,N2O,N 47.19314,W 102.89661,,agriculture,,Chatterjee2020,
+,"North Bend, NE",10_30,100,percent_fieldcapacity,1.63,N2O,N41.429308,W 97.794056,,agriculture,,Chatterjee2020,
+,"Pendleton, OR",10_30,100,percent_fieldcapacity,0.53,N2O,N 45.718439,W 118.626883,,agriculture,,Chatterjee2020,
