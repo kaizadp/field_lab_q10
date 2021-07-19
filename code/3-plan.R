@@ -52,3 +52,15 @@ q10_plan =
 
 
 make(q10_plan)
+
+
+
+world %>% 
+  ggplot()+
+  geom_sf(color = NA, alpha = 0.7)+
+  geom_point(data = indiv_studies,
+             aes(x = Longitude, y = Latitude, color = Species), 
+             alpha = 0.5, size = 3)+
+  labs(color = "")+
+  theme_void()+
+  theme(legend.position = "top")
