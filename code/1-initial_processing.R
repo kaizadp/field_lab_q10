@@ -293,7 +293,7 @@ import_individual_studies <- function(){
              Longitude = Longitude_dec)
     
     # combine ----
-    x = combined2 %>% 
+    combined2 %>% 
       dplyr::select(-starts_with("Latitude"), -starts_with("Longitude")) %>% 
       left_join(combined2_latlong)
   }
