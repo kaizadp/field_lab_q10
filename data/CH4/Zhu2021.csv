@@ -1,11 +1,11 @@
 ﻿Year,Sample,Temp_range,moisture,moisture_units,Q10,Species,Latitude,Longitude,Manipulation,Ecosystem_type,Biome,Source,Incubation,notes,StudyName,DOI
-,B,,,,4.95,,"27°37′N, 84°26′E",,,,,Zhu2021,,,Zhu2021,https://doi.org/10.1111/gcb.15454
-,M,,,,5.31,,"22°28′N, 114°00′E",,,,,Zhu2021,,,Liu2020,
-,D,,,,47.47,,"27°48′N, 85°27′E,",,,,,Zhu2021,,,Zhu2021,https://doi.org/10.1111/gcb.15454
-,W,,,,9.03,,"46°48′N, 7°18′E",,,,,Zhu2021,,,Delsontro2010,
-,R,,,,3.9,,"40°17′N,105°40′W",,,,,Zhu2021,,,Wickland2001,
-,Z,,,,4.85,,"32°46′N, 102°30′E",,,,,Zhu2021,,,Peng2019,
-,L,,,,2.41,,"37°35′N, 101°20′E",,,,,Zhu2021,,,Song2015,
-,Ba,,,,2.53,,"42°53′N, 83°43′E",,,,,Zhu2021,,,He2014,
+,B,,,,4.95,,27_37′N,84_26′E,,,,Zhu2021,,,Zhu2021,https://doi.org/10.1111/gcb.15454
+,M,,,,5.31,,22_28′N,114_00′E,,,,Zhu2021,,,Liu2020,
+,D,,,,47.47,,27_48′N,85_27′E,,,,Zhu2021,,,Zhu2021,https://doi.org/10.1111/gcb.15454
+,W,,,,9.03,,46_48′N,7_18′E,,,,Zhu2021,,,Delsontro2010,
+,R,,,,3.9,,40_17′N,105_40′W,,,,Zhu2021,,,Wickland2001,
+,Z,,,,4.85,,32_46′N,102_30′E,,,,Zhu2021,,,Peng2019,
+,L,,,,2.41,,37_35′N,101_20′E,,,,Zhu2021,,,Song2015,
+,Ba,,,,2.53,,42_53′N,83_43′E,,,,Zhu2021,,,He2014,
 ,,,,,,,,,,,,,,,,
 ,,,,,14,,,,,tropical peatland,,Zhu2021,,,Sihi2016,

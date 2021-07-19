@@ -14,9 +14,6 @@
 ,,,,,,,,,,,,Lupascu2018,,,Updegraff1995,https://doi.org/10.2307/1942060
 ,,,,,,,,,,,,Lupascu2018,,,Segers1998,
 ,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,
 ,C-rostrata,2_11,,,2.9,CH4,,,,,,Lupascu2018,,upper peat,Bergman1998,https://doi.org/10.1016/S0038-0717(97)00181-8
 ,C-rostrata,2_11,,,5.7,CH4,,,,,,Lupascu2018,,lower peat,Bergman1998,https://doi.org/10.1016/S0038-0717(97)00181-8
 ,C-rostrata,11_20,,,1,CH4,,,,,,Lupascu2018,,upper peat,Bergman1998,https://doi.org/10.1016/S0038-0717(97)00181-8
@@ -36,31 +33,15 @@
 ,S-fuscum,10_20,,,1.4,CH4,,,,,,Lupascu2018,,upper peat,Bergman1998,https://doi.org/10.1016/S0038-0717(97)00181-8
 ,S-fuscum,10_20,,,5.9,CH4,,,,,,Lupascu2018,,lower peat,Bergman1998,https://doi.org/10.1016/S0038-0717(97)00181-8
 ,,,,,,,,,,,,,,,,
-,ombr-hummock,15_25,,,4.9,CH4,63°44′N,20°06′E,,mire,,Lupascu2018,lab,,Bergman2000,https://doi.org/10.1111/j.1574-6941.2000.tb00740.x
-,ombr-lawn,10_20,,,9.2,CH4,63°44′N,20°06′E,,mire,,Lupascu2018,lab,,Bergman2000,https://doi.org/10.1111/j.1574-6941.2000.tb00740.x
-,min-lawn,10_20,,,7,CH4,63°44′N,20°06′E,,mire,,Lupascu2018,lab,,Bergman2000,https://doi.org/10.1111/j.1574-6941.2000.tb00740.x
-,ombr-carpet,10_20,,,6.3,CH4,63°44′N,20°06′E,,mire,,Lupascu2018,lab,,Bergman2000,https://doi.org/10.1111/j.1574-6941.2000.tb00740.x
-,mud-bottom,10_20,,,4,CH4,63°44′N,20°06′E,,mire,,Lupascu2018,lab,,Bergman2000,https://doi.org/10.1111/j.1574-6941.2000.tb00740.x
+,ombr-hummock,15_25,,,4.9,CH4,63_44′N,20_06′E,,mire,,Lupascu2018,lab,,Bergman2000,https://doi.org/10.1111/j.1574-6941.2000.tb00740.x
+,ombr-lawn,10_20,,,9.2,CH4,63_44′N,20_06′E,,mire,,Lupascu2018,lab,,Bergman2000,https://doi.org/10.1111/j.1574-6941.2000.tb00740.x
+,min-lawn,10_20,,,7,CH4,63_44′N,20_06′E,,mire,,Lupascu2018,lab,,Bergman2000,https://doi.org/10.1111/j.1574-6941.2000.tb00740.x
+,ombr-carpet,10_20,,,6.3,CH4,63_44′N,20_06′E,,mire,,Lupascu2018,lab,,Bergman2000,https://doi.org/10.1111/j.1574-6941.2000.tb00740.x
+,mud-bottom,10_20,,,4,CH4,63_44′N,20_06′E,,mire,,Lupascu2018,lab,,Bergman2000,https://doi.org/10.1111/j.1574-6941.2000.tb00740.x
 ,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,
-2001,,5_15,,,1.9,CO2,68°47′N,161°20′E,,,,Lupascu2018,lab,,Duttta2006,https://doi.org/10.1111/j.1365-2486.2006.01259.x
-2001,,5_15,,,2.1,CO2,68°47′N,161°20′E,,,,Lupascu2018,lab,,Duttta2006,https://doi.org/10.1111/j.1365-2486.2006.01259.x
-2001,,5_15,,,1.7,CO2,68°47′N,161°20′E,,,,Lupascu2018,lab,,Duttta2006,https://doi.org/10.1111/j.1365-2486.2006.01259.x
-,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,
+2001,,5_15,,,1.9,CO2,68_47′N,161_20′E,,,,Lupascu2018,lab,,Duttta2006,https://doi.org/10.1111/j.1365-2486.2006.01259.x
+2001,,5_15,,,2.1,CO2,68_47′N,161_20′E,,,,Lupascu2018,lab,,Duttta2006,https://doi.org/10.1111/j.1365-2486.2006.01259.x
+2001,,5_15,,,1.7,CO2,68_47′N,161_20′E,,,,Lupascu2018,lab,,Duttta2006,https://doi.org/10.1111/j.1365-2486.2006.01259.x
 ,,,,,,,,,,,,,,,,
 1990,,,,,6.4,CH4,,,,,,Lupascu2018,field,,Worthy2000,https://doi.org/10.1029/1999JD901100
 ,,,,,,,,,,,,,,,,
@@ -87,12 +68,6 @@
 ,LHuS,,,,0.8,CH4,,,,,,Lupascu2018,,,Pelletier2007,https://doi.org/10.1029/2006JG000216
 ,SpHo,,,,3.8,CH4,,,,,,Lupascu2018,,,Pelletier2007,https://doi.org/10.1029/2006JG000216
 ,P,,,,2.5,CH4,,,,,,Lupascu2018,,,Pelletier2007,https://doi.org/10.1029/2006JG000216
-,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 ,,,,,5,CH4,,,,,,Gedney2004,field,,Christensen2003,https://doi.org/10.1029/2002GL016848
 1987,,,,,2,CH4,,,,,,Gedney2004,field,,Khalil1998,https://doi.org/10.1029/98JD01115
