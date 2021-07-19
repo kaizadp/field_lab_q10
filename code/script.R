@@ -47,7 +47,30 @@ field_data_CH4 <-
                                                    Latitude = col_character(),
                                                    Longitude = col_character(),
                                                    Sample = col_character())) %>% 
-  bind_rows() 
+  bind_rows() %>% 
+  mutate(
+    # clean up f-ing latitude/longitude
+    Latitude = str_replace(Latitude, " N", "N"),
+    Latitude = str_replace(Latitude, " S", "S"),
+    Longitude = str_replace(Longitude, " E", "E"),
+    Longitude = str_replace(Longitude, " W", "W"),
+    
+    Latitude = str_replace(Latitude, " N", "N"),
+    Latitude = str_replace(Latitude, " S", "S"),
+    Longitude = str_replace(Longitude, " E", "E"),
+    Longitude = str_replace(Longitude, " W", "W"),
+    
+    Latitude  = str_replace(Latitude, "′′", '"'),
+    Longitude  = str_replace(Longitude, "′′", '"'),
+    
+    Latitude  = str_replace(Latitude, "″", '"'),
+    Longitude  = str_replace(Longitude, "″", '"'),
+    
+    Latitude  = str_replace(Latitude, "′", "'"),
+    Longitude  = str_replace(Longitude, "′", "'")
+  ) %>% 
+  filter_all(any_vars(!is.na(.)))
+
 write.csv(field_data_CH4, "data/data_from_papers/0_CH4_data1.csv", row.names = FALSE, na = "")
 
 # misc ----
