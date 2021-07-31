@@ -6,28 +6,30 @@ library(googlesheets4)
 
 
 # download from Google Drive ----------------------------------------------
-
-n_data = 
-  googlesheets4::read_sheet("1uBhsn7s6LJTl0CLYl7IPGQ6dM0tPnFiMY0iShcmIUX4") 
-
-n_data2 = 
+load_N_files_from_googlesheets = function(gsheets_path_N){
+  n_data = 
+    googlesheets4::read_sheet(gsheets_path_N) 
+  
   n_data %>% 
-  mutate_all(as.character) %>% 
-  mutate(across(.fns = ~replace(., . == "NULL", NA))) %>% 
-  mutate(Q10 = as.numeric(Q10))
+    mutate_all(as.character) %>% 
+    mutate(across(.fns = ~replace(., . == "NULL", NA))) %>% 
+    mutate(Q10 = as.numeric(Q10))
+}
 
-
-ch4_data = 
-  googlesheets4::read_sheet("1GIq2R8afh2p8tULEDuPmS2y-hSUTp8_wXTde2Wz5q8k")
-
-ch4_data2 = 
+load_CH4_files_from_googlesheets = function(gsheets_path_CH4){
+  ch4_data = 
+    googlesheets4::read_sheet(gsheets_path_CH4)
+  
   ch4_data %>% 
-  mutate_all(as.character) %>% 
-  mutate(across(.fns = ~replace(., . == "NULL", NA))) %>%   
-  mutate(Q10 = as.numeric(Q10))
+    mutate_all(as.character) %>% 
+    mutate(across(.fns = ~replace(., . == "NULL", NA))) %>%   
+    mutate(Q10 = as.numeric(Q10))
+  
+}
+
+gsheets_path_N = "1uBhsn7s6LJTl0CLYl7IPGQ6dM0tPnFiMY0iShcmIUX4"
+gsheets_path_CH4 = "1GIq2R8afh2p8tULEDuPmS2y-hSUTp8_wXTde2Wz5q8k"
 
 
-# save files locally ------------------------------------------------------
-
-n_data2 %>% write.csv("data/data_from_papers/N_data.csv", row.names = FALSE, na = "")
-ch4_data2 %>% write.csv("data/data_from_papers/CH4_data.csv", row.names = FALSE, na = "")
+gsheets_data_N = load_N_files_from_googlesheets(gsheets_path_N)
+gsheets_data_CH4 = load_CH4_files_from_googlesheets(gsheets_path_CH4)
