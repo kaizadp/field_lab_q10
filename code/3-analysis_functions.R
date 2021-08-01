@@ -24,15 +24,15 @@ make_map_all_studies <- function(Q10_data){
     facet_wrap(~Species)
 }
 
-compute_stats_q10 <- function(combined_q10){
+compute_stats_q10 <- function(Q10_data){
   # LME ----
-  l <- nlme::lme(Q10 ~ Incubation, random = ~1|Incubation, data = combined_q10) 
+  l <- nlme::lme(Q10 ~ Incubation, random = ~1|Incubation, data = Q10_data) 
   anova(l)
   # NaNs produced
   
   # ANOVA/HSD ----
-  fit_aov <- function(combined_q10){
-    a = aov(Q10 ~ Incubation, data = combined_q10)
+  fit_aov <- function(Q10_data){
+    a = aov(Q10 ~ Incubation, data = Q10_data)
     # h = agricolae::HSD.test(a, "Incubation")
     # h$groups %>% 
     #   rownames_to_column("Incubation")
@@ -44,26 +44,48 @@ compute_stats_q10 <- function(combined_q10){
       dplyr::select(label)
   }
   
-  combined_q10 %>% 
-    group_by(Temp_range_new) %>% 
+  Q10_data %>% 
+    group_by(Temp_range) %>% 
     do(fit_aov(.))
   # 5-15: lab > field
   # 15-25, > 25: field > lab
 }
 
-make_graphs_q10 <- function(combined_q10){
+make_graphs_q10 <- function(Q10_data){
   
   resp_q10_temp <- 
-    combined_q10 %>% 
+    Q10_data %>% 
     ggplot(aes(x = Temp_range_new, y = Q10, color = Incubation))+
     geom_point(position = position_dodge(width = 0.4))
   
   resp_q10_latitude = 
-    combined_q10 %>% 
+    Q10_data %>% 
     ggplot(aes(x = Q10, y = Latitude, color = Incubation))+
     geom_point(position = position_dodge(width = 0.4))+
     facet_wrap(~Temp_range_new, scales = "free_x")+theme_bw()
   
   list(resp_q10_temp = resp_q10_temp,
        resp_q10_latitude = resp_q10_latitude)
+}
+
+
+compute_stats_q10_CO2 <- function(Q10_data){
+
+  fit_aov <- function(dat){
+    a = aov(Q10 ~ Incubation, data = dat)
+    
+    broom::tidy(a) %>% 
+      filter(term == "Incubation") %>% 
+      rename(p_value = `p.value`) %>% 
+  #    mutate(label = case_when(p_value <= 0.05 ~ "*")) %>% 
+  #    dplyr::select(p_value) %>% 
+      force()
+  }
+  
+ Q10_data %>% 
+    filter(Species == "CO2" & !is.na(Temp_range)) %>% 
+    filter(!Temp_range %in% c("< 0", "0_5")) %>% # because no lab data for < 0
+    group_by(Temp_range) %>% 
+    do(fit_aov(.))
+
 }
