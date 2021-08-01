@@ -42,7 +42,7 @@ compute_stats_q10 <- function(Q10_data){
       #    dplyr::select(p_value) %>% 
       force()
   }
-
+  
   # CO2 ----
   
   co2_aov_temp = 
@@ -83,8 +83,8 @@ compute_stats_q10 <- function(Q10_data){
   list(co2_aov_temp = co2_aov_temp,
        co2_aov_all = co2_aov_all,
        co2_lme_all = co2_lme_all,
-       n2o_aov_all,
-       ch4_aov_all)
+       n2o_aov_all = n2o_aov_all,
+       ch4_aov_all = ch4_aov_all)
 }
 
 make_graphs_q10 <- function(Q10_data){
@@ -95,18 +95,21 @@ make_graphs_q10 <- function(Q10_data){
     filter(Species == "CO2" & !is.na(Temp_range))
   
   (resp_q10_temp <- 
-    Q10_CO2_data %>% 
-    ggplot(aes(x = Temp_range, y = Q10, color = Incubation))+
-#      geom_jitter(width = 0.2, )+
-    geom_point(position = position_dodge(width = 0.4))+
+      Q10_CO2_data %>% 
+      ggplot(aes(x = Temp_range, y = Q10, color = Incubation))+
+      #      geom_jitter(width = 0.2, )+
+      geom_point(position = position_dodge(width = 0.4))+
+      labs(title = "CO2")+
       ylim(0,20))
   
   (resp_q10_temp_jitter <- 
       Q10_CO2_data %>% 
       filter(Temp_range %in% c("5_15", "15_25", "> 25")) %>% 
       ggplot(aes(x = Incubation, y = Q10, color = Incubation))+
-            geom_jitter(width = 0.2, size = 1)+
+      geom_jitter(width = 0.2, size = 1)+
       facet_wrap(~Temp_range, strip.position = "bottom")+
+      labs(title = "CO2",
+           subtitle = "only > 5 C included")+
       ylim(0,20))
   
   resp_q10_latitude = 
@@ -114,35 +117,36 @@ make_graphs_q10 <- function(Q10_data){
     ggplot(aes(x = Q10, y = Latitude, color = Incubation))+
     geom_point(position = position_dodge(width = 0.4))+
     facet_wrap(~Temp_range, scales = "free_x")+
+    labs(title = "CO2 by latitude")+
     theme_bw()
   
   
   N2O_incubation = 
-  Q10_data %>% 
+    Q10_data %>% 
     filter(Species == "N2O") %>% 
-      ggplot(aes(x = Incubation, y = Q10, color = Temp_range))+
-      #      geom_jitter(width = 0.2, )+
-      geom_point(position = position_dodge(width = 0.4))+
+    ggplot(aes(x = Incubation, y = Q10, color = Temp_range))+
+    #      geom_jitter(width = 0.2, )+
+    geom_point(position = position_dodge(width = 0.4))+
     labs(title = "N2O")
   ylim(0,20)
   
   CH4_incubation = 
-  Q10_data %>% 
+    Q10_data %>% 
     filter(Species == "CH4") %>% 
     ggplot(aes(x = Incubation, y = Q10, color = Temp_range))+
     geom_point(position = position_dodge(width = 0.4))+
     labs(title = "CH4")
-    ylim(0,20)
+  ylim(0,20)
   
   
   list(resp_q10_temp = resp_q10_temp,
        resp_q10_temp_jitter = resp_q10_temp_jitter,
        resp_q10_latitude = resp_q10_latitude,
-       N2O_incubation,
-       CH4_incubation)
+       N2O_incubation = N2O_incubation,
+       CH4_incubation = CH4_incubation)
 }
 
-study_summary = function(Q10_data){
+compute_study_summary = function(Q10_data){
   datapoints = 
     Q10_data %>% 
     filter(!is.na(Q10)) %>% 
