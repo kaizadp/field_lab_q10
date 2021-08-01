@@ -12,24 +12,66 @@ knitr::opts_chunk$set(echo = FALSE,
                       )
 ```
 
-## Respiration Q10
+---
 
-### Study sites included
+## Study sites
 
 ```{r}
-readd(gg_map)
+readd(Q10_map)
 ```
 
-### Field vs. lab 
+How many datapoints?
+```{r}
+readd(study_summary)$datapoints %>% knitr::kable()
+```
 
-- field vs. lab was significantly different (ANOVA) for:
-    - 5-15 °C (lab > field)
-    - 15-25 °C (field > lab)
-    - > 25 °C (field > lab)
+How many studies?
+```{r}
+readd(study_summary)$study_counts %>% knitr::kable()
+```
 
+
+---
+
+## Field vs. lab 
+
+### Stats
+
+CO2 - by temperature
+```{r}
+readd(Q10_stats)$co2_aov_temp
+```
+
+paired (field AND lab) results were not available for < 0 C and 0-5 C.
+
+
+CO2 - across all temperatures
+
+- ANOVA
+```{r}
+readd(Q10_stats)$co2_aov_all
+```
+
+- LME
+```{r}
+readd(Q10_stats)$co2_lme_all
+```
+
+N2O - across all temperatures
+```{r}
+readd(Q10_stats)$n2o_aov_all
+```
+
+CH4 - across all temperatures
+```{r}
+readd(Q10_stats)$ch4_aov_all
+```
+
+
+### Graphs
 
 ```{r}
-readd(gg_q10)
+readd(Q10_graphs)
 ```
 
 
