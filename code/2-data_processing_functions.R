@@ -1,11 +1,12 @@
-
+SRDB_FILE_PATH_DATA = "data/CO2/SRDB_V5_1827/data/srdb-data-V5.csv"
+SRDB_FILE_PATH_EQ = "data/CO2/SRDB_V5_1827/data/srdb-equations-V5.csv"
+SIDB_FILE_PATH = "data/CO2/sidb.RData"
 
 # PART 1: SRDB (Soil Respiration DataBase) --------------------------------
 
-
 clean_srdb_dataset <- function(){
-  srdb_v5_data <- read.csv("data/CO2/SRDB_V5_1827/data/srdb-data-V5.csv")
-  srdb_v5_equations <- read.csv("data/CO2/SRDB_V5_1827/data/srdb-equations-V5.csv")
+  srdb_v5_data <- read.csv(SRDB_FILE_PATH_DATA)
+  srdb_v5_equations <- read.csv(SRDB_FILE_PATH_EQ)
   
   sites <-
     srdb_v5_data %>% 
@@ -56,7 +57,8 @@ clean_srdb_dataset <- function(){
   q10_sites <- sites %>% left_join(q10) %>% filter(!is.na(Q10)) %>% 
     mutate(Source = "SRDB",
            Incubation = "field",
-           Study_ID = paste0("SRDB-", Study_number))
+           Study_ID = paste0("SRDB-", Study_number)) %>% 
+    rename(SRDB_record_number = Record_number)
   
   list(r10_sites = r10_sites,
        q10_sites = q10_sites)
@@ -78,237 +80,8 @@ do_q10_exploration <- function(){
   
 }
 
-import_individual_studies_OLD <- function(){
-  
-  filePaths_field <- list.files(path = "data/CO2/cleaned_for_analysis/field",pattern = "*.csv", full.names = TRUE)
-  filePaths_lab <- list.files(path = "data/CO2/cleaned_for_analysis/lab",pattern = "*.csv", full.names = TRUE)
-  
-  field_data <-
-    lapply(filePaths_field, read.csv, stringsAsFactors = FALSE) %>% 
-    bind_rows() %>% 
-    mutate(Incubation = "field", Depth_cm = as.character(Depth_cm))
-  
-  lab_data <-
-    lapply(filePaths_lab, read.csv, stringsAsFactors = FALSE) %>% 
-    bind_rows() %>% 
-    mutate(Incubation = "lab", Depth_cm = as.character(Depth_cm))
-  
-  
-  combined <- 
-    bind_rows(lab_data, field_data) %>% 
-    dplyr::select(Source, Incubation, Record_number, Duplicate_record,
-                  Site_name, Latitude_deg, Longitude_deg, Latitude, Longitude,
-                  Species, Soil_type, Ecosystem_type, 
-                  Temp_range, Temp_mean, Temp_min, Temp_max, Q10, R10) %>% 
-    na_if("")
-  
-  fix_temp_and_latlon <- function(combined){
-    # clean temperature ranges ----
-    combined2 <- 
-      combined %>% 
-      mutate(Temp_min = round(Temp_min/5)*5,
-             Temp_max = round(Temp_max/5)*5,
-             Temp_range = if_else(!is.na(Temp_min), paste0(Temp_min, "_", Temp_max), Temp_range),
-             Temp_range2 = Temp_range) %>% 
-      separate(Temp_range2, sep = "_", into = c("Temp_min", "Temp_max")) %>% 
-      mutate(Temp_max = as.integer(Temp_max),
-             Temp_min = as.integer(Temp_min),
-             Temp_diff = Temp_max - Temp_min) %>% 
-      rownames_to_column("rownum")
-    
-    # fix latitude/longitude ----
-    # subset only the columns needed, we will re-join later
-    combined2_latlong <- 
-      combined2 %>% 
-      dplyr::select(rownum, Latitude, Longitude, Latitude_deg, Longitude_deg) %>% 
-      # create a separate column for hemisphere
-      # we will use this later to assign negative values for S and W
-      mutate(hemisphere = paste0(str_extract(Latitude_deg, "[A-Z]"), str_extract(Longitude_deg, "[A-Z]")),
-             hemisphere = str_remove_all(hemisphere, "NA")) %>% 
-      # remove all letters, remove unnecessary characters like _ and space
-      mutate(latitude_deg = str_remove(Latitude_deg, "N"),
-             latitude_deg = str_remove(latitude_deg, "S"),
-             latitude_deg = str_remove(latitude_deg, " "),
-             latitude_deg = str_replace_all(latitude_deg, "_", " "),
-             # some values are already as decimals. we need to extract those
-             # decimal format is without ', so use that to extract
-             # create a new column for decimal value data (no ')
-             # then delete those values from the latitude_deg column
-             lat_dec = if_else(grepl("'", latitude_deg), NA_character_, latitude_deg),
-             latitude_deg = if_else(grepl("'", latitude_deg), latitude_deg, NA_character_)) %>% 
-      # replace ' and " with spaces, for the unit conversion function
-      # you NEED to run conv_unit() rowwise, because it treats the entire column as a vector,
-      # and numbers may carry over into the next row
-      # we want to avoid this
-      rowwise() %>% 
-      mutate(
-        latitude_deg = str_replace_all(latitude_deg, "'", " "),
-        latitude_deg = str_replace_all(latitude_deg, '"', " "),
-        lat_dec2 = measurements::conv_unit(latitude_deg, from = "deg_min_sec", to = "dec_deg")) %>% 
-      # next, combine lat_dec and lat_dec2
-      mutate(Latitude_dec = case_when(!is.na(lat_dec) ~ lat_dec,
-                                      !is.na(lat_dec2) ~ lat_dec2),
-             Latitude_dec = round(as.numeric(Latitude_dec), 3),
-             # finally, assign - values for Southern hemisphere       
-             Latitude_dec = case_when(grepl("N", hemisphere) ~ Latitude_dec,
-                                      grepl("S", hemisphere) ~ Latitude_dec * -1)) %>% 
-      # NOW, repeat for longitude
-      #
-      # remove all letters, remove unnecessary characters like _ and space
-      mutate(longitude_deg = str_remove(Longitude_deg, "E"),
-             longitude_deg = str_remove(longitude_deg, "W"),
-             longitude_deg = str_remove(longitude_deg, " "),
-             longitude_deg = str_replace_all(longitude_deg, "_", " "),
-             # some values are already as decimals. we need to extract those
-             # decimal format is without ', so use that to extract
-             # create a new column for decimal value data (no ')
-             # then delete those values from the longitude_deg column
-             lon_dec = if_else(grepl("'", longitude_deg), NA_character_, longitude_deg),
-             longitude_deg = if_else(grepl("'", longitude_deg), longitude_deg, NA_character_)) %>% 
-      # replace ' and " with spaces, for the unit conversion function
-      # you NEED to run conv_unit() rowwise, because it treats the entire column as a vector,
-      # and numbers may carry over into the next row
-      # we want to avoid this
-      rowwise() %>% 
-      mutate(
-        longitude_deg = str_replace_all(longitude_deg, "'", " "),
-        longitude_deg = str_replace_all(longitude_deg, '"', " "),
-        lon_dec2 = measurements::conv_unit(longitude_deg, from = "deg_min_sec", to = "dec_deg")) %>% 
-      # next, combine lat_dec and lat_dec2
-      mutate(Longitude_dec = case_when(!is.na(lon_dec) ~ lon_dec,
-                                       !is.na(lon_dec2) ~ lon_dec2),
-             Longitude_dec = round(as.numeric(Longitude_dec), 3),
-             # finally, assign - values for Southern hemisphere       
-             Longitude_dec = case_when(grepl("E", hemisphere) ~ Longitude_dec,
-                                       grepl("W", hemisphere) ~ Longitude_dec * -1)) %>% 
-      # then, combine the lat and lon columns
-      mutate(Latitude = case_when(!is.na(Latitude) ~ Latitude,
-                                  !is.na(Latitude_dec) ~ Latitude_dec),
-             Longitude = case_when(!is.na(Longitude) ~ Longitude,
-                                   !is.na(Longitude_dec) ~ Longitude_dec)) %>% 
-      # finally, subset the necessary columns and then join with the dataset
-      dplyr::select(rownum, Latitude, Longitude)
-    
-    # combine ----
-    combined2 %>% 
-      dplyr::select(-Latitude, -Longitude, -Latitude_deg, -Longitude_deg) %>% 
-      left_join(combined2_latlong)
-  }
-  fix_temp_and_latlon(combined)
-}
 
-import_individual_studies <- function(){
-  
-  filePaths_papers <- list.files(path = "data/data_from_papers",pattern = "*.csv", full.names = TRUE)
-  
-  combined <-
-    lapply(filePaths_papers, 
-           read_csv, col_types = cols(moisture = col_character())) %>% 
-    bind_rows()
-  
-  fix_temp_and_latlon <- function(combined){
-    # clean temperature ranges ----
-    combined2 <- 
-      combined %>% 
-      mutate(#Temp_min = round(Temp_min/5)*5,
-        #Temp_max = round(Temp_max/5)*5,
-        #Temp_range = if_else(!is.na(Temp_min), paste0(Temp_min, "_", Temp_max), Temp_range),
-        Temp_range2 = Temp_range) %>% 
-      separate(Temp_range2, sep = "_", into = c("Temp_min", "Temp_max")) %>% 
-      mutate(Temp_max = as.integer(Temp_max),
-             Temp_min = as.integer(Temp_min),
-             Temp_diff = Temp_max - Temp_min) %>% 
-      rownames_to_column("rownum")
-    
-    # fix latitude/longitude ----
-    # subset only the columns needed, we will re-join later
-    combined2_latlong <- 
-      combined2 %>% 
-      dplyr::select(rownum, Latitude, Longitude) %>% 
-      # create a separate column for hemisphere
-      # we will use this later to assign negative values for S and W
-      mutate(hemisphere = paste0(str_extract(Latitude, "[A-Z]"), str_extract(Longitude, "[A-Z]")),
-             hemisphere = str_remove_all(hemisphere, "NA")) %>% 
-      # remove all letters, remove unnecessary characters like _ and space
-      mutate(latitude_deg = str_remove(Latitude, "N"),
-             latitude_deg = str_remove(latitude_deg, "S"),
-             latitude_deg = str_remove(latitude_deg, " "),
-             latitude_deg = str_replace_all(latitude_deg, "_", " "),
-             # some values are already as decimals. we need to extract those
-             # decimal format is without ', so use that to extract
-             # create a new column for decimal value data (no ')
-             # then delete those values from the latitude_deg column
-             lat_dec = if_else(grepl("'", latitude_deg), NA_character_, latitude_deg),
-             latitude_deg = if_else(grepl("'", latitude_deg), latitude_deg, NA_character_)) %>% 
-      # replace ' and " with spaces, for the unit conversion function
-      # you NEED to run conv_unit() rowwise, because it treats the entire column as a vector,
-      # and numbers may carry over into the next row
-      # we want to avoid this
-      rowwise() %>% 
-      mutate(
-        latitude_deg = str_replace_all(latitude_deg, "'", " "),
-        latitude_deg = str_replace_all(latitude_deg, '"', " "),
-        lat_dec2 = measurements::conv_unit(latitude_deg, from = "deg_min_sec", to = "dec_deg")) %>% 
-      # next, combine lat_dec and lat_dec2
-      mutate(Latitude_dec = case_when(!is.na(lat_dec) ~ lat_dec,
-                                      !is.na(lat_dec2) ~ lat_dec2),
-             Latitude_dec = round(as.numeric(Latitude_dec), 3),
-             # finally, assign - values for Southern hemisphere       
-             Latitude_dec = case_when(grepl("N", hemisphere) ~ Latitude_dec,
-                                      grepl("S", hemisphere) ~ Latitude_dec * -1)) %>% 
-      # NOW, repeat for longitude
-      #
-      # remove all letters, remove unnecessary characters like _ and space
-      mutate(longitude_deg = str_remove(Longitude, "E"),
-             longitude_deg = str_remove(longitude_deg, "W"),
-             longitude_deg = str_remove(longitude_deg, " "),
-             longitude_deg = str_replace_all(longitude_deg, "_", " "),
-             # some values are already as decimals. we need to extract those
-             # decimal format is without ', so use that to extract
-             # create a new column for decimal value data (no ')
-             # then delete those values from the longitude_deg column
-             lon_dec = if_else(grepl("'", longitude_deg), NA_character_, longitude_deg),
-             longitude_deg = if_else(grepl("'", longitude_deg), longitude_deg, NA_character_)) %>% 
-      # replace ' and " with spaces, for the unit conversion function
-      # you NEED to run conv_unit() rowwise, because it treats the entire column as a vector,
-      # and numbers may carry over into the next row
-      # we want to avoid this
-      rowwise() %>% 
-      mutate(
-        longitude_deg = str_replace_all(longitude_deg, "'", " "),
-        longitude_deg = str_replace_all(longitude_deg, '"', " "),
-        lon_dec2 = measurements::conv_unit(longitude_deg, from = "deg_min_sec", to = "dec_deg")) %>% 
-      # next, combine lat_dec and lat_dec2
-      mutate(Longitude_dec = case_when(!is.na(lon_dec) ~ lon_dec,
-                                       !is.na(lon_dec2) ~ lon_dec2),
-             Longitude_dec = round(as.numeric(Longitude_dec), 3),
-             # finally, assign - values for Southern hemisphere       
-             Longitude_dec = case_when(grepl("E", hemisphere) ~ Longitude_dec,
-                                       grepl("W", hemisphere) ~ Longitude_dec * -1),
-             #Longitude_dec = as.character(Longitude_dec),
-             #Latitude_dec = as.character(Latitude_dec)
-      ) %>% 
-      # then, combine the lat and lon columns
-      ##    mutate(Latitude2 = case_when(!is.na(Latitude) ~ Latitude,
-      ##                                !is.na(Latitude_dec) ~ Latitude_dec),
-      ##           Longitude2 = case_when(!is.na(Longitude) ~ Longitude,
-      ##                                 !is.na(Longitude_dec) ~ Longitude_dec)) %>% 
-      # finally, subset the necessary columns and then join with the dataset
-      dplyr::select(rownum, Latitude_dec, Longitude_dec) %>% 
-      rename(Latitude = Latitude_dec,
-             Longitude = Longitude_dec)
-    
-    # combine ----
-    combined2 %>% 
-      dplyr::select(-starts_with("Latitude"), -starts_with("Longitude")) %>% 
-      left_join(combined2_latlong)
-  }
-  fix_temp_and_latlon(combined)
-}
-
-
-
-
+#
 # PART 2: SIDb (Soil Incubation Database) ---------------------------------
 
 ## next steps:
@@ -413,7 +186,7 @@ calculate_sidb_q10_r10 <- function(sidb_timeseries_clean, sidb_vars){
     dplyr::select(citationKey, units, n, temp_range_min, temp_range_max, a, b, r10, starts_with("q10")) %>% 
     force()
   
-  sidb_q10_clean1 <-
+  sidb_q10_clean <-
     sidb_q10_calculated %>% 
     ungroup() %>% 
     dplyr::select(citationKey, starts_with("Q10")) %>% 
@@ -425,28 +198,18 @@ calculate_sidb_q10_r10 <- function(sidb_timeseries_clean, sidb_vars){
     left_join(sidb_latlon) %>% 
     rename(StudyName = citationKey)
   
-  sidb_studies = 
-    sidb_q10_clean1 %>% 
-    distinct(StudyName) %>% 
-    arrange(StudyName) %>% 
-    rownames_to_column("Study_ID")
-  
-  sidb_q10_clean = 
-    sidb_q10_clean1 %>% 
-    left_join(sidb_studies)
+#  sidb_studies = 
+#    sidb_q10_clean1 %>% 
+#    distinct(StudyName) %>% 
+#    arrange(StudyName) %>% 
+#    rownames_to_column("Study_ID") %>% 
   
   list(sidb_q10_calculated = sidb_q10_calculated,
        sidb_q10_clean = sidb_q10_clean)
-  
 }
 
 
 #
-
-
-
-
-
 # PART 3: Data from papers ------------------------------------------------
 import_N_data_from_papers = function(filePaths_N){
   #field_data_N <-
@@ -513,6 +276,17 @@ import_CH4_data_from_papers = function(filePaths_CH4){
     filter_all(any_vars(!is.na(.)))
   
 }
+
+create_study_matrix = function(combined_data_cleaned){
+  combined_data_cleaned %>% 
+    dplyr::select(Species, StudyName, DOI) %>% 
+    distinct() %>% 
+    mutate(Species2 = Species) %>% 
+    pivot_wider(names_from = "Species2", values_from = "Species") %>% 
+    dplyr::select(StudyName, DOI, CO2, N2O, CH4)
+  
+}
+
 
 #
 # PART 4: cleaning --------------------------------------------------------
@@ -646,12 +420,14 @@ clean_temp_range <- function(combined_data){
  #                                             Temp_mean >= 25 ~ "> 25"),
  #                                   Temp_range_new)) %>% 
  #    filter(!is.na(Temp_range_new)) %>% 
-    filter(!is.na(Q10)) %>% 
-    mutate(Temp_range_new = factor(Temp_range_new, levels = c("< 0", "0_5", "5_15", "15_25", "> 25")))
+ #    filter(!is.na(Q10)) %>% 
+      rename(Temp_range_old = Temp_range,
+             Temp_range = Temp_range_new) %>% 
+      mutate(Temp_range = factor(Temp_range, 
+                                 levels = c("< 0", "0_5", "5_15", "15_25", "> 25")))
 }
 
 # setting study-ID and study-number
-
 assign_study_numbers = function(dat){
   studies =   
     dat %>% 
@@ -664,20 +440,24 @@ assign_study_numbers = function(dat){
   
   dat %>% 
     left_join(studies)
-    
-}
-
-create_study_matrix = function(combined_data_cleaned){
-  combined_data_cleaned %>% 
-    dplyr::select(Species, StudyName, DOI) %>% 
-    distinct() %>% 
-    mutate(Species2 = Species) %>% 
-    pivot_wider(names_from = "Species2", values_from = "Species") %>% 
-    dplyr::select(StudyName, DOI, CO2, N2O, CH4)
   
 }
 
+assign_study_numbers2 = function(all_data){
+  x = all_data %>% 
+    mutate(Species = factor(Species, levels = c("CO2", "N2O", "CH4"))) %>% 
+    arrange(Species, Incubation, StudyName) %>% 
+    rownames_to_column("Record_number")
+}
 
+
+clean_combined_dataset = function(){
+  # subset only data needed
+  # subset study info
+  
+  
+  
+}
 
 #
 
@@ -735,3 +515,229 @@ combine_all_q10_studies <- function(indiv_studies, srdb_q10, sidb_q10_clean){
   q10_combined_temp
 }
 
+import_individual_studies_OLD <- function(){
+  
+  filePaths_field <- list.files(path = "data/CO2/cleaned_for_analysis/field",pattern = "*.csv", full.names = TRUE)
+  filePaths_lab <- list.files(path = "data/CO2/cleaned_for_analysis/lab",pattern = "*.csv", full.names = TRUE)
+  
+  field_data <-
+    lapply(filePaths_field, read.csv, stringsAsFactors = FALSE) %>% 
+    bind_rows() %>% 
+    mutate(Incubation = "field", Depth_cm = as.character(Depth_cm))
+  
+  lab_data <-
+    lapply(filePaths_lab, read.csv, stringsAsFactors = FALSE) %>% 
+    bind_rows() %>% 
+    mutate(Incubation = "lab", Depth_cm = as.character(Depth_cm))
+  
+  
+  combined <- 
+    bind_rows(lab_data, field_data) %>% 
+    dplyr::select(Source, Incubation, Record_number, Duplicate_record,
+                  Site_name, Latitude_deg, Longitude_deg, Latitude, Longitude,
+                  Species, Soil_type, Ecosystem_type, 
+                  Temp_range, Temp_mean, Temp_min, Temp_max, Q10, R10) %>% 
+    na_if("")
+  
+  fix_temp_and_latlon <- function(combined){
+    # clean temperature ranges ----
+    combined2 <- 
+      combined %>% 
+      mutate(Temp_min = round(Temp_min/5)*5,
+             Temp_max = round(Temp_max/5)*5,
+             Temp_range = if_else(!is.na(Temp_min), paste0(Temp_min, "_", Temp_max), Temp_range),
+             Temp_range2 = Temp_range) %>% 
+      separate(Temp_range2, sep = "_", into = c("Temp_min", "Temp_max")) %>% 
+      mutate(Temp_max = as.integer(Temp_max),
+             Temp_min = as.integer(Temp_min),
+             Temp_diff = Temp_max - Temp_min) %>% 
+      rownames_to_column("rownum")
+    
+    # fix latitude/longitude ----
+    # subset only the columns needed, we will re-join later
+    combined2_latlong <- 
+      combined2 %>% 
+      dplyr::select(rownum, Latitude, Longitude, Latitude_deg, Longitude_deg) %>% 
+      # create a separate column for hemisphere
+      # we will use this later to assign negative values for S and W
+      mutate(hemisphere = paste0(str_extract(Latitude_deg, "[A-Z]"), str_extract(Longitude_deg, "[A-Z]")),
+             hemisphere = str_remove_all(hemisphere, "NA")) %>% 
+      # remove all letters, remove unnecessary characters like _ and space
+      mutate(latitude_deg = str_remove(Latitude_deg, "N"),
+             latitude_deg = str_remove(latitude_deg, "S"),
+             latitude_deg = str_remove(latitude_deg, " "),
+             latitude_deg = str_replace_all(latitude_deg, "_", " "),
+             # some values are already as decimals. we need to extract those
+             # decimal format is without ', so use that to extract
+             # create a new column for decimal value data (no ')
+             # then delete those values from the latitude_deg column
+             lat_dec = if_else(grepl("'", latitude_deg), NA_character_, latitude_deg),
+             latitude_deg = if_else(grepl("'", latitude_deg), latitude_deg, NA_character_)) %>% 
+      # replace ' and " with spaces, for the unit conversion function
+      # you NEED to run conv_unit() rowwise, because it treats the entire column as a vector,
+      # and numbers may carry over into the next row
+      # we want to avoid this
+      rowwise() %>% 
+      mutate(
+        latitude_deg = str_replace_all(latitude_deg, "'", " "),
+        latitude_deg = str_replace_all(latitude_deg, '"', " "),
+        lat_dec2 = measurements::conv_unit(latitude_deg, from = "deg_min_sec", to = "dec_deg")) %>% 
+      # next, combine lat_dec and lat_dec2
+      mutate(Latitude_dec = case_when(!is.na(lat_dec) ~ lat_dec,
+                                      !is.na(lat_dec2) ~ lat_dec2),
+             Latitude_dec = round(as.numeric(Latitude_dec), 3),
+             # finally, assign - values for Southern hemisphere       
+             Latitude_dec = case_when(grepl("N", hemisphere) ~ Latitude_dec,
+                                      grepl("S", hemisphere) ~ Latitude_dec * -1)) %>% 
+      # NOW, repeat for longitude
+      #
+      # remove all letters, remove unnecessary characters like _ and space
+      mutate(longitude_deg = str_remove(Longitude_deg, "E"),
+             longitude_deg = str_remove(longitude_deg, "W"),
+             longitude_deg = str_remove(longitude_deg, " "),
+             longitude_deg = str_replace_all(longitude_deg, "_", " "),
+             # some values are already as decimals. we need to extract those
+             # decimal format is without ', so use that to extract
+             # create a new column for decimal value data (no ')
+             # then delete those values from the longitude_deg column
+             lon_dec = if_else(grepl("'", longitude_deg), NA_character_, longitude_deg),
+             longitude_deg = if_else(grepl("'", longitude_deg), longitude_deg, NA_character_)) %>% 
+      # replace ' and " with spaces, for the unit conversion function
+      # you NEED to run conv_unit() rowwise, because it treats the entire column as a vector,
+      # and numbers may carry over into the next row
+      # we want to avoid this
+      rowwise() %>% 
+      mutate(
+        longitude_deg = str_replace_all(longitude_deg, "'", " "),
+        longitude_deg = str_replace_all(longitude_deg, '"', " "),
+        lon_dec2 = measurements::conv_unit(longitude_deg, from = "deg_min_sec", to = "dec_deg")) %>% 
+      # next, combine lat_dec and lat_dec2
+      mutate(Longitude_dec = case_when(!is.na(lon_dec) ~ lon_dec,
+                                       !is.na(lon_dec2) ~ lon_dec2),
+             Longitude_dec = round(as.numeric(Longitude_dec), 3),
+             # finally, assign - values for Southern hemisphere       
+             Longitude_dec = case_when(grepl("E", hemisphere) ~ Longitude_dec,
+                                       grepl("W", hemisphere) ~ Longitude_dec * -1)) %>% 
+      # then, combine the lat and lon columns
+      mutate(Latitude = case_when(!is.na(Latitude) ~ Latitude,
+                                  !is.na(Latitude_dec) ~ Latitude_dec),
+             Longitude = case_when(!is.na(Longitude) ~ Longitude,
+                                   !is.na(Longitude_dec) ~ Longitude_dec)) %>% 
+      # finally, subset the necessary columns and then join with the dataset
+      dplyr::select(rownum, Latitude, Longitude)
+    
+    # combine ----
+    combined2 %>% 
+      dplyr::select(-Latitude, -Longitude, -Latitude_deg, -Longitude_deg) %>% 
+      left_join(combined2_latlong)
+  }
+  fix_temp_and_latlon(combined)
+}
+import_individual_studies_OLD2 <- function(){
+  
+  filePaths_papers <- list.files(path = "data/data_from_papers",pattern = "*.csv", full.names = TRUE)
+  
+  combined <-
+    lapply(filePaths_papers, 
+           read_csv, col_types = cols(moisture = col_character())) %>% 
+    bind_rows()
+  
+  fix_temp_and_latlon <- function(combined){
+    # clean temperature ranges ----
+    combined2 <- 
+      combined %>% 
+      mutate(#Temp_min = round(Temp_min/5)*5,
+        #Temp_max = round(Temp_max/5)*5,
+        #Temp_range = if_else(!is.na(Temp_min), paste0(Temp_min, "_", Temp_max), Temp_range),
+        Temp_range2 = Temp_range) %>% 
+      separate(Temp_range2, sep = "_", into = c("Temp_min", "Temp_max")) %>% 
+      mutate(Temp_max = as.integer(Temp_max),
+             Temp_min = as.integer(Temp_min),
+             Temp_diff = Temp_max - Temp_min) %>% 
+      rownames_to_column("rownum")
+    
+    # fix latitude/longitude ----
+    # subset only the columns needed, we will re-join later
+    combined2_latlong <- 
+      combined2 %>% 
+      dplyr::select(rownum, Latitude, Longitude) %>% 
+      # create a separate column for hemisphere
+      # we will use this later to assign negative values for S and W
+      mutate(hemisphere = paste0(str_extract(Latitude, "[A-Z]"), str_extract(Longitude, "[A-Z]")),
+             hemisphere = str_remove_all(hemisphere, "NA")) %>% 
+      # remove all letters, remove unnecessary characters like _ and space
+      mutate(latitude_deg = str_remove(Latitude, "N"),
+             latitude_deg = str_remove(latitude_deg, "S"),
+             latitude_deg = str_remove(latitude_deg, " "),
+             latitude_deg = str_replace_all(latitude_deg, "_", " "),
+             # some values are already as decimals. we need to extract those
+             # decimal format is without ', so use that to extract
+             # create a new column for decimal value data (no ')
+             # then delete those values from the latitude_deg column
+             lat_dec = if_else(grepl("'", latitude_deg), NA_character_, latitude_deg),
+             latitude_deg = if_else(grepl("'", latitude_deg), latitude_deg, NA_character_)) %>% 
+      # replace ' and " with spaces, for the unit conversion function
+      # you NEED to run conv_unit() rowwise, because it treats the entire column as a vector,
+      # and numbers may carry over into the next row
+      # we want to avoid this
+      rowwise() %>% 
+      mutate(
+        latitude_deg = str_replace_all(latitude_deg, "'", " "),
+        latitude_deg = str_replace_all(latitude_deg, '"', " "),
+        lat_dec2 = measurements::conv_unit(latitude_deg, from = "deg_min_sec", to = "dec_deg")) %>% 
+      # next, combine lat_dec and lat_dec2
+      mutate(Latitude_dec = case_when(!is.na(lat_dec) ~ lat_dec,
+                                      !is.na(lat_dec2) ~ lat_dec2),
+             Latitude_dec = round(as.numeric(Latitude_dec), 3),
+             # finally, assign - values for Southern hemisphere       
+             Latitude_dec = case_when(grepl("N", hemisphere) ~ Latitude_dec,
+                                      grepl("S", hemisphere) ~ Latitude_dec * -1)) %>% 
+      # NOW, repeat for longitude
+      #
+      # remove all letters, remove unnecessary characters like _ and space
+      mutate(longitude_deg = str_remove(Longitude, "E"),
+             longitude_deg = str_remove(longitude_deg, "W"),
+             longitude_deg = str_remove(longitude_deg, " "),
+             longitude_deg = str_replace_all(longitude_deg, "_", " "),
+             # some values are already as decimals. we need to extract those
+             # decimal format is without ', so use that to extract
+             # create a new column for decimal value data (no ')
+             # then delete those values from the longitude_deg column
+             lon_dec = if_else(grepl("'", longitude_deg), NA_character_, longitude_deg),
+             longitude_deg = if_else(grepl("'", longitude_deg), longitude_deg, NA_character_)) %>% 
+      # replace ' and " with spaces, for the unit conversion function
+      # you NEED to run conv_unit() rowwise, because it treats the entire column as a vector,
+      # and numbers may carry over into the next row
+      # we want to avoid this
+      rowwise() %>% 
+      mutate(
+        longitude_deg = str_replace_all(longitude_deg, "'", " "),
+        longitude_deg = str_replace_all(longitude_deg, '"', " "),
+        lon_dec2 = measurements::conv_unit(longitude_deg, from = "deg_min_sec", to = "dec_deg")) %>% 
+      # next, combine lat_dec and lat_dec2
+      mutate(Longitude_dec = case_when(!is.na(lon_dec) ~ lon_dec,
+                                       !is.na(lon_dec2) ~ lon_dec2),
+             Longitude_dec = round(as.numeric(Longitude_dec), 3),
+             # finally, assign - values for Southern hemisphere       
+             Longitude_dec = case_when(grepl("E", hemisphere) ~ Longitude_dec,
+                                       grepl("W", hemisphere) ~ Longitude_dec * -1),
+             #Longitude_dec = as.character(Longitude_dec),
+             #Latitude_dec = as.character(Latitude_dec)
+      ) %>% 
+      # then, combine the lat and lon columns
+      ##    mutate(Latitude2 = case_when(!is.na(Latitude) ~ Latitude,
+      ##                                !is.na(Latitude_dec) ~ Latitude_dec),
+      ##           Longitude2 = case_when(!is.na(Longitude) ~ Longitude,
+      ##                                 !is.na(Longitude_dec) ~ Longitude_dec)) %>% 
+      # finally, subset the necessary columns and then join with the dataset
+      dplyr::select(rownum, Latitude_dec, Longitude_dec) %>% 
+      rename(Latitude = Latitude_dec,
+             Longitude = Longitude_dec)
+    
+    # combine ----
+    combined2 %>% 
+      dplyr::select(-starts_with("Latitude"), -starts_with("Longitude")) %>% 
+      left_join(combined2_latlong)
+  }
+  fix_temp_and_latlon(combined)
+}
