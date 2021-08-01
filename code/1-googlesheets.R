@@ -33,3 +33,6 @@ gsheets_path_CH4 = "1GIq2R8afh2p8tULEDuPmS2y-hSUTp8_wXTde2Wz5q8k"
 
 gsheets_data_N = load_N_files_from_googlesheets(gsheets_path_N)
 gsheets_data_CH4 = load_CH4_files_from_googlesheets(gsheets_path_CH4)
+
+gsheets_data_N %>% write.csv(GSHEETS_LOCAL_PATH_N, row.names = FALSE, na = "")
+gsheets_data_CH4 %>% write.csv(GSHEETS_LOCAL_PATH_CH4, row.names = FALSE, na = "")

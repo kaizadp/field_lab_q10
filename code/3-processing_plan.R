@@ -13,8 +13,9 @@ GSHEETS_LOCAL_PATH_CH4 = "data/2-data_from_papers-GoogleDrive/CH4_data.csv"
 processing_plan = drake_plan(
   # I. STUDIES FROM PAPERS ---- 
   # GoogleSheets: save locally as csv
-  gsheets_data_N %>% write.csv(GSHEETS_LOCAL_PATH_N, row.names = FALSE, na = ""),
-  gsheets_data_CH4 %>% write.csv(GSHEETS_LOCAL_PATH_CH4, row.names = FALSE, na = ""),
+  # this is now done outside drake, to avoid fuck ups
+  #  gsheets_data_N %>% write.csv(GSHEETS_LOCAL_PATH_N, row.names = FALSE, na = ""),
+  #  gsheets_data_CH4 %>% write.csv(GSHEETS_LOCAL_PATH_CH4, row.names = FALSE, na = ""),
   
   # Process data from papers
   N_data_from_papers = import_N_data_from_papers(GSHEETS_LOCAL_PATH_N),
