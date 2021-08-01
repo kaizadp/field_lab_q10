@@ -26,12 +26,17 @@ processing_plan = drake_plan(
   
   # combine the data ----
   combined_data = bind_rows(N_data_from_papers, CH4_data_from_papers),
+  
+  # fix the latitude-longitude ----
+  combined_data_cleaned = 
+    combined_data %>% 
+    clean_lat_lon(.) %>% 
+    clean_temp_range(.),
 
   )
 
 
 make(processing_plan)
 
-loadd(N_data_from_papers, CH4_data_from_papers)
+loadd(N_data_from_papers, CH4_data_from_papers, combined_data, combined_data_cleaned)
 
-x = 
