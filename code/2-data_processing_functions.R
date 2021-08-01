@@ -1,5 +1,6 @@
 SRDB_FILE_PATH_DATA = "data/CO2/SRDB_V5_1827/data/srdb-data-V5.csv"
 SRDB_FILE_PATH_EQ = "data/CO2/SRDB_V5_1827/data/srdb-equations-V5.csv"
+SRDB_FILE_PATH_STUDIES = "data/CO2/SRDB_V5_1827/data/srdb-studies-V5.csv"
 SIDB_FILE_PATH = "data/CO2/sidb.RData"
 
 # PART 1: SRDB (Soil Respiration DataBase) --------------------------------
@@ -7,6 +8,7 @@ SIDB_FILE_PATH = "data/CO2/sidb.RData"
 clean_srdb_dataset <- function(){
   srdb_v5_data <- read.csv(SRDB_FILE_PATH_DATA)
   srdb_v5_equations <- read.csv(SRDB_FILE_PATH_EQ)
+  srdb_v5_studies <- read.csv(SRDB_FILE_PATH_STUDIES)
   
   sites <-
     srdb_v5_data %>% 
@@ -19,7 +21,12 @@ clean_srdb_dataset <- function(){
     srdb_v5_equations %>% 
     dplyr::select(Record_number, R10)
   
-  
+  studies_subset <- 
+    srdb_v5_studies %>% 
+    dplyr::select(Study_number, Authors, Title, PubYear) %>% 
+    mutate(StudyName = paste0(Authors, "_", Title, "_", PubYear)) %>% 
+    dplyr::select(Study_number, StudyName)
+    
   process_q10_data = function(srdb_v5_equations){
     q10_1 <-
       srdb_v5_equations %>% 
@@ -56,9 +63,13 @@ clean_srdb_dataset <- function(){
   r10_sites <- sites %>% left_join(r10) %>% filter(!is.na(R10))
   q10_sites <- sites %>% left_join(q10) %>% filter(!is.na(Q10)) %>% 
     mutate(Source = "SRDB",
+           Species = "CO2",
            Incubation = "field",
-           Study_ID = paste0("SRDB-", Study_number)) %>% 
-    rename(SRDB_record_number = Record_number)
+           SRDB_study_ID = paste0("SRDB-", Study_number),
+           StudyName = paste0("SRDB-", Study_number)) %>% 
+    rename(SRDB_record_number = Record_number) %>% 
+    #left_join(studies_subset) %>% 
+    force()
   
   list(r10_sites = r10_sites,
        q10_sites = q10_sites)
@@ -427,36 +438,61 @@ clean_temp_range <- function(combined_data){
                                  levels = c("< 0", "0_5", "5_15", "15_25", "> 25")))
 }
 
+
+combine_all_q10_studies = function(combined_data_cleaned, srdb_q10, sidb_q10_clean){
+  bind_rows(combined_data_cleaned, srdb_q10, sidb_q10_clean) %>% 
+    mutate_all(na_if,"") %>% 
+    filter(is.na(Duplicate_record)) %>% 
+    mutate(Species = factor(Species, levels = c("CO2", "N2O", "CH4"))) 
+}
+
 # setting study-ID and study-number
-assign_study_numbers = function(dat){
-  studies =   
-    dat %>% 
-    dplyr::select(Species, Incubation, StudyName, DOI) %>% 
+assign_study_numbers = function(all_data){
+  all_data1 = 
+    all_data %>% 
     arrange(Species, Incubation, StudyName) %>% 
-    distinct(StudyName, DOI) %>% 
-    rownames_to_column("Study_ID") %>% 
-    mutate(Study_ID = str_pad(Study_ID, 3, pad = "0"),
-           DOI = as.character(DOI))
+    rownames_to_column("Q10_record_number")
   
-  dat %>% 
+  studies =   
+    all_data1 %>% 
+    dplyr::select(Q10_record_number, Species, Incubation, StudyName, DOI) %>% 
+    arrange(Q10_record_number) %>% 
+    distinct(StudyName, DOI) %>% 
+    rownames_to_column("Q10_study_ID") %>% 
+    mutate(#Q10_study_ID = str_pad(Q10_study_ID, 3, pad = "0"),
+      Q10_study_ID = as.numeric(Q10_study_ID),
+      DOI = as.character(DOI))
+  
+  all_data1 %>% 
     left_join(studies)
   
 }
 
-assign_study_numbers2 = function(all_data){
-  x = all_data %>% 
-    mutate(Species = factor(Species, levels = c("CO2", "N2O", "CH4"))) %>% 
-    arrange(Species, Incubation, StudyName) %>% 
-    rownames_to_column("Record_number")
-}
-
-
-clean_combined_dataset = function(){
+subset_combined_dataset = function(dat){
   # subset only data needed
+  study_data = 
+    dat %>% 
+    dplyr::select(Q10_study_ID, SRDB_study_ID, Source, StudyName, DOI) %>% 
+    distinct() %>% 
+    mutate(Q10_study_ID = as.numeric(Q10_study_ID)) %>% 
+    arrange(Q10_study_ID)
   # subset study info
   
+  data_subset = 
+    dat %>% 
+    rename(Moisture = moisture,
+           Moisture_units = moisture_units,
+           Moisture_flag = moisture_flag) %>% 
+    dplyr::select(Q10_record_number, SRDB_record_number, Q10_study_ID,
+                  Year, Temp_range_old, Temp_range, Temp_flag, 
+                  Moisture, Moisture_units, Moisture_flag,
+                  Species, Incubation, Q10, Meas_method,
+                  Ecosystem_type, Biome, Manipulation, Manipulation_level,
+                  Sample, Latitude, Longitude,
+                  notes)
   
-  
+  list(study_data = study_data,
+       data_subset = data_subset)
 }
 
 #
@@ -469,7 +505,7 @@ clean_combined_dataset = function(){
 
 # COMBINE DATASETS --------------------------------------------------------
 
-combine_all_q10_studies <- function(indiv_studies, srdb_q10, sidb_q10_clean){
+combine_all_q10_studies_OLD <- function(indiv_studies, srdb_q10, sidb_q10_clean){
   # combine the available data ----
   q10_combined <- 
     indiv_studies %>% 
