@@ -1,7 +1,7 @@
 library(tidyverse)
 
 # import N data from individual files ----
-filePaths_N <- list.files(path = "data/x-N",pattern = "*.csv", full.names = TRUE)
+filePaths_N <- list.files(path = "data/x-data/x-N",pattern = "*.csv", full.names = TRUE)
 
 field_data_N <-
   lapply(filePaths_N, read_csv, col_types = cols(#moisture = col_double(),
@@ -40,7 +40,7 @@ write.csv(field_data_N, "data/data_from_papers/0_N_data1.csv", row.names = FALSE
 # import CH4 data from individual files ----
 
 
-filePaths_CH4 <- list.files(path = "data/CH4",pattern = "*.csv", full.names = TRUE)
+filePaths_CH4 <- list.files(path = "data/x-data/CH4",pattern = "*.csv", full.names = TRUE)
 
 field_data_CH4 <-
   lapply(filePaths_CH4, read_csv, col_types = cols(Temp_range = col_character(),
@@ -100,3 +100,33 @@ field_data_N %>%
 field_data_CH4 %>% 
   filter(!is.na(Q10)) %>% 
   distinct(Source, StudyName, DOI)
+
+indiv_studies %>% 
+  filter(!is.na(Q10)) %>% 
+  
+  ggplot(aes(x = Incubation, y = Q10))+
+  geom_point()+
+  facet_wrap(~Species)
+
+
+indiv_studies %>% 
+  filter(!is.na(Q10)) %>% 
+  distinct(Species, Incubation, Source, StudyName, DOI) %>% 
+  group_by(Species, Incubation) %>% 
+  dplyr::summarise(n = n())
+
+
+indiv_studies %>% 
+  filter(!is.na(Q10)) %>% 
+  group_by(Species, Incubation) %>% 
+  dplyr::summarise(n = n())
+
+
+
+indiv_studies %>% 
+  filter(!is.na(Q10)) %>% 
+  filter(Species %in% c("CH4", "N2O")) %>% 
+  
+  ggplot(aes(x = Incubation, y = Q10))+
+  geom_point()+
+  facet_wrap(~Species)
