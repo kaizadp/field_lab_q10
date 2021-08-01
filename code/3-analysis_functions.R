@@ -4,6 +4,10 @@ library(rnaturalearth)
 library(rnaturalearthdata)
 library(sf)
 
+reorder_temp_levels = function(dat){
+  dat %>% 
+    mutate(Temp_range = factor(Temp_range, levels = c("< 0", "0_5", "5_15", "15_25", "> 25")))
+}
 
 make_map_all_studies <- function(Q10_data){
   world <- ne_countries(scale = "medium",  returnclass = "sf", type = "countries")
@@ -24,68 +28,135 @@ make_map_all_studies <- function(Q10_data){
     facet_wrap(~Species)
 }
 
+
+
 compute_stats_q10 <- function(Q10_data){
-  # LME ----
-  l <- nlme::lme(Q10 ~ Incubation, random = ~1|Incubation, data = Q10_data) 
-  anova(l)
-  # NaNs produced
   
-  # ANOVA/HSD ----
-  fit_aov <- function(Q10_data){
-    a = aov(Q10 ~ Incubation, data = Q10_data)
-    # h = agricolae::HSD.test(a, "Incubation")
-    # h$groups %>% 
-    #   rownames_to_column("Incubation")
-    
-    broom::tidy(a) %>% 
-      filter(term == "Incubation") %>% 
-      rename(p_value = `p.value`) %>% 
-      mutate(label = case_when(p_value <= 0.05 ~ "*")) %>% 
-      dplyr::select(label)
-  }
-  
-  Q10_data %>% 
-    group_by(Temp_range) %>% 
-    do(fit_aov(.))
-  # 5-15: lab > field
-  # 15-25, > 25: field > lab
-}
-
-make_graphs_q10 <- function(Q10_data){
-  
-  resp_q10_temp <- 
-    Q10_data %>% 
-    ggplot(aes(x = Temp_range_new, y = Q10, color = Incubation))+
-    geom_point(position = position_dodge(width = 0.4))
-  
-  resp_q10_latitude = 
-    Q10_data %>% 
-    ggplot(aes(x = Q10, y = Latitude, color = Incubation))+
-    geom_point(position = position_dodge(width = 0.4))+
-    facet_wrap(~Temp_range_new, scales = "free_x")+theme_bw()
-  
-  list(resp_q10_temp = resp_q10_temp,
-       resp_q10_latitude = resp_q10_latitude)
-}
-
-
-compute_stats_q10_CO2 <- function(Q10_data){
-
   fit_aov <- function(dat){
     a = aov(Q10 ~ Incubation, data = dat)
     
     broom::tidy(a) %>% 
       filter(term == "Incubation") %>% 
       rename(p_value = `p.value`) %>% 
-  #    mutate(label = case_when(p_value <= 0.05 ~ "*")) %>% 
-  #    dplyr::select(p_value) %>% 
+      #    mutate(label = case_when(p_value <= 0.05 ~ "*")) %>% 
+      #    dplyr::select(p_value) %>% 
       force()
   }
+
+  # CO2 ----
   
- Q10_data %>% 
+  co2_aov_temp = 
+    Q10_data %>% 
+    #filter(!is.na(Q10)) %>% 
     filter(Species == "CO2" & !is.na(Temp_range)) %>% 
     filter(!Temp_range %in% c("< 0", "0_5")) %>% # because no lab data for < 0
     group_by(Temp_range) %>% 
     do(fit_aov(.))
+  
+  co2_aov_all = 
+    Q10_data %>% 
+    # filter(!is.na(Q10)) %>% 
+    filter(Species == "CO2" & !is.na(Temp_range)) %>% 
+    do(fit_aov(.))
+  
+  co2_lme_all = 
+    Q10_data %>% 
+    filter(!is.na(Q10)) %>% 
+    filter(Species == "CO2" & !is.na(Temp_range)) %$%
+    nlme::lme(Q10 ~ Incubation, random = ~1|Temp_range) %>% anova(.)
+  
+  # N2O ----
+  n2o_aov_all = 
+    Q10_data %>% 
+    # filter(!is.na(Q10)) %>% 
+    filter(Species == "N2O") %>% 
+    do(fit_aov(.))
+  
+  # CH4 ----
+  ch4_aov_all = 
+    Q10_data %>% 
+    # filter(!is.na(Q10)) %>% 
+    filter(Species == "CH4") %>% 
+    do(fit_aov(.))
+  
+  # list ----
+  list(co2_aov_temp = co2_aov_temp,
+       co2_aov_all = co2_aov_all,
+       co2_lme_all = co2_lme_all,
+       n2o_aov_all,
+       ch4_aov_all)
+}
 
+make_graphs_q10 <- function(Q10_data){
+  
+  Q10_CO2_data = 
+    Q10_data %>% 
+    filter(!is.na(Q10)) %>% 
+    filter(Species == "CO2" & !is.na(Temp_range))
+  
+  (resp_q10_temp <- 
+    Q10_CO2_data %>% 
+    ggplot(aes(x = Temp_range, y = Q10, color = Incubation))+
+#      geom_jitter(width = 0.2, )+
+    geom_point(position = position_dodge(width = 0.4))+
+      ylim(0,20))
+  
+  (resp_q10_temp_jitter <- 
+      Q10_CO2_data %>% 
+      filter(Temp_range %in% c("5_15", "15_25", "> 25")) %>% 
+      ggplot(aes(x = Incubation, y = Q10, color = Incubation))+
+            geom_jitter(width = 0.2, size = 1)+
+      facet_wrap(~Temp_range, strip.position = "bottom")+
+      ylim(0,20))
+  
+  resp_q10_latitude = 
+    Q10_CO2_data %>% 
+    ggplot(aes(x = Q10, y = Latitude, color = Incubation))+
+    geom_point(position = position_dodge(width = 0.4))+
+    facet_wrap(~Temp_range, scales = "free_x")+
+    theme_bw()
+  
+  
+  N2O_incubation = 
+  Q10_data %>% 
+    filter(Species == "N2O") %>% 
+      ggplot(aes(x = Incubation, y = Q10, color = Temp_range))+
+      #      geom_jitter(width = 0.2, )+
+      geom_point(position = position_dodge(width = 0.4))+
+    labs(title = "N2O")
+  ylim(0,20)
+  
+  CH4_incubation = 
+  Q10_data %>% 
+    filter(Species == "CH4") %>% 
+    ggplot(aes(x = Incubation, y = Q10, color = Temp_range))+
+    geom_point(position = position_dodge(width = 0.4))+
+    labs(title = "CH4")
+    ylim(0,20)
+  
+  
+  list(resp_q10_temp = resp_q10_temp,
+       resp_q10_temp_jitter = resp_q10_temp_jitter,
+       resp_q10_latitude = resp_q10_latitude,
+       N2O_incubation,
+       CH4_incubation)
+}
+
+study_summary = function(Q10_data){
+  datapoints = 
+    Q10_data %>% 
+    filter(!is.na(Q10)) %>% 
+    group_by(Species, Incubation) %>% 
+    dplyr::summarise(n = n()) %>% 
+    pivot_wider(names_from = "Incubation", values_from = "n")
+  
+  study_counts = 
+    Q10_data %>% 
+    distinct(Q10_study_ID, Species, Incubation) %>% 
+    group_by(Species, Incubation) %>% 
+    dplyr::summarise(n = n()) %>% 
+    pivot_wider(names_from = "Incubation", values_from = "n")
+  
+  list(datapoints = datapoints,
+       study_counts = study_counts)
 }
