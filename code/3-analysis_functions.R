@@ -8,7 +8,7 @@ make_map_all_studies <- function(combined_q10){
   world %>% 
     ggplot()+
     geom_sf(color = NA, alpha = 0.7)+
-    geom_point(data = combined_data_LatLon_cleaned,
+    geom_point(data = all_data,
                aes(x = Longitude, y = Latitude), 
                alpha = 0.5, size = 1)+
     labs(color = "")+
