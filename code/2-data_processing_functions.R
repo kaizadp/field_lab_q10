@@ -23,8 +23,8 @@ clean_srdb_dataset <- function(){
     q10_1 <-
       srdb_v5_equations %>% 
       dplyr::select(Record_number, Q10_0_10, Q10_5_15, Q10_10_20, Q10_0_20) %>% 
-      pivot_longer(-Record_number, names_to = "temp_range", values_to = "Q10") %>% 
-      mutate(temp_range = str_remove(temp_range, "Q10_")) 
+      pivot_longer(-Record_number, names_to = "Temp_range", values_to = "Q10") %>% 
+      mutate(Temp_range = str_remove(Temp_range, "Q10_")) 
     
     q10_other1 <- 
       srdb_v5_equations %>% 
@@ -33,27 +33,30 @@ clean_srdb_dataset <- function(){
       # round temperature ranges to the nearest 5
       mutate(Q10_other1_temp_min = round(Q10_other1_temp_min/5)*5,
              Q10_other1_temp_max = round(Q10_other1_temp_max/5)*5,
-             temp_range = paste0(Q10_other1_temp_min, "_", Q10_other1_temp_max)) %>% 
+             Temp_range = paste0(Q10_other1_temp_min, "_", Q10_other1_temp_max)) %>% 
       rename(Q10 = Q10_other1) %>% 
       mutate(Q10 = round(Q10, 2)) %>% 
-      dplyr::select(Record_number, temp_range, Q10)
+      dplyr::select(Record_number, Temp_range, Q10)
     
     q10_other2 <- 
       srdb_v5_equations %>% 
       dplyr::select(Record_number, starts_with("Q10_other2")) %>% 
       drop_na() %>% 
-      mutate(temp_range = paste0(Q10_other2_temp_min, "_", Q10_other2_temp_max)) %>% 
+      mutate(Temp_range = paste0(Q10_other2_temp_min, "_", Q10_other2_temp_max)) %>% 
       rename(Q10 = Q10_other2) %>% 
       mutate(Q10 = round(Q10, 2)) %>% 
-      dplyr::select(Record_number, temp_range, Q10)
+      dplyr::select(Record_number, Temp_range, Q10)
     
-    bind_rows(q10_1, q10_other1, q10_other2) %>% filter(Q10 <= 500)
+    bind_rows(q10_1, q10_other1, q10_other2) %>% filter(Q10 <= 500) 
     
   }
   q10 <- process_q10_data(srdb_v5_equations)
   
   r10_sites <- sites %>% left_join(r10) %>% filter(!is.na(R10))
-  q10_sites <- sites %>% left_join(q10) %>% filter(!is.na(Q10))
+  q10_sites <- sites %>% left_join(q10) %>% filter(!is.na(Q10)) %>% 
+    mutate(Source = "SRDB",
+           Incubation = "field",
+           Study_ID = paste0("SRDB-", Study_number))
   
   list(r10_sites = r10_sites,
        q10_sites = q10_sites)
@@ -410,7 +413,7 @@ calculate_sidb_q10_r10 <- function(sidb_timeseries_clean, sidb_vars){
     dplyr::select(citationKey, units, n, temp_range_min, temp_range_max, a, b, r10, starts_with("q10")) %>% 
     force()
   
-  sidb_q10_clean <-
+  sidb_q10_clean1 <-
     sidb_q10_calculated %>% 
     ungroup() %>% 
     dplyr::select(citationKey, starts_with("Q10")) %>% 
@@ -420,7 +423,17 @@ calculate_sidb_q10_r10 <- function(sidb_timeseries_clean, sidb_vars){
            Source = "SIDb",
            Incubation = "lab") %>% 
     left_join(sidb_latlon) %>% 
-    rename(reference = citationKey)
+    rename(StudyName = citationKey)
+  
+  sidb_studies = 
+    sidb_q10_clean1 %>% 
+    distinct(StudyName) %>% 
+    arrange(StudyName) %>% 
+    rownames_to_column("Study_ID")
+  
+  sidb_q10_clean = 
+    sidb_q10_clean1 %>% 
+    left_join(sidb_studies)
   
   list(sidb_q10_calculated = sidb_q10_calculated,
        sidb_q10_clean = sidb_q10_clean)
@@ -632,14 +645,44 @@ clean_temp_range <- function(combined_data){
  #                                             Temp_mean >= 15 & Temp_mean <= 25 ~ "15_25",
  #                                             Temp_mean >= 25 ~ "> 25"),
  #                                   Temp_range_new)) %>% 
-    filter(!is.na(Temp_range_new)) %>% 
+ #    filter(!is.na(Temp_range_new)) %>% 
     filter(!is.na(Q10)) %>% 
     mutate(Temp_range_new = factor(Temp_range_new, levels = c("< 0", "0_5", "5_15", "15_25", "> 25")))
+}
+
+# setting study-ID and study-number
+
+assign_study_numbers = function(dat){
+  studies =   
+    dat %>% 
+    dplyr::select(Species, Incubation, StudyName, DOI) %>% 
+    arrange(Species, Incubation, StudyName) %>% 
+    distinct(StudyName, DOI) %>% 
+    rownames_to_column("Study_ID") %>% 
+    mutate(Study_ID = str_pad(Study_ID, 3, pad = "0"),
+           DOI = as.character(DOI))
+  
+  dat %>% 
+    left_join(studies)
+    
+}
+
+create_study_matrix = function(combined_data_cleaned){
+  combined_data_cleaned %>% 
+    dplyr::select(Species, StudyName, DOI) %>% 
+    distinct() %>% 
+    mutate(Species2 = Species) %>% 
+    pivot_wider(names_from = "Species2", values_from = "Species") %>% 
+    dplyr::select(StudyName, DOI, CO2, N2O, CH4)
+  
 }
 
 
 
 #
+
+
+
 ##################
 ##################
 ##################
