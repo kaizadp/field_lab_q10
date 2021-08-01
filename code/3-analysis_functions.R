@@ -1,19 +1,27 @@
-make_map_all_studies <- function(combined_q10){
-  library(rnaturalearth)
-  library(rnaturalearthdata)
-  library(sf)
-  
+
+# packages for map
+library(rnaturalearth)
+library(rnaturalearthdata)
+library(sf)
+
+
+make_map_all_studies <- function(Q10_data){
   world <- ne_countries(scale = "medium",  returnclass = "sf", type = "countries")
+  
+  Q10_map_data = 
+    Q10_data %>% 
+    distinct(Species, Latitude, Longitude)
   
   world %>% 
     ggplot()+
     geom_sf(color = NA, alpha = 0.7)+
-    geom_point(data = all_data,
+    geom_point(data = Q10_map_data,
                aes(x = Longitude, y = Latitude), 
                alpha = 0.5, size = 1)+
     labs(color = "")+
     theme_void()+
-    theme(legend.position = "top")
+    theme(legend.position = "top")+
+    facet_wrap(~Species)
 }
 
 compute_stats_q10 <- function(combined_q10){
