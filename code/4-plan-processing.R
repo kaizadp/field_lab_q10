@@ -1,6 +1,6 @@
 source("code/0-packages.R")
 source("code/1-googlesheets.R")
-source("code/2-functions-data_processing")
+source("code/2-functions-data_processing.R")
 
 
 # SET PATHS ---------------------------------------------------------------
@@ -73,7 +73,7 @@ processing_plan = drake_plan(
   )
 
 
-make(processing_plan)
+make(processing_plan, lock_cache = FALSE)
 
 loadd(N_data_from_papers, CH4_data_from_papers, combined_data, combined_data_cleaned)
 loadd(srdb_q10, sidb_q10_clean)
