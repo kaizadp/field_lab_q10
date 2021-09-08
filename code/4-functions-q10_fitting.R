@@ -146,7 +146,21 @@ fit_q10_parameters <- function(dat){
   }
   fit_quadratic = function(dat){
     # Rs  = a + b*T + c*(T^2)
+
+    ## some studies have only two temperature levels
+    ## we need > 2 levels (distinct points) for a quadratic fit
+    ## so, create a loop to only fit the quadratic function if n-observations > 2
     
+    n_obs = 
+      dat %>% 
+      distinct(citationKey, temperature) %>% 
+      group_by(citationKey) %>% 
+      dplyr::summarize(n = n()) %>% pull(n)
+    
+    coefs_full_quad = 
+      if(n_obs <= 2){
+      data.frame()
+    } else {
     curve.quadratic <- lm(response ~ poly(temperature, 2),
                           data = dat)
     
@@ -154,11 +168,11 @@ fit_q10_parameters <- function(dat){
     cor.quadratic = cor(dat$response, predict(curve.quadratic))
     
     # make dataframe of coefficients, add correlation
-    coefs.quadratic = data.frame(as.list(coef(curve.qudratic))) %>% mutate(cor = cor.quadratic)
+    coefs.quadratic = data.frame(as.list(coef(curve.quadratic))) %>% mutate(cor = cor.quadratic)
     names(coefs.quadratic) = c("a", "b", "c", "cor")
     
     # cbind coefficients with the blank coefs file
-    coefs_full_quad <- 
+    #coefs_full_quad <- 
       cbind(coefs, coefs.quadratic) %>% 
       mutate(fun = "quadratic",
              form = "Rs  = a + b*T + c*(T^2)",
@@ -170,6 +184,7 @@ fit_q10_parameters <- function(dat){
              R35 = a + (b*35) + (c*35*35),
              R45 = a + (b*45) + (c*45*45))
     
+    }
     coefs_full_quad
   }
   fit_arrhenius = function(dat){
@@ -214,29 +229,14 @@ fit_q10_parameters <- function(dat){
 # testing on Andrews2000SBB data
 coefs_andrews = fit_q10_parameters(sidb_test_data_andrews)
 
-# some studies have only two temperatures
-# this fucks up the quadratic function:  
-  ## Error in poly(temperature, 2) :
-  ## 'degree' must be less than number of unique points
-# so for now, removing studies with only two temperatures
-
-sidb_clean_distinct = 
-  sidb_timeseries_clean %>% 
-  distinct(citationKey, temperature) %>% 
-  group_by(citationKey) %>% 
-  mutate(n = n()) %>% 
-  filter(n > 2) %>% 
-  dplyr::select(-n) %>% 
-  left_join(sidb_timeseries_clean)
-
 # run the parameters function, for each study
 q10_parameters_combined = 
-  sidb_clean_distinct %>% 
+  sidb_timeseries_clean %>% 
   group_by(citationKey) %>%
   do(fit_q10_parameters(.))
 
 q10_calculated = 
-  sidb_clean_distinct %>%
+  sidb_timeseries_clean %>%
   
   # first, set temp ranges
   group_by(citationKey) %>% 
