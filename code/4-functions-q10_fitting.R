@@ -189,11 +189,18 @@ fit_q10_parameters <- function(dat){
   }
   fit_arrhenius = function(dat){
     # Rs = a * exp(-Ea / (8.314 * T))
-    
-    curve.arrhenius = nls(response ~ a * exp(-Ea/(8.314 * temperature)),
-                          start = list(a = 0.03, Ea = 10), 
-                          ## ^^ NEED A BETTER WAY TO SET STARTING PARAMETERS!!!
-                          data = dat)
+
+    tryCatch({
+      # Estimate the a and b parameters using a linear model...
+      dat = dat %>% mutate(temp_inv = 1/temperature)
+      m <- lm(log(response) ~ (temp_inv), data = dat)
+      a_start <- exp(coef(m)[1])
+      b_start <- coef(m)[2] * (-8.314)
+      
+      # ...and then fit the nonlinear model using these starting values
+      curve.arrhenius = nls(response ~ a * exp(-Ea/(8.314 * temperature)),
+                            start = list(a = a_start, Ea = b_start), 
+                            data = dat)
     
     # get goodness of fit? correlation
     cor.arrhenius = cor(dat$response, predict(curve.arrhenius))
@@ -203,7 +210,7 @@ fit_q10_parameters <- function(dat){
     names(coefs.arrhenius) = c("a", "b", "cor")    
     
     coefs_full_ar <- 
-      cbind(coefs, coefs.quadratic) %>% 
+      cbind(coefs, coefs.arrhenius) %>% 
       mutate(fun = "arrhenius",
              form = "Rs = a * exp(-b / (8.314 * T))",
              notes = "b = Ea",
@@ -214,13 +221,19 @@ fit_q10_parameters <- function(dat){
              R25 = a * exp(-b / (8.314 * 25)),
              R35 = a * exp(-b / (8.314 * 35)),
              R45 = a * exp(-b / (8.314 * 45)))
+    },
+    error = function(e) {
+      coefs$err <<- e$message
+    }
+    )  # end of tryCatch
+    
     coefs_full_ar
   }
   
   coefs_full_combined = 
     bind_rows(fit_quadratic(dat), 
               fit_exponential(dat), fit_lloyd_taylor(dat), 
-              #fit_arrhenius(dat)
+              fit_arrhenius(dat)
               )
   
   coefs_full_combined
