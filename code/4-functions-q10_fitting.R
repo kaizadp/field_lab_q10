@@ -89,15 +89,23 @@ fit_q10_parameters <- function(dat){
       # https://datascienceplus.com/first-steps-with-non-linear-regression-in-r/
       cor.exponential = cor(dat$response, predict(curve.nls))
       
+      # RMSE and R2
+      res = residuals(curve.nls)
+      rmse = ((sum(res)^2)/nrow(dat))^0.5 %>% round(3)
+      rsquared = 1- (((sum(res))^2) / (sum((dat$response - mean(dat$response))^2)))
+      
+      
       # make dataframe of coefficients, add correlation
       coefs.exponential = data.frame(as.list(coef(curve.nls))) %>% mutate(cor = cor.exponential)
-      names(coefs.exponential) = c("a", "b", "cor")
+      names(coefs.exponential) = c("a", "b", "gof_cor")
       
       # cbind coefficients with the blank coefs file
       coefs_full_exp <- 
         cbind(coefs, coefs.exponential) %>% 
         mutate(fun = "exponential",
                form = "Rs = a * exp(b * T)",
+               gof_rmse = rmse,
+               gof_rsquared = rsquared,
                R10 = a * exp(b * 10),
                R00 = a * exp(b * 0),
                R05 = a * exp(b * 5),
@@ -126,13 +134,20 @@ fit_q10_parameters <- function(dat){
 
     R10 = coef(curve.lloyd.taylor)[2]
     rsquared.lloyd = summary(curve.lloyd.taylor)$adj.r.squared
-    
+
+    # RMSE and R2
+    res = residuals(curve.lloyd.taylor)
+    rmse = ((sum(res)^2)/nrow(dat))^0.5 %>% round(3)
+    rsquared = 1- (((sum(res))^2) / (sum((dat$response - mean(dat$response))^2)))
+        
     coefs_full_lt <-
       coefs %>% 
       mutate(fun = "Lloyd-Taylor",
              form = "Rs = R10 * exp(308.56 * ((1/56) - (1/(T+46))))",
-             cor = cor.lloyd,
-             rsquared = rsquared.lloyd,
+             gof_cor = cor.lloyd,
+             adj_rsquared = rsquared.lloyd,
+             gof_rmse = rmse,
+             gof_rsquared = rsquared,
              R10 = R10,
              R00 = R10 * exp(308.56 * ((1/56) - (1/(0+46)))),
              R05 = R10 * exp(308.56 * ((1/56) - (1/(5+46)))),
@@ -167,15 +182,22 @@ fit_q10_parameters <- function(dat){
     # get goodness of fit? correlation
     cor.quadratic = cor(dat$response, predict(curve.quadratic))
     
+    # RMSE and R2
+    res = residuals(curve.quadratic)
+    rmse = ((sum(res)^2)/nrow(dat))^0.5 %>% round(3)
+    rsquared = 1- (((sum(res))^2) / (sum((dat$response - mean(dat$response))^2)))
+    
     # make dataframe of coefficients, add correlation
     coefs.quadratic = data.frame(as.list(coef(curve.quadratic))) %>% mutate(cor = cor.quadratic)
-    names(coefs.quadratic) = c("a", "b", "c", "cor")
+    names(coefs.quadratic) = c("a", "b", "c", "gof_cor")
     
     # cbind coefficients with the blank coefs file
     #coefs_full_quad <- 
       cbind(coefs, coefs.quadratic) %>% 
       mutate(fun = "quadratic",
              form = "Rs  = a + b*T + c*(T^2)",
+             gof_rmse = rmse,
+             gof_rsquared = rsquared,
              R10 = a + (b*10) + (c*10*10),
              R00 = a + (b*0) + (c*0*0),
              R05 = a + (b*5) + (c*5*5),
@@ -205,15 +227,23 @@ fit_q10_parameters <- function(dat){
     # get goodness of fit? correlation
     cor.arrhenius = cor(dat$response, predict(curve.arrhenius))
     
+    # RMSE and R2
+    res = residuals(curve.arrhenius)
+    rmse = ((sum(res)^2)/nrow(dat))^0.5 %>% round(3)
+    rsquared = 1- (((sum(res))^2) / (sum((dat$response - mean(dat$response))^2)))
+    
+    
     # make dataframe of coefficients, add correlation
     coefs.arrhenius = data.frame(as.list(coef(curve.arrhenius))) %>% mutate(cor = cor.arrhenius)
-    names(coefs.arrhenius) = c("a", "b", "cor")    
+    names(coefs.arrhenius) = c("a", "b", "gof_cor")    
     
     coefs_full_ar <- 
       cbind(coefs, coefs.arrhenius) %>% 
       mutate(fun = "arrhenius",
              form = "Rs = a * exp(-b / (8.314 * T))",
              notes = "b = Ea",
+             gof_rmse = rmse,
+             gof_rsquared = rsquared,
              R10 = a * exp(-b / (8.314 * 10)),
              R00 = a * exp(-b / (8.314 * 0)),
              R05 = a * exp(-b / (8.314 * 5)),
@@ -246,7 +276,8 @@ coefs_andrews = fit_q10_parameters(sidb_test_data_andrews)
 q10_parameters_combined = 
   sidb_timeseries_clean %>% 
   group_by(citationKey) %>%
-  do(fit_q10_parameters(.))
+  do(fit_q10_parameters(.)) %>% 
+  mutate_if(is.numeric, ~round(., 3))
 
 q10_calculated = 
   sidb_timeseries_clean %>%
