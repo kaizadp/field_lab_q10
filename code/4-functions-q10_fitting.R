@@ -280,7 +280,8 @@ dat = sidb_test_data_zhang
 
 # run the parameters function, for each study
 q10_parameters_combined = 
-  dat %>% 
+  sidb_timeseries_clean %>%
+  filter(citationKey != "Crow2019b") %>% 
   group_by(citationKey) %>%
   do(fit_q10_parameters(.)) %>% 
   mutate_if(is.numeric, ~round(., 3))
@@ -301,9 +302,56 @@ q10_calculated =
          Q10_35_45 = case_when(temp_range_min < 45 & temp_range_max > 35 ~ (R35+R45)/R35)) %>% 
   dplyr::select(-c(R00, R05, R15, R25, R35, R45)) %>% 
   relocate(citationKey, temp_range_min, temp_range_max, n,
-           fun, form, a, b, c, cor, rsquared)
+           fun, form, a, b, c)
 
 
 
 
+##############
 
+## plotting the functions
+
+sidb_timeseries_clean_with_Q10 = 
+  sidb_timeseries_clean %>% 
+  left_join(q10_calculated %>% dplyr::select(citationKey, a, b, c)) %>% 
+  filter(citationKey != "Crow2019b") 
+
+sidb_timeseries_clean_with_Q10 %>% 
+  ggplot(aes(x = temperature, y = response))+
+  geom_point()+
+  geom_function(fun = ~ a * exp(.x * b, color = "red"))+
+  facet_wrap(~ citationKey, scales = "free_y")
+## ^ this does not work
+
+## trying a different way to plot the functions
+## create a mock dataframe with temp values 1:40 and merge with the Q10 parameters
+## run the functions
+
+x = as.tibble(c(1:40))
+
+q10_params_subset = 
+  q10_calculated %>% 
+  dplyr::select(citationKey, fun, a, b, c, R10) %>% 
+  full_join(x, by = character()) %>% 
+  rename(x = value)
+
+q10_params_subset2 = 
+  q10_params_subset %>% 
+  mutate(y = 
+           case_when(fun == "exponential" ~ a * exp(x * b),
+                     fun == "lloyd_taylor" ~ R10 * exp(308.56 * ((1/56) - (1/(x+46)))),
+                     #fun == "quadratic" ~ a + b*x + c*(x^2),
+                     fun == "arrhenius" ~ a * exp(-b / (8.314 * x))))
+
+
+ggplot()+
+  # plot the functions
+  geom_line(data = q10_params_subset2, aes(x = x, y = y, color = fun))+
+  # plot the respiration data points
+  geom_point(data = sidb_timeseries_clean, aes(x = temperature, y = response))+
+  # plot the mean respiration per temperature
+  geom_point(data = sidb_timeseries_clean %>% 
+               group_by(citationKey, temperature) %>% 
+               dplyr::summarise(response = mean(response)),
+             aes(x = temperature, y = response), color = "blue", shape = 21, size = 5)+
+  facet_wrap(~ citationKey, scales = "free_y")
