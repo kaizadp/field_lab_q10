@@ -56,10 +56,13 @@ sidb_timeseries = dplyr::bind_rows(sidb_flat$timeseries)
 sidb_vars = rbindlist(sidb_flat$vars, fill = TRUE)
 
 
-sidb_timeseries_clean = clean_sidb_data(sidb_vars, sidb_timeseries)$sidb_timeseries_clean2
+sidb_timeseries_clean = clean_sidb_data(sidb_vars, sidb_timeseries)$sidb_timeseries_clean2 %>% 
+  filter(response > 0) # remove instances where resp == 0, because (a) that's probably wrong, and (b) it fucks up the model fitting 
 
 # subsetting cleaned data for code creation/testing
 sidb_test_data_andrews = sidb_timeseries_clean %>% filter(citationKey == "Andrews2000SBB")
+sidb_test_data_barrett = sidb_timeseries_clean %>% filter(citationKey == "Barrett2006")
+sidb_test_data_zhang = sidb_timeseries_clean %>% filter(citationKey == "Zhang2007")
 
 
 
@@ -75,14 +78,15 @@ fit_q10_parameters <- function(dat){
     # Rs = a * exp(b * T)
     
     tryCatch({
-      # Estimate the a and b parameters using a linear model...
-      m <- lm(log(response) ~ temperature, data = dat)
-      a_start <- exp(coef(m)[1])
-      b_start <- coef(m)[2]
+      ## not doing this piece any more, using estimates based on initial tests
+      ## # Estimate the a and b parameters using a linear model...
+      ## m <- lm(log(response) ~ temperature, data = dat)
+      ## a_start <- exp(coef(m)[1])
+      ## b_start <- coef(m)[2]
       
       # ...and then fit the nonlinear model using these starting values
       curve.nls <- nls(response ~ a * exp(temperature * b),
-                       start = list(a = a_start, b = b_start),
+                       start = list(a = 1, b = 0.05),
                        data = dat)
       
       # get goodness of fit? correlation
@@ -271,10 +275,12 @@ fit_q10_parameters <- function(dat){
 
 # testing on Andrews2000SBB data
 coefs_andrews = fit_q10_parameters(sidb_test_data_andrews)
+coefs_barrett = fit_q10_parameters(sidb_test_data_barrett)
+dat = sidb_test_data_zhang
 
 # run the parameters function, for each study
 q10_parameters_combined = 
-  sidb_timeseries_clean %>% 
+  dat %>% 
   group_by(citationKey) %>%
   do(fit_q10_parameters(.)) %>% 
   mutate_if(is.numeric, ~round(., 3))
