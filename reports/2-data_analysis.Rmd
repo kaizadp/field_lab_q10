@@ -30,6 +30,24 @@ How many studies?
 readd(study_summary)$study_counts %>% knitr::kable()
 ```
 
+```{r, eval=FALSE}
+readd(Q10_data) %>% 
+  group_by(Incubation, Ecosystem_type) %>% 
+  dplyr::summarise(n = n()) %>% 
+  pivot_wider(names_from = "Incubation", values_from = "n") %>% 
+  arrange(Ecosystem_type) %>% 
+  knitr::kable()
+```
+
+```{r, eval=FALSE}
+readd(Q10_data) %>% 
+  group_by(Incubation, Biome) %>% 
+  dplyr::summarise(n = n())%>% 
+  pivot_wider(names_from = "Incubation", values_from = "n") %>% 
+  arrange(Biome) %>% 
+  knitr::kable()
+```
+
 
 ---
 
@@ -73,6 +91,24 @@ readd(Q10_stats)$ch4_aov_all
 ```{r}
 readd(Q10_graphs)
 ```
+
+
+## Fitting Q10 functions
+
+<details>
+  <summary>Click to open table</summary>
+  
+```{r}
+readd(q10_calculated) %>% knitr::kable()
+```
+
+</details>
+
+```{r}
+readd(gg_q10_calculated)
+```
+
+
 
 
 ---
