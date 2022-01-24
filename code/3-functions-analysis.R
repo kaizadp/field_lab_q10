@@ -120,6 +120,20 @@ make_graphs_q10 <- function(Q10_data){
     labs(title = "CO2 by latitude")+
     theme_bw()
   
+  resp_biome = 
+    Q10_data %>% 
+    filter(Species == "CO2") %>% 
+    ggplot(aes(x = Biome, y = Q10, color = Incubation))+
+    labs(title = "CO2")+
+    geom_point(position = position_dodge(width = 0.3))
+  
+  resp_ecosystem = 
+    Q10_data %>% 
+    filter(Species == "CO2") %>% 
+    ggplot(aes(x = Incubation, y = Q10, color = Incubation))+
+    geom_point(position = position_dodge(width = 0.3))+
+    labs(title = "CO2")+
+    facet_wrap(~Ecosystem_type)
   
   N2O_incubation = 
     Q10_data %>% 
@@ -142,6 +156,8 @@ make_graphs_q10 <- function(Q10_data){
   list(resp_q10_temp = resp_q10_temp,
        resp_q10_temp_jitter = resp_q10_temp_jitter,
        resp_q10_latitude = resp_q10_latitude,
+       resp_biome = resp_biome,
+       resp_ecosystem = resp_ecosystem,
        N2O_incubation = N2O_incubation,
        CH4_incubation = CH4_incubation)
 }
