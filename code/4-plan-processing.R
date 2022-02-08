@@ -6,6 +6,7 @@ source("code/2-functions-data_processing.R")
 # SET PATHS ---------------------------------------------------------------
 GSHEETS_LOCAL_PATH_N = "data/2-data_from_papers-GoogleDrive/N_data.csv"
 GSHEETS_LOCAL_PATH_CH4 = "data/2-data_from_papers-GoogleDrive/CH4_data.csv"
+GSHEETS_LOCAL_PATH_CO2 = "data/2-data_from_papers-GoogleDrive/CO2_data.csv"
 
 
 #
@@ -20,6 +21,7 @@ processing_plan = drake_plan(
   # Process data from papers
   N_data_from_papers = import_N_data_from_papers(GSHEETS_LOCAL_PATH_N),
   CH4_data_from_papers = import_CH4_data_from_papers(GSHEETS_LOCAL_PATH_CH4),
+  CO2_data_from_papers = import_CO2_data_from_papers(GSHEETS_LOCAL_PATH_CO2),
   
   # export these data
   ## perhaps delete this later (?)
@@ -27,7 +29,7 @@ processing_plan = drake_plan(
   ## write.csv(CH4_data_from_papers, "data/3-data_from_papers-cleaned/CH4_data.csv", row.names = FALSE, na = ""),
   
   # combine the data
-  combined_data = bind_rows(N_data_from_papers, CH4_data_from_papers) %>% 
+  combined_data = bind_rows(N_data_from_papers, CH4_data_from_papers, CO2_data_from_papers) %>% 
     filter(Species %in% c("CO2", "N2O", "CH4")),
   
   # fix the latitude-longitude

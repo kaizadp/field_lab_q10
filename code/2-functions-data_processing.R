@@ -288,6 +288,40 @@ import_CH4_data_from_papers = function(filePaths_CH4){
   
 }
 
+import_CO2_data_from_papers = function(filePaths_CO2){
+  #field_data_CH4 <-
+  read_csv(filePaths_CO2, col_types = cols(Temp_range = col_character(),
+                                           Latitude = col_character(),
+                                           Longitude = col_character(),
+                                           Sample = col_character(),
+                                           Temp_flag = col_character())) %>% 
+    #bind_rows() %>% 
+    mutate(
+      # clean up f-ing latitude/longitude
+      Latitude = str_replace(Latitude, " N", "N"),
+      Latitude = str_replace(Latitude, " S", "S"),
+      Longitude = str_replace(Longitude, " E", "E"),
+      Longitude = str_replace(Longitude, " W", "W"),
+      
+      Latitude = str_replace(Latitude, " N", "N"),
+      Latitude = str_replace(Latitude, " S", "S"),
+      Longitude = str_replace(Longitude, " E", "E"),
+      Longitude = str_replace(Longitude, " W", "W"),
+      
+      Latitude  = str_replace(Latitude, "′′", '"'),
+      Longitude  = str_replace(Longitude, "′′", '"'),
+      
+      Latitude  = str_replace(Latitude, "″", '"'),
+      Longitude  = str_replace(Longitude, "″", '"'),
+      
+      Latitude  = str_replace(Latitude, "′", "'"),
+      Longitude  = str_replace(Longitude, "′", "'")
+    ) %>% 
+    filter_all(any_vars(!is.na(.)))
+  
+}
+
+
 create_study_matrix = function(combined_data_cleaned){
   combined_data_cleaned %>% 
     dplyr::select(Species, StudyName, DOI) %>% 
