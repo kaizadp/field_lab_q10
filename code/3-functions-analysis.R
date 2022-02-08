@@ -14,13 +14,14 @@ make_map_all_studies <- function(Q10_data){
   
   Q10_map_data = 
     Q10_data %>% 
-    distinct(Species, Latitude, Longitude)
+    distinct(Species, Latitude, Longitude, Incubation)
   
   world %>% 
     ggplot()+
     geom_sf(color = NA, alpha = 0.7)+
     geom_point(data = Q10_map_data,
-               aes(x = Longitude, y = Latitude), 
+               aes(x = Longitude, y = Latitude, 
+                   color = Incubation), 
                alpha = 0.5, size = 1)+
     labs(color = "")+
     theme_void()+
