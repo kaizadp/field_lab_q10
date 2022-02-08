@@ -1,0 +1,771 @@
+"Year","Sample","Temp_range","Temp_flag","moisture","moisture_units","moisture_flag","R10","Q10","Species","Latitude","Longitude","Manipulation","Ecosystem_type","Biome","Source","Incubation","notes","StudyName","DOI","Meas_method","Depth_cm","TreeSpecies","...24","...25","...26","...27","...28","...29","...30","...31","...32","...33","...34","...35","...36","...37","...38"
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+"2015","b1","10_20","14.3753851","22.935","volumetric water",,"1.82394183",4.66459027,"CO2","42_27.32 N","72_40.96 W","None","Forest","temperate","Ignace2019","field",,"Ignace2019","https://doi.org/10.1371/journal.pone.0223566",,,"birch",,,,,,,,,,,,,,,
+"2015","b2","10_20","14.8130732","20.945","volumetric water",,"3.03739427",3.00416602,"CO2","42_27.32 N","72_40.96 W","None","Forest","temperate","Ignace2019","field",,"Ignace2019","https://doi.org/10.1371/journal.pone.0223566",,,"birch",,,,,,,,,,,,,,,
+"2015","b3","10_20","14.95123","21.995","volumetric water",,"2.18802651",3.63278656,"CO2","42_27.32 N","72_40.96 W","None","Forest","temperate","Ignace2019","field",,"Ignace2019","https://doi.org/10.1371/journal.pone.0223566",,,"birch",,,,,,,,,,,,,,,
+"2015","h1","10_20","14.4193259","17.3804762","volumetric water",,"1.4993025",5.36555597,"CO2","42_27.32 N","72_40.96 W","None","Forest","temperate","Ignace2019","field",,"Ignace2019","https://doi.org/10.1371/journal.pone.0223566",,,"hemlock",,,,,,,,,,,,,,,
+"2015","h2","10_20","14.5756761","16.485","volumetric water",,"1.76473405",6.55350486,"CO2","42_27.32 N","72_40.96 W","None","Forest","temperate","Ignace2019","field",,"Ignace2019","https://doi.org/10.1371/journal.pone.0223566",,,"hemlock",,,,,,,,,,,,,,,
+"2015","h3","10_20","14.7503159","13.4142857","volumetric water",,"3.16451562",3.0956565,"CO2","42_27.32 N","72_40.96 W","None","Forest","temperate","Ignace2019","field",,"Ignace2019","https://doi.org/10.1371/journal.pone.0223566",,,"hemlock",,,,,,,,,,,,,,,
+"2015","mb1","10_20","15.3359105","10.9444444","volumetric water",,"1.91171358",5.00281123,"CO2","42_27.32 N","72_40.96 W","None","Forest","temperate","Ignace2019","field",,"Ignace2019","https://doi.org/10.1371/journal.pone.0223566",,,"mature",,,,,,,,,,,,,,,
+"2015","mb2","10_20","15.5705441","12.9333333","volumetric water",,"1.68371052",6.7530888,"CO2","42_27.32 N","72_40.96 W","None","Forest","temperate","Ignace2019","field",,"Ignace2019","https://doi.org/10.1371/journal.pone.0223566",,,"mature",,,,,,,,,,,,,,,
+"2015","mb3","10_20","15.46001","12.4777778","volumetric water",,"2.03195828",3.9353507,"CO2","42_27.32 N","72_40.96 W","None","Forest","temperate","Ignace2019","field",,"Ignace2019","https://doi.org/10.1371/journal.pone.0223566",,,"mature",,,,,,,,,,,,,,,
+"2016","b1","10_20","14.6940275","14.0473684","volumetric water",,"2.15976625",2.82921701,"CO2","42_27.32 N","72_40.96 W","None","Forest","temperate","Ignace2019","field",,"Ignace2019","https://doi.org/10.1371/journal.pone.0223566",,,"birch",,,,,,,,,,,,,,,
+"2016","b2","10_20","14.4721081","14.01","volumetric water",,"2.33730838",2.53450918,"CO2","42_27.32 N","72_40.96 W","None","Forest","temperate","Ignace2019","field",,"Ignace2019","https://doi.org/10.1371/journal.pone.0223566",,,"birch",,,,,,,,,,,,,,,
+"2016","b3","10_20","14.7699393","13.4476191","volumetric water",,"1.95619254",2.48432253,"CO2","42_27.32 N","72_40.96 W","None","Forest","temperate","Ignace2019","field",,"Ignace2019","https://doi.org/10.1371/journal.pone.0223566",,,"birch",,,,,,,,,,,,,,,
+"2016","h1","10_20","14.0077476","11.2105263","volumetric water",,"1.5967974",2.66445624,"CO2","42_27.32 N","72_40.96 W","None","Forest","temperate","Ignace2019","field",,"Ignace2019","https://doi.org/10.1371/journal.pone.0223566",,,"hemlock",,,,,,,,,,,,,,,
+"2016","h2","10_20","14.251264","8.5","volumetric water",,"2.11488408",2.41089971,"CO2","42_27.32 N","72_40.96 W","None","Forest","temperate","Ignace2019","field",,"Ignace2019","https://doi.org/10.1371/journal.pone.0223566",,,"hemlock",,,,,,,,,,,,,,,
+"2016","h3","10_20","14.5868383","7.01904762","volumetric water",,"3.17402342",2.20339643,"CO2","42_27.32 N","72_40.96 W","None","Forest","temperate","Ignace2019","field",,"Ignace2019","https://doi.org/10.1371/journal.pone.0223566",,,"hemlock",,,,,,,,,,,,,,,
+"2016","mb1","10_20","14.8737627","7.52857143","volumetric water",,"2.46946123",2.82921701,"CO2","42_27.32 N","72_40.96 W","None","Forest","temperate","Ignace2019","field",,"Ignace2019","https://doi.org/10.1371/journal.pone.0223566",,,"mature",,,,,,,,,,,,,,,
+"2016","mb2","10_20","15.3047017","9","volumetric water",,"2.78430976",2.66445624,"CO2","42_27.32 N","72_40.96 W","None","Forest","temperate","Ignace2019","field",,"Ignace2019","https://doi.org/10.1371/journal.pone.0223566",,,"mature",,,,,,,,,,,,,,,
+"2016","mb3","10_20","14.9926145","7.73333333","volumetric water",,"2.79826617",2.27049984,"CO2","42_27.32 N","72_40.96 W","None","Forest","temperate","Ignace2019","field",,"Ignace2019","https://doi.org/10.1371/journal.pone.0223566",,,"mature",,,,,,,,,,,,,,,
+"2017","b1","10_20","13.458799","19.2466667","volumetric water",,"2.61169647",3.56085256,"CO2","42_27.32 N","72_40.96 W","None","Forest","temperate","Ignace2019","field",,"Ignace2019","https://doi.org/10.1371/journal.pone.0223566",,,"birch",,,,,,,,,,,,,,,
+"2017","b2","10_20","13.6369553","14.15625","volumetric water",,"2.60908608",4.34923514,"CO2","42_27.32 N","72_40.96 W","None","Forest","temperate","Ignace2019","field",,"Ignace2019","https://doi.org/10.1371/journal.pone.0223566",,,"birch",,,,,,,,,,,,,,,
+"2017","b3","10_20","14.9714355","18.5066667","volumetric water",,"2.6064783",2.11700002,"CO2","42_27.32 N","72_40.96 W","None","Forest","temperate","Ignace2019","field",,"Ignace2019","https://doi.org/10.1371/journal.pone.0223566",,,"birch",,,,,,,,,,,,,,,
+"2017","h1","10_20","13.4193335","15.6857143","volumetric water",,"1.8607879",3.70617371,"CO2","42_27.32 N","72_40.96 W","None","Forest","temperate","Ignace2019","field",,"Ignace2019","https://doi.org/10.1371/journal.pone.0223566",,,"hemlock",,,,,,,,,,,,,,,
+"2017","h2","10_20","13.7707151","10.65","volumetric water",,"2.9153795",3.32011692,"CO2","42_27.32 N","72_40.96 W","None","Forest","temperate","Ignace2019","field",,"Ignace2019","https://doi.org/10.1371/journal.pone.0223566",,,"hemlock",,,,,,,,,,,,,,,
+"2017","h3","10_20","14.7333543","12.5769231","volumetric water",,"4.01083721",1.76826705,"CO2","42_27.32 N","72_40.96 W","None","Forest","temperate","Ignace2019","field",,"Ignace2019","https://doi.org/10.1371/journal.pone.0223566",,,"hemlock",,,,,,,,,,,,,,,
+"2017","mb1","10_20","13.3869066","10.3625","volumetric water",,"3.11117354",4.0959554,"CO2","42_27.32 N","72_40.96 W","None","Forest","temperate","Ignace2019","field",,"Ignace2019","https://doi.org/10.1371/journal.pone.0223566",,,"mature",,,,,,,,,,,,,,,
+"2017","mb2","10_20","13.7721319","13.5941177","volumetric water",,"2.89214951",4.17869919,"CO2","42_27.32 N","72_40.96 W","None","Forest","temperate","Ignace2019","field",,"Ignace2019","https://doi.org/10.1371/journal.pone.0223566",,,"mature",,,,,,,,,,,,,,,
+"2017","mb3","10_20","13.7388709","12.2555556","volumetric water",,"2.59607321",4.17869919,"CO2","42_27.32 N","72_40.96 W","None","Forest","temperate","Ignace2019","field",,"Ignace2019","https://doi.org/10.1371/journal.pone.0223566",,,"mature",,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+"2004",,"10_20",,,,,,5.4,"CO2","45.7531","-61.9558","None","Forest","temperate","Risk2008","field",,"Risk2008","https://doi.org/10.1088/1748-9326/3/4/044004","IRGA","0",,,,,,,,,,,,,,,,
+"2004",,"10_20",,,,,,3.3,"CO2","45.7531","-61.9558","Clearcut","Forest","temperate","Risk2008","field",,"Risk2008","https://doi.org/10.1088/1748-9326/3/4/044004","IRGA","0",,,,,,,,,,,,,,,,
+"2004",,"10_20",,,,,,5,"CO2","45.7531","-61.9558","None","Forest","temperate","Risk2008","field",,"Risk2008","https://doi.org/10.1088/1748-9326/3/4/044004","IRGA","35",,,,,,,,,,,,,,,,
+"2004",,"10_20",,,,,,12.8,"CO2","45.7531","-61.9558","Clearcut","Forest","temperate","Risk2008","field",,"Risk2008","https://doi.org/10.1088/1748-9326/3/4/044004","IRGA","35",,,,,,,,,,,,,,,,
+"2004",,"10_20",,,,,,1.2,"CO2","45.7531","-61.9558","None","Forest","temperate","Risk2008","lab",,"Risk2008","https://doi.org/10.1088/1748-9326/3/4/044004","IRGA","0",,,,,,,,,,,,,,,,
+"2004",,"10_20",,,,,,2,"CO2","45.7531","-61.9558","Clearcut","Forest","temperate","Risk2008","lab",,"Risk2008","https://doi.org/10.1088/1748-9326/3/4/044004","IRGA","0",,,,,,,,,,,,,,,,
+"2004",,"10_20",,,,,,1.7,"CO2","45.7531","-61.9558","None","Forest","temperate","Risk2008","lab",,"Risk2008","https://doi.org/10.1088/1748-9326/3/4/044004","IRGA","35",,,,,,,,,,,,,,,,
+"2004",,"10_20",,,,,,4,"CO2","45.7531","-61.9558","Clearcut","Forest","temperate","Risk2008","lab",,"Risk2008","https://doi.org/10.1088/1748-9326/3/4/044004","IRGA","35",,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,"MAT_C","MMT_C","MAP_mm","Organic_C_perc","Texture","pH","B","Elevation_m",,,,,,
+,"BB1","10_30",,,,,,2.7,"CO2","44.87","-68.1",,,,"Fierer2006","lab","Bear Brook, ME, USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,"5","Picea rubens",,"6.1","18","1200","12.8","sandy loam","4.3","0.4","400",,,,,,
+,"BB2","10_30",,,,,,2.8,"CO2","44.87","-68.1",,,,"Fierer2006","lab","Bear Brook, ME, USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Fagus grandifolia, Acer rubrum, Acer saccharum, Betula alleghaniensis",,"6.1","18","1200","5.2","sandy loam","4.6","0.4","400",,,,,,
+,"BF1","10_30",,,,,,3,"CO2","41.58","-80.05",,,,"Fierer2006","lab","Bousson Forest, PA USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Acer saccharum, Fagus grandifolia, Prunus serotina",,"7.8","18","1000","6.4","loam","4.1","1.1","390",,,,,,
+,"BF2","10_30",,,,,,3.5,"CO2","41.58","-80.05",,,,"Fierer2006","lab","Bousson Forest, PA USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Acer saccharum, Fagus grandifolia, Prunus serotina",,"7.8","18","1000","9.5","loam","3.6","0.6","390",,,,,,
+,"BP1","10_30",,,,,,2.8,"CO2","43.75","-102.38",,,,"Fierer2006","lab","Badlands National Park, SD","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Agropyron smithii, Schizachyrium scoparium",,"6.6","18","450","3.1","silt loam","7.5","3","1000",,,,,,
+,"BZ1","10_30",,,,,,2.6,"CO2","64.8","-148.25",,,,"Fierer2006","lab","Bonanza Creek LTER, AK USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Picea glauca",,"-2.9","11","260","3","silt loam","5.1","1.8","300",,,,,,
+,"BZ2","10_30",,,,,,2.6,"CO2","64.8","-148.25",,,,"Fierer2006","lab","Bonanza Creek LTER, AK USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Picea glauca",,"-2.9","11","260","3","silt loam","5.2","2.8","300",,,,,,
+,"BZ3","10_30",,,,,,2.4,"CO2","64.8","-148.25",,,,"Fierer2006","lab","Bonanza Creek LTER, AK USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Picea glauca",,"-2.9","11","260","3.7","silt loam","5.4","3.3","300",,,,,,
+,"CA1","10_30",,,,,,2.6,"CO2","36.05","-111.77",,,,"Fierer2006","lab","Cedar Mtn., AZ USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Pinus edulis",,"10.3","15","400","1.7","silt loam","7.3","2.7","2003",,,,,,
+,"CA2","10_30",,,,,,4.1,"CO2","36.05","-111.77",,,,"Fierer2006","lab","Cedar Mtn., AZ USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Juniperus monosperma",,"10.3","15","400","2.2","silt loam","8","0.5","2003",,,,,,
+,"CC1","10_30",,,,,,2.6,"CO2","45.4","-93.2",,,,"Fierer2006","lab","Cedar Creek LTER, MN USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Carex muhlenbergii, Andropogon gerardii, Poa pratensis,Schizachyrium scoparium",,"5.8","18","720","1.9","sand","6.1","2","110",,,,,,
+,"CF1","10_30",,,,,,3.2,"CO2","42.17","-74.26",,,,"Fierer2006","lab","Catskills, NY USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Acer saccharum, Fagus grandifolia, Acer rubrum",,"5.3","16","1300","2.6","loam","3.9","0.6","800",,,,,,
+,"CF2","10_30",,,,,,3.1,"CO2","41.93","-74.35",,,,"Fierer2006","lab","Catskills, NY USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Fagus grandifolia, Betula alleghaniensis, Acer saccharum",,"5.3","16","1300","4.1","sandy loam","3.6","0.6","800",,,,,,
+,"CF3","10_30",,,,,,3.5,"CO2","42.12","-74.1",,,,"Fierer2006","lab","Catskills, NY USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Tsuga canadensis",,"5.3","16","1300","4.3","silt loam","3.6","0.4","800",,,,,,
+,"CL1","10_30",,,,,,2.6,"CO2","34.62","-81.67",,,,"Fierer2006","lab","Calhoun Experimental Forest, SC USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Quercus spp., Carya spp., Acer rubrum",,"15.9","22","1250","2.3","sandy loam","5.7","3","150",,,,,,
+,"CL2","10_30",,,,,,3,"CO2","34.62","-81.67",,,,"Fierer2006","lab","Calhoun Experimental Forest, SC USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Bromus spp.",,"15.9","22","1250","2.3","sandy loam","5.6","1.9","150",,,,,,
+,"CL3","10_30",,,,,,2.7,"CO2","34.62","-81.67",,,,"Fierer2006","lab","Calhoun Experimental Forest, SC USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Pinus taeda",,"15.9","22","1250","1.2","loamy sand","4.9","4","150",,,,,,
+,"CL4","10_30",,,,,,3,"CO2","34.62","-81.67",,,,"Fierer2006","lab","Calhoun Experimental Forest, SC USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Hordeum sp.",,"15.9","22","1250","1.7","sandy loam","5","1.6","150",,,,,,
+,"CM1","10_30",,,,,,2.7,"CO2","33.3","-96.23",,,,"Fierer2006","lab","Clymer Meadow Preserve, TX USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Andropogon gerardii, Sorghastrum nutans, Schizachyrium scoparium",,"18.5","25","850","3","silty clay","7.9","1","200",,,,,,
+,"CO1","10_30",,,,,,2.6,"CO2","40.4","-105.7",,,,"Fierer2006","lab","Fort Collins, CO USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Geum rossii, Primula spp., Silene acaulis, Poa spp.",,"-3","8","600","1.6","sand","6.1","5.5","3800",,,,,,
+,"CO2","10_30",,,,,,2.5,"CO2","40.58","-105.33",,,,"Fierer2006","lab","Fort Collins, CO USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Pinus contorta",,"6.1","10","350","1.8","sandy loam","5.7","6","2400",,,,,,
+,"CO3","10_30",,,,,,3,"CO2","40.8","-104.83",,,,"Fierer2006","lab","Shortgrass Steppe LTER, CO USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Bouteloua gracilis, Buchloe dactyloides, Sphaeralcea coccinea",,"9.3","14","322","0.8","sandy loam","6","4","1500",,,,,,
+,"CR1","10_30",,,,,,4.1,"CO2","33.93","-97.23",,,,"Fierer2006","lab","Coffey Ranch, TX USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Schizachyrium scoparium, Andropogon gerardii, Panicum virgatum",,"18.4","25","850","2.8","loam","8","0.6","250",,,,,,
+,"DF1","10_30",,,,,,2.4,"CO2","35.97","-79.08",,,,"Fierer2006","lab","Duke Forest, NC USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Pinus taeda, Liquidambar styraciflua, Liriodendron tulipifera, Cornus florida",,"14.6","18","1100","2.8","sandy loam","5.4","5.5","163",,,,,,
+,"DF2","10_30",,,,,,2.7,"CO2","35.97","-79.08",,,,"Fierer2006","lab","Duke Forest, NC USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Liriodendron tulipifera, Liquidambar styraciflua, Carya sp., Ostrya virginiana",,"14.6","18","1100","5.5","loam","6.8","4.2","163",,,,,,
+,"DF3","10_30",,,,,,2.7,"CO2","35.97","-79.08",,,,"Fierer2006","lab","Duke Forest, NC USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Quercus alba",,"14.6","27","1100","1.7","loamy sand","5.1","2.1","150",,,,,,
+,"GB1","10_30",,,,,,2.9,"CO2","39.33","-111.45",,,,"Fierer2006","lab","Great Basin Experimental Range, UT USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Poa spp., Achillea millefolium",,"2","10","400","2.8","clay loam","6.8","1.5","3750",,,,,,
+,"GB2","10_30",,,,,,3.8,"CO2","39.32","-111.47",,,,"Fierer2006","lab","Great Basin Experimental Range, UT USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Populus tremuloides, Vicia americana, Bromus inermis understory",,"2","13","400","6.9","loam","7.6","0.3","3290",,,,,,
+,"GB3","10_30",,,,,,3,"CO2","39.32","-111.48",,,,"Fierer2006","lab","Great Basin Experimental Range, UT USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Abies concolor, Picea engelmannii",,"2","13","400","5.7","clay loam","7.2","0.6","3270",,,,,,
+,"GB4","10_30",,,,,,2.9,"CO2","39.27","-111.47",,,,"Fierer2006","lab","Great Basin Experimental Range, UT USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Penstemon rydbergii, Geranium richardsonii, Achillea millefolium",,"2","10","400","3.6","clay loam","6.9","0.9","3735",,,,,,
+,"GB5","10_30",,,,,,3.2,"CO2","39.35","-111.58",,,,"Fierer2006","lab","Great Basin Experimental Range, UT USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Juniperus osteosperma, Artemisia tridentata, Bromus tectorum",,"4.8","15","400","1.7","silt loam","8.2","1.9","2160",,,,,,
+,"GB6","10_30",,,,,,2.5,"CO2","39.33","-111.45",,,,"Fierer2006","lab","Great Basin Experimental Range, UT USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Lupinus perennis, Bromus inermis, Achillea millifolium, Taraxicum officinales",,"2","10","400","2.2","clay","7.2","1.6","3750",,,,,,
+,"HF1","10_30",,,,,,2.8,"CO2","42.5","-72.17",,,,"Fierer2006","lab","Harvard Forest, MA USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Quercus rubra, Acer rubrum, Quercus velutina",,"7","15","1100","12.7","sandy loam","4.3","1.4","300",,,,,,
+,"HF2","10_30",,,,,,3.4,"CO2","42.5","-72.17",,,,"Fierer2006","lab","Harvard Forest, MA USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Pinus resinosa",,"7","15","1100","9.6","sandy loam","4","1","300",,,,,,
+,"HI1","10_30",,,,,,4,"CO2","20.08","-155.7",,,,"Fierer2006","lab","Kohala Peninsula, HI USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Pennisetum clandestinum",,"22.8","25","250","1.1","loam","6.5","0.4","200",,,,,,
+,"HI2","10_30",,,,,,3.1,"CO2","20.08","-155.7",,,,"Fierer2006","lab","Kohala Peninsula, HI USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Pennisetum clandestinum",,"22","25","750","15.8","sandy loam","6.3","0.5","700",,,,,,
+,"HI3","10_30",,,,,,3.6,"CO2","20.08","-155.7",,,,"Fierer2006","lab","Kohala Peninsula, HI USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Pennisetum clandestinum",,"22","25","1000","18.2","loamy sand","6.5","0.3","1000",,,,,,
+,"HI4","10_30",,,,,,2.9,"CO2","20.1","-155.7",,,,"Fierer2006","lab","Kohala Peninsula, HI USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Pennisetum clandestinum",,"21.2","25","1500","10.8","loam","4.9","1.1","1500",,,,,,
+,"HJ1","10_30",,,,,,3.1,"CO2","44.22","-122.15",,,,"Fierer2006","lab","H.J. Andrews Experimental Forest, OR USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Pseudotsuga menziesii, Tsuga heterophylla, Thuja plicata",,"9.4","17","2000","6.9","sandy loam","5.4","0.5","700",,,,,,
+,"HJ2","10_30",,,,,,3.2,"CO2","44.22","-122.15",,,,"Fierer2006","lab","H.J. Andrews Experimental Forest, OR USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Alnus rubra, Rhododendron macrophyllum",,"9.4","17","2000","7.6","sandy loam","5.4","0.4","700",,,,,,
+,"IE1","10_30",,,,,,3,"CO2","41.8","-73.75",,,,"Fierer2006","lab","Institute for Ecosystem Studies, NY USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Poa pratensis, Galium aparine, Solidago sp.",,"8.6","21","1200","2.7","sandy loam","5.3","2.9","75",,,,,,
+,"IE2","10_30",,,,,,2.6,"CO2","41.8","-73.75",,,,"Fierer2006","lab","Institute for Ecosystem Studies, NY USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Anthoxanthum odoratum, Coronilla varia, Galium aparine, Schizachyrium scoparium",,"8.6","21","1200","4.1","sandy loam","5.5","3","75",,,,,,
+,"IE3","10_30",,,,,,2.8,"CO2","41.8","-73.75",,,,"Fierer2006","lab","Institute for Ecosystem Studies, NY USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Galium aparine, Solidago sp., Phleum pratensis, Poa pratensis",,"8.6","21","1200","6.4","sandy loam","5.7","2.1","75",,,,,,
+,"IE4","10_30",,,,,,2.9,"CO2","41.8","-73.75",,,,"Fierer2006","lab","Institute for Ecosystem Studies, NY USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Dactylis glomerata, Phleum pratensis, Poa pratensis, Anthoxanthum odoratum, Galium aparine",,"8.6","21","1200","3.3","sandy loam","6.3","3","75",,,,,,
+,"IE5","10_30",,,,,,2.9,"CO2","41.8","-73.75",,,,"Fierer2006","lab","Institute for Ecosystem Studies, NY USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Anthoxanthum odoratum, Datcylis glomerata, Galium aparine, Solidago sp.",,"8.6","21","1200","5.3","sandy loam","5.6","3.8","75",,,,,,
+,"IT1","10_30",,,,,,2.5,"CO2","47.17","-95.17",,,,"Fierer2006","lab","Itasca Lake State Park, MN USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Acer saccharum, Corylus cornuta, Populus tremuloides",,"3","18","750","6.3","sandy loam","5.8","2","550",,,,,,
+,"IT2","10_30",,,,,,2.8,"CO2","47.18","-95.17",,,,"Fierer2006","lab","Itasca Lake State Park, MN USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Pinus resinosa",,"3","18","750","3.9","loamy sand","5.4","2.2","550",,,,,,
+,"KP1","10_30",,,,,,2.7,"CO2","39.1","-96.6",,,,"Fierer2006","lab","Konza Prairie LTER, KS USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Andropogon gerardii, Sorghastrum nutans, Poa pratensis",,"12.5","20","835","6.1","silt loam","6.4","1","100",,,,,,
+,"KP2","10_30",,,,,,2.9,"CO2","39.1","-96.6",,,,"Fierer2006","lab","Konza Prairie LTER, KS USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Andropogon gerardii, Sorghastrum nutans, Schizachyrium scoparium",,"12.5","20","835","4.6","silt loam","6.5","1","100",,,,,,
+,"KP3","10_30",,,,,,3.9,"CO2","39.1","-96.6",,,,"Fierer2006","lab","Konza Prairie LTER, KS USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Juniperus virginiana",,"12.5","20","835","6.9","silt loam","7.9","0.2","100",,,,,,
+,"LQ1","10_30",,,,,,3.5,"CO2","18.3","-65.83",,,,"Fierer2006","lab","Luquillo LTER, Puerto Rico","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Tabebuia rigida",,"19.3","25","5000","13.9","silt loam","4.9","0.4","1000",,,,,,
+,"LQ2","10_30",,,,,,3,"CO2","18.3","-65.83",,,,"Fierer2006","lab","Luquillo LTER, Puerto Rico","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Dacryodes excelsa",,"21.5","28","3500","4.1","silty clay loam","5","1.8","400",,,,,,
+,"LQ3","10_30",,,,,,3,"CO2","18.3","-65.83",,,,"Fierer2006","lab","Luquillo LTER, Puerto Rico","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Cyrilla racemiflora",,"20.5","27","4500","6.4","sandy loam","4.7","1.7","700",,,,,,
+,"MD1","10_30",,,,,,2.4,"CO2","34.9","-115.6",,,,"Fierer2006","lab","Mojave Desert, CA USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Larrea tridentata, Ambrosia dumosa, Yucca schidigera",,"21","16","150","0.4","sandy loam","7.7","10.2","1171",,,,,,
+,"MD2","10_30",,,,,,2.3,"CO2","34.9","-115.65",,,,"Fierer2006","lab","Mojave Desert, CA USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Larrea tridentata, Ambrosia dumosa, Yucca shidigera",,"21","16","150","0.1","loamy sand","7.9","16.3","967",,,,,,
+,"MD3","10_30",,,,,,2.9,"CO2","35.2","-115.87",,,,"Fierer2006","lab","Mojave Desert, CA USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Larrea tridentata, Ambrosia dumosa",,"21","16","150","0.6","loamy sand","8.1","11.9","776",,,,,,
+,"MP1","10_30",,,,,,3.1,"CO2","49.47","-123.53",,,,"Fierer2006","lab","Mary's Peak, OR USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Poa spp., Bromus spp.",,"8.8","17","2200","10.7","sandy loam","4.6","0.4","1300",,,,,,
+,"MP2","10_30",,,,,,3,"CO2","49.47","-123.53",,,,"Fierer2006","lab","Mary's Peak, OR USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Abies procera",,"8.8","17","2200","9.9","sandy loam","4.4","0.6","1300",,,,,,
+,"RT1","10_30",,,,,,3.9,"CO2","31.47","-96.87",,,,"Fierer2006","lab","USDA Grassland Research Center, Riesel, TX USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Prosopis glandulosa, Gleditsia triacanthos, Ulmus crassifolia",,"18.1","27","840","3.9","silty clay loam","7.9","0.3","50",,,,,,
+,"RT2","10_30",,,,,,4.6,"CO2","31.47","-96.87",,,,"Fierer2006","lab","USDA Grassland Research Center, Riesel, TX USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Andropogon gerardii, Schizachyrium scoparium",,"18.1","27","840","3.8","silty clay loam","8.1","0.2","50",,,,,,
+,"SA1","10_30",,,,,,2.2,"CO2","35.37","-111.55",,,,"Fierer2006","lab","Sunset Crater, AZ USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Pinus edulis",,"10.3","15","400","2.3","sand","6.9","3","1905",,,,,,
+,"SA2","10_30",,,,,,3.1,"CO2","35.37","-111.55",,,,"Fierer2006","lab","Sunset Crater, AZ USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Juniperus monosperma",,"10.3","15","400","2.5","sand","8.1","1.4","1905",,,,,,
+,"SB1","10_30",,,,,,3,"CO2","34.47","-119.8",,,,"Fierer2006","lab","Santa Barbara, CA USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Ceanothus megacarpus, Adenostoma fasciculatum",,"15","15","550","2.7","loam","7.9","2.6","500",,,,,,
+,"SN1","10_30",,,,,,2.5,"CO2","36.45","-118.17",,,,"Fierer2006","lab","Sierra Nevada Mts., CA USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Pinus jeffreyi, Abies concolor",,"3.6","8","600","4.3","loamy sand","5","2.8","3000",,,,,,
+,"SN2","10_30",,,,,,2.6,"CO2","36.45","-118.17",,,,"Fierer2006","lab","Sierra Nevada Mts., CA USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Artemisia tridentata, Ceanothus prostratus",,"3.6","8","600","1.7","loamy sand","5.7","4.9","3000",,,,,,
+,"SP1","10_30",,,,,,2.6,"CO2","36.62","-118.63",,,,"Fierer2006","lab","Sequoia National Park, CA USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Calamagrostis breweri, Carex spp., Salix arctica, Vaccinium caespitosum",,"3.6","9","750","8.1","loamy sand","5.1","0.8","3215",,,,,,
+,"SR1","10_30",,,,,,2.8,"CO2","34.7","-120.05",,,,"Fierer2006","lab","Sedgwick Reserve, CA USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Quercus douglasii, Bromus spp.",,"17.2","15","500","4.6","loam","6.8","1.4","300",,,,,,
+,"SR2","10_30",,,,,,2.8,"CO2","34.68","-120.05",,,,"Fierer2006","lab","Sedgwick Reserve, CA USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Bromus spp., Hordeum murinum",,"17.2","15","500","3.3","loam","7","3.3","300",,,,,,
+,"SV1","10_30",,,,,,3.2,"CO2","34.33","-106.73",,,,"Fierer2006","lab","Sevilleta LTER, NM USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Larrea tridentata",,"13.5","20","210","0.3","sandy loam","8.3","7.2","1480",,,,,,
+,"SV2","10_30",,,,,,2.9,"CO2","34.33","-106.73",,,,"Fierer2006","lab","Sevilleta LTER, NM USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Bouteloua eriopoda, Bouteloua gracilis",,"13.5","20","210","0.2","loamy sand","8.4","9.2","1480",,,,,,
+,"SV3","10_30",,,,,,3,"CO2","34.33","-106.73",,,,"Fierer2006","lab","Sevilleta LTER, NM USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Larrea tridentata, Bouteloua eriopoda",,"13.5","20","210","0.3","loamy sand","8.3","8.3","1480",,,,,,
+,"SV4","10_30",,,,,,3.1,"CO2","34.33","-106.73",,,,"Fierer2006","lab","Sevilleta LTER, NM USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Larrea tridentata, Bouteloua eriopoda",,"13.5","20","210","0.3","loamy sand","8.3","9.3","1480",,,,,,
+,"TL1","10_30",,,,,,2.7,"CO2","68.63","-149.58",,,,"Fierer2006","lab","Toolik Lake LTER, AK USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Eriophorum vaginatum",,"-9.3","6","400","7","loam","4.6","1.2","894",,,,,,
+,"TL2","10_30",,,,,,3.2,"CO2","68.63","-149.58",,,,"Fierer2006","lab","Toolik Lake LTER, AK USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Salix spp., Betula nana",,"-9.3","6","400","15.8","silt loam","6.5","0.5","894",,,,,,
+,"TL3","10_30",,,,,,2.4,"CO2","68.63","-149.58",,,,"Fierer2006","lab","Toolik Lake LTER, AK USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Vaccinium spp.",,"-9.3","6","400","5.4","loam","4.2","3.1","894",,,,,,
+,"VC1","10_30",,,,,,2.8,"CO2","35.9","-106.55",,,,"Fierer2006","lab","Valles Caldera, NM USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Picea engelmannii, Populus tremuloides",,"2.5","7","500","5.7","sandy loam","5.6","3","2746",,,,,,
+,"VC2","10_30",,,,,,2.9,"CO2","35.9","-106.55",,,,"Fierer2006","lab","Valles Caldera, NM USA","Fierer2006","https://doi.org/10.1029/2005GB002644",,,"Blepharoneuron tricholepis, Potentilla fruticosa, Poa pratensis, Achillea millefolium",,"2.5","7","500","3.4","loam","6","2","2733",,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,"Soil_type","Reference_number","Duplicate_record",,,"Temp_mean","Temp_min","Temp_max","q10calc","substrate",,"corg","norg","clay","ph"
+,"99",,,,,,,2.2,"CO2","10.168 S","62.824 W",,"forest","temperate","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-BR","27",,,,"30","25","35","equal-C","Y",,"1.06",,"30",
+,"99",,,,,,,2.06,"CO2","10.168 S","62.824 W",,"forest","warm","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-BR","27",,,,"20","15","25","equal-time","N",,"1.06",,"30",
+,"99",,,,,,,1.4,"CO2","10.168 S","62.824 W",,"forest","warm","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-BR","27",,,,"30","25","35","equal-time","Y",,"1.06",,"30",
+,"99",,,,,,,1.65,"CO2","10.168 S","62.824 W",,"forest","warm","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-BR","27",,,,"30","25","35","equal-C","N",,"1.06",,"30",
+,"99",,,,,,,1.58,"CO2","10.168 S","62.824 W",,"grassland","warm","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-BR","27",,,,"20","15","25","equal-time","N",,"1.41",,"25",
+,"99",,,,,,,4.2,"CO2","10.168 S","62.824 W",,"grassland","warm","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-BR","27",,,,"30","25","35","equal-time","Y",,"1.41",,"25",
+,"99",,,,,,,2.4,"CO2","10.168 S","62.824 W",,"grassland","warm","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-BR","27",,,,"30","25","35","equal-C","Y",,"1.41",,"25",
+,"99",,,,,,,2.03,"CO2","10.168 S","62.824 W",,"grassland","warm","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-BR","27",,,,"30","25","35","equal-C","N",,"1.41",,"25",
+,"196",,,,,,,2.7,"CO2","11_55'N","42_24'E",,"forest","temperate","Hamdi2013","lab",,"Rey and Jarvis 2006",,,,,"ROC_0-5_20y","50",,,,"17","4","30","model","N",,"3.85","0.26","31.41790048","4.1"
+,"196",,,,,,,2.2,"CO2","11_55'N","42_24'E",,"forest","temperate","Hamdi2013","lab",,"Rey and Jarvis 2006",,,,,"ROC_0-5_20y","50",,,,"17","4","30","equal-C","N",,"3.85","0.26","31.41790048","4.1"
+,"59",,,,,,,1.45,"CO2","18.3_N","65.8_W",,"forest","warm","Hamdi2013","lab",,"Cussack et al. 2010",,,"0 to 10",,"Lower-C","15",,,,"26","21","31","equal-time","N",,"3.7","0.27",,"4"
+,"59",,,,,,,1.44,"CO2","18.3_N","65.8_W",,"forest","warm","Hamdi2013","lab",,"Cussack et al. 2010",,,"0 to 10",,"Lower-C","15",,,,"26","21","31","equal-C","N",,"3.7","0.27",,"4"
+,"60",,,,,,,1.29,"CO2","18.3_N","65.8_W",,"forest","warm","Hamdi2013","lab",,"Cussack et al. 2010",,,"0 to 10",,"Lower-N","15",,,,"26","21","31","equal-time","Y",,"4.2","0.33",,"4.1"
+,"60",,,,,,,1.25,"CO2","18.3_N","65.8_W",,"forest","warm","Hamdi2013","lab",,"Cussack et al. 2010",,,"0 to 10",,"Lower-N","15",,,,"26","21","31","equal-C","Y",,"4.2","0.33",,"4.1"
+,"61",,,,,,,1.8,"CO2","18.3_N","65.8_W",,"forest","warm","Hamdi2013","lab",,"Cussack et al. 2010",,,"0 to 10",,"Upper-C","15",,,,"26","21","31","equal-time","N",,"3.5","0.18",,"4.1"
+,"61",,,,,,,1.65,"CO2","18.3_N","65.8_W",,"forest","warm","Hamdi2013","lab",,"Cussack et al. 2010",,,"0 to 10",,"Upper-C","15",,,,"26","21","31","equal-C","N",,"3.5","0.18",,"4.1"
+,"62",,,,,,,1.6,"CO2","18.3_N","65.8_W",,"forest","warm","Hamdi2013","lab",,"Cussack et al. 2010",,,"0 to 10",,"Upper-N","15",,,,"26","21","31","equal-time","Y",,"6.7","0.31",,"3.9"
+,"62",,,,,,,1.65,"CO2","18.3_N","65.8_W",,"forest","warm","Hamdi2013","lab",,"Cussack et al. 2010",,,"0 to 10",,"Upper-N","15",,,,"26","21","31","equal-C","Y",,"6.7","0.31",,"3.9"
+,"10",,,,,,,2.7,"CO2","2_N","102_E",,"forest","warm","Hamdi2013","lab",,"Bekku et al. 2003",,,,,"Bekku_Tropical","4",,,,"14.5","5","24","sequential","N",,"2.5","0.2",,
+,"10",,,,,,,2.1,"CO2","2_N","102_E",,"forest","warm","Hamdi2013","lab",,"Bekku et al. 2003",,,,,"Bekku_Tropical","4",,,,"24","16","32","sequential","N",,"2.5","0.2",,
+,"10",,,,,,,2.1,"CO2","2_N","102_E",,"forest","warm","Hamdi2013","lab",,"Bekku et al. 2003",,,,,"Bekku_Tropical","4",,,,"32","24","40","sequential","N",,"2.5","0.2",,
+,"228",,,,,,,3.4,"CO2","28_19.4'N","83_52.4'E",,"forest",,"Hamdi2013","lab",,"Shrestha et al. 2004",,,"0 to 10",,"Nep","54",,,,"10","5","15","equal-time","N",,"3.4",,,"4.7"
+,"228",,,,,,,1.8,"CO2","28_19.4'N","83_52.4'E",,"forest",,"Hamdi2013","lab",,"Shrestha et al. 2004",,,"0 to 10",,"Nep","54",,,,"17.5","15","20","equal-time","N",,"3.4",,,"4.7"
+,"254",,,,,,,1.72,"CO2","28_21.133'N","116_10.551'E",,"cultivated","temperate","Hamdi2013","lab",,"Zhang et al. 2007",,,"0 to 15",,"RP","62",,,,"22.5","20","25","equal-time","N",,"2.44","0.223","25.9","5.54"
+,"253",,,,,,,1.09,"CO2","29_48.597'N","106_25.584'E",,"cultivated","temperate","Hamdi2013","lab",,"Zhang et al. 2007",,,"0 to 15",,"PP","62",,,,"22.5","20","25","equal-time","N",,"1.75","0.135","26.5","6.89"
+,"252",,,,,,,2.26,"CO2","30_22.477'N","113_21.286'E",,"cultivated","temperate","Hamdi2013","lab",,"Zhang et al. 2007",,,"0 to 15",,"EP","62",,,,"22.5","20","25","equal-time","N",,"1.77","0.176","45.3","7.15"
+,"45",,,,,,,7.31,"CO2","33_50'N","99_02'W",,"cultivated","warm","Hamdi2013","lab",,"Conant et al. 2008b",,,,,"TX-cultivated","10",,,,"9.5","4","15","equal-time","N",,"1.02",,"42.3",
+,"45",,,,,,,3.38,"CO2","33_50'N","99_02'W",,"cultivated","warm","Hamdi2013","lab",,"Conant et al. 2008b",,,,,"TX-cultivated","10",,,,"20","15","25","equal-time","N",,"1.02",,"42.3",
+,"45",,,,,,,3.31,"CO2","33_50'N","99_02'W",,"cultivated","warm","Hamdi2013","lab",,"Conant et al. 2008b",,,,,"TX-cultivated","10",,,,"30","25","35","equal-time","N",,"1.02",,"42.3",
+,"46",,,,,,,6.31,"CO2","33_50'N","99_02'W",,"grassland","warm","Hamdi2013","lab",,"Conant et al. 2008b",,,,,"TX-grassland","10",,,,"9.5","4","15","equal-time","N",,"1.12",,"30.9",
+,"46",,,,,,,2.81,"CO2","33_50'N","99_02'W",,"grassland","warm","Hamdi2013","lab",,"Conant et al. 2008b",,,,,"TX-grassland","10",,,,"20","15","25","equal-time","N",,"1.12",,"30.9",
+,"46",,,,,,,3,"CO2","33_50'N","99_02'W",,"grassland","warm","Hamdi2013","lab",,"Conant et al. 2008b",,,,,"TX-grassland","10",,,,"30","25","35","equal-time","N",,"1.12",,"30.9",
+,"40",,,,,,,1.8,"CO2","33.9_N","99.4_W",,"cultivated",,"Hamdi2013","lab",,"Conant et al. 2008a",,,,,"TE-cultivated","9",,,,"30","25","35","equal-C","N",,"1",,,
+,"41",,,,,,,1.9,"CO2","33.9_N","99.4_W",,"grassland",,"Hamdi2013","lab",,"Conant et al. 2008a",,,,,"TE-grassland","9",,,,"30","22","38","equal-C","N",,"1.1",,,
+,"104",,,,,,,1.81,"CO2","33.939 N","99.413 W",,"cultivated","warm","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-TX","27",,,,"20","15","25","equal-time","N",,"1.02",,"44",
+,"104",,,,,,,3.1,"CO2","33.939 N","99.413 W",,"cultivated","warm","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-TX","27",,,,"30","25","35","equal-time","Y",,"1.02",,"44",
+,"104",,,,,,,1.6,"CO2","33.939 N","99.413 W",,"cultivated","warm","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-TX","27",,,,"30","25","35","equal-C","Y",,"1.02",,"44",
+,"104",,,,,,,1.49,"CO2","33.939 N","99.413 W",,"cultivated","warm","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-TX","27",,,,"30","25","35","equal-C","N",,"1.02",,"44",
+,"104",,,,,,,1.56,"CO2","33.939 N","99.413 W",,"grassland","warm","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-TX","27",,,,"20","15","25","equal-time","N",,"1.12",,"31",
+,"104",,,,,,,3.4,"CO2","33.939 N","99.413 W",,"grassland","warm","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-TX","27",,,,"30","25","35","equal-time","Y",,"1.12",,"31",
+,"104",,,,,,,2,"CO2","33.939 N","99.413 W",,"grassland","warm","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-TX","27",,,,"30","25","35","equal-C","Y",,"1.12",,"31",
+,"104",,,,,,,1.63,"CO2","33.939 N","99.413 W",,"grassland","warm","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-TX","27",,,,"30","25","35","equal-C","N",,"1.12",,"31",
+,"76",,,,,,,2.8,"CO2","34_42'N","120_03'W",,"grassland","warm","Hamdi2013","lab",,"Fierer et al. 2003",,,,,"Fierer_0ñ5","21",,,,"22.5","10","35","equal-time","N",,"3.2",,,
+,"77",,,,,,,3.8,"CO2","34_42'N","120_03'W",,"grassland","warm","Hamdi2013","lab",,"Fierer et al. 2003",,,,,"Fierer_100","21",,,,"22.5","10","35","equal-time","N",,"0.84",,,
+,"78",,,,,,,3.2,"CO2","34_42'N","120_03'W",,"grassland","warm","Hamdi2013","lab",,"Fierer et al. 2003",,,,,"Fierer_15ñ25","21",,,,"22.5","10","35","equal-time","N",,"1.7",,,
+,"79",,,,,,,4.1,"CO2","34_42'N","120_03'W",,"grassland","warm","Hamdi2013","lab",,"Fierer et al. 2003",,,,,"Fierer_200","21",,,,"22.5","10","35","equal-time","N",,"0.16",,,
+,"80",,,,,,,3.7,"CO2","34_42'N","120_03'W",,"grassland","warm","Hamdi2013","lab",,"Fierer et al. 2003",,,,,"Fierer_50","21",,,,"22.5","10","35","equal-time","N",,"0.83",,,
+,"81",,,,,,,3,"CO2","34_42'N","120_03'W",,"grassland","warm","Hamdi2013","lab",,"Fierer et al. 2003",,,,,"Fierer_5ñ15","21",,,,"22.5","10","35","equal-time","N",,"2",,,
+,"251",,,,,,,2.61,"CO2","34_59'N","97_31'W",,"grassland","temperate","Hamdi2013","lab",,"Xu et al. 2012",,,"0 to 20",,"C","61",,,,"20","5","35","sequential","N",,"1.24","0.113",,"7"
+,"11",,,,,,,2.56,"CO2","35_01'N","83_27'W",,"forest","temperate","Hamdi2013","lab",,"Bradford et al. 2010",,,"0 to 10",,"Brad","5",,,,"15","10","20","equal-time","N",,,,,
+,"105",,,,,,,2.05,"CO2","35_43'N","8_35'E",,"cultivated","warm","Hamdi2013","lab",,"Hamdi et al. 2010",,,,,"Hamdi-cult","28",,,,"25","20","30","equal-time","N",,"2.2",,"36","8.9"
+,"105",,,,,,,2.15,"CO2","35_43'N","8_35'E",,"cultivated","warm","Hamdi2013","lab",,"Hamdi et al. 2010",,,,,"Hamdi-cult","28",,,,"35","30","40","equal-time","N",,"2.2",,"36","8.9"
+,"105",,,,,,,1.92,"CO2","35_43'N","8_35'E",,"cultivated","warm","Hamdi2013","lab",,"Hamdi et al. 2010",,,,,"Hamdi-cult","28",,,,"45","40","50","equal-time","N",,"2.2",,"36","8.9"
+,"1",,,,,,,3.75,"CO2","35_97'N","79_09'W",,"forest","temperate","Hamdi2013","lab",,"Andrews et al. 2000",,,"0 to 10",,"Duke_B","1",,,,"13","4","22","equal-time","N",,,,,
+,"127",,,,,,,2.61,"CO2","36_10'S","148_54'E",,"grassland","temperate","Hamdi2013","lab",,"Jenkins and Adams 2011",,,"0 to 10",,"G","35",,,,"30","20","40","sequential","N",,"4.1","0.5","31","5.3"
+,"127",,,,,,,2.4,"CO2","36_10'S","148_54'E",,"grassland","temperate","Hamdi2013","lab",,"Jenkins and Adams 2011",,,"10 to 30",,"G","35",,,,"30","20","40","sequential","N",,"3.3","0.4","31","5.3"
+,"127",,,,,,,2.23,"CO2","36_10'S","148_54'E",,"grassland","temperate","Hamdi2013","lab",,"Jenkins and Adams 2011",,,"30 to 50",,"G","35",,,,"30","20","40","sequential","N",,"2.2","0.2","31","5.3"
+,"128",,,,,,,2.44,"CO2","36_10'S","148_54'E",,"forest","temperate","Hamdi2013","lab",,"Jenkins and Adams 2011",,,"0 to 10",,"WG","35",,,,"30","20","40","sequential","N",,"5","0.9","31","5"
+,"128",,,,,,,2.63,"CO2","36_10'S","148_54'E",,"forest","temperate","Hamdi2013","lab",,"Jenkins and Adams 2011",,,"10 to 30",,"WG","35",,,,"30","20","40","sequential","N",,"3.8","0.6","31","5.1"
+,"128",,,,,,,2.55,"CO2","36_10'S","148_54'E",,"forest","temperate","Hamdi2013","lab",,"Jenkins and Adams 2011",,,"30 to 50",,"WG","35",,,,"30","20","40","sequential","N",,"2.4","0.3","31","5.2"
+,"129",,,,,,,2.56,"CO2","36_10'S","148_54'E",,"forest","temperate","Hamdi2013","lab",,"Jenkins and Adams 2011",,,"0 to 10",,"WS","35",,,,"30","20","40","sequential","N",,"8.5","0.9","31","5"
+,"129",,,,,,,2.42,"CO2","36_10'S","148_54'E",,"forest","temperate","Hamdi2013","lab",,"Jenkins and Adams 2011",,,"10 to 30",,"WS","35",,,,"30","20","40","sequential","N",,"6.1","0.6","31","5"
+,"129",,,,,,,2.29,"CO2","36_10'S","148_54'E",,"forest","temperate","Hamdi2013","lab",,"Jenkins and Adams 2011",,,"30 to 50",,"WS","35",,,,"30","20","40","sequential","N",,"3.5","0.3","31","5.2"
+,"9",,,,,,,2.85,"CO2","36_N","140_E",,"grassland","temperate","Hamdi2013","lab",,"Bekku et al. 2003",,,,,"Bekku_Temperate","4",,,,"11","2","20","sequential","N",,"7.5","0.5",,
+,"9",,,,,,,2.5,"CO2","36_N","140_E",,"grassland","temperate","Hamdi2013","lab",,"Bekku et al. 2003",,,,,"Bekku_Temperate","4",,,,"13","2","24","sequential","N",,"7.5","0.5",,
+,"9",,,,,,,2,"CO2","36_N","140_E",,"grassland","temperate","Hamdi2013","lab",,"Bekku et al. 2003",,,,,"Bekku_Temperate","4",,,,"20","12","28","sequential","N",,"7.5","0.5",,
+,"229",,,,,,,1.18,"CO2","37_32'N","101_15'E",,"tundra","cold","Hamdi2013","lab",,"Song et al. 2010",,,"0 to 10",,"Camb","55",,,,"12.5","5","20","equal-time","N",,"10",,,
+,"55",,,,,,,1.6,"CO2","38_53'42.9""N","120_37'57.9""W",,"forest","temperate","Hamdi2013","lab",,"Curiel Yuste et al. 2007",,,,,"yuste-bc","14",,,,"27.5","20","35","sequential","N",,"13.9",,,
+,"56",,,,,,,1.65,"CO2","38_53'42.9""N","120_37'57.9""W",,"forest","temperate","Hamdi2013","lab",,"Curiel Yuste et al. 2007",,,,,"yuste-bt","14",,,,"27.5","20","35","sequential","N",,"6.4",,,
+,"57",,,,,,,1.75,"CO2","38_53'42.9""N","120_37'57.9""W",,"grassland","temperate","Hamdi2013","lab",,"Curiel Yuste et al. 2007",,,,,"yuste-to","14",,,,"27.5","20","35","sequential","N",,"1.7",,,
+,"58",,,,,,,1.7,"CO2","38_53'42.9""N","120_37'57.9""W",,"grassland","temperate","Hamdi2013","lab",,"Curiel Yuste et al. 2007",,,,,"yuste-tu","14",,,,"27.5","20","35","sequential","N",,"3.9",,,
+,"35",,,,,,,3.1,"CO2","40.15_N","103.15_W",,"cultivated",,"Hamdi2013","lab",,"Conant et al. 2008a",,,,,"CO-cultivated","9",,,,"30","25","35","equal-C","N",,"0.7",,,
+,"36",,,,,,,1.7,"CO2","40.15_N","103.15_W",,"grassland",,"Hamdi2013","lab",,"Conant et al. 2008a",,,,,"CO-grassland","9",,,,"30","22","38","equal-C","N",,"1.2",,,
+,"100",,,,,,,1.76,"CO2","40.150 N","103.150 W",,"cultivated","temperate","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-CO","27",,,,"20","15","25","equal-time","N",,"0.69",,"28",
+,"100",,,,,,,4.6,"CO2","40.150 N","103.150 W",,"cultivated","temperate","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-CO","27",,,,"30","25","35","equal-time","Y",,"0.69",,"28",
+,"100",,,,,,,2.2,"CO2","40.150 N","103.150 W",,"cultivated","temperate","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-CO","27",,,,"30","25","35","equal-C","Y",,"0.69",,"28",
+,"100",,,,,,,1.84,"CO2","40.150 N","103.150 W",,"cultivated","temperate","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-CO","27",,,,"30","25","35","equal-C","N",,"0.69",,"28",
+,"100",,,,,,,1.86,"CO2","40.150 N","103.150 W",,"grassland","temperate","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-CO","27",,,,"20","15","25","equal-time","N",,"1.16",,"23",
+,"100",,,,,,,2.8,"CO2","40.150 N","103.150 W",,"grassland","temperate","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-CO","27",,,,"30","25","35","equal-time","Y",,"1.16",,"23",
+,"100",,,,,,,1.5,"CO2","40.150 N","103.150 W",,"grassland","temperate","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-CO","27",,,,"30","25","35","equal-C","Y",,"1.16",,"23",
+,"100",,,,,,,1.68,"CO2","40.150 N","103.150 W",,"grassland","temperate","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-CO","27",,,,"30","25","35","equal-C","N",,"1.16",,"23",
+,"191",,,,,,,2.7,"CO2","41_52'N","13_28'E",,"forest","temperate","Hamdi2013","lab",,"Rey and Jarvis 2006",,,,,"COL_0-5","50",,,,"17","4","30","model","N",,"14.8","0.96",,"5.9"
+,"191",,,,,,,1.9,"CO2","41_52'N","13_28'E",,"forest","temperate","Hamdi2013","lab",,"Rey and Jarvis 2006",,,,,"COL_0-5","50",,,,"17","4","30","equal-C","N",,"14.8","0.96",,"5.9"
+,"153",,,,,,,2.1,"CO2","42_02'N","116_16'E",,"grassland","temperate","Hamdi2013","lab",,"Liu et al. 2006",,,"0 to 10",,"A","41",,,,"19","2","36","sequential","N",,"1.27",,,"8.2"
+,"154",,,,,,,2.2,"CO2","42_02'N","116_16'E",,"grassland","temperate","Hamdi2013","lab",,"Liu et al. 2006",,,"0 to 10",,"B","41",,,,"19","2","36","sequential","N",,"1.63",,,"8"
+,"155",,,,,,,2.15,"CO2","42_02'N","116_16'E",,"grassland","temperate","Hamdi2013","lab",,"Liu et al. 2006",,,,,"Liu-A","41",,,,"19","2","36","sequential","N",,"1.3",,,"8.3"
+,"156",,,,,,,2.4,"CO2","42_02'N","116_16'E",,"grassland","temperate","Hamdi2013","lab",,"Liu et al. 2006",,,,,"Liu-B","41",,,,"19","2","36","sequential","N",,"1.6",,,"7.8"
+,"172",,,,,,,2.4,"CO2","42_40'N","03_20'E",,"forest","temperate","Hamdi2013","lab",,"Niklinska et al. 1999",,,,,"E","45",,,,"7.5","5","10","equal-time","N",,"41.66666667","0.093",,"6.3"
+,"172",,,,,,,3.03,"CO2","42_40'N","03_20'E",,"forest","temperate","Hamdi2013","lab",,"Niklinska et al. 1999",,,,,"E","45",,,,"12.5","10","15","equal-time","N",,"41.66666667","0.093",,"6.3"
+,"172",,,,,,,1.42,"CO2","42_40'N","03_20'E",,"forest","temperate","Hamdi2013","lab",,"Niklinska et al. 1999",,,,,"E","45",,,,"17.5","15","20","equal-time","N",,"41.66666667","0.093",,"6.3"
+,"172",,,,,,,1.17,"CO2","42_40'N","03_20'E",,"forest","temperate","Hamdi2013","lab",,"Niklinska et al. 1999",,,,,"E","45",,,,"22.5","20","25","equal-time","N",,"41.66666667","0.093",,"6.3"
+,"65",,,,,,,3.8,"CO2","43_07'N","2_45'E",,"forest","temperate","Hamdi2013","lab",,"Dalias et al. 2001",,,,,"Dalias-ThezA1","16",,,,"7","4","10","equal-C","N",,"4.7","0.12","7.6","5.2"
+,"65",,,,,,,2.8,"CO2","43_07'N","2_45'E",,"forest","temperate","Hamdi2013","lab",,"Dalias et al. 2001",,,,,"Dalias-ThezA1","16",,,,"13","10","16","equal-C","N",,"4.7","0.12","7.6","5.2"
+,"65",,,,,,,1.9,"CO2","43_07'N","2_45'E",,"forest","temperate","Hamdi2013","lab",,"Dalias et al. 2001",,,,,"Dalias-ThezA1","16",,,,"19.5","16","23","equal-C","N",,"4.7","0.12","7.6","5.2"
+,"65",,,,,,,1.3,"CO2","43_07'N","2_45'E",,"forest","temperate","Hamdi2013","lab",,"Dalias et al. 2001",,,,,"Dalias-ThezA1","16",,,,"26.5","23","30","equal-C","N",,"4.7","0.12","7.6","5.2"
+,"66",,,,,,,5.2,"CO2","43_07'N","2_45'E",,"forest","temperate","Hamdi2013","lab",,"Dalias et al. 2001",,,,,"Dalias-ThezOh","16",,,,"7","4","10","equal-C","N",,"38.8","0.9",,"4.3"
+,"66",,,,,,,1.6,"CO2","43_07'N","2_45'E",,"forest","temperate","Hamdi2013","lab",,"Dalias et al. 2001",,,,,"Dalias-ThezOh","16",,,,"13","10","16","equal-C","N",,"38.8","0.9",,"4.3"
+,"66",,,,,,,1.6,"CO2","43_07'N","2_45'E",,"forest","temperate","Hamdi2013","lab",,"Dalias et al. 2001",,,,,"Dalias-ThezOh","16",,,,"19.5","16","23","equal-C","N",,"38.8","0.9",,"4.3"
+,"66",,,,,,,1.6,"CO2","43_07'N","2_45'E",,"forest","temperate","Hamdi2013","lab",,"Dalias et al. 2001",,,,,"Dalias-ThezOh","16",,,,"26.5","23","30","equal-C","N",,"38.8","0.9",,"4.3"
+,"63",,,,,,,,"CO2","43_09'N","3_08'E",,"forest","temperate","Hamdi2013","lab",,"Dalias et al. 2001",,,,,"Dalias-Clap","16",,,,"7","4","10","equal-C","N",,"2.6","0.12","17.4","7.7"
+,"63",,,,,,,,"CO2","43_09'N","3_08'E",,"forest","temperate","Hamdi2013","lab",,"Dalias et al. 2001",,,,,"Dalias-Clap","16",,,,"13","10","16","equal-C","N",,"2.6","0.12","17.4","7.7"
+,"63",,,,,,,,"CO2","43_09'N","3_08'E",,"forest","temperate","Hamdi2013","lab",,"Dalias et al. 2001",,,,,"Dalias-Clap","16",,,,"19.5","16","23","equal-C","N",,"2.6","0.12","17.4","7.7"
+,"63",,,,,,,,"CO2","43_09'N","3_08'E",,"forest","temperate","Hamdi2013","lab",,"Dalias et al. 2001",,,,,"Dalias-Clap","16",,,,"26.5","23","30","equal-C","N",,"2.6","0.12","17.4","7.7"
+,"175",,,,,,,4.68,"CO2","44_11'N","03_24'E",,"forest","temperate","Hamdi2013","lab",,"Niklinska et al. 1999",,,,,"L","45",,,,"7.5","5","10","equal-time","N",,"47.16666667","0.091",,"6.1"
+,"175",,,,,,,1.94,"CO2","44_11'N","03_24'E",,"forest","temperate","Hamdi2013","lab",,"Niklinska et al. 1999",,,,,"L","45",,,,"12.5","10","15","equal-time","N",,"47.16666667","0.091",,"6.1"
+,"175",,,,,,,1.34,"CO2","44_11'N","03_24'E",,"forest","temperate","Hamdi2013","lab",,"Niklinska et al. 1999",,,,,"L","45",,,,"17.5","15","20","equal-time","N",,"47.16666667","0.091",,"6.1"
+,"175",,,,,,,1.28,"CO2","44_11'N","03_24'E",,"forest","temperate","Hamdi2013","lab",,"Niklinska et al. 1999",,,,,"L","45",,,,"22.5","20","25","equal-time","N",,"47.16666667","0.091",,"6.1"
+,"43",,,,,,,5.75,"CO2","46_46'N","100_55'W",,"cultivated","temperate","Hamdi2013","lab",,"Conant et al. 2008b",,,,,"ND-cultivated","10",,,,"9.5","4","15","equal-time","N",,"2.8",,"34.3",
+,"43",,,,,,,2.53,"CO2","46_46'N","100_55'W",,"cultivated","temperate","Hamdi2013","lab",,"Conant et al. 2008b",,,,,"ND-cultivated","10",,,,"20","15","25","equal-time","N",,"2.8",,"34.3",
+,"43",,,,,,,2.1,"CO2","46_46'N","100_55'W",,"cultivated","temperate","Hamdi2013","lab",,"Conant et al. 2008b",,,,,"ND-cultivated","10",,,,"30","25","35","equal-time","N",,"2.8",,"34.3",
+,"44",,,,,,,5.65,"CO2","46_46'N","100_55'W",,"grassland","temperate","Hamdi2013","lab",,"Conant et al. 2008b",,,,,"ND-grassland","10",,,,"9.5","4","15","equal-time","N",,"3.24",,"29.7",
+,"44",,,,,,,3.15,"CO2","46_46'N","100_55'W",,"grassland","temperate","Hamdi2013","lab",,"Conant et al. 2008b",,,,,"ND-grassland","10",,,,"20","15","25","equal-time","N",,"3.24",,"29.7",
+,"44",,,,,,,2.4,"CO2","46_46'N","100_55'W",,"grassland","temperate","Hamdi2013","lab",,"Conant et al. 2008b",,,,,"ND-grassland","10",,,,"30","25","35","equal-time","N",,"3.24",,"29.7",
+,"177",,,,,,,4.8,"CO2","46_46'N","100_55'W",,"grassland","temperate","Hamdi2013","lab",,"Philipps et al. 2012",,,,,"Grass","46",,,,"-5","-15","5","sequential","N",,"4",,,"6.2"
+,"146",,,,,,,1.9,"CO2","46_50'N","11_03'E",,"grassland","temperate","Hamdi2013","lab",,"Koch et al. 2007",,,,,"Koch_F","38",,,,"15","0","30","sequential","N",,"31",,,"4.3"
+,"147",,,,,,,1.86,"CO2","46_50'N","11_03'E",,"grassland","temperate","Hamdi2013","lab",,"Koch et al. 2007",,,,,"Koch_M","38",,,,"15","0","30","sequential","N",,"17",,,"3.9"
+,"148",,,,,,,2,"CO2","46_50'N","11_03'E",,"grassland","temperate","Hamdi2013","lab",,"Koch et al. 2007",,,,,"Koch_T","38",,,,"15","0","30","sequential","N",,"28",,,"4.3"
+,"149",,,,,,,2.1,"CO2","46_50'N","11_03'E",,"grassland","temperate","Hamdi2013","lab",,"Koch et al. 2007",,,,,"Koch_W","38",,,,"15","0","30","sequential","N",,"35",,,"4"
+,"102",,,,,,,1.77,"CO2","46.767 N","100.917 W",,"cultivated","temperate","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-ND","27",,,,"20","15","25","equal-time","N",,"2.8",,"33",
+,"102",,,,,,,1.3,"CO2","46.767 N","100.917 W",,"cultivated","temperate","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-ND","27",,,,"30","25","35","equal-time","Y",,"2.8",,"33",
+,"102",,,,,,,1.5,"CO2","46.767 N","100.917 W",,"cultivated","temperate","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-ND","27",,,,"30","25","35","equal-C","Y",,"2.8",,"33",
+,"102",,,,,,,1.23,"CO2","46.767 N","100.917 W",,"cultivated","temperate","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-ND","27",,,,"30","25","35","equal-C","N",,"2.8",,"33",
+,"102",,,,,,,2.07,"CO2","46.767 N","100.917 W",,"grassland","temperate","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-ND","27",,,,"20","15","25","equal-time","N",,"3.24",,"28",
+,"102",,,,,,,2.7,"CO2","46.767 N","100.917 W",,"grassland","temperate","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-ND","27",,,,"30","25","35","equal-time","Y",,"3.24",,"28",
+,"102",,,,,,,1.7,"CO2","46.767 N","100.917 W",,"grassland","temperate","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-ND","27",,,,"30","25","35","equal-C","Y",,"3.24",,"28",
+,"102",,,,,,,1.85,"CO2","46.767 N","100.917 W",,"grassland","temperate","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-ND","27",,,,"30","25","35","equal-C","N",,"3.24",,"28",
+,"151",,,,,,,5.8,"CO2","47_17'N","07_44'E",,"cultivated","temperate","Hamdi2013","lab",,"Leifeld and Fuhrer 2005",,,"25 to 30",,"Arab","40",,,,"15","5","25","sequential","N",,"1.96","0.29","42","7.2"
+,"151",,,,,,,6,"CO2","47_17'N","07_44'E",,"cultivated","temperate","Hamdi2013","lab",,"Leifeld and Fuhrer 2005",,,"5 to 10",,"Arab","40",,,,"15","5","25","sequential","N",,"3.4","0.36","42","7.2"
+,"152",,,,,,,4.8,"CO2","47_17'N","07_44'E",,"grassland","temperate","Hamdi2013","lab",,"Leifeld and Fuhrer 2005",,,"25 to 30",,"Grass","40",,,,"15","5","25","sequential","N",,"2.46","0.33","43","5.6"
+,"152",,,,,,,4.8,"CO2","47_17'N","07_44'E",,"grassland","temperate","Hamdi2013","lab",,"Leifeld and Fuhrer 2005",,,"5 to 10",,"Grass","40",,,,"15","5","25","sequential","N",,"3.21","0.42","43","5.6"
+,"49",,,,,,,3.7,"CO2","48_21'47""N","13_11'46""W",,"cultivated","temperate","Hamdi2013","lab",,"Conen et al. 2006",,,"0 to 30",,"RM-C3","11",,,,"20","5","35","equal-time","N",,"1.27",,"17",
+,"50",,,,,,,4.8,"CO2","48_21'47""N","13_11'46""W",,"cultivated","temperate","Hamdi2013","lab",,"Conen et al. 2006",,,"0 to 30",,"RM-C4","11",,,,"20","5","35","equal-time","N",,"1.37",,"17",
+,"194",,,,,,,2.5,"CO2","48_40'N","07_05'E",,"forest","temperate","Hamdi2013","lab",,"Rey and Jarvis 2006",,,,,"HES_0-5","50",,,,"17.5","5","30","model","N",,"6.45","0.63",,"5.9"
+,"194",,,,,,,2.5,"CO2","48_40'N","07_05'E",,"forest","temperate","Hamdi2013","lab",,"Rey and Jarvis 2006",,,,,"HES_0-5","50",,,,"17.5","5","30","equal-C","N",,"6.45","0.63",,"5.9"
+,"130",,,,,,,1.5,"CO2","50_01'N","4_24'E",,"forest","temperate","Hamdi2013","lab",,"Jonard et al. 2007",,,"1.5 to 2.5",,"Beech","36",,,,"11","4","18","equal-time","N",,,,,
+,"130",,,,,,,1.71,"CO2","50_01'N","4_24'E",,"forest","temperate","Hamdi2013","lab",,"Jonard et al. 2007",,,"2.5 to 30",,"Beech","36",,,,"11","4","18","equal-time","N",,,,,
+,"131",,,,,,,2.01,"CO2","50_01'N","4_24'E",,"forest","temperate","Hamdi2013","lab",,"Jonard et al. 2007",,,"2.5 to 30",,"Mixt","36",,,,"11","4","18","equal-time","N",,,,,
+,"132",,,,,,,1.71,"CO2","50_01'N","4_24'E",,"forest","temperate","Hamdi2013","lab",,"Jonard et al. 2007",,,"1.5 to 2.5",,"Mxt","36",,,,"11","4","18","equal-time","N",,,,,
+,"133",,,,,,,1.56,"CO2","50_01'N","4_24'E",,"forest","temperate","Hamdi2013","lab",,"Jonard et al. 2007",,,"1.5 to 2.5",,"Oak","36",,,,"11","4","18","equal-time","N",,,,,
+,"133",,,,,,,2.27,"CO2","50_01'N","4_24'E",,"forest","temperate","Hamdi2013","lab",,"Jonard et al. 2007",,,"2.5 to 30",,"Oak","36",,,,"11","4","18","equal-time","N",,,,,
+,"68",,,,,,,1.9,"CO2","50_08'N","11_52'W",,"forest","temperate","Hamdi2013","lab",,"Dalias et al. 2001",,,,,"Dalias-WaldOf","16",,,,"7","4","10","equal-C","N",,"47.2","1.8",,"3.4"
+,"68",,,,,,,2.1,"CO2","50_08'N","11_52'W",,"forest","temperate","Hamdi2013","lab",,"Dalias et al. 2001",,,,,"Dalias-WaldOf","16",,,,"13","10","16","equal-C","N",,"47.2","1.8",,"3.4"
+,"68",,,,,,,1.5,"CO2","50_08'N","11_52'W",,"forest","temperate","Hamdi2013","lab",,"Dalias et al. 2001",,,,,"Dalias-WaldOf","16",,,,"19.5","16","23","equal-C","N",,"47.2","1.8",,"3.4"
+,"68",,,,,,,1.1,"CO2","50_08'N","11_52'W",,"forest","temperate","Hamdi2013","lab",,"Dalias et al. 2001",,,,,"Dalias-WaldOf","16",,,,"26.5","23","30","equal-C","N",,"47.2","1.8",,"3.4"
+,"69",,,,,,,3,"CO2","50_08'N","11_52'W",,"forest","temperate","Hamdi2013","lab",,"Dalias et al. 2001",,,,,"Dalias-WaldOh","16",,,,"7","4","10","equal-C","N",,"34","1.07","11","3.5"
+,"69",,,,,,,1.5,"CO2","50_08'N","11_52'W",,"forest","temperate","Hamdi2013","lab",,"Dalias et al. 2001",,,,,"Dalias-WaldOh","16",,,,"13","10","16","equal-C","N",,"34","1.07","11","3.5"
+,"69",,,,,,,2,"CO2","50_08'N","11_52'W",,"forest","temperate","Hamdi2013","lab",,"Dalias et al. 2001",,,,,"Dalias-WaldOh","16",,,,"19.5","16","23","equal-C","N",,"34","1.07","11","3.5"
+,"69",,,,,,,1,"CO2","50_08'N","11_52'W",,"forest","temperate","Hamdi2013","lab",,"Dalias et al. 2001",,,,,"Dalias-WaldOh","16",,,,"26.5","23","30","equal-C","N",,"34","1.07","11","3.5"
+,"198",,,,,,,2.9,"CO2","50_27'13""N","11_27'27""E",,"forest","temperate","Hamdi2013","lab",,"Rey and Jarvis 2006",,,,,"WET_0-5_120y","50",,,,"17","4","30","model","N",,"8.46","0.49",,"3.4"
+,"198",,,,,,,2.5,"CO2","50_27'13""N","11_27'27""E",,"forest","temperate","Hamdi2013","lab",,"Rey and Jarvis 2006",,,,,"WET_0-5_120y","50",,,,"17","4","30","equal-C","N",,"8.46","0.49",,"3.4"
+,"64",,,,,,,3.5,"CO2","50_37'N","3_40'W",,"forest","temperate","Hamdi2013","lab",,"Dalias et al. 2001",,,,,"Dalias-Hald","16",,,,"7","4","10","equal-C","N",,"5.7","0.38","35","4.9"
+,"64",,,,,,,3.4,"CO2","50_37'N","3_40'W",,"forest","temperate","Hamdi2013","lab",,"Dalias et al. 2001",,,,,"Dalias-Hald","16",,,,"13","10","16","equal-C","N",,"5.7","0.38","35","4.9"
+,"64",,,,,,,3.1,"CO2","50_37'N","3_40'W",,"forest","temperate","Hamdi2013","lab",,"Dalias et al. 2001",,,,,"Dalias-Hald","16",,,,"19.5","16","23","equal-C","N",,"5.7","0.38","35","4.9"
+,"64",,,,,,,3.4,"CO2","50_37'N","3_40'W",,"forest","temperate","Hamdi2013","lab",,"Dalias et al. 2001",,,,,"Dalias-Hald","16",,,,"26.5","23","30","equal-C","N",,"5.7","0.38","35","4.9"
+,"92",,,,,,,2,"CO2","50_52'42""N","4_39'24""E",,"cultivated","temperate","Hamdi2013","lab",,"Gillabel et al. 2010",,,,,"Gill","25",,,,"30","25","35","equal-C","N",,"0.54",,,
+,"197",,,,,,,2.9,"CO2","50_58'00""N","13_34'16""E",,"forest","temperate","Hamdi2013","lab",,"Rey and Jarvis 2006",,,,,"THA_0-5_95y","50",,,,"17.5","5","30","model","N",,"8.46","0.49",,"3.4"
+,"197",,,,,,,2.75,"CO2","50_58'00""N","13_34'16""E",,"forest","temperate","Hamdi2013","lab",,"Rey and Jarvis 2006",,,,,"THA_0-5_95y","50",,,,"17.5","5","30","equal-C","N",,"8.46","0.49",,"3.4"
+,"103",,,,,,,1.79,"CO2","50.533 N","103.517 W",,"cultivated","temperate","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-SK","27",,,,"20","15","25","equal-time","N",,"2.29",,"61",
+,"103",,,,,,,3.3,"CO2","50.533 N","103.517 W",,"cultivated","temperate","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-SK","27",,,,"30","25","35","equal-time","Y",,"2.29",,"61",
+,"103",,,,,,,2,"CO2","50.533 N","103.517 W",,"cultivated","temperate","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-SK","27",,,,"30","25","35","equal-C","Y",,"2.29",,"61",
+,"103",,,,,,,1.69,"CO2","50.533 N","103.517 W",,"cultivated","temperate","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-SK","27",,,,"30","25","35","equal-C","N",,"2.29",,"61",
+,"103",,,,,,,1.6,"CO2","50.533 N","103.517 W",,"grassland","temperate","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-SK","27",,,,"20","15","25","equal-time","N",,"3.71",,"50",
+,"103",,,,,,,2.5,"CO2","50.533 N","103.517 W",,"grassland","temperate","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-SK","27",,,,"30","25","35","equal-time","Y",,"3.71",,"50",
+,"103",,,,,,,1.6,"CO2","50.533 N","103.517 W",,"grassland","temperate","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-SK","27",,,,"30","25","35","equal-C","Y",,"3.71",,"50",
+,"103",,,,,,,1.38,"CO2","50.533 N","103.517 W",,"grassland","temperate","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-SK","27",,,,"30","25","35","equal-C","N",,"3.71",,"50",
+,"192",,,,,,,3.2,"CO2","51_05'N","10_28'E",,"forest","temperate","Hamdi2013","lab",,"Rey and Jarvis 2006",,,,,"HAI_0-5","50",,,,"17.5","5","30","model","N",,"7.85","0.61",,"3.7"
+,"192",,,,,,,2.6,"CO2","51_05'N","10_28'E",,"forest","temperate","Hamdi2013","lab",,"Rey and Jarvis 2006",,,,,"HAI_0-5","50",,,,"17.5","5","30","equal-C","N",,"7.85","0.61",,"3.7"
+,"241",,,,,,,2.15,"CO2","51_45'34""N","123_02'34E",,"peat","cold","Hamdi2013","lab",,"Wang et al. 2010",,,"10 to 20",,"Huz1","58",,,,"12.5","5","20","equal-time","N",,"45.01","1.41",,"3.88"
+,"242",,,,,,,2.2,"CO2","51_45'34""N","123_02'34E",,"peat","cold","Hamdi2013","lab",,"Wang et al. 2010",,,"20 to 30",,"Huz2","58",,,,"12.5","5","20","equal-time","N",,"41.03","1.7",,"3.7"
+,"239",,,,,,,2.44,"CO2","52_09'10""N","122_57'18""E",,"peat","cold","Hamdi2013","lab",,"Wang et al. 2010",,,"10 to 20",,"Fei1","58",,,,"12.5","5","20","equal-time","N",,"42.93","1.34",,"4.13"
+,"240",,,,,,,2.37,"CO2","52_09'10""N","122_57'18""E",,"peat","cold","Hamdi2013","lab",,"Wang et al. 2010",,,"20 to 30",,"Fei2","58",,,,"12.5","5","20","equal-time","N",,"37.86","1.71",,"3.9"
+,"195",,,,,,,3.1,"CO2","52_10'00""N","05_44'38""E",,"forest","temperate","Hamdi2013","lab",,"Rey and Jarvis 2006",,,,,"LOO_0-5","50",,,,"17.5","5","30","model","N",,"6.78","0.5","51.73786744","5.2"
+,"195",,,,,,,2.6,"CO2","52_10'00""N","05_44'38""E",,"forest","temperate","Hamdi2013","lab",,"Rey and Jarvis 2006",,,,,"LOO_0-5","50",,,,"17.5","5","30","equal-C","N",,"6.78","0.5","51.73786744","5.2"
+,"176",,,,,,,4.34,"CO2","52_22'N","14_36'E",,"forest","temperate","Hamdi2013","lab",,"Niklinska et al. 1999",,,,,"O","45",,,,"7.5","5","10","equal-time","N",,"46.16666667","0.167",,"5.9"
+,"176",,,,,,,3.27,"CO2","52_22'N","14_36'E",,"forest","temperate","Hamdi2013","lab",,"Niklinska et al. 1999",,,,,"O","45",,,,"12.5","10","15","equal-time","N",,"46.16666667","0.167",,"5.9"
+,"176",,,,,,,1.97,"CO2","52_22'N","14_36'E",,"forest","temperate","Hamdi2013","lab",,"Niklinska et al. 1999",,,,,"O","45",,,,"17.5","15","20","equal-time","N",,"46.16666667","0.167",,"5.9"
+,"176",,,,,,,1.14,"CO2","52_22'N","14_36'E",,"forest","temperate","Hamdi2013","lab",,"Niklinska et al. 1999",,,,,"O","45",,,,"22.5","20","25","equal-time","N",,"46.16666667","0.167",,"5.9"
+,"171",,,,,,,4.78,"CO2","52_41'N","23_47'E",,"forest","temperate","Hamdi2013","lab",,"Niklinska et al. 1999",,,,,"C","45",,,,"7.5","5","10","equal-time","N",,"25.66666667","0.085",,"6.1"
+,"171",,,,,,,2.06,"CO2","52_41'N","23_47'E",,"forest","temperate","Hamdi2013","lab",,"Niklinska et al. 1999",,,,,"C","45",,,,"12.5","10","15","equal-time","N",,"25.66666667","0.085",,"6.1"
+,"171",,,,,,,1.26,"CO2","52_41'N","23_47'E",,"forest","temperate","Hamdi2013","lab",,"Niklinska et al. 1999",,,,,"C","45",,,,"17.5","15","20","equal-time","N",,"25.66666667","0.085",,"6.1"
+,"171",,,,,,,1.55,"CO2","52_41'N","23_47'E",,"forest","temperate","Hamdi2013","lab",,"Niklinska et al. 1999",,,,,"C","45",,,,"22.5","20","25","equal-time","N",,"25.66666667","0.085",,"6.1"
+,"245",,,,,,,2.09,"CO2","52_45'07""N","122_37'57""E",,"peat","cold","Hamdi2013","lab",,"Wang et al. 2010",,,"10 to 20",,"Zhua1","58",,,,"12.5","5","20","equal-time","N",,"45.22","1.43",,"3.88"
+,"246",,,,,,,2.15,"CO2","52_45'07""N","122_37'57""E",,"peat","cold","Hamdi2013","lab",,"Wang et al. 2010",,,"20 to 30",,"Zhua2","58",,,,"12.5","5","20","equal-time","N",,"41.3","1.59",,"3.58"
+,"243",,,,,,,2.07,"CO2","52_55'59""N","122_46'26""E",,"peat","cold","Hamdi2013","lab",,"Wang et al. 2010",,,"10 to 20",,"Tuqi1","58",,,,"12.5","5","20","equal-time","N",,"45.16","1.38",,"3.86"
+,"244",,,,,,,2.06,"CO2","52_55'59""N","122_46'26""E",,"peat","cold","Hamdi2013","lab",,"Wang et al. 2010",,,"20 to 30",,"Tuqi2","58",,,,"12.5","5","20","equal-time","N",,"43.37","1.64",,"3.72"
+,"237",,,,,,,2.05,"CO2","53_12'08""N","122_16'43""E",,"peat","cold","Hamdi2013","lab",,"Wang et al. 2010",,,"10 to 20",,"Beij1","58",,,,"12.5","5","20","equal-time","N",,"44.43","1.31",,"3.93"
+,"238",,,,,,,1.96,"CO2","53_12'08""N","122_16'43""E",,"peat","cold","Hamdi2013","lab",,"Wang et al. 2010",,,"20 to 30",,"Beij2","58",,,,"12.5","5","20","equal-time","N",,"40.56","1.65",,"3.52"
+,"2",,,,,,,3.17,"CO2","54_12'N","114_8'W",,"forest","temperate","Hamdi2013","lab",,"Arevalo et al. 2012",,,"0 to 10",,"2HP","2",,,,"10.5","7","14","equal-time","N",,,,,
+,"2",,,,,,,2.27,"CO2","54_12'N","114_8'W",,"forest","temperate","Hamdi2013","lab",,"Arevalo et al. 2012",,,"0 to 10",,"2HP","2",,,,"17.5","14","21","equal-time","N",,,,,
+,"3",,,,,,,3.02,"CO2","54_12'N","114_8'W",,"forest","temperate","Hamdi2013","lab",,"Arevalo et al. 2012",,,"0 to 10",,"9HP","2",,,,"10.5","7","14","equal-time","N",,,,,
+,"3",,,,,,,2.06,"CO2","54_12'N","114_8'W",,"forest","temperate","Hamdi2013","lab",,"Arevalo et al. 2012",,,"0 to 10",,"9HP","2",,,,"17.5","14","21","equal-time","N",,,,,
+,"4",,,,,,,3.06,"CO2","54_12'N","114_8'W",,"cultivated","temperate","Hamdi2013","lab",,"Arevalo et al. 2012",,,"0 to 10",,"AG","2",,,,"10.5","7","14","equal-time","N",,,,,
+,"4",,,,,,,2.47,"CO2","54_12'N","114_8'W",,"cultivated","temperate","Hamdi2013","lab",,"Arevalo et al. 2012",,,"0 to 10",,"AG","2",,,,"17.5","14","21","equal-time","N",,,,,
+,"5",,,,,,,3.25,"CO2","54_12'N","114_8'W",,"grassland","temperate","Hamdi2013","lab",,"Arevalo et al. 2012",,,"0 to 10",,"GRA","2",,,,"10.5","7","14","equal-time","N",,,,,
+,"5",,,,,,,2.45,"CO2","54_12'N","114_8'W",,"grassland","temperate","Hamdi2013","lab",,"Arevalo et al. 2012",,,"0 to 10",,"GRA","2",,,,"17.5","14","21","equal-time","N",,,,,
+,"6",,,,,,,2.08,"CO2","54_12'N","114_8'W",,"forest","temperate","Hamdi2013","lab",,"Arevalo et al. 2012",,,"0 to 10",,"NAT","2",,,,"10.5","7","14","equal-time","N",,,,,
+,"6",,,,,,,2.26,"CO2","54_12'N","114_8'W",,"forest","temperate","Hamdi2013","lab",,"Arevalo et al. 2012",,,"0 to 10",,"NAT","2",,,,"17.5","14","21","equal-time","N",,,,,
+,"193",,,,,,,2.8,"CO2","55_12'46""N","02_02'15""E",,"forest","temperate","Hamdi2013","lab",,"Rey and Jarvis 2006",,,,,"HAR_0-5","50",,,,"17","4","30","model","N",,"6.45","0.63",,"5.9"
+,"193",,,,,,,2.6,"CO2","55_12'46""N","02_02'15""E",,"forest","temperate","Hamdi2013","lab",,"Rey and Jarvis 2006",,,,,"HAR_0-5","50",,,,"17","4","30","equal-C","N",,"6.45","0.63",,"5.9"
+,"53",,,,,,,2.54,"CO2","55_12'59""N","2_1'28""W",,"forest","temperate","Hamdi2013","lab",,"Cross and Grace 2010",,,"5 to 15",,"Fresh","13",,,,"7.5","5","10","sequential","N",,"39.1","1.9",,
+,"53",,,,,,,2.39,"CO2","55_12'59""N","2_1'28""W",,"forest","temperate","Hamdi2013","lab",,"Cross and Grace 2010",,,"5 to 15",,"Fresh","13",,,,"13","10","16","sequential","N",,"39.1","1.9",,
+,"53",,,,,,,2.59,"CO2","55_12'59""N","2_1'28""W",,"forest","temperate","Hamdi2013","lab",,"Cross and Grace 2010",,,"5 to 15",,"Fresh","13",,,,"19","16","22","sequential","N",,"39.1","1.9",,
+,"53",,,,,,,2.68,"CO2","55_12'59""N","2_1'28""W",,"forest","temperate","Hamdi2013","lab",,"Cross and Grace 2010",,,"5 to 15",,"Fresh","13",,,,"26","22","30","sequential","N",,"39.1","1.9",,
+,"54",,,,,,,1.8,"CO2","55_12'59""N","2_1'28""W",,"forest","temperate","Hamdi2013","lab",,"Cross and Grace 2010",,,"20 to 30",,"Old","13",,,,"7.5","5","10","sequential","N",,"21.7","0.7",,
+,"54",,,,,,,2.28,"CO2","55_12'59""N","2_1'28""W",,"forest","temperate","Hamdi2013","lab",,"Cross and Grace 2010",,,"20 to 30",,"Old","13",,,,"13","10","16","sequential","N",,"21.7","0.7",,
+,"54",,,,,,,2.21,"CO2","55_12'59""N","2_1'28""W",,"forest","temperate","Hamdi2013","lab",,"Cross and Grace 2010",,,"20 to 30",,"Old","13",,,,"19","16","22","sequential","N",,"21.7","0.7",,
+,"54",,,,,,,2.6,"CO2","55_12'59""N","2_1'28""W",,"forest","temperate","Hamdi2013","lab",,"Cross and Grace 2010",,,"20 to 30",,"Old","13",,,,"26","22","30","sequential","N",,"21.7","0.7",,
+,"21",,,,,,,2.5,"CO2","56_07'N",,,"peat","temperate","Hamdi2013","lab",,"Chapman and Thurlow 1998",,,"0 to 20",,"Loch1","7",,,,"7","1","13","sequential","N",,,,,"2.95"
+,"21",,,,,,,1.9,"CO2","56_07'N",,,"peat","temperate","Hamdi2013","lab",,"Chapman and Thurlow 1998",,,"0 to 20",,"Loch1","7",,,,"17.5","5","30","equal-time","N",,,,,"2.95"
+,"22",,,,,,,2.7,"CO2","56_07'N",,,"peat","temperate","Hamdi2013","lab",,"Chapman and Thurlow 1998",,,"0 to 20",,"Loch2","7",,,,"7","1","13","sequential","N",,,,,"3.03"
+,"22",,,,,,,2.5,"CO2","56_07'N",,,"peat","temperate","Hamdi2013","lab",,"Chapman and Thurlow 1998",,,"0 to 20",,"Loch2","7",,,,"17.5","5","30","equal-time","N",,,,,"3.03"
+,"75",,,,,,,2.16,"CO2","56_37'N","3_48'W",,"forest","temperate","Hamdi2013","lab",,"Fang et al. 2005",,,,,"Fang-2005","20",,,,"24","4","44","sequential","N",,,,,
+,"16",,,,,,,3.9,"CO2","56_55'N",,,"peat","temperate","Hamdi2013","lab",,"Chapman and Thurlow 1998",,,"0 to 20",,"Glen1","7",,,,"7","1","13","sequential","N",,,,,"2.62"
+,"17",,,,,,,2.9,"CO2","56_55'N",,,"peat","temperate","Hamdi2013","lab",,"Chapman and Thurlow 1998",,,"0 to 20",,"Glen2","7",,,,"7","1","13","sequential","N",,,,,"2.73"
+,"18",,,,,,,146,"CO2","56_55'N",,,"peat","temperate","Hamdi2013","lab",,"Chapman and Thurlow 1998",,,"0 to 20",,"Glen3","7",,,,"3","1","5","equal-time","N",,,,,"3.08"
+,"18",,,,,,,2.3,"CO2","56_55'N",,,"peat","temperate","Hamdi2013","lab",,"Chapman and Thurlow 1998",,,"0 to 20",,"Glen3","7",,,,"17.5","5","30","equal-time","N",,,,,"3.08"
+,"19",,,,,,,2.1,"CO2","56_55'N",,,"peat","temperate","Hamdi2013","lab",,"Chapman and Thurlow 1998",,,"0 to 20",,"Glen4","7",,,,"17.5","5","30","equal-time","N",,,,,"4.39"
+,"70",,,,,,,50,"CO2","56_N",,,"forest","temperate","Hamdi2013","lab",,"Elberling and Brandt 2003",,,"0 to 20",,"Node","17",,,,"-5","-10","0","equal-time","N",,,,,
+,"70",,,,,,,3.63,"CO2","56_N",,,"forest","temperate","Hamdi2013","lab",,"Elberling and Brandt 2003",,,"0 to 20",,"Node","17",,,,"5","0","10","equal-time","N",,,,,
+,"70",,,,,,,2.34,"CO2","56_N",,,"forest","temperate","Hamdi2013","lab",,"Elberling and Brandt 2003",,,"0 to 20",,"Node","17",,,,"15","10","20","equal-time","N",,,,,
+,"24",,,,,,,12,"CO2","57_11'N",,,"peat","temperate","Hamdi2013","lab",,"Chapman and Thurlow 1998",,,"0 to 20",,"Sken","7",,,,"3","1","5","sequential","N",,,,,"3.3"
+,"24",,,,,,,2.5,"CO2","57_11'N",,,"peat","temperate","Hamdi2013","lab",,"Chapman and Thurlow 1998",,,"0 to 20",,"Sken","7",,,,"12.5","5","20","sequential","N",,,,,"3.3"
+,"15",,,,,,,3.7,"CO2","57_17'N",,,"peat","temperate","Hamdi2013","lab",,"Chapman and Thurlow 1998",,,"0 to 20",,"Clov","7",,,,"10.5","1","20","sequential","N",,,,,"2.73"
+,"25",,,,,,,3.3,"CO2","57_20'N",,,"peat","temperate","Hamdi2013","lab",,"Chapman and Thurlow 1998",,,"0 to 20",,"Tonb","7",,,,"10.5","1","20","sequential","N",,,,,"2.89"
+,"170",,,,,,,2.72,"CO2","58_03'N","14_08'E",,"forest","temperate","Hamdi2013","lab",,"Niklinska et al. 1999",,,,,"B","45",,,,"7.5","5","10","equal-time","N",,"52.83333333","0.105",,"5.9"
+,"170",,,,,,,3.19,"CO2","58_03'N","14_08'E",,"forest","temperate","Hamdi2013","lab",,"Niklinska et al. 1999",,,,,"B","45",,,,"12.5","10","15","equal-time","N",,"52.83333333","0.105",,"5.9"
+,"170",,,,,,,2.06,"CO2","58_03'N","14_08'E",,"forest","temperate","Hamdi2013","lab",,"Niklinska et al. 1999",,,,,"B","45",,,,"17.5","15","20","equal-time","N",,"52.83333333","0.105",,"5.9"
+,"170",,,,,,,0.68,"CO2","58_03'N","14_08'E",,"forest","temperate","Hamdi2013","lab",,"Niklinska et al. 1999",,,,,"B","45",,,,"22.5","20","25","equal-time","N",,"52.83333333","0.105",,"5.9"
+,"12",,,,,,,6.2,"CO2","58_26'N",,,"peat","temperate","Hamdi2013","lab",,"Chapman and Thurlow 1998",,,"0 to 20",,"Bad1","7",,,,"7","1","13","sequential","N",,,,,"3.3"
+,"12",,,,,,,3.4,"CO2","58_26'N",,,"peat","temperate","Hamdi2013","lab",,"Chapman and Thurlow 1998",,,"0 to 20",,"Bad1","7",,,,"17.5","5","30","equal-time","N",,,,,"3.3"
+,"13",,,,,,,2.2,"CO2","58_26'N",,,"peat","temperate","Hamdi2013","lab",,"Chapman and Thurlow 1998",,,"0 to 20",,"Bad2","7",,,,"7","1","13","sequential","N",,,,,"3.1"
+,"13",,,,,,,3.8,"CO2","58_26'N",,,"peat","temperate","Hamdi2013","lab",,"Chapman and Thurlow 1998",,,"0 to 20",,"Bad2","7",,,,"17.5","5","30","equal-time","N",,,,,"3.1"
+,"26",,,,,,,8.1,"CO2","60_20'N",,,"peat","temperate","Hamdi2013","lab",,"Chapman and Thurlow 1998",,,"0 to 20",,"Voe","7",,,,"8","5","11","sequential","N",,,,,"3.22"
+,"26",,,,,,,3.2,"CO2","60_20'N",,,"peat","temperate","Hamdi2013","lab",,"Chapman and Thurlow 1998",,,"0 to 20",,"Voe","7",,,,"17.5","5","30","equal-time","N",,,,,"3.22"
+,"23",,,,,,,49,"CO2","60_35'N",,,"peat","temperate","Hamdi2013","lab",,"Chapman and Thurlow 1998",,,"0 to 20",,"Rea","7",,,,"3","1","5","sequential","N",,,,,
+,"23",,,,,,,14,"CO2","60_35'N",,,"peat","temperate","Hamdi2013","lab",,"Chapman and Thurlow 1998",,,"0 to 20",,"Rea","7",,,,"8","5","11","sequential","N",,,,,
+,"23",,,,,,,3.8,"CO2","60_35'N",,,"peat","temperate","Hamdi2013","lab",,"Chapman and Thurlow 1998",,,"0 to 20",,"Rea","7",,,,"17.5","5","30","equal-time","N",,,,,
+,"14",,,,,,,85,"CO2","60_36'N",,,"peat","temperate","Hamdi2013","lab",,"Chapman and Thurlow 1998",,,"0 to 20",,"Burr","7",,,,"3","1","5","sequential","N",,,,,"3.54"
+,"14",,,,,,,19,"CO2","60_36'N",,,"peat","temperate","Hamdi2013","lab",,"Chapman and Thurlow 1998",,,"0 to 20",,"Burr","7",,,,"8","5","11","sequential","N",,,,,"3.54"
+,"14",,,,,,,6.4,"CO2","60_36'N",,,"peat","temperate","Hamdi2013","lab",,"Chapman and Thurlow 1998",,,"0 to 20",,"Burr","7",,,,"17.5","5","30","equal-time","N",,,,,"3.54"
+,"174",,,,,,,3.07,"CO2","60_49'N","16_01'E",,"forest","temperate","Hamdi2013","lab",,"Niklinska et al. 1999",,,,,"J","45",,,,"7.5","5","10","equal-time","N",,"51.44444444","0.116",,"5.8"
+,"174",,,,,,,2.27,"CO2","60_49'N","16_01'E",,"forest","temperate","Hamdi2013","lab",,"Niklinska et al. 1999",,,,,"J","45",,,,"12.5","10","15","equal-time","N",,"51.44444444","0.116",,"5.8"
+,"174",,,,,,,2.2,"CO2","60_49'N","16_01'E",,"forest","temperate","Hamdi2013","lab",,"Niklinska et al. 1999",,,,,"J","45",,,,"17.5","15","20","equal-time","N",,"51.44444444","0.116",,"5.8"
+,"174",,,,,,,1.07,"CO2","60_49'N","16_01'E",,"forest","temperate","Hamdi2013","lab",,"Niklinska et al. 1999",,,,,"J","45",,,,"22.5","20","25","equal-time","N",,"51.44444444","0.116",,"5.8"
+,"20",,,,,,,52,"CO2","60_50'N",,,"peat","temperate","Hamdi2013","lab",,"Chapman and Thurlow 1998",,,"0 to 20",,"Herm","7",,,,"3","1","5","sequential","N",,,,,"3.65"
+,"20",,,,,,,9,"CO2","60_50'N",,,"peat","temperate","Hamdi2013","lab",,"Chapman and Thurlow 1998",,,"0 to 20",,"Herm","7",,,,"8","5","11","sequential","N",,,,,"3.65"
+,"20",,,,,,,4.6,"CO2","60_50'N",,,"peat","temperate","Hamdi2013","lab",,"Chapman and Thurlow 1998",,,"0 to 20",,"Herm","7",,,,"17.5","5","30","equal-time","N",,,,,"3.65"
+,"247",,,,,,,1.7,"CO2","63_53'N","145_44'W",,"forest","cold","Hamdi2013","lab",,"Wickland and Neff 2008",,,,,"MD","59",,,,"15","10","20","equal-time","N",,"29.6","1.18",,
+,"249",,,,,,,1.9,"CO2","63_53'N","145_44'W",,"forest","cold","Hamdi2013","lab",,"Wickland and Neff 2008",,,,,"WD","59",,,,"15","10","20","equal-time","N",,"31","1.16",,
+,"250",,,,,,,1.8,"CO2","63_53'N","145_44'W",,"forest","temperate","Hamdi2013","lab",,"Winkler et al. 1996",,,"0 to 28",,"Wink","60",,,,"16","4","28","equal-time","N",,,,,
+,"67",,,,,,,4,"CO2","64_00'N","21_05'E",,"forest","temperate","Hamdi2013","lab",,"Dalias et al. 2001",,,,,"Dalias-Vind","16",,,,"7","4","10","equal-C","N",,"44","1.17",,"3.6"
+,"67",,,,,,,2,"CO2","64_00'N","21_05'E",,"forest","temperate","Hamdi2013","lab",,"Dalias et al. 2001",,,,,"Dalias-Vind","16",,,,"13","10","16","equal-C","N",,"44","1.17",,"3.6"
+,"67",,,,,,,0.8,"CO2","64_00'N","21_05'E",,"forest","temperate","Hamdi2013","lab",,"Dalias et al. 2001",,,,,"Dalias-Vind","16",,,,"19.5","16","23","equal-C","N",,"44","1.17",,"3.6"
+,"67",,,,,,,0.7,"CO2","64_00'N","21_05'E",,"forest","temperate","Hamdi2013","lab",,"Dalias et al. 2001",,,,,"Dalias-Vind","16",,,,"26.5","23","30","equal-C","N",,"44","1.17",,"3.6"
+,"248",,,,,,,1.6,"CO2","64_42'N","148_19'W",,"forest","cold","Hamdi2013","lab",,"Wickland and Neff 2008",,,,,"PD","59",,,,"15","10","20","equal-time","N",,"34.7","1.58",,
+,"167",,,,,,,2,"CO2","64_52.06'N","147_47.16'W",,"tundra","cold","Hamdi2013","lab",,"Neff and Hooper 2002",,,"0 to 10",,"Fair","44",,,,"20","10","30","equal-time","N",,"44","0.92",,
+,"173",,,,,,,3.25,"CO2","66_08'N","16_01'E",,"forest","temperate","Hamdi2013","lab",,"Niklinska et al. 1999",,,,,"H","45",,,,"7.5","5","10","equal-time","N",,"51.72222222","0.071",,"5.6"
+,"173",,,,,,,4.69,"CO2","66_08'N","16_01'E",,"forest","temperate","Hamdi2013","lab",,"Niklinska et al. 1999",,,,,"H","45",,,,"12.5","10","15","equal-time","N",,"51.72222222","0.071",,"5.6"
+,"173",,,,,,,1.92,"CO2","66_08'N","16_01'E",,"forest","temperate","Hamdi2013","lab",,"Niklinska et al. 1999",,,,,"H","45",,,,"17.5","15","20","equal-time","N",,"51.72222222","0.071",,"5.6"
+,"173",,,,,,,1,"CO2","66_08'N","16_01'E",,"forest","temperate","Hamdi2013","lab",,"Niklinska et al. 1999",,,,,"H","45",,,,"22.5","20","25","equal-time","N",,"51.72222222","0.071",,"5.6"
+,"223",,,,,,,2.52,"CO2","67_29.90'N","86_25.26'E",,"grassland","temperate","Hamdi2013","lab",,"Rodionow et al. 2006",,,"0 to 10",,"P0","52",,,,"10","5","15","equal-time","N",,"2.5","0.24","17.2","6.3"
+,"224",,,,,,,2.17,"CO2","67_29.90'N","86_25.26'E",,"tundra","cold","Hamdi2013","lab",,"Rodionow et al. 2006",,,"0 to 10",,"P1","52",,,,"10","5","15","equal-time","N",,"3.6","0.14","24","5.5"
+,"224",,,,,,,2.18,"CO2","67_29.90'N","86_25.26'E",,"tundra","cold","Hamdi2013","lab",,"Rodionow et al. 2006",,,"10 to 40",,"P1","52",,,,"10","5","15","equal-time","N",,"0.8","0.05","18","5.8"
+,"225",,,,,,,2,"CO2","67_29.90'N","86_25.26'E",,"tundra","cold","Hamdi2013","lab",,"Rodionow et al. 2006",,,"0 to 30",,"P2","52",,,,"10","5","15","equal-time","N",,"3","0.19","28","5.5"
+,"225",,,,,,,2.43,"CO2","67_29.90'N","86_25.26'E",,"tundra","cold","Hamdi2013","lab",,"Rodionow et al. 2006",,,"0 to 40",,"P2","52",,,,"10","5","15","equal-time","N",,"5.3","0.28","27.6","6.4"
+,"226",,,,,,,3.08,"CO2","67_29.90'N","86_25.26'E",,"tundra","cold","Hamdi2013","lab",,"Rodionow et al. 2006",,,"0 to 20",,"P3","52",,,,"10","5","15","equal-time","N",,"7.4","0.4","30.3","5.9"
+,"226",,,,,,,2.37,"CO2","67_29.90'N","86_25.26'E",,"tundra","cold","Hamdi2013","lab",,"Rodionow et al. 2006",,,"20 to 30",,"P3","52",,,,"10","5","15","equal-time","N",,"12.8","0.7","28.4","6"
+,"166",,,,,,,1.79,"CO2","67_39.24'N","149_43.09'W",,"tundra","cold","Hamdi2013","lab",,"Neff and Hooper 2002",,,"0 to 10",,"Chan","44",,,,"20","10","30","equal-time","N",,"44","1.35",,
+,"107",,,,,,,4.03,"CO2","68_18'07""N","18_51'16""E",,"tundra","cold","Hamdi2013","lab",,"Hartley et al. 2008",,,,,"Hartley-tundra","30",,,,"6","2","10","sequential","N",,,,,
+,"227",,,,,,,2.13,"CO2","68_37'N","149_36'W",,"tundra","cold","Hamdi2013","lab",,"Shaver et al. 2006",,,,,"Shav","53",,,,"11","7","15","equal-time","N",,"33",,,
+,"157",,,,,,,89.1,"CO2","68_38'N","149_38'W",,"tundra","cold","Hamdi2013","lab",,"Mikan et al. 2002",,,"0 to 15",,"Inter","42",,,,"-5.25","-10","-0.5","equal-time","N",,,,,
+,"157",,,,,,,4.6,"CO2","68_38'N","149_38'W",,"tundra","cold","Hamdi2013","lab",,"Mikan et al. 2002",,,"0 to 15",,"Inter","42",,,,"7.25","0.5","14","equal-time","N",,,,,
+,"158",,,,,,,63.4,"CO2","68_38'N","149_38'W",,"tundra","cold","Hamdi2013","lab",,"Mikan et al. 2002",,,"0 to 15",,"Shrub","42",,,,"-5.25","-10","-0.5","equal-time","N",,,,,
+,"158",,,,,,,4.9,"CO2","68_38'N","149_38'W",,"tundra","cold","Hamdi2013","lab",,"Mikan et al. 2002",,,"0 to 15",,"Shrub","42",,,,"7.25","0.5","14","equal-time","N",,,,,
+,"159",,,,,,,89.8,"CO2","68_38'N","149_38'W",,"tundra","cold","Hamdi2013","lab",,"Mikan et al. 2002",,,"0 to 15",,"Tuss","42",,,,"-5.25","-10","-0.5","equal-time","N",,,,,
+,"159",,,,,,,9.4,"CO2","68_38'N","149_38'W",,"tundra","cold","Hamdi2013","lab",,"Mikan et al. 2002",,,"0 to 15",,"Tuss","42",,,,"7.25","0.5","14","equal-time","N",,,,,
+,"160",,,,,,,191.3,"CO2","68_38'N","149_38'W",,"tundra","cold","Hamdi2013","lab",,"Mikan et al. 2002",,,"0 to 5",,"WM0-5","42",,,,"-5.25","-10","-0.5","equal-time","N",,,,,
+,"160",,,,,,,5.1,"CO2","68_38'N","149_38'W",,"tundra","cold","Hamdi2013","lab",,"Mikan et al. 2002",,,"0 to 5",,"WM0-5","42",,,,"7.25","0.5","14","equal-time","N",,,,,
+,"161",,,,,,,164.7,"CO2","68_38'N","149_38'W",,"tundra","cold","Hamdi2013","lab",,"Mikan et al. 2002",,,"15 to 25",,"WM15-25","42",,,,"-5.25","-10","-0.5","equal-time","N",,,,,
+,"161",,,,,,,9.4,"CO2","68_38'N","149_38'W",,"tundra","cold","Hamdi2013","lab",,"Mikan et al. 2002",,,"15 to 25",,"WM15-25","42",,,,"7.25","0.5","14","equal-time","N",,,,,
+,"162",,,,,,,237,"CO2","68_38'N","149_38'W",,"tundra","cold","Hamdi2013","lab",,"Mikan et al. 2002",,,"5 to 15",,"WM5-15","42",,,,"-5.25","-10","-0.5","equal-time","N",,,,,
+,"162",,,,,,,6.4,"CO2","68_38'N","149_38'W",,"tundra","cold","Hamdi2013","lab",,"Mikan et al. 2002",,,"5 to 15",,"WM5-15","42",,,,"7.25","0.5","14","equal-time","N",,,,,
+,"169",,,,,,,1.69,"CO2","69_40.92'N","149_4.15'W",,"tundra","cold","Hamdi2013","lab",,"Neff and Hooper 2002",,,"0 to 10",,"Tool","44",,,,"20","10","30","equal-time","N",,"40","1.46",,
+,"168",,,,,,,2.09,"CO2","70_14.39'N","148_29.73'W",,"tundra","cold","Hamdi2013","lab",,"Neff and Hooper 2002",,,"0 to 10",,"Sag","44",,,,"20","10","30","equal-time","N",,"45","1.28",,
+,"71",,,,,,,22.3,"CO2","74_28'N","20_34'W",,"tundra","cold","Hamdi2013","lab",,"Elberling and Brandt 2003",,,"0 to 20",,"Zack","17",,,,"-5","-10","0","equal-time","N",,"6.5","0.4",,
+,"71",,,,,,,2.56,"CO2","74_28'N","20_34'W",,"tundra","cold","Hamdi2013","lab",,"Elberling and Brandt 2003",,,"0 to 20",,"Zack","17",,,,"5","0","10","equal-time","N",,"6.5","0.4",,
+,"71",,,,,,,1.96,"CO2","74_28'N","20_34'W",,"tundra","cold","Hamdi2013","lab",,"Elberling and Brandt 2003",,,"0 to 20",,"Zack","17",,,,"15","10","20","equal-time","N",,"6.5","0.4",,
+,"72",,,,,,,344,"CO2","78_01'S","163_53'E",,"polar desert","cold","Hamdi2013","lab",,"Elberling et al. 2006",,,"0 to 8",,"Polygon","18",,,,"2","-1","5","equal-time","N",,"0.116",,,
+,"72",,,,,,,3.8,"CO2","78_01'S","163_53'E",,"polar desert","cold","Hamdi2013","lab",,"Elberling et al. 2006",,,"0 to 8",,"Polygon","18",,,,"7.5","5","10","equal-time","N",,"0.116",,,
+,"8",,,,,,,3.15,"CO2","79_N","12_E",,"tundra","cold","Hamdi2013","lab",,"Bekku et al. 2003",,,,,"Bekku_Arctic","4",,,,"11","2","20","sequential","N",,"15","0.8",,
+,"1",,,,,,,1.73,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Andrews et al. 2000",,,"0 to 10",,"Duke_B","1",,,,"31","22","40","equal-time","N",,,,,
+,"7",,,,,,,4.6,"CO2",,,,"polar desert","cold","Hamdi2013","lab",,"Barrett et al. 2006",,,"0 to 10",,"AntDry","3",,,,"7.5","5","10","equal-time","N",,,,,
+,"7",,,,,,,1.6,"CO2",,,,"polar desert","cold","Hamdi2013","lab",,"Barrett et al. 2006",,,"0 to 10",,"AntDry","3",,,,"15","10","20","equal-time","N",,,,,
+,"11",,,,,,,2.93,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Bradford et al. 2011",,,"0 to 10",,"Brad","6",,,,"25","20","30","equal-time","N",,,,,
+,"27",,,,,,,2.93,"CO2",,,,"forest","warm","Hamdi2013","lab",,"Chen et al. 2010",,,,,"Chen-FJ","8",,,,"20","10","30","sequential","N",,"3.34",,,
+,"28",,,,,,,2.22,"CO2",,,,"grassland","temperate","Hamdi2013","lab",,"Chen et al. 2010",,,,,"Chen-GS","8",,,,"20","10","30","sequential","N",,"9.9",,,
+,"29",,,,,,,3.09,"CO2",,,,"forest","warm","Hamdi2013","lab",,"Chen et al. 2010",,,,,"Chen-HN","8",,,,"20","10","30","sequential","N",,"0.74",,,
+,"30",,,,,,,3.55,"CO2",,,,"grassland","temperate","Hamdi2013","lab",,"Chen et al. 2010",,,,,"Chen-IM","8",,,,"20","10","30","sequential","N",,"0.95",,,
+,"31",,,,,,,2,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Chen et al. 2010",,,,,"Chen-JL","8",,,,"20","10","30","sequential","N",,"7.69",,,
+,"32",,,,,,,2.37,"CO2",,,,"cultivated","temperate","Hamdi2013","lab",,"Chen et al. 2010",,,,,"Chen-SX","8",,,,"20","10","30","sequential","N",,"0.47",,,
+,"33",,,,,,,2.2,"CO2",,,,"cultivated",,"Hamdi2013","lab",,"Conant et al. 2008a",,,,,"Champ-cultivated","9",,,,"23.5","19","28","equal-C","N",,"1.8",,,
+,"34",,,,,,,1.2,"CO2",,,,"grassland",,"Hamdi2013","lab",,"Conant et al. 2008a",,,,,"Champ-grassland","9",,,,"23.5","19","28","equal-C","N",,"3.8",,,
+,"37",,,,,,,1.7,"CO2",,,,"forest",,"Hamdi2013","lab",,"Conant et al. 2008a",,,,,"Duke-forest","9",,,,"30","25","35","equal-C","N",,"1",,,
+,"38",,,,,,,2.9,"CO2",,,,"grassland",,"Hamdi2013","lab",,"Conant et al. 2008a",,,,,"Hari-grassland","9",,,,"22","20","24","equal-C","N",,"2.5",,,
+,"39",,,,,,,3,"CO2",,,,"grassland",,"Hamdi2013","lab",,"Conant et al. 2008a",,,,,"Taw-grassland","9",,,,"22","20","24","equal-C","N",,"4.6",,,
+,"42",,,,,,,3,"CO2",,,,"grassland",,"Hamdi2013","lab",,"Conant et al. 2008a",,,,,"Tima-grassland","9",,,,"22","20","24","equal-C","N",,"3.7",,,
+,"47",,,,,,,3.2,"CO2",,,,"cultivated","temperate","Hamdi2013","lab",,"Conen et al. 2006",,,"0 to 30",,"HL-C3","11",,,,"20","5","35","equal-time","N",,"1.1",,"8",
+,"48",,,,,,,3.2,"CO2",,,,"cultivated","temperate","Hamdi2013","lab",,"Conen et al. 2006",,,"0 to 30",,"HL-C4","11",,,,"20","5","35","equal-time","N",,"1.12",,"8",
+,"51",,,,,,,3.3,"CO2",,,,"cultivated","temperate","Hamdi2013","lab",,"Conen et al. 2008",,,,,"Basel-C","12",,,,"20","5","35","equal-time","N",,"9.2",,,
+,"52",,,,,,,2.9,"CO2",,,,"cultivated","temperate","Hamdi2013","lab",,"Conen et al. 2008",,,,,"Basel-M","12",,,,"20","5","35","equal-time","N",,"13.3",,,
+,"73",,,,,,,2.4,"CO2",,,,"cultivated","temperate","Hamdi2013","lab",,"Fang and Moncrieff 2001",,,,,"Fang-cult","19",,,,"10","5","15","sequential","N",,,,,
+,"73",,,,,,,2.2,"CO2",,,,"cultivated","temperate","Hamdi2013","lab",,"Fang and Moncrieff 2001",,,,,"Fang-cult","19",,,,"30","25","35","sequential","N",,,,,
+,"74",,,,,,,3.4,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Fang and Moncrieff 2001",,,,,"Fang-forest","19",,,,"10","5","15","sequential","N",,,,,
+,"74",,,,,,,2.9,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Fang and Moncrieff 2001",,,,,"Fang-forest","19",,,,"30","25","35","sequential","N",,,,,
+,"82",,,,,,,2.7,"CO2",,,,"tundra","cold","Hamdi2013","lab",,"Fierer et al. 2006",,,,,"Fierer-Boreal","22","y",,,"20","10","30","equal-time","N",,,,,
+,"83",,,,,,,2.8,"CO2",,,,"forest","warm","Hamdi2013","lab",,"Fierer et al. 2006",,,,,"Fierer-DryFor","22","y",,,"20","10","30","equal-time","N",,,,,
+,"84",,,,,,,2.9,"CO2",,,,"grassland","warm","Hamdi2013","lab",,"Fierer et al. 2006",,,,,"Fierer-DryGrass","22","y",,,"20","10","30","equal-time","N",,,,,
+,"85",,,,,,,2.9,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Fierer et al. 2006",,,,,"Fierer-TempFor","22","y",,,"20","10","30","equal-time","N",,,,,
+,"86",,,,,,,3.1,"CO2",,,,"grassland","temperate","Hamdi2013","lab",,"Fierer et al. 2006",,,,,"Fierer-TempGrass","22","y",,,"20","10","30","equal-time","N",,,,,
+,"87",,,,,,,3.3,"CO2",,,,"grassland","warm","Hamdi2013","lab",,"Fierer et al. 2006",,,,,"Fierer-TropFor","22","y",,,"20","10","30","equal-time","N",,,,,
+,"88",,,,,,,1.95,"CO2",,,,"forest",,"Hamdi2013","lab",,"Fissore et al. 2009",,,"0 to 20",,"Various","23",,,,"20","10","30","equal-time","N",,,,,
+,"88",,,,,,,1.44,"CO2",,,,"forest",,"Hamdi2013","lab",,"Fissore et al. 2009",,,"0 to 20",,"Various","23",,,,"20","10","30","equal-C","N",,,,,
+,"89",,,,,,,4.65,"CO2",,,,"cultivated","temperate","Hamdi2013","lab",,"Gershenson et al. 2009",,,,,"Gersh-Farm","24",,,,"5","0","10","equal-time","Y",,,,,
+,"89",,,,,,,6.27,"CO2",,,,"cultivated","temperate","Hamdi2013","lab",,"Gershenson et al. 2009",,,,,"Gersh-Farm","24",,,,"5","0","10","equal-time","N",,,,,
+,"89",,,,,,,2.47,"CO2",,,,"cultivated","temperate","Hamdi2013","lab",,"Gershenson et al. 2009",,,,,"Gersh-Farm","24",,,,"16","10","22","equal-time","Y",,,,,
+,"89",,,,,,,1.83,"CO2",,,,"cultivated","temperate","Hamdi2013","lab",,"Gershenson et al. 2009",,,,,"Gersh-Farm","24",,,,"16","10","22","equal-time","N",,,,,
+,"89",,,,,,,1.78,"CO2",,,,"cultivated","temperate","Hamdi2013","lab",,"Gershenson et al. 2009",,,,,"Gersh-Farm","24",,,,"26","22","30","equal-time","Y",,,,,
+,"89",,,,,,,1.69,"CO2",,,,"cultivated","temperate","Hamdi2013","lab",,"Gershenson et al. 2009",,,,,"Gersh-Farm","24",,,,"26","22","30","equal-time","N",,,,,
+,"90",,,,,,,3.99,"CO2",,,,"grassland","temperate","Hamdi2013","lab",,"Gershenson et al. 2009",,,,,"Gersh-Ga","24",,,,"5","0","10","equal-time","Y",,,,,
+,"90",,,,,,,2.9,"CO2",,,,"grassland","temperate","Hamdi2013","lab",,"Gershenson et al. 2009",,,,,"Gersh-Ga","24",,,,"5","0","10","equal-time","N",,,,,
+,"90",,,,,,,2.6,"CO2",,,,"grassland","temperate","Hamdi2013","lab",,"Gershenson et al. 2009",,,,,"Gersh-Ga","24",,,,"16","10","22","equal-time","Y",,,,,
+,"90",,,,,,,2.49,"CO2",,,,"grassland","temperate","Hamdi2013","lab",,"Gershenson et al. 2009",,,,,"Gersh-Ga","24",,,,"16","10","22","equal-time","N",,,,,
+,"90",,,,,,,1.61,"CO2",,,,"grassland","temperate","Hamdi2013","lab",,"Gershenson et al. 2009",,,,,"Gersh-Ga","24",,,,"26","22","30","equal-time","Y",,,,,
+,"90",,,,,,,1.4,"CO2",,,,"grassland","temperate","Hamdi2013","lab",,"Gershenson et al. 2009",,,,,"Gersh-Ga","24",,,,"26","22","30","equal-time","N",,,,,
+,"91",,,,,,,4.46,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Gershenson et al. 2009",,,,,"Gersh-RW","24",,,,"5","0","10","equal-time","Y",,,,,
+,"91",,,,,,,3.39,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Gershenson et al. 2009",,,,,"Gersh-RW","24",,,,"5","0","10","equal-time","N",,,,,
+,"91",,,,,,,2.4,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Gershenson et al. 2009",,,,,"Gersh-RW","24",,,,"16","10","22","equal-time","Y",,,,,
+,"91",,,,,,,2.11,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Gershenson et al. 2009",,,,,"Gersh-RW","24",,,,"16","10","22","equal-time","N",,,,,
+,"91",,,,,,,1.67,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Gershenson et al. 2009",,,,,"Gersh-RW","24",,,,"26","22","30","equal-time","Y",,,,,
+,"91",,,,,,,1.71,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Gershenson et al. 2009",,,,,"Gersh-RW","24",,,,"26","22","30","equal-time","N",,,,,
+,"93",,,,,,,2.2,"CO2",,,,"forest","warm","Hamdi2013","lab",,"Grisi et al. 1998",,,,,"I","26",,,,"25","15","35","equal-time","N",,"2.88","0.29","22","6.2"
+,"94",,,,,,,1.9,"CO2",,,,"cultivated","warm","Hamdi2013","lab",,"Grisi et al. 1998",,,,,"II","26",,,,"25","15","35","equal-time","N",,"2.95","0.18","82","5.1"
+,"95",,,,,,,1.9,"CO2",,,,"cultivated","warm","Hamdi2013","lab",,"Grisi et al. 1998",,,,,"III","26",,,,"25","15","35","equal-time","N",,"0.95","0.1","15","6.4"
+,"96",,,,,,,1.7,"CO2",,,,"cultivated","temperate","Hamdi2013","lab",,"Grisi et al. 1998",,,,,"IV","26",,,,"25","15","35","equal-time","N",,"4.09","0.34","68","8.2"
+,"97",,,,,,,2.1,"CO2",,,,"grassland","temperate","Hamdi2013","lab",,"Grisi et al. 1998",,,,,"V","26",,,,"25","15","35","equal-time","N",,"2.86","0.27","21","6.9"
+,"98",,,,,,,1.4,"CO2",,,,"grassland","temperate","Hamdi2013","lab",,"Grisi et al. 1998",,,,,"VI","26",,,,"25","15","35","equal-time","N",,"1.5","0.14","8","6.8"
+,"101",,,,,,,2.06,"CO2",,,,"forest","warm","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-CR","27",,,,"20","15","25","equal-time","N",,"20.02",,"9",
+,"101",,,,,,,4.1,"CO2",,,,"forest","warm","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-CR","27",,,,"30","25","35","equal-time","Y",,"20.02",,"9",
+,"101",,,,,,,1.9,"CO2",,,,"forest","warm","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-CR","27",,,,"30","25","35","equal-C","Y",,"20.02",,"9",
+,"101",,,,,,,2.3,"CO2",,,,"forest","warm","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-CR","27",,,,"30","25","35","equal-C","N",,"20.02",,"9",
+,"101",,,,,,,2.08,"CO2",,,,"grassland","warm","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-CR","27",,,,"20","15","25","equal-time","N",,"14.16",,"12",
+,"101",,,,,,,6.5,"CO2",,,,"grassland","warm","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-CR","27",,,,"30","25","35","equal-time","Y",,"14.16",,"12",
+,"101",,,,,,,2.9,"CO2",,,,"grassland","warm","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-CR","27",,,,"30","25","35","equal-C","Y",,"14.16",,"12",
+,"101",,,,,,,2.11,"CO2",,,,"grassland","warm","Hamdi2013","lab",,"Haddix et al. 2011",,,,,"Haddix-CR","27",,,,"30","25","35","equal-C","N",,"14.16",,"12",
+,"106",,,,,,,3.12,"CO2",,,,"cultivated","temperate","Hamdi2013","lab",,"Hartley and Ineson 2008",,,,,"Hartley-Escrick","29",,,,"15","10","20","sequential","N",,"4",,,"6.5"
+,"108",,,,,,,4.35,"CO2",,,,"tundra","cold","Hamdi2013","lab",,"Hartly et al. 2008",,,"0 to 10",,"Tund","31",,,,"4","2","6","sequential","N",,,,,
+,"108",,,,,,,3.58,"CO2",,,,"tundra","cold","Hamdi2013","lab",,"Hartly et al. 2008",,,"0 to 10",,"Tund","31",,,,"8","6","10","sequential","N",,,,,
+,"109",,,,,,,3.1,"CO2",,,,"forest","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-BR-forest","32",,,,"20","15","25","equal-time","N",,"2.94",,"67.5",
+,"109",,,,,,,2.2,"CO2",,,,"forest","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-BR-forest","32",,,,"30","25","35","equal-time","N",,"2.94",,"67.5",
+,"109",,,,,,,1.7,"CO2",,,,"forest","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-BR-forest","32",,,,"40","35","45","equal-time","N",,"2.94",,"67.5",
+,"109",,,,,,,3.4,"CO2",,,,"forest","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-BR-forest","32",,,,"50","45","55","equal-time","N",,"2.94",,"67.5",
+,"110",,,,,,,3.1,"CO2",,,,"grassland","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-BR-grassland","32",,,,"20","15","25","equal-time","N",,"2.39",,"49",
+,"110",,,,,,,2,"CO2",,,,"grassland","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-BR-grassland","32",,,,"30","25","35","equal-time","N",,"2.39",,"49",
+,"110",,,,,,,1.5,"CO2",,,,"grassland","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-BR-grassland","32",,,,"40","35","45","equal-time","N",,"2.39",,"49",
+,"110",,,,,,,2.3,"CO2",,,,"grassland","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-BR-grassland","32",,,,"50","45","55","equal-time","N",,"2.39",,"49",
+,"111",,,,,,,4.1,"CO2",,,,"forest","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-CR-forest","32",,,,"20","15","25","equal-time","N",,"3.25",,"47",
+,"111",,,,,,,6.4,"CO2",,,,"forest","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-CR-forest","32",,,,"30","25","35","equal-time","N",,"3.25",,"47",
+,"111",,,,,,,2.2,"CO2",,,,"forest","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-CR-forest","32",,,,"40","35","45","equal-time","N",,"3.25",,"47",
+,"111",,,,,,,1.4,"CO2",,,,"forest","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-CR-forest","32",,,,"50","45","55","equal-time","N",,"3.25",,"47",
+,"112",,,,,,,4.8,"CO2",,,,"grassland","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-CR-grassland10","32",,,,"20","15","25","equal-time","N",,"3.6",,"43",
+,"112",,,,,,,3.4,"CO2",,,,"grassland","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-CR-grassland10","32",,,,"30","25","35","equal-time","N",,"3.6",,"43",
+,"112",,,,,,,1.4,"CO2",,,,"grassland","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-CR-grassland10","32",,,,"40","35","45","equal-time","N",,"3.6",,"43",
+,"112",,,,,,,1.9,"CO2",,,,"grassland","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-CR-grassland10","32",,,,"50","45","55","equal-time","N",,"3.6",,"43",
+,"113",,,,,,,2.6,"CO2",,,,"grassland","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-CR-grassland2","32",,,,"20","15","25","equal-time","N",,"4.15",,"52",
+,"113",,,,,,,2.6,"CO2",,,,"grassland","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-CR-grassland2","32",,,,"30","25","35","equal-time","N",,"4.15",,"52",
+,"113",,,,,,,1.1,"CO2",,,,"grassland","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-CR-grassland2","32",,,,"40","35","45","equal-time","N",,"4.15",,"52",
+,"113",,,,,,,1.5,"CO2",,,,"grassland","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-CR-grassland2","32",,,,"50","45","55","equal-time","N",,"4.15",,"52",
+,"114",,,,,,,3.1,"CO2",,,,"grassland","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-CR-grassland25","32",,,,"20","15","25","equal-time","N",,"4.65",,"57",
+,"114",,,,,,,2.4,"CO2",,,,"grassland","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-CR-grassland25","32",,,,"30","25","35","equal-time","N",,"4.65",,"57",
+,"114",,,,,,,1.3,"CO2",,,,"grassland","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-CR-grassland25","32",,,,"40","35","45","equal-time","N",,"4.65",,"57",
+,"114",,,,,,,1.6,"CO2",,,,"grassland","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-CR-grassland25","32",,,,"50","45","55","equal-time","N",,"4.65",,"57",
+,"115",,,,,,,2.8,"CO2",,,,"forest","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-HW-forest1700","32",,,,"20","15","25","equal-time","N",,"26.6",,,
+,"115",,,,,,,1.2,"CO2",,,,"forest","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-HW-forest1700","32",,,,"30","25","35","equal-time","N",,"26.6",,,
+,"115",,,,,,,1.7,"CO2",,,,"forest","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-HW-forest1700","32",,,,"40","35","45","equal-time","N",,"26.6",,,
+,"115",,,,,,,1.9,"CO2",,,,"forest","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-HW-forest1700","32",,,,"50","45","55","equal-time","N",,"26.6",,,
+,"116",,,,,,,1.6,"CO2",,,,"forest","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-HW-forest800","32",,,,"20","15","25","equal-time","N",,"21.3",,,
+,"116",,,,,,,1.6,"CO2",,,,"forest","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-HW-forest800","32",,,,"30","25","35","equal-time","N",,"21.3",,,
+,"116",,,,,,,1.6,"CO2",,,,"forest","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-HW-forest800","32",,,,"40","35","45","equal-time","N",,"21.3",,,
+,"116",,,,,,,1.5,"CO2",,,,"forest","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-HW-forest800","32",,,,"50","45","55","equal-time","N",,"21.3",,,
+,"117",,,,,,,2,"CO2",,,,"grassland","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-HW-grassland1700","32",,,,"20","15","25","equal-time","N",,"27.4",,,
+,"117",,,,,,,1.5,"CO2",,,,"grassland","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-HW-grassland1700","32",,,,"30","25","35","equal-time","N",,"27.4",,,
+,"117",,,,,,,1.6,"CO2",,,,"grassland","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-HW-grassland1700","32",,,,"40","35","45","equal-time","N",,"27.4",,,
+,"117",,,,,,,1.7,"CO2",,,,"grassland","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-HW-grassland1700","32",,,,"50","45","55","equal-time","N",,"27.4",,,
+,"118",,,,,,,1.8,"CO2",,,,"grassland","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-HW-grassland800","32",,,,"20","15","25","equal-time","N",,"18",,,
+,"118",,,,,,,1.6,"CO2",,,,"grassland","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-HW-grassland800","32",,,,"30","25","35","equal-time","N",,"18",,,
+,"118",,,,,,,1.8,"CO2",,,,"grassland","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-HW-grassland800","32",,,,"40","35","45","equal-time","N",,"18",,,
+,"118",,,,,,,2.2,"CO2",,,,"grassland","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-HW-grassland800","32",,,,"50","45","55","equal-time","N",,"18",,,
+,"119",,,,,,,0.8,"CO2",,,,"forest","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-TX-forest","32",,,,"20","15","25","equal-time","N",,"2.3",,"23",
+,"119",,,,,,,1.5,"CO2",,,,"forest","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-TX-forest","32",,,,"30","25","35","equal-time","N",,"2.3",,"23",
+,"119",,,,,,,3.2,"CO2",,,,"forest","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-TX-forest","32",,,,"40","35","45","equal-time","N",,"2.3",,"23",
+,"119",,,,,,,1.7,"CO2",,,,"forest","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-TX-forest","32",,,,"50","45","55","equal-time","N",,"2.3",,"23",
+,"120",,,,,,,0.5,"CO2",,,,"grassland","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-TX-grassland","32",,,,"20","15","25","equal-time","N",,"0.84",,"16",
+,"120",,,,,,,2.2,"CO2",,,,"grassland","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-TX-grassland","32",,,,"30","25","35","equal-time","N",,"0.84",,"16",
+,"120",,,,,,,2.7,"CO2",,,,"grassland","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-TX-grassland","32",,,,"40","35","45","equal-time","N",,"0.84",,"16",
+,"120",,,,,,,2,"CO2",,,,"grassland","warm","Hamdi2013","lab",,"Holland et al. 2000",,,,,"Holl-TX-grassland","32",,,,"50","45","55","equal-time","N",,"0.84",,"16",
+,"121",,,,,,,3.3,"CO2",,,,"polar desert","cold","Hamdi2013","lab",,"Hopkins et al. 2006",,,,,"Hopk-D","33",,,,"10","0","20","equal-time","Y",,,,,
+,"121",,,,,,,1.2,"CO2",,,,"polar desert","cold","Hamdi2013","lab",,"Hopkins et al. 2006",,,,,"Hopk-D","33",,,,"10","0","20","equal-time","N",,"0.05",,,
+,"121",,,,,,,2,"CO2",,,,"polar desert","cold","Hamdi2013","lab",,"Hopkins et al. 2006",,,,,"Hopk-D","33",,,,"14.5","9","20","equal-time","Y",,,,,
+,"121",,,,,,,1.2,"CO2",,,,"polar desert","cold","Hamdi2013","lab",,"Hopkins et al. 2006",,,,,"Hopk-D","33",,,,"14.5","9","20","equal-time","N",,"0.05",,,
+,"122",,,,,,,3.4,"CO2",,,,"polar desert","cold","Hamdi2013","lab",,"Hopkins et al. 2006",,,,,"Hopk-HS","33",,,,"10","0","20","equal-time","Y",,,,,
+,"122",,,,,,,1.6,"CO2",,,,"polar desert","cold","Hamdi2013","lab",,"Hopkins et al. 2006",,,,,"Hopk-HS","33",,,,"10","0","20","equal-time","N",,"0.14",,,
+,"122",,,,,,,2.8,"CO2",,,,"polar desert","cold","Hamdi2013","lab",,"Hopkins et al. 2006",,,,,"Hopk-HS","33",,,,"14.5","9","20","equal-time","Y",,,,,
+,"122",,,,,,,2,"CO2",,,,"polar desert","cold","Hamdi2013","lab",,"Hopkins et al. 2006",,,,,"Hopk-HS","33",,,,"14.5","9","20","equal-time","N",,"0.14",,,
+,"123",,,,,,,3.4,"CO2",,,,"polar desert","cold","Hamdi2013","lab",,"Hopkins et al. 2006",,,,,"Hopk-LS","33",,,,"10","0","20","equal-time","Y",,,,,
+,"123",,,,,,,3.3,"CO2",,,,"polar desert","cold","Hamdi2013","lab",,"Hopkins et al. 2006",,,,,"Hopk-LS","33",,,,"10","0","20","equal-time","N",,"2.99",,,
+,"123",,,,,,,3.6,"CO2",,,,"polar desert","cold","Hamdi2013","lab",,"Hopkins et al. 2006",,,,,"Hopk-LS","33",,,,"14.5","9","20","equal-time","Y",,,,,
+,"123",,,,,,,3,"CO2",,,,"polar desert","cold","Hamdi2013","lab",,"Hopkins et al. 2006",,,,,"Hopk-LS","33",,,,"14.5","9","20","equal-time","N",,"2.99",,,
+,"124",,,,,,,5,"CO2",,,,"polar desert","cold","Hamdi2013","lab",,"Hopkins et al. 2006",,,,,"Hopk-P","33",,,,"10","0","20","equal-time","Y",,,,,
+,"124",,,,,,,1.4,"CO2",,,,"polar desert","cold","Hamdi2013","lab",,"Hopkins et al. 2006",,,,,"Hopk-P","33",,,,"10","0","20","equal-time","N",,"0.16",,,
+,"124",,,,,,,4.4,"CO2",,,,"polar desert","cold","Hamdi2013","lab",,"Hopkins et al. 2006",,,,,"Hopk-P","33",,,,"14.5","9","20","equal-time","Y",,,,,
+,"124",,,,,,,2,"CO2",,,,"polar desert","cold","Hamdi2013","lab",,"Hopkins et al. 2006",,,,,"Hopk-P","33",,,,"14.5","9","20","equal-time","N",,"0.16",,,
+,"125",,,,,,,6.9,"CO2",,,,"polar desert","cold","Hamdi2013","lab",,"Hopkins et al. 2006",,,,,"Hopk-SE","33",,,,"10","0","20","equal-time","Y",,,,,
+,"125",,,,,,,1.9,"CO2",,,,"polar desert","cold","Hamdi2013","lab",,"Hopkins et al. 2006",,,,,"Hopk-SE","33",,,,"10","0","20","equal-time","N",,"0.37",,,
+,"125",,,,,,,2,"CO2",,,,"polar desert","cold","Hamdi2013","lab",,"Hopkins et al. 2006",,,,,"Hopk-SE","33",,,,"14.5","9","20","equal-time","Y",,,,,
+,"125",,,,,,,1.9,"CO2",,,,"polar desert","cold","Hamdi2013","lab",,"Hopkins et al. 2006",,,,,"Hopk-SE","33",,,,"14.5","9","20","equal-time","N",,"0.37",,,
+,"126",,,,,,,3.2,"CO2",,,,"cultivated","temperate","Hamdi2013","lab",,"Huntjens et al. 1981",,,"1 to 5",,"Hut","34",,,,"16.5","13","20","equal-time","N",,"1.2",,,"6.2"
+,"126",,,,,,,5.7,"CO2",,,,"grassland","temperate","Hamdi2013","lab",,"Huntjens et al. 1981",,,"1 to 5",,"Hut","34",,,,"16.5","13","20","equal-time","N",,"1.76",,,"6.7"
+,"134",,,,,,,1.92,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Katterer et al. 98",,,,,"Katt_01","37",,,,"21","4","38","model","N",,"1",,,
+,"135",,,,,,,2.15,"CO2",,,,"cultivated","temperate","Hamdi2013","lab",,"Katterer et al. 98",,,,,"Katt_02","37",,,,"17.5","5","30","model","N",,"34.6",,,
+,"136",,,,,,,2.33,"CO2",,,,"grassland","temperate","Hamdi2013","lab",,"Katterer et al. 98",,,,,"Katt_03","37",,,,"14.5","5","24","model","N",,"4.6",,,
+,"137",,,,,,,2.5,"CO2",,,,"grassland","temperate","Hamdi2013","lab",,"Katterer et al. 98",,,,,"Katt_08","37",,,,"15","5","25","model","N",,"43.5",,,
+,"138",,,,,,,2.75,"CO2",,,,"grassland","temperate","Hamdi2013","lab",,"Katterer et al. 98",,,,,"Katt_09","37",,,,"15","2","28","model","N",,"6.1",,,
+,"139",,,,,,,2.64,"CO2",,,,"cultivated","temperate","Hamdi2013","lab",,"Katterer et al. 98",,,,,"Katt_11","37",,,,"15","5","25","model","N",,"1.8",,,
+,"140",,,,,,,1.47,"CO2",,,,"grassland","temperate","Hamdi2013","lab",,"Katterer et al. 98",,,,,"Katt_12","37",,,,"19","10","28","model","N",,"7.4",,,
+,"141",,,,,,,1.75,"CO2",,,,"cultivated","temperate","Hamdi2013","lab",,"Katterer et al. 98",,,,,"Katt_15","37",,,,"30","25","35","model","N",,"2.2",,,
+,"142",,,,,,,2.16,"CO2",,,,"cultivated","temperate","Hamdi2013","lab",,"Katterer et al. 98",,,,,"Katt_19","37",,,,"25","15","35","model","N",,"2.2",,,
+,"143",,,,,,,1.91,"CO2",,,,"cultivated","temperate","Hamdi2013","lab",,"Katterer et al. 98",,,,,"Katt_22","37",,,,"30","25","35","model","N",,"2.56",,,
+,"144",,,,,,,2.88,"CO2",,,,"cultivated","temperate","Hamdi2013","lab",,"Katterer et al. 98",,,,,"Katt_24","37",,,,"12.5","0","25","model","N",,"2.37",,,
+,"145",,,,,,,2.33,"CO2",,,,"cultivated","temperate","Hamdi2013","lab",,"Katterer et al. 98",,,,,"Katt_25","37",,,,"20","15","25","model","N",,"1.3",,,
+,"150",,,,,,,2.73,"CO2",,,,"cultivated","temperate","Hamdi2013","lab",,"Koepf 1953",,,,,"Koepf","39",,,,"15","10","20","equal-time","N",,"1",,"10",
+,"150",,,,,,,2.27,"CO2",,,,"cultivated","temperate","Hamdi2013","lab",,"Koepf 1953",,,,,"Koepf","39",,,,"25","20","30","equal-time","N",,"1",,"10",
+,"150",,,,,,,1.97,"CO2",,,,"cultivated","temperate","Hamdi2013","lab",,"Koepf 1953",,,,,"Koepf","39",,,,"35","30","40","equal-time","N",,"1",,"10",
+,"163",,,,,,,2.6,"CO2",,,,"grassland","cold","Hamdi2013","lab",,"Miller et al. 2007",,,"0 to 10",,"DM-alp","43",,,,"2.5","0","5","equal-time","N",,"12.4","0.8",,"5"
+,"164",,,,,,,4.5,"CO2",,,,"grassland","cold","Hamdi2013","lab",,"Miller et al. 2007",,,"0 to 10",,"WM-alp","43",,,,"2.5","0","5","equal-time","N",,"13.8","1",,"5"
+,"165",,,,,,,5,"CO2",,,,"grassland","cold","Hamdi2013","lab",,"Miller et al. 2007",,,"0 to 10",,"WM-subalp","43",,,,"2.5","0","5","equal-time","N",,"15.1","0.9",,"5"
+,"178",,,,,,,6.22,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rasmussen et al. 2006",,,"0 to 6",,"PP-AN","47",,,,"8.75","5","12.5","equal-time","N",,"9.8",,"25.4",
+,"179",,,,,,,6.33,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rasmussen et al. 2006",,,"0 to 7",,"PP-BS","47",,,,"8.75","5","12.5","equal-time","N",,"7",,"26.8",
+,"180",,,,,,,4.78,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rasmussen et al. 2006",,,"0 to 7",,"PP-GR","47",,,,"8.75","5","12.5","equal-time","N",,"6.5",,"14",
+,"181",,,,,,,3.78,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rasmussen et al. 2006",,,"0 to 11",,"RF-AN","47",,,,"8.75","5","12.5","equal-time","N",,"9.7",,"7.7",
+,"182",,,,,,,2.68,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rasmussen et al. 2006",,,"0 to 8",,"RF-BS","47",,,,"8.75","5","12.5","equal-time","N",,"16.1",,"6.7",
+,"183",,,,,,,1.83,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rasmussen et al. 2006",,,"0 to 8",,"RF-GR","47",,,,"8.75","5","12.5","equal-time","N",,"5.3",,"8.7",
+,"184",,,,,,,7.12,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rasmussen et al. 2006",,,"0 to 11",,"WF-AN","47",,,,"8.75","5","12.5","equal-time","N",,"8.4",,"9.4",
+,"185",,,,,,,5.8,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rasmussen et al. 2006",,,"0 to 10",,"WF-BS","47",,,,"8.75","5","12.5","equal-time","N",,"9.3",,"6.3",
+,"186",,,,,,,4.66,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rasmussen et al. 2006",,,"0 to 13",,"WF-GR","47",,,,"8.75","5","12.5","equal-time","N",,"5.1",,"7.7",
+,"187",,,,,,,2.8,"CO2",,,,"tundra","cold","Hamdi2013","lab",,"Reichstein et al. 2000",,,,,"Gully","48",,,,"15","5","25","model","N",,"5.65","0.37",,"3.6"
+,"188",,,,,,,2.5,"CO2",,,,"tundra","cold","Hamdi2013","lab",,"Reichstein et al. 2000",,,,,"Ridge","48",,,,"15","5","25","model","N",,"40.31","1.33",,"3"
+,"189",,,,,,,2.58,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Reichstein et al. 2005",,,,,"Reich2005-min","49",,,,"15","7","23","model","N",,"4.5",,"10","3"
+,"189",,,,,,,2.45,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Reichstein et al. 2005",,,,,"Reich2005-min","49",,,,"15","7","23","sequential","N",,"4.5",,"10","3"
+,"190",,,,,,,2.78,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Reichstein et al. 2005",,,,,"Reich2005-org","49",,,,"15","7","23","model","N",,"40",,,"3"
+,"190",,,,,,,2.6,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Reichstein et al. 2005",,,,,"Reich2005-org","49",,,,"15","7","23","sequential","N",,"40",,,"3"
+,"199",,,,,,,2.48,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rey et al. 2008",,,,,"COL_0-5","51",,,,"17","4","30","model","N",,"14.8","0.96",,"5.9"
+,"200",,,,,,,3.25,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rey et al. 2008",,,,,"COL_10-20","51",,,,"17","4","30","model","N",,"8.39","0.6",,"5.6"
+,"200",,,,,,,3.03,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rey et al. 2008",,,,,"COL_10-20","51",,,,"17","4","30","equal-time","N",,"8.39","0.6",,"5.6"
+,"201",,,,,,,3.15,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rey et al. 2008",,,,,"COL_5-10","51",,,,"17","4","30","model","N",,"11.46","0.78",,"5.6"
+,"201",,,,,,,2.72,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rey et al. 2008",,,,,"COL_5-10","51",,,,"17","4","30","equal-time","N",,"11.46","0.78",,"5.6"
+,"202",,,,,,,2.7,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rey et al. 2008",,,,,"HAI_0-5","51",,,,"17.5","5","30","model","N",,"6.78","0.5",,"5.2"
+,"203",,,,,,,2,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rey et al. 2008",,,,,"HAI_10-20","51",,,,"17.5","5","30","model","N",,"2.46","0.23","49.98723047","5.3"
+,"203",,,,,,,2.56,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rey et al. 2008",,,,,"HAI_10-20","51",,,,"17.5","5","30","equal-time","N",,"2.46","0.23","49.98723047","5.3"
+,"204",,,,,,,2.59,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rey et al. 2008",,,,,"HAI_5-10","51",,,,"17.5","5","30","model","N",,"3.89","0.34","50.56341193","5.1"
+,"204",,,,,,,3.04,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rey et al. 2008",,,,,"HAI_5-10","51",,,,"17.5","5","30","equal-time","N",,"3.89","0.34","50.56341193","5.1"
+,"205",,,,,,,2.86,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rey et al. 2008",,,,,"HAR_0-5","51",,,,"17","4","30","model","N",,"7.85","0.61",,"3.7"
+,"206",,,,,,,3.37,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rey et al. 2008",,,,,"HAR_10-20","51",,,,"17","4","30","model","N",,"4.93","0.45",,"2.8"
+,"206",,,,,,,3.07,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rey et al. 2008",,,,,"HAR_10-20","51",,,,"17","4","30","equal-time","N",,"4.93","0.45",,"2.8"
+,"207",,,,,,,2.55,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rey et al. 2008",,,,,"HAR_5-10","51",,,,"17","4","30","model","N",,"6.77","0.6",,"3.1"
+,"207",,,,,,,2.61,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rey et al. 2008",,,,,"HAR_5-10","51",,,,"17","4","30","equal-time","N",,"6.77","0.6",,"3.1"
+,"208",,,,,,,3.25,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rey et al. 2008",,,,,"HES_0-5","51",,,,"17.5","5","30","model","N",,"3.85","0.26",,"4.1"
+,"209",,,,,,,3.11,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rey et al. 2008",,,,,"HES_10-20","51",,,,"17.5","5","30","model","N",,"1.57","0.11","32.02523072","3.8"
+,"209",,,,,,,2.39,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rey et al. 2008",,,,,"HES_10-20","51",,,,"17.5","5","30","equal-time","N",,"1.57","0.11","32.02523072","3.8"
+,"210",,,,,,,3.05,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rey et al. 2008",,,,,"HES_5-10","51",,,,"17.5","5","30","model","N",,"2.15","0.16","31.78116447","3.9"
+,"210",,,,,,,2.57,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rey et al. 2008",,,,,"HES_5-10","51",,,,"17.5","5","30","equal-time","N",,"2.15","0.16","31.78116447","3.9"
+,"211",,,,,,,3.17,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rey et al. 2008",,,,,"LOO_0-5","51",,,,"17.5","5","30","model","N",,"8.46","0.49",,"3.4"
+,"212",,,,,,,3.65,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rey et al. 2008",,,,,"LOO_10-20","51",,,,"17.5","5","30","model","N",,"0.58","0.03",,"3"
+,"212",,,,,,,2.67,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rey et al. 2008",,,,,"LOO_10-20","51",,,,"17.5","5","30","equal-time","N",,"0.58","0.03",,"3"
+,"213",,,,,,,3.28,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rey et al. 2008",,,,,"LOO_5-10","51",,,,"17.5","5","30","model","N",,"0.72","0.05",,"3.3"
+,"213",,,,,,,3.5,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rey et al. 2008",,,,,"LOO_5-10","51",,,,"17.5","5","30","equal-time","N",,"0.72","0.05",,"3.3"
+,"214",,,,,,,2.7,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rey et al. 2008",,,,,"ROC_0-5_20y","51",,,,"17","4","30","model","N",,"6.45","0.63",,"5.9"
+,"215",,,,,,,2.79,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rey et al. 2008",,,,,"ROC_10-20_20y","51",,,,"17","4","30","model","N",,"1.99","0.1",,"5.2"
+,"215",,,,,,,2.38,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rey et al. 2008",,,,,"ROC_10-20_20y","51",,,,"17","4","30","equal-time","N",,"1.99","0.1",,"5.2"
+,"216",,,,,,,2.96,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rey et al. 2008",,,,,"ROC_5-10_20y","51",,,,"17","4","30","model","N",,"3.43","0.56",,"5.6"
+,"216",,,,,,,2.69,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rey et al. 2008",,,,,"ROC_5-10_20y","51",,,,"17","4","30","equal-time","N",,"3.43","0.56",,"5.6"
+,"217",,,,,,,2.94,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rey et al. 2008",,,,,"THA_0-5_95y","51",,,,"17.5","5","30","model","N",,"36.7","1.54",,"3.9"
+,"218",,,,,,,,,,,,"forest","temperate","Hamdi2013","lab",,"Rey et al. 2008",,,,,"THA_10-20_95y","51",,,,"17.5","5","30","model","N",,"4.38","0.16",,"3.9"
+,"218",,,,,,,1.83,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rey et al. 2008",,,,,"THA_10-20_95y","51",,,,"17.5","5","30","equal-time","N",,"4.38","0.16",,"3.9"
+,"219",,,,,,,,,,,,"forest","temperate","Hamdi2013","lab",,"Rey et al. 2008",,,,,"THA_5-10_95y","51",,,,"17.5","5","30","model","N",,"7.3","0.27",,"3.9"
+,"219",,,,,,,2.15,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rey et al. 2008",,,,,"THA_5-10_95y","51",,,,"17.5","5","30","equal-time","N",,"7.3","0.27",,"3.9"
+,"220",,,,,,,2.92,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rey et al. 2008",,,,,"WET_0-5_120y","51",,,,"17","4","30","model","N",,"30.8","1.41",,"3.6"
+,"221",,,,,,,3.41,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rey et al. 2008",,,,,"WET_10-20_120y","51",,,,"17","4","30","model","N",,"8.51","0.37","36.55790965","3.1"
+,"221",,,,,,,2.39,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rey et al. 2008",,,,,"WET_10-20_120y","51",,,,"17","4","30","equal-time","N",,"8.51","0.37","36.55790965","3.1"
+,"222",,,,,,,3.07,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rey et al. 2008",,,,,"WET_5-10_120y","51",,,,"17","4","30","model","N",,"17.27","0.73","26.26863862","3.1"
+,"222",,,,,,,2.44,"CO2",,,,"forest","temperate","Hamdi2013","lab",,"Rey et al. 2008",,,,,"WET_5-10_120y","51",,,,"17","4","30","equal-time","N",,"17.27","0.73","26.26863862","3.1"
+,"230",,,,,,,1.5,"CO2",,,,"forest","warm","Hamdi2013","lab",,"Townsend et al. 1997",,,,,"Town_forest1500","56",,,,"25","20","30","equal-time","N",,"26",,,
+,"230",,,,,,,1.4,"CO2",,,,"forest","warm","Hamdi2013","lab",,"Townsend et al. 1997",,,,,"Town_forest1500","56",,,,"35","30","40","equal-time","N",,"26",,,
+,"231",,,,,,,1.55,"CO2",,,,"forest","warm","Hamdi2013","lab",,"Townsend et al. 1997",,,,,"Town_forest900","56",,,,"25","20","30","equal-time","N",,"14.4",,,
+,"231",,,,,,,1.35,"CO2",,,,"forest","warm","Hamdi2013","lab",,"Townsend et al. 1997",,,,,"Town_forest900","56",,,,"35","30","40","equal-time","N",,"14.4",,,
+,"232",,,,,,,1.7,"CO2",,,,"grassland","warm","Hamdi2013","lab",,"Townsend et al. 1997",,,,,"Town_past100","56",,,,"25","20","30","equal-time","N",,"9.6",,,
+,"232",,,,,,,1.3,"CO2",,,,"grassland","warm","Hamdi2013","lab",,"Townsend et al. 1997",,,,,"Town_past100","56",,,,"35","30","40","equal-time","N",,"9.6",,,
+,"233",,,,,,,1.9,"CO2",,,,"grassland","warm","Hamdi2013","lab",,"Townsend et al. 1997",,,,,"Town_past1700","56",,,,"25","20","30","equal-time","N",,"21",,,
+,"233",,,,,,,1.5,"CO2",,,,"grassland","warm","Hamdi2013","lab",,"Townsend et al. 1997",,,,,"Town_past1700","56",,,,"35","30","40","equal-time","N",,"21",,,
+,"234",,,,,,,1.8,"CO2",,,,"grassland","warm","Hamdi2013","lab",,"Townsend et al. 1997",,,,,"Town_past800","56",,,,"25","20","30","equal-time","N",,"15.1",,,
+,"234",,,,,,,1.4,"CO2",,,,"grassland","warm","Hamdi2013","lab",,"Townsend et al. 1997",,,,,"Town_past800","56",,,,"35","30","40","equal-time","N",,"15.1",,,
+,"235",,,,,,,3.41,"CO2",,,,"cultivated","temperate","Hamdi2013","lab",,"Vanhala et al. 2007",,,,,"Van_Control","57",,,,"20","10","30","equal-time","N",,"9",,,
+,"235",,,,,,,3.59,"CO2",,,,"cultivated","temperate","Hamdi2013","lab",,"Vanhala et al. 2007",,,,,"Van_Control","57",,,,"26","19","33","equal-time","N",,"9",,,
+,"236",,,,,,,3.46,"CO2",,,,"cultivated","temperate","Hamdi2013","lab",,"Vanhala et al. 2007",,,,,"Van_Maize","57",,,,"20","10","30","equal-time","N",,"10.5",,,
+,"236",,,,,,,3.38,"CO2",,,,"cultivated","temperate","Hamdi2013","lab",,"Vanhala et al. 2007",,,,,"Van_Maize","57",,,,"26","19","33","equal-time","N",,"10.5",,,
+,"255",,,,,,,2.25,"CO2",,,,"cultivated","temperate","Hamdi2013","lab",,"Zhu and Cheng 2011",,,"0 to 30",,"Cult","63",,,,"22.5","20","25","equal-C","N",,"0.94","0.11",,
+,"256",,,,,,,1.85,"CO2",,,,"grassland","temperate","Hamdi2013","lab",,"Zhu and Cheng 2011",,,"0 to 30",,"Grass","63",,,,"22.5","20","25","equal-C","N",,"1.2","0.13",,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,"0",,,,,2.66,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"2.5",,,,,5.89,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"5",,,,,8.44,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"5",,,,,4.57,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"5",,,,,3.93,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"5",,,,,4.29,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"7.5",,,,,3.13,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"7.5",,,,,6.72,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"7.5",,,,,10,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"7.5",,,,,1.52,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"7.5",,,,,3.23,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"7.5",,,,,3.54,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"7.5",,,,,3.9,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"10",,,,,1.57,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"10",,,,,2.62,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"10",,,,,2.98,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"10",,,,,3.43,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"10",,,,,5.2,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"12",,,,,2.73,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"12",,,,,4.78,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"12",,,,,4.42,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"12",,,,,1.9,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"12",,,,,2.12,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"12",,,,,2.59,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"12",,,,,2.81,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"12",,,,,3.37,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"12",,,,,7.21,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"15",,,,,3.23,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"15",,,,,1.57,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"15",,,,,1.76,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"15",,,,,1.95,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"15",,,,,2.31,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"15",,,,,2.81,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"15",,,,,6.13,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"16",,,,,2.84,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"17.5",,,,,2.15,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"17.5",,,,,1.68,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"17.5",,,,,1.45,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"17.5",,,,,1.92,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"17.5",,,,,2.75,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"18",,,,,1.95,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"18",,,,,4.44,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"20",,,,,1.89,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"20",,,,,2.14,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"20",,,,,2.5,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"20",,,,,2.72,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"22.5",,,,,1.45,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"22.5",,,,,1.64,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"22.5",,,,,1.84,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"22.5",,,,,4.13,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"22.5",,,,,2.17,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"22.5",,,,,3.41,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"23",,,,,1.48,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"25",,,,,1.89,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"25",,,,,2.28,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"25",,,,,1.61,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"27.5",,,,,1.17,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"27.5",,,,,1.83,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"27.5",,,,,1.69,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"30",,,,,2.08,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"30",,,,,1.52,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"30",,,,,1.25,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"32.5",,,,,1.69,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"32.5",,,,,0.829,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"32.5",,,,,1.22,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"32.5",,,,,2.65,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"33",,,,,3.23,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"35",,,,,0.882,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"35",,,,,1.63,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"35",,,,,1.93,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,"35",,,,,2.13,"CO2",,,,,,"Kirschbaum1995","lab",,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,"time_d","MAT_C","MAP_mm","Soil_type",,,,,,,,,
+,,"5_15",,,,,,2.86,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA","O/A","Vaccinium, Calamagrostis",,,"1.57","1.4","1047","gully",,,,,,,,,
+,,"5_15",,,,,,2.61,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"6.02",,,"gully",,,,,,,,,
+,,"5_15",,,,,,2.45,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"9.42",,,"gully",,,,,,,,,
+,,"5_15",,,,,,2.16,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"14.1",,,"gully",,,,,,,,,
+,,"5_15",,,,,,1.76,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"19.6",,,"gully",,,,,,,,,
+,,"5_15",,,,,,1.42,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"27.7",,,"gully",,,,,,,,,
+,,"5_15",,,,,,1.32,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"35.9",,,"gully",,,,,,,,,
+,,"5_15",,,,,,2.05,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"43.7",,,"gully",,,,,,,,,
+,,"5_15",,,,,,1.76,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"52.1",,,"gully",,,,,,,,,
+,,"5_15",,,,,,1.51,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"59.7",,,"gully",,,,,,,,,
+,,"5_15",,,,,,1.69,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"68.1",,,"gully",,,,,,,,,
+,,"5_15",,,,,,1.63,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"75.9",,,"gully",,,,,,,,,
+,,"5_15",,,,,,1.26,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"84",,,"gully",,,,,,,,,
+,,"5_15",,,,,,2.06,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"91.6",,,"gully",,,,,,,,,
+,,"5_15",,,,,,1.79,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"100",,,"gully",,,,,,,,,
+,,"15_25",,,,,,2.06,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"1.31",,,"gully",,,,,,,,,
+,,"15_25",,,,,,2.08,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"5.5",,,"gully",,,,,,,,,
+,,"15_25",,,,,,1.84,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"9.69",,,"gully",,,,,,,,,
+,,"15_25",,,,,,1.72,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"13.6",,,"gully",,,,,,,,,
+,,"15_25",,,,,,2.25,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"19.4",,,"gully",,,,,,,,,
+,,"15_25",,,,,,2.17,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"27.7",,,"gully",,,,,,,,,
+,,"15_25",,,,,,2.37,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"35.3",,,"gully",,,,,,,,,
+,,"15_25",,,,,,1.87,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"43.5",,,"gully",,,,,,,,,
+,,"15_25",,,,,,1.72,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"51.8",,,"gully",,,,,,,,,
+,,"15_25",,,,,,2.24,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"59.7",,,"gully",,,,,,,,,
+,,"15_25",,,,,,2.09,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"67.8",,,"gully",,,,,,,,,
+,,"15_25",,,,,,2.1,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"75.7",,,"gully",,,,,,,,,
+,,"15_25",,,,,,2.59,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"83.5",,,"gully",,,,,,,,,
+,,"15_25",,,,,,2.28,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"91.4",,,"gully",,,,,,,,,
+,,"15_25",,,,,,2.42,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"99.5",,,"gully",,,,,,,,,
+,,"5_15",,,,,,2.13,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"1.55",,,"ridge",,,,,,,,,
+,,"5_15",,,,,,2.56,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"5.68",,,"ridge",,,,,,,,,
+,,"5_15",,,,,,2.61,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"10.1",,,"ridge",,,,,,,,,
+,,"5_15",,,,,,2.19,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"13.7",,,"ridge",,,,,,,,,
+,,"5_15",,,,,,1.93,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"19.6",,,"ridge",,,,,,,,,
+,,"5_15",,,,,,1.75,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"28.2",,,"ridge",,,,,,,,,
+,,"5_15",,,,,,1.73,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"35.9",,,"ridge",,,,,,,,,
+,,"5_15",,,,,,2.09,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"43.9",,,"ridge",,,,,,,,,
+,,"5_15",,,,,,1.87,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"52.2",,,"ridge",,,,,,,,,
+,,"5_15",,,,,,1.9,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"59.9",,,"ridge",,,,,,,,,
+,,"5_15",,,,,,2.17,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"68.2",,,"ridge",,,,,,,,,
+,,"5_15",,,,,,2.23,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"76",,,"ridge",,,,,,,,,
+,,"5_15",,,,,,2.22,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"83.7",,,"ridge",,,,,,,,,
+,,"5_15",,,,,,2.1,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"92.2",,,"ridge",,,,,,,,,
+,,"5_15",,,,,,2.53,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"100",,,"ridge",,,,,,,,,
+,,"15_25",,,,,,2.34,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"1.29",,,"ridge",,,,,,,,,
+,,"15_25",,,,,,2.06,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"5.68",,,"ridge",,,,,,,,,
+,,"15_25",,,,,,2.22,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"9.56",,,"ridge",,,,,,,,,
+,,"15_25",,,,,,2.07,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"13.7",,,"ridge",,,,,,,,,
+,,"15_25",,,,,,2.2,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"19.6",,,"ridge",,,,,,,,,
+,,"15_25",,,,,,1.99,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"27.6",,,"ridge",,,,,,,,,
+,,"15_25",,,,,,1.66,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"35.7",,,"ridge",,,,,,,,,
+,,"15_25",,,,,,2.15,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"43.7",,,"ridge",,,,,,,,,
+,,"15_25",,,,,,2.16,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"51.9",,,"ridge",,,,,,,,,
+,,"15_25",,,,,,2.38,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"59.9",,,"ridge",,,,,,,,,
+,,"15_25",,,,,,2.33,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"68",,,"ridge",,,,,,,,,
+,,"15_25",,,,,,2.32,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"76",,,"ridge",,,,,,,,,
+,,"15_25",,,,,,2.3,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"84",,,"ridge",,,,,,,,,
+,,"15_25",,,,,,2.36,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"92",,,"ridge",,,,,,,,,
+,,"15_25",,,,,,2.32,"CO2","46.7833","9.8667",,"forest","tundra","Reichstein2000","lab",,"Reichstein2000","https://doi.org/10.1016/S0038-0717(00)00002-X","IRGA",,"Vaccinium, Calamagrostis",,,"100",,,"ridge",,,,,,,,,
