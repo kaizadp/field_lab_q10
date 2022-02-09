@@ -93,6 +93,27 @@ readd(Q10_graphs)
 ```
 
 
+### Respiration: autotrophic/heterotrophic
+
+Most field studies include auto + heterotrophic respiration
+
+Some SRDB studies (field) were heterotrophic only
+
+```{r}
+readd(Q10_rh_only)$rh_summary
+```
+
+
+```{r}
+readd(Q10_rh_only)$rh_jitter_plot
+```
+
+running ANOVA on 5-15 C heterotrophic respiration only
+```{r}
+readd(Q10_rh_only)$rh_aov
+```
+
+
 ## Fitting Q10 functions
 
 <details>

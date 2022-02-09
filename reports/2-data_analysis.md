@@ -12,7 +12,7 @@ How many datapoints?
 | Species | field | lab |  NA |
 |:--------|------:|----:|----:|
 | CH4     |    67 | 136 |  21 |
-| CO2     |  4942 |  76 |   2 |
+| CO2     |  4973 | 799 |   1 |
 | N2O     |    52 |  98 |   3 |
 | NA      |    NA |  44 |  NA |
 
@@ -21,7 +21,7 @@ How many studies?
 | Species | field | lab |  NA |
 |:--------|------:|----:|----:|
 | CH4     |    33 |  23 |  11 |
-| CO2     |   598 |  19 |   2 |
+| CO2     |   600 |  86 |   1 |
 | N2O     |    22 |  23 |   2 |
 | NA      |    NA |  16 |  NA |
 
@@ -35,11 +35,11 @@ CO2 - by temperature
 
     #> # A tibble: 3 × 7
     #> # Groups:   Temp_range [3]
-    #>   Temp_range term          df sumsq meansq statistic p_value
-    #>   <fct>      <chr>      <dbl> <dbl>  <dbl>     <dbl>   <dbl>
-    #> 1 5_15       Incubation     1  3.91   3.91     2.40  0.121  
-    #> 2 15_25      Incubation     1  1.71   1.71     0.720 0.399  
-    #> 3 > 25       Incubation     1 30.2   30.2     11.8   0.00178
+    #>   Temp_range term          df sumsq meansq statistic  p_value
+    #>   <fct>      <chr>      <dbl> <dbl>  <dbl>     <dbl>    <dbl>
+    #> 1 5_15       Incubation     1 20.6   20.6      10.4  0.00129 
+    #> 2 15_25      Incubation     1  7.81   7.81      6.33 0.0128  
+    #> 3 > 25       Incubation     1 18.8   18.8      14.3  0.000229
 
 paired (field AND lab) results were not available for &lt; 0 C and 0-5
 C.
@@ -51,17 +51,17 @@ CO2 - across all temperatures
 <!-- -->
 
     #> # A tibble: 1 × 6
-    #>   term          df sumsq meansq statistic p_value
-    #>   <chr>      <dbl> <dbl>  <dbl>     <dbl>   <dbl>
-    #> 1 Incubation     1  91.1   91.1      3.48  0.0625
+    #>   term          df sumsq meansq statistic  p_value
+    #>   <chr>      <dbl> <dbl>  <dbl>     <dbl>    <dbl>
+    #> 1 Incubation     1 1683.  1683.      14.9 0.000116
 
 -   LME
 
 <!-- -->
 
     #>             numDF denDF  F-value p-value
-    #> (Intercept)     1  1480 3.374753  0.0664
-    #> Incubation      1  1480 1.881949  0.1703
+    #> (Intercept)     1  1827 2.203403  0.1379
+    #> Incubation      1  1827 5.436477  0.0198
 
 N2O - across all temperatures
 
@@ -112,6 +112,36 @@ CH4 - across all temperatures
     #> $CH4_incubation
 
 ![](2-data_analysis_files/figure-gfm/unnamed-chunk-11-7.png)<!-- -->
+
+### Respiration: autotrophic/heterotrophic
+
+Most field studies include auto + heterotrophic respiration
+
+Some SRDB studies (field) were heterotrophic only
+
+    #> # A tibble: 9 × 3
+    #> # Groups:   Temp_range [6]
+    #>   Temp_range Incubation     n
+    #>   <fct>      <chr>      <int>
+    #> 1 < 0        lab            8
+    #> 2 0_5        lab           10
+    #> 3 5_15       field         76
+    #> 4 5_15       lab          155
+    #> 5 15_25      field          1
+    #> 6 15_25      lab          150
+    #> 7 > 25       lab          175
+    #> 8 <NA>       field        201
+    #> 9 <NA>       lab          589
+
+![](2-data_analysis_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
+
+running ANOVA on 5-15 C heterotrophic respiration only
+
+    #>              Df Sum Sq Mean Sq F value Pr(>F)  
+    #> Incubation    1    180  180.24   2.736 0.0995 .
+    #> Residuals   229  15085   65.87                 
+    #> ---
+    #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 ## Fitting Q10 functions
 
@@ -198,12 +228,12 @@ Click to open table
 
     #> $q10_calculated_functions
 
-![](2-data_analysis_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
+![](2-data_analysis_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
 
     #> 
     #> $calculated_q10_graph
 
-![](2-data_analysis_files/figure-gfm/unnamed-chunk-13-2.png)<!-- -->
+![](2-data_analysis_files/figure-gfm/unnamed-chunk-16-2.png)<!-- -->
 
 ------------------------------------------------------------------------
 
@@ -212,7 +242,7 @@ Click to open table
 Session Info
 </summary>
 
-Date run: 2022-01-24
+Date run: 2022-02-08
 
     #> R version 4.1.1 (2021-08-10)
     #> Platform: x86_64-apple-darwin17.0 (64-bit)
@@ -229,42 +259,35 @@ Date run: 2022-01-24
     #> [1] stats     graphics  grDevices utils     datasets  methods   base     
     #> 
     #> other attached packages:
-    #>  [1] data.table_1.14.2       sidb_1.0.0              sf_1.0-5               
-    #>  [4] rnaturalearthdata_0.1.0 rnaturalearth_0.1.0     nlme_3.1-153           
-    #>  [7] drake_7.13.2            forcats_0.5.1           stringr_1.4.0          
-    #> [10] dplyr_1.0.7             purrr_0.3.4             readr_2.0.2            
-    #> [13] tidyr_1.1.4             tibble_3.1.5            ggplot2_3.3.5          
-    #> [16] tidyverse_1.3.1        
+    #>  [1] magrittr_2.0.1          googlesheets4_1.0.0     data.table_1.14.2      
+    #>  [4] sidb_1.0.0              sf_1.0-5                rnaturalearthdata_0.1.0
+    #>  [7] rnaturalearth_0.1.0     nlme_3.1-153            drake_7.13.2           
+    #> [10] forcats_0.5.1           stringr_1.4.0           dplyr_1.0.7            
+    #> [13] purrr_0.3.4             readr_2.0.2             tidyr_1.1.4            
+    #> [16] tibble_3.1.5            ggplot2_3.3.5           tidyverse_1.3.1        
     #> 
     #> loaded via a namespace (and not attached):
-    #>  [1] fs_1.5.0            lubridate_1.8.0     filelock_1.0.2     
-    #>  [4] progress_1.2.2      httr_1.4.2          tools_4.1.1        
-    #>  [7] backports_1.2.1     utf8_1.2.2          R6_2.5.1           
-    #> [10] KernSmooth_2.23-20  rgeos_0.5-9         DBI_1.1.1          
-    #> [13] colorspace_2.0-2    measurements_1.4.0  withr_2.4.2        
-    #> [16] sp_1.4-5            tidyselect_1.1.1    prettyunits_1.1.1  
-    #> [19] compiler_4.1.1      FME_1.3.6.1         cli_3.0.1          
-    #> [22] rvest_1.0.1         xml2_1.3.2          labeling_0.4.2     
-    #> [25] scales_1.1.1        classInt_0.4-3      proxy_0.4-26       
-    #> [28] digest_0.6.27       txtq_0.2.4          minqa_1.2.4        
-    #> [31] rmarkdown_2.11      pkgconfig_2.0.3     htmltools_0.5.2    
-    #> [34] highr_0.9           dbplyr_2.1.1        fastmap_1.1.0      
-    #> [37] rlang_0.4.11        readxl_1.3.1        rstudioapi_0.13    
-    #> [40] generics_0.1.0      farver_2.1.0        jsonlite_1.7.2     
-    #> [43] googlesheets4_1.0.0 magrittr_2.0.1      s2_1.0.7           
-    #> [46] Rcpp_1.0.7          munsell_0.5.0       fansi_0.5.0        
-    #> [49] lifecycle_1.0.0     stringi_1.7.5       yaml_2.2.1         
-    #> [52] MASS_7.3-54         storr_1.2.5         rootSolve_1.8.2.2  
-    #> [55] grid_4.1.1          parallel_4.1.1      crayon_1.4.1       
-    #> [58] lattice_0.20-44     haven_2.4.3         hms_1.1.0          
-    #> [61] knitr_1.36          pillar_1.6.2        igraph_1.2.6       
-    #> [64] PNWColors_0.1.0     base64url_1.4       wk_0.6.0           
-    #> [67] reprex_2.0.1        glue_1.4.2          evaluate_0.14      
-    #> [70] modelr_0.1.8        deSolve_1.28        vctrs_0.3.8        
-    #> [73] tzdb_0.1.2          cellranger_1.1.0    gtable_0.3.0       
-    #> [76] assertthat_0.2.1    xfun_0.25           broom_0.7.10       
-    #> [79] e1071_1.7-8         coda_0.19-4         viridisLite_0.4.0  
-    #> [82] googledrive_2.0.0   class_7.3-19        gargle_1.2.0       
-    #> [85] minpack.lm_1.2-1    units_0.7-2         ellipsis_0.3.2
+    #>  [1] fs_1.5.0           lubridate_1.8.0    filelock_1.0.2     progress_1.2.2    
+    #>  [5] httr_1.4.2         tools_4.1.1        backports_1.2.1    utf8_1.2.2        
+    #>  [9] R6_2.5.1           KernSmooth_2.23-20 DBI_1.1.1          colorspace_2.0-2  
+    #> [13] measurements_1.4.0 withr_2.4.2        sp_1.4-5           tidyselect_1.1.1  
+    #> [17] prettyunits_1.1.1  curl_4.3.2         compiler_4.1.1     FME_1.3.6.1       
+    #> [21] cli_3.0.1          rvest_1.0.1        xml2_1.3.2         labeling_0.4.2    
+    #> [25] scales_1.1.1       classInt_0.4-3     proxy_0.4-26       askpass_1.1       
+    #> [29] rappdirs_0.3.3     digest_0.6.27      txtq_0.2.4         minqa_1.2.4       
+    #> [33] rmarkdown_2.11     htmltools_0.5.2    pkgconfig_2.0.3    highr_0.9         
+    #> [37] fastmap_1.1.0      dbplyr_2.1.1       rlang_0.4.11       readxl_1.3.1      
+    #> [41] rstudioapi_0.13    farver_2.1.0       generics_0.1.0     jsonlite_1.7.2    
+    #> [45] s2_1.0.7           Rcpp_1.0.7         munsell_0.5.0      fansi_0.5.0       
+    #> [49] lifecycle_1.0.0    stringi_1.7.5      yaml_2.2.1         MASS_7.3-54       
+    #> [53] storr_1.2.5        rootSolve_1.8.2.2  grid_4.1.1         parallel_4.1.1    
+    #> [57] crayon_1.4.1       lattice_0.20-44    haven_2.4.3        hms_1.1.0         
+    #> [61] knitr_1.36         pillar_1.6.2       igraph_1.2.6       PNWColors_0.1.0   
+    #> [65] base64url_1.4      wk_0.6.0           reprex_2.0.1       glue_1.4.2        
+    #> [69] evaluate_0.14      modelr_0.1.8       deSolve_1.28       vctrs_0.3.8       
+    #> [73] tzdb_0.1.2         cellranger_1.1.0   gtable_0.3.0       openssl_1.4.4     
+    #> [77] assertthat_0.2.1   xfun_0.25          broom_0.7.10       e1071_1.7-8       
+    #> [81] coda_0.19-4        class_7.3-19       googledrive_2.0.0  gargle_1.2.0      
+    #> [85] minpack.lm_1.2-1   units_0.7-2        ellipsis_0.3.2
 
 </details>
