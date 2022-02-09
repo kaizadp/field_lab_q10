@@ -13,6 +13,7 @@ analysis_plan = drake_plan(
   Q10_map = make_map_all_studies(Q10_data),
   Q10_stats = compute_stats_q10(Q10_data),
   Q10_graphs = make_graphs_q10(Q10_data),
+  Q10_rh_only = compute_rh_only(Q10_data),
   
   study_summary = compute_study_summary(Q10_data),
   
@@ -30,7 +31,18 @@ analysis_plan = drake_plan(
 )
 
 
-make(analysis_plan)
+make(analysis_plan, lock_cache = FALSE)
 
+
+x = 
+  Q10_data %>% 
+  distinct(Q10_study_ID, Year, Species) %>% 
+  group_by(Species, Year) %>% 
+  dplyr::summarise(n = n()) 
+
+x %>% 
+  drop_na() %>% 
+  ggplot(aes(x = Year, y = n, color = Species))+
+  geom_path()
 
 
