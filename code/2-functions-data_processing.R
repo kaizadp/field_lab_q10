@@ -9,13 +9,15 @@ clean_srdb_dataset <- function(){
   srdb_v5_data <- read.csv(SRDB_FILE_PATH_DATA)
   srdb_v5_equations <- read.csv(SRDB_FILE_PATH_EQ)
   srdb_v5_studies <- read.csv(SRDB_FILE_PATH_STUDIES)
+  srdb_v5_rh_list = read.csv("data/CO2/SRDB_v5_rh_studies.csv")
   
   sites <-
     srdb_v5_data %>% 
     dplyr::select(Record_number, Study_number, Entry_date, Duplicate_record, 
                   Latitude, Longitude, Elevation, Biome, Ecosystem_type, 
                   Manipulation, Manipulation_level, Meas_method) %>% 
-    filter(Manipulation == "None"|Manipulation_level %in% c("None", "NONE", "none"))
+    filter(Manipulation == "None"|Manipulation_level %in% c("None", "NONE", "none")) %>% 
+    left_join(srdb_v5_rh_list)
   
   r10 <-
     srdb_v5_equations %>% 
@@ -25,7 +27,7 @@ clean_srdb_dataset <- function(){
     srdb_v5_studies %>% 
     dplyr::select(Study_number, Authors, Title, PubYear) %>% 
     mutate(StudyName = paste0(Authors, "_", Title, "_", PubYear)) %>% 
-    dplyr::select(Study_number, StudyName)
+    dplyr::select(Study_number, StudyName) 
     
   process_q10_data = function(srdb_v5_equations){
     q10_1 <-
@@ -522,8 +524,9 @@ subset_combined_dataset = function(dat){
                   Moisture, Moisture_units, Moisture_flag,
                   Species, Incubation, Q10, Meas_method,
                   Ecosystem_type, Biome, Manipulation, Manipulation_level,
-                  Sample, Latitude, Longitude,
-                  notes)
+                  Sample, Latitude, Longitude, Respiration_type, MAT_C, MAP_mm,
+                  notes) %>% 
+    mutate(Respiration_type = if_else(Incubation == "lab", "heterotrophic", Respiration_type))
   
   list(study_data = study_data,
        data_subset = data_subset)
