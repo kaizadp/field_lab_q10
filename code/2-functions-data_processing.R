@@ -265,27 +265,27 @@ import_CH4_data_from_papers = function(filePaths_CH4){
                                            Longitude = col_character(),
                                            Sample = col_character())) %>% 
     #bind_rows() %>% 
-    mutate(
-      # clean up f-ing latitude/longitude
-      Latitude = str_replace(Latitude, " N", "N"),
-      Latitude = str_replace(Latitude, " S", "S"),
-      Longitude = str_replace(Longitude, " E", "E"),
-      Longitude = str_replace(Longitude, " W", "W"),
-      
-      Latitude = str_replace(Latitude, " N", "N"),
-      Latitude = str_replace(Latitude, " S", "S"),
-      Longitude = str_replace(Longitude, " E", "E"),
-      Longitude = str_replace(Longitude, " W", "W"),
-      
-      Latitude  = str_replace(Latitude, "′′", '"'),
-      Longitude  = str_replace(Longitude, "′′", '"'),
-      
-      Latitude  = str_replace(Latitude, "″", '"'),
-      Longitude  = str_replace(Longitude, "″", '"'),
-      
-      Latitude  = str_replace(Latitude, "′", "'"),
-      Longitude  = str_replace(Longitude, "′", "'")
-    ) %>% 
+ #   mutate(
+ #     # clean up f-ing latitude/longitude
+ #     Latitude = str_replace(Latitude, " N", "N"),
+ #     Latitude = str_replace(Latitude, " S", "S"),
+ #     Longitude = str_replace(Longitude, " E", "E"),
+ #     Longitude = str_replace(Longitude, " W", "W"),
+ #     
+ #     Latitude = str_replace(Latitude, " N", "N"),
+ #     Latitude = str_replace(Latitude, " S", "S"),
+ #     Longitude = str_replace(Longitude, " E", "E"),
+ #     Longitude = str_replace(Longitude, " W", "W"),
+ #     
+ #     Latitude  = str_replace(Latitude, "′′", '"'),
+ #     Longitude  = str_replace(Longitude, "′′", '"'),
+ #     
+ #     Latitude  = str_replace(Latitude, "″", '"'),
+ #     Longitude  = str_replace(Longitude, "″", '"'),
+ #     
+ #     Latitude  = str_replace(Latitude, "′", "'"),
+ #     Longitude  = str_replace(Longitude, "′", "'")
+ #   ) %>% 
     filter_all(any_vars(!is.na(.)))
   
 }
@@ -298,27 +298,27 @@ import_CO2_data_from_papers = function(filePaths_CO2){
                                            Sample = col_character(),
                                            Temp_flag = col_character())) %>% 
     #bind_rows() %>% 
-    mutate(
-      # clean up f-ing latitude/longitude
-      Latitude = str_replace(Latitude, " N", "N"),
-      Latitude = str_replace(Latitude, " S", "S"),
-      Longitude = str_replace(Longitude, " E", "E"),
-      Longitude = str_replace(Longitude, " W", "W"),
-      
-      Latitude = str_replace(Latitude, " N", "N"),
-      Latitude = str_replace(Latitude, " S", "S"),
-      Longitude = str_replace(Longitude, " E", "E"),
-      Longitude = str_replace(Longitude, " W", "W"),
-      
-      Latitude  = str_replace(Latitude, "′′", '"'),
-      Longitude  = str_replace(Longitude, "′′", '"'),
-      
-      Latitude  = str_replace(Latitude, "″", '"'),
-      Longitude  = str_replace(Longitude, "″", '"'),
-      
-      Latitude  = str_replace(Latitude, "′", "'"),
-      Longitude  = str_replace(Longitude, "′", "'")
-    ) %>% 
+ #   mutate(
+ #     # clean up f-ing latitude/longitude
+ #     Latitude = str_replace(Latitude, " N", "N"),
+ #     Latitude = str_replace(Latitude, " S", "S"),
+ #     Longitude = str_replace(Longitude, " E", "E"),
+ #     Longitude = str_replace(Longitude, " W", "W"),
+ #     
+ #     Latitude = str_replace(Latitude, " N", "N"),
+ #     Latitude = str_replace(Latitude, " S", "S"),
+ #     Longitude = str_replace(Longitude, " E", "E"),
+ #     Longitude = str_replace(Longitude, " W", "W"),
+ #     
+ #     Latitude  = str_replace(Latitude, "′′", '"'),
+ #     Longitude  = str_replace(Longitude, "′′", '"'),
+ #     
+ #     Latitude  = str_replace(Latitude, "″", '"'),
+ #     Longitude  = str_replace(Longitude, "″", '"'),
+ #     
+ #     Latitude  = str_replace(Latitude, "′", "'"),
+ #     Longitude  = str_replace(Longitude, "′", "'")
+ #   ) %>% 
     filter_all(any_vars(!is.na(.)))
   
 }
@@ -339,8 +339,31 @@ create_study_matrix = function(combined_data_cleaned){
 # PART 4: cleaning --------------------------------------------------------
 
 clean_lat_lon = function(combined_data){
-    combined_data %>% 
+  combined_data %>% 
     #dplyr::select(Latitude, Longitude) %>% 
+    
+    # first, clean up ----
+  mutate(
+    # clean up f-ing latitude/longitude
+    Latitude = str_replace(Latitude, " N", "N"),
+    Latitude = str_replace(Latitude, " S", "S"),
+    Longitude = str_replace(Longitude, " E", "E"),
+    Longitude = str_replace(Longitude, " W", "W"),
+    
+    Latitude = str_replace(Latitude, " N", "N"),
+    Latitude = str_replace(Latitude, " S", "S"),
+    Longitude = str_replace(Longitude, " E", "E"),
+    Longitude = str_replace(Longitude, " W", "W"),
+    
+    Latitude  = str_replace(Latitude, "′′", '"'),
+    Longitude  = str_replace(Longitude, "′′", '"'),
+    
+    Latitude  = str_replace(Latitude, "″", '"'),
+    Longitude  = str_replace(Longitude, "″", '"'),
+    
+    Latitude  = str_replace(Latitude, "′", "'"),
+    Longitude  = str_replace(Longitude, "′", "'")
+    ) %>% 
     
     # LATITUDE ----
     # a. remove any spaces, so they don't fuck up the analysis later
