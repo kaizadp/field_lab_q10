@@ -19,7 +19,7 @@ processing_plan = drake_plan(
   #  gsheets_data_CH4 %>% write.csv(GSHEETS_LOCAL_PATH_CH4, row.names = FALSE, na = ""),
   
   # Process data from papers
-  N_data_from_papers = import_N_data_from_papers(GSHEETS_LOCAL_PATH_N),
+  # N_data_from_papers = import_N_data_from_papers(GSHEETS_LOCAL_PATH_N),
   CH4_data_from_papers = import_CH4_data_from_papers(GSHEETS_LOCAL_PATH_CH4),
   CO2_data_from_papers = import_CO2_data_from_papers(GSHEETS_LOCAL_PATH_CO2),
   
@@ -29,18 +29,20 @@ processing_plan = drake_plan(
   ## write.csv(CH4_data_from_papers, "data/3-data_from_papers-cleaned/CH4_data.csv", row.names = FALSE, na = ""),
   
   # combine the data
-  combined_data = bind_rows(N_data_from_papers, CH4_data_from_papers, CO2_data_from_papers) %>% 
-    filter(Species %in% c("CO2", "N2O", "CH4")),
+  combined_data = bind_rows(#N_data_from_papers, 
+                            CH4_data_from_papers, CO2_data_from_papers) %>% 
+    filter(Species %in% c("CO2", #"N2O", 
+                          "CH4")),
   
   # fix the latitude-longitude
-  combined_data_cleaned = 
-    combined_data %>% 
-    clean_lat_lon(.) %>% 
-    clean_temp_range(.),
+  # combined_data_cleaned = 
+  #   combined_data %>% 
+  #   clean_lat_lon(.) %>% 
+  #   clean_temp_range(.),
   
   #
   # II. SRDB ----
-  srdb_q10 = clean_srdb_dataset()$q10_sites %>%  clean_temp_range(.),
+  srdb_q10 = clean_srdb_dataset()$q10_sites, #%>%  clean_temp_range(.),
   srdb_r10 = clean_srdb_dataset()$r10_sites,
 
   #
@@ -58,14 +60,15 @@ processing_plan = drake_plan(
   # sidb_vars_clean2 <- clean_sidb_data(sidb_vars, sidb_timeseries)$sidb_vars_clean,
   sidb_timeseries_clean = clean_sidb_data(sidb_vars, sidb_timeseries)$sidb_timeseries_clean2,
   sidb_q10_calculated = calculate_sidb_q10_r10(sidb_timeseries_clean, sidb_vars)$sidb_q10_calculated,
-  sidb_q10_clean = calculate_sidb_q10_r10(sidb_timeseries_clean, sidb_vars)$sidb_q10_clean %>% 
-    clean_temp_range(.),
+  sidb_q10_clean = calculate_sidb_q10_r10(sidb_timeseries_clean, sidb_vars)$sidb_q10_clean, 
+  #%>% clean_temp_range(.),
   
   #
   # IV. COMBINE ----
   #all_data = bind_rows(combined_data_cleaned, srdb_q10, sidb_q10_clean),
-  all_data = combine_all_q10_studies(combined_data_cleaned, srdb_q10, sidb_q10_clean),
-  all_data_study_numbers = assign_study_numbers(all_data),
+  all_data = combine_all_q10_studies(combined_data, srdb_q10, sidb_q10_clean),
+  all_data_clean = all_data %>% clean_lat_lon(.) %>% clean_temp_range(.),
+  all_data_study_numbers = assign_study_numbers(all_data_clean),
   
   processed_data = subset_combined_dataset(all_data_study_numbers)$data_subset,
   study_metadata = subset_combined_dataset(all_data_study_numbers)$study_data,
@@ -77,7 +80,7 @@ processing_plan = drake_plan(
 
 make(processing_plan, lock_cache = FALSE)
 
-loadd(N_data_from_papers, CH4_data_from_papers, combined_data, combined_data_cleaned)
+loadloadd(N_data_from_papers, CH4_data_from_papers, combined_data, combined_data_cleaned)
 loadd(srdb_q10, sidb_q10_clean)
 loadd(all_data)
 loadd(all_data_study_numbers, processed_data, study_metadata)
