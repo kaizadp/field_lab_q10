@@ -437,7 +437,7 @@ clean_lat_lon = function(combined_data){
   
 }
 
-clean_temp_range <- function(combined_data){
+clean_temp_range2 <- function(combined_data){
   
   temp_ranges <- 
     combined_data %>% 
@@ -472,6 +472,56 @@ clean_temp_range <- function(combined_data){
              Temp_range = Temp_range_new) %>% 
       mutate(Temp_range = factor(Temp_range, 
                                  levels = c("< 0", "0_5", "5_15", "15_25", "> 25")))
+}
+
+clean_temp_range <- function(combined_data){
+  # new version
+  temp_ranges <- 
+    combined_data %>% 
+    dplyr::select(Temp_range) %>% 
+    distinct() %>% 
+    mutate(Temp_range2 = Temp_range) %>% 
+    separate(Temp_range2, sep = "_", into = c("Temp_min", "Temp_max")) %>% 
+    mutate(Temp_max = as.integer(Temp_max),
+           Temp_min = as.integer(Temp_min),
+           #Temp_diff = Temp_max - Temp_min
+           ) %>% 
+    mutate(Temp_min2 = round(Temp_min/5)*5,
+           Temp_max2 = round(Temp_max/5)*5,
+           Temp_range_rounded = if_else(!is.na(Temp_min2) & !is.na(Temp_max2), paste0(Temp_min2, "_", Temp_max2), NA_character_)) %>% 
+    #separate(Temp_range_2, sep = "_", into = c("Temp_min", "Temp_max")) %>% 
+    mutate(Temp_diff = Temp_max2 - Temp_min2) %>% 
+    
+    rownames_to_column("rownum") %>% 
+  
+  
+  
+#    filter(Temp_diff <= 10) %>% 
+    mutate(Temp_range_new = 
+             case_when(Temp_max2 <= 0 ~ "< 0",
+                       Temp_min2 >= 0 & Temp_max2 <= 5 ~ "0_5",
+                       Temp_min2 >= 5 & Temp_max2 <= 15 ~ "5_15",
+                       Temp_min2 >= 15 & Temp_max2 <= 25 ~ "15_25",
+                       Temp_min2 >= 25 ~ "> 25")) %>% 
+    dplyr::select(Temp_range, Temp_range_rounded, Temp_range_new, Temp_diff)
+  
+  # 
+  #x = 
+    combined_data %>% 
+    left_join(temp_ranges) %>% 
+    #   mutate(Temp_range_new = if_else(is.na(Temp_range),
+    #                                   case_when(Temp_mean < 0 ~ "< 0",
+    #                                             Temp_mean >= 0 & Temp_mean < 5 ~ "0_5",
+    #                                             Temp_mean >= 5 & Temp_mean < 15 ~ "5_15",
+    #                                             Temp_mean >= 15 & Temp_mean <= 25 ~ "15_25",
+    #                                             Temp_mean >= 25 ~ "> 25"),
+    #                                   Temp_range_new)) %>% 
+    #    filter(!is.na(Temp_range_new)) %>% 
+    #    filter(!is.na(Q10)) %>% 
+    rename(Temp_range_old = Temp_range,
+           Temp_range = Temp_range_new) %>% 
+    mutate(Temp_range = factor(Temp_range, 
+                               levels = c("< 0", "0_5", "5_15", "15_25", "> 25")))
 }
 
 
