@@ -552,8 +552,23 @@ combine_all_q10_studies = function(combined_data_cleaned, srdb_q10, sidb_q10_cle
   bind_rows(combined_data_cleaned, srdb_q10, sidb_q10_clean) %>% 
     mutate_all(na_if,"") %>% 
     filter(is.na(Duplicate_record)) %>% 
-    mutate(Species = factor(Species, levels = c("CO2", "N2O", "CH4"))) 
+    mutate(Manipulation = tolower(Manipulation),
+           Manipulation_level = tolower(Manipulation_level)) %>%
+    filter(Manipulation %in% c("control", "none") | Manipulation_level %in% c("none", "control")) %>% 
+    mutate(Species = factor(Species, levels = c("CO2", "N2O", "CH4"))) %>% 
+    dplyr::select(Species, 
+                  starts_with("Temp"),
+                  starts_with("Q10"),
+                  Sample, Incubation, Latitude, Longitude,
+                  Source, StudyName, DOI,
+                  starts_with("notes"), Respiration_type,
+                  SRDB_record_number) %>% 
+    mutate(Q10 = as.numeric(Q10),
+           Q10 = round(Q10, 2))
 }
+
+
+
 
 # setting study-ID and study-number
 assign_study_numbers = function(all_data){
@@ -581,32 +596,71 @@ subset_combined_dataset = function(dat){
   # subset only data needed
   study_data = 
     dat %>% 
-    dplyr::select(Q10_study_ID, SRDB_study_ID, Source, StudyName, DOI) %>% 
+    dplyr::select(Q10_study_ID, SRDB_record_number, Source, StudyName, DOI) %>% 
     distinct() %>% 
     mutate(Q10_study_ID = as.numeric(Q10_study_ID)) %>% 
     arrange(Q10_study_ID)
   # subset study info
   
-  data_subset = 
+  data_Q10 = 
     dat %>% 
-    rename(Moisture = moisture,
-           Moisture_units = moisture_units,
-           Moisture_flag = moisture_flag) %>% 
-    dplyr::select(Q10_record_number, SRDB_record_number, Q10_study_ID,
-                  Year, Temp_range_old, Temp_range, Temp_flag, 
-                  Moisture, Moisture_units, Moisture_flag,
-                  Species, Incubation, Q10, Meas_method,
-                  Ecosystem_type, Biome, Manipulation, Manipulation_level,
-                  Sample, Latitude, Longitude, Respiration_type, MAT_C, MAP_mm,
+    dplyr::select(Q10_record_number, 
+                  Q10_study_ID,
+                  Species,
+                  starts_with("Q10"),
+                  Incubation,
+                  starts_with("Temp"),
+                  Respiration_type,
                   notes) %>% 
     mutate(Respiration_type = if_else(Incubation == "lab", "heterotrophic", Respiration_type))
   
+  sample_metadata = 
+    dat %>% 
+    dplyr::select(Q10_record_number, Q10_study_ID, 
+                  Latitude, Longitude, 
+                  SRDB_record_number, Source, StudyName, DOI) %>% 
+    mutate(Q10_study_ID = as.numeric(Q10_study_ID),
+           Q10_record_number = as.numeric(Q10_record_number)) %>% 
+    arrange(Q10_record_number)
+  
   list(study_data = study_data,
-       data_subset = data_subset)
+       data_Q10 = data_Q10,
+       sample_metadata = sample_metadata)
 }
 
 #
 
+
+assign_climate_biome = function(dat){
+  
+  UDel_summarized_climate = read.csv("data/geographic_databases/UDel_summarized_climate.csv")
+  KoeppenGeigerASCII = readxl::read_xlsx("data/geographic_databases/KoeppenGeigerASCII.xlsx")
+  
+  dat_mat_map = 
+    dat %>% 
+    mutate(Latitude2 = round(Latitude*2)/2,
+           Longitude2 = round(Longitude*2)/2,
+           Lat_dif = ifelse(Latitude2 - Latitude >=0, 0.25, -0.25),
+           Lon_dif = ifelse(Longitude2 - Longitude >=0, 0.25, -0.25),
+           Latitude2 = Latitude2 - Lat_dif,
+           Longitude2 = Longitude2 - Lon_dif) %>% 
+    dplyr::select(-Lat_dif, -Lon_dif) %>% 
+    left_join(UDel_summarized_climate, by=c("Latitude2"="Latitude", "Longitude2"="Longitude")) %>% 
+    left_join(KoeppenGeigerASCII, by=c("Latitude2"="Latitude", "Longitude2"="Longitude")) %>% 
+    mutate(ClimateTypes = case_when(grepl("A", ClimateTypes) ~ "equatorial",
+                                      grepl("B", ClimateTypes) ~ "arid",
+                                      grepl("C", ClimateTypes) ~ "temperate",
+                                      grepl("D", ClimateTypes) ~ "snow",
+                                      grepl("E", ClimateTypes) ~ "polar")) %>% 
+    dplyr::select(-Latitude2, -Longitude2)
+    
+  
+  
+}
+
+
+
+#
 
 
 ##################
