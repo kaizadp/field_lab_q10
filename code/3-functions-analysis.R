@@ -210,7 +210,135 @@ compute_co2_temp_range = function(Q10_data){
   
 }
 
-
+compute_co2_bootstrapping = function(Q10_data){
+  
+  Q10_CO2_data = 
+    Q10_data %>% 
+    filter(!is.na(Q10)) %>% 
+    filter(Species == "CO2" & !is.na(Temp_range))
+  
+  # bootstrapping ----
+  
+  RESAMPLE <- function(n, x) {
+    mean(sample(x, n, replace = TRUE))
+  }
+  
+  q10_5_15_field = Q10_CO2_data %>% filter(Temp_range == "5_15" & Incubation == "field") %>% pull(Q10)
+  q10_5_15_lab = Q10_CO2_data %>% filter(Temp_range == "5_15" & Incubation == "lab") %>% pull(Q10)
+  q10_15_25_field = Q10_CO2_data %>% filter(Temp_range == "15_25" & Incubation == "field") %>% pull(Q10)
+  q10_15_25_lab = Q10_CO2_data %>% filter(Temp_range == "15_25" & Incubation == "lab") %>% pull(Q10)
+  q10_25_field = Q10_CO2_data %>% filter(Temp_range == "> 25" & Incubation == "field") %>% pull(Q10)
+  q10_25_lab = Q10_CO2_data %>% filter(Temp_range == "> 25" & Incubation == "lab") %>% pull(Q10)
+  
+  # repeat how many times
+  N_SAMPLES <- 10000 # repeat how many times 
+  sample_size <- 10 # how many samples take every time 
+  
+  set.seed(123456) 
+  bootstrap_out <- tibble(
+    q10_5_15_field_boots = sapply(rep(sample_size, N_SAMPLES), RESAMPLE, q10_5_15_field),
+    q10_5_15_lab_boots = sapply(rep(sample_size, N_SAMPLES), RESAMPLE, q10_5_15_lab),
+    q10_15_25_field_boots = sapply(rep(sample_size, N_SAMPLES), RESAMPLE, q10_15_25_field),
+    q10_15_25_lab_boots = sapply(rep(sample_size, N_SAMPLES), RESAMPLE, q10_15_25_lab),
+    q10_25_field_boots = sapply(rep(sample_size, N_SAMPLES), RESAMPLE, q10_25_field),
+    q10_25_lab_boots = sapply(rep(sample_size, N_SAMPLES), RESAMPLE, q10_25_lab)
+  )
+  
+  bootstrap_long = 
+    bootstrap_out %>% 
+    pivot_longer(cols = dplyr::everything(), values_to = "Q10", names_to = "names") %>% 
+    mutate(Temp_range = case_when(grepl("5_15", names) ~ "5_15",
+                                  grepl("15_25", names) ~ "15_25",
+                                  grepl("q10_25", names) ~ "> 25"),
+           Incubation = case_when(grepl("field", names) ~ "field",
+                                  grepl("lab", names) ~ "lab"),
+           Species = "CO2") %>% 
+    reorder_temp_levels(.)
+  
+  # stats ----
+  ## bootstrap aov
+  boot_aov = 
+    bootstrap_long %>% 
+    group_by(Temp_range) %>% 
+    do(fit_aov(.))
+  
+  ## wilcoxon?
+  
+  # graphs ----
+  gg_boot_jitter = 
+    bootstrap_long %>% 
+    ggplot(aes(x = Incubation, y = Q10, color = Incubation))+
+    geom_jitter(width = 0.2, size = 1)+
+    facet_wrap(~Temp_range, strip.position = "bottom")+
+    labs(title = "CO2",
+         subtitle = "bootstrapped")+
+    theme(legend.position = "none")
+  
+  gg_boot_density = 
+    bootstrap_long %>% 
+    ggplot(aes(x = Q10, fill = Incubation))+
+    geom_density(alpha = 0.5)+
+    facet_wrap(~Temp_range)
+  
+  
+  # old code from JJ ----
+  
+ ##  # Bootstrap
+ ##  # https://www.youtube.com/watch?v=m_osNICFFLY  # this is a youtube link to learn more about bootstrap, and you can find more learning material from google
+ ##  # Bootstrap function
+ ##  RESAMPLE <- function(n, x) {
+ ##    mean(sample(x, n, replace = TRUE))
+ ##  }
+ ##  
+ ##  # let's do an toy example
+ ##  set.seed(123456) 
+ ##  x1 = rnorm(n = 100, mean = 0, sd = 0.5)
+ ##  x2 = rnorm(n = 1000, mean = 1.5, sd = 0.5)
+ ##  
+ ##  
+ ##  # repeat how many times
+ ##  N_SAMPLES <- 10000 # repeat how many times 
+ ##  sample_size <- 10 # how many samples take every time 
+ ##  
+ ##  library(dplyr)
+ ##  bootstrap_out <- tibble(
+ ##    x1_boots = sapply(rep(sample_size, N_SAMPLES), RESAMPLE, x1),
+ ##    x2_boots = sapply(rep(sample_size, N_SAMPLES), RESAMPLE, x2)
+ ##  )
+ ##  
+ ##  
+ ##  mean(bootstrap_out$x1_boots)
+ ##  sd(bootstrap_out$x1_boots)
+ ##  mean(bootstrap_out$x2_boots)
+ ##  sd(bootstrap_out$x2_boots)
+ ##  
+ ##  # wilcox.test
+ ##  wilcox.test(bootstrap_out$x1_boots,
+ ##              bootstrap_out$x2_boots,
+ ##              mu = 0, paired = TRUE, alternative = "two.sided", conf.level = 0.95)
+ ##  
+ ##  library(tidyr)
+ ##  library(ggplot2)
+ ##  
+ ##  bootstrap_out %>%
+ ##    tidyr::gather(Type) %>% 
+ ##    ggplot(aes(value, fill = Type)) +
+ ##    # theme_cowplot() +
+ ##    geom_density(stat = "density", alpha = 0.65) +
+ ##    theme(legend.position = c(0.50, 0.75)) 
+  
+  
+  
+  
+  
+  
+  # output ----
+  list(bootstrap_long = bootstrap_long,
+       boot_aov = boot_aov,
+       gg_boot_jitter = gg_boot_jitter,
+       gg_boot_density = gg_boot_density
+       )
+}
 
 compute_stats_q10 <- function(Q10_data){
   
