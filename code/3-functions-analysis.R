@@ -340,6 +340,54 @@ compute_co2_bootstrapping = function(Q10_data){
        )
 }
 
+compute_rh_only = function(Q10_data){
+  Q10_data_rh_only = 
+    Q10_data %>% 
+    filter(Respiration_type == "heterotrophic")
+  
+  library(magrittr)
+  rh_aov = 
+    Q10_data_rh_only %>% 
+    filter(Temp_range == "5_15") %$% 
+    aov(Q10 ~ Incubation) %>% 
+    summary(.)
+  
+  rh_summary = 
+    Q10_data_rh_only %>% 
+    group_by(Temp_range, Incubation) %>% 
+    dplyr::summarise(n = n())
+  
+  rh_jitter_plot = 
+    Q10_data_rh_only %>% 
+    filter(Temp_range %in% c("5_15", "15_25", "> 25")) %>% 
+    ggplot(aes(x = Incubation, y = Q10, color = Incubation))+
+    geom_jitter(width = 0.2, size = 1)+
+    facet_wrap(~Temp_range, strip.position = "bottom")+
+    labs(title = "CO2",
+         subtitle = "heterotrophic respiration only")+
+    ylim(0,20)
+  
+  list(rh_aov = rh_aov,
+       rh_summary = rh_summary,
+       rh_jitter_plot = rh_jitter_plot)
+  
+  
+  gg_rh_biomes = 
+    Q10_data_rh_only %>% 
+    filter(Temp_range %in% c("5_15")) %>% 
+    filter(ClimateTypes %in% c("temperate", "snow")) %>% 
+    ggplot(aes(x = Incubation, y = Q10, color = Incubation))+
+    geom_jitter(width = 0.2, size = 1)+
+    facet_wrap(~Temp_range + ClimateTypes, strip.position = "bottom")+
+    labs(title = "CO2",
+         subtitle = "heterotrophic respiration only - by biome")+
+    ylim(0, 10)
+  
+}
+
+
+
+
 compute_stats_q10 <- function(Q10_data){
   
   fit_aov <- function(dat){
@@ -491,37 +539,6 @@ compute_study_summary = function(Q10_data){
        study_counts = study_counts)
 }
 
-compute_rh_only = function(Q10_data){
-  Q10_data_rh_only = 
-    Q10_data %>% 
-    filter(Respiration_type == "heterotrophic")
-  
-  library(magrittr)
-  rh_aov = 
-    Q10_data_rh_only %>% 
-    filter(Temp_range == "5_15") %$% 
-    aov(Q10 ~ Incubation) %>% 
-    summary(.)
-  
-  rh_summary = 
-    Q10_data_rh_only %>% 
-    group_by(Temp_range, Incubation) %>% 
-    dplyr::summarise(n = n())
-  
-  rh_jitter_plot = 
-    Q10_data_rh_only %>% 
-    filter(Temp_range %in% c("5_15", "15_25", "> 25")) %>% 
-    ggplot(aes(x = Incubation, y = Q10, color = Incubation))+
-    geom_jitter(width = 0.2, size = 1)+
-    facet_wrap(~Temp_range, strip.position = "bottom")+
-    labs(title = "CO2",
-         subtitle = "heterotrophic respiration only")+
-    ylim(0,20)
-  
-  list(rh_aov = rh_aov,
-       rh_summary = rh_summary,
-       rh_jitter_plot = rh_jitter_plot)
-}
 
 
 
