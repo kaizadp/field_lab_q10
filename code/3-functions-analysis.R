@@ -541,7 +541,17 @@ compute_study_summary = function(Q10_data){
 
 
 
-
+compute_ch4 = function(Q10_data){
+  #CH4_incubation = 
+    Q10_data %>% 
+    filter(Species == "CH4") %>% 
+    filter(!is.na(Incubation)) %>% 
+    ggplot(aes(x = Incubation, y = Q10, color = Incubation))+
+    geom_jitter(width = 0.2, size = 1)+
+    #geom_point(position = position_dodge(width = 0.4))+
+    labs(title = "CH4")
+  ylim(0,20)
+}
 
 
 
