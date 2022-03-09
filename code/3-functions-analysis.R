@@ -4,9 +4,54 @@ library(rnaturalearth)
 library(rnaturalearthdata)
 library(sf)
 
+
+# general functions -------------------------------------------------------
+
 reorder_temp_levels = function(dat){
   dat %>% 
-    mutate(Temp_range = factor(Temp_range, levels = c("< 0", "0_5", "5_15", "15_25", "> 25")))
+    mutate(Temp_range = factor(Temp_range, levels = c("< 0", "0_5", "5_15", "15_25", "> 25"))) %>% 
+    mutate(Species = factor(Species, levels = c("CO2", "CH4")))
+}
+
+fit_aov <- function(dat){
+  a = aov(Q10 ~ Incubation, data = dat)
+  
+  broom::tidy(a) %>% 
+    filter(term == "Incubation") %>% 
+    rename(p_value = `p.value`) %>% 
+    #    mutate(label = case_when(p_value <= 0.05 ~ "*")) %>% 
+    #    dplyr::select(p_value) %>% 
+    force()
+}
+
+#
+
+# exploration -------------------------------------------------------------
+
+plot_temperature_ranges = function(Q10_data){
+  Q10_data_temps = 
+    Q10_data %>% 
+    distinct(Temp_range_old, Species, Incubation) %>% 
+    separate(Temp_range_old, sep = "_", into = c("temp_start", "temp_stop")) %>% 
+    mutate(temp_start = as.numeric(temp_start),
+           temp_stop = as.numeric(temp_stop))
+  
+  Q10_data_temps %>% 
+    filter(!is.na(Species) & !is.na(Incubation)) %>% 
+    arrange(temp_start, temp_stop) %>% 
+    mutate(rownames_to_column(., "y")) %>% 
+    ggplot(aes(y = y))+
+    geom_point(aes(x = temp_start), color = "red")+
+    geom_point(aes(x = temp_stop), color = "black")+
+    geom_segment(aes(x = temp_start, xend = temp_stop, yend = y))+
+    theme_bw()+
+    scale_x_continuous(minor_breaks = seq(-20, 50, 5))+
+    theme(axis.text.y = element_blank(),
+          axis.ticks = element_blank(),
+          axis.title = element_blank(),
+          axis.line.y = element_blank())+
+    labs(title = "all data, all temperature ranges")+
+    facet_grid(Species ~ Incubation)
 }
 
 make_map_all_studies <- function(Q10_data){
@@ -14,7 +59,9 @@ make_map_all_studies <- function(Q10_data){
   
   Q10_map_data = 
     Q10_data %>% 
-    distinct(Species, Latitude, Longitude, Incubation)
+    filter(!is.na(Species)) %>% 
+    distinct(Species, Latitude, Longitude, Incubation) %>% 
+    drop_na()
   
   world %>% 
     ggplot()+
@@ -26,8 +73,23 @@ make_map_all_studies <- function(Q10_data){
     labs(color = "")+
     theme_void()+
     theme(legend.position = "top")+
-    facet_wrap(~Species)
+    facet_wrap(~Species, ncol = 1)+
+    NULL
 }
+
+plot_mat_map = function(Q10_data){
+  
+  Q10_data %>% 
+    filter(!is.na(Species)) %>% 
+    ggplot(aes(x = MAT, y = MAP))+
+    geom_point(aes(color = ClimateTypes), size = 2)+    
+    facet_wrap(~Species, ncol = 1)+
+    theme_bw()+
+    NULL
+  
+}
+
+
 
 
 
@@ -66,12 +128,12 @@ compute_stats_q10 <- function(Q10_data){
     filter(Species == "CO2" & !is.na(Temp_range)) %$%
     nlme::lme(Q10 ~ Incubation, random = ~1|Temp_range) %>% anova(.)
   
-  # N2O ----
-  n2o_aov_all = 
-    Q10_data %>% 
-    # filter(!is.na(Q10)) %>% 
-    filter(Species == "N2O") %>% 
-    do(fit_aov(.))
+ #  # N2O ----
+ #  n2o_aov_all = 
+ #    Q10_data %>% 
+ #    # filter(!is.na(Q10)) %>% 
+ #    filter(Species == "N2O") %>% 
+ #    do(fit_aov(.))
   
   # CH4 ----
   ch4_aov_all = 
@@ -84,7 +146,7 @@ compute_stats_q10 <- function(Q10_data){
   list(co2_aov_temp = co2_aov_temp,
        co2_aov_all = co2_aov_all,
        co2_lme_all = co2_lme_all,
-       n2o_aov_all = n2o_aov_all,
+       #n2o_aov_all = n2o_aov_all,
        ch4_aov_all = ch4_aov_all)
 }
 
@@ -213,3 +275,12 @@ compute_rh_only = function(Q10_data){
        rh_summary = rh_summary,
        rh_jitter_plot = rh_jitter_plot)
 }
+
+
+
+
+
+
+
+
+
