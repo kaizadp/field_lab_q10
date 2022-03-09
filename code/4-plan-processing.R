@@ -20,8 +20,8 @@ processing_plan = drake_plan(
   
   # Process data from papers
   # N_data_from_papers = import_N_data_from_papers(GSHEETS_LOCAL_PATH_N),
-  CH4_data_from_papers = import_CH4_data_from_papers(GSHEETS_LOCAL_PATH_CH4),
-  CO2_data_from_papers = import_CO2_data_from_papers(GSHEETS_LOCAL_PATH_CO2),
+  CH4_data_from_papers = import_CH4_data_from_papers(GSHEETS_LOCAL_PATH_CH4) %>% mutate_all(as.character),
+  CO2_data_from_papers = import_CO2_data_from_papers(GSHEETS_LOCAL_PATH_CO2) %>% mutate_all(as.character),
   
   # export these data
   ## perhaps delete this later (?)
@@ -42,7 +42,7 @@ processing_plan = drake_plan(
   
   #
   # II. SRDB ----
-  srdb_q10 = clean_srdb_dataset()$q10_sites, #%>%  clean_temp_range(.),
+  srdb_q10 = clean_srdb_dataset()$q10_sites %>% mutate_all(as.character), #%>%  clean_temp_range(.),
   srdb_r10 = clean_srdb_dataset()$r10_sites,
 
   #
@@ -60,7 +60,7 @@ processing_plan = drake_plan(
   # sidb_vars_clean2 <- clean_sidb_data(sidb_vars, sidb_timeseries)$sidb_vars_clean,
   sidb_timeseries_clean = clean_sidb_data(sidb_vars, sidb_timeseries)$sidb_timeseries_clean2,
   sidb_q10_calculated = calculate_sidb_q10_r10(sidb_timeseries_clean, sidb_vars)$sidb_q10_calculated,
-  sidb_q10_clean = calculate_sidb_q10_r10(sidb_timeseries_clean, sidb_vars)$sidb_q10_clean, 
+  sidb_q10_clean = calculate_sidb_q10_r10(sidb_timeseries_clean, sidb_vars)$sidb_q10_clean %>% mutate_all(as.character), 
   #%>% clean_temp_range(.),
   
   #
@@ -70,11 +70,16 @@ processing_plan = drake_plan(
   all_data_clean = all_data %>% clean_lat_lon(.) %>% clean_temp_range(.),
   all_data_study_numbers = assign_study_numbers(all_data_clean),
   
-  processed_data = subset_combined_dataset(all_data_study_numbers)$data_subset,
+  processed_data_q10 = subset_combined_dataset(all_data_study_numbers)$data_Q10,
   study_metadata = subset_combined_dataset(all_data_study_numbers)$study_data,
+  sample_metadata = subset_combined_dataset(all_data_study_numbers)$sample_metadata,
+  #study_citations = ...
   
-  processed_data %>% write.csv("data/processed/Q10_data.csv", row.names = F, na = ""),
-  study_metadata %>% write.csv("data/processed/Q10_study_metadata.csv", row.names = F, na = "")
+  sample_metadata_climate_biome = assign_climate_biome(sample_metadata),
+  
+  processed_data_q10 %>% write.csv("data/processed/Q10_data.csv", row.names = F, na = ""),
+  study_metadata %>% write.csv("data/processed/Q10_study_metadata.csv", row.names = F, na = ""),
+  sample_metadata_climate_biome %>% write.csv("data/processed/Q10_sample_metadata.csv", row.names = F, na = "")
   )
 
 
