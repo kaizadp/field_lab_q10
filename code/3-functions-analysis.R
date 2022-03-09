@@ -91,6 +91,125 @@ plot_mat_map = function(Q10_data){
 
 
 
+# analysis ----------------------------------------------------------------
+
+compute_co2_all = function(Q10_data){
+  ## comparing field vs. lab for all CO2 data, irrespective of incubation temperatures 
+  
+  # all data - all temperatures ----
+# co2_aov_all = 
+    Q10_data %>% 
+    filter(Species == "CO2") %>% 
+    do(fit_aov(.))
+  
+  #  (resp_q10_temp <- 
+  Q10_data %>% 
+    filter(Species == "CO2") %>% 
+    ggplot(aes(x = Incubation, y = Q10, color = Incubation))+
+    geom_jitter(width = 0.2, )+
+    scale_y_log10()+
+    labs(title = "CO2 - all data, all temperatures")+
+    # ylim(0,20))
+    NULL
+
+  # all data - only temperature ranges <= 10 C
+# co2_aov_tenC = 
+    Q10_data %>% 
+    filter(Species == "CO2" & Temp_diff <= 10) %>% 
+    do(fit_aov(.))
+  
+    #  (resp_q10_temp <- 
+    Q10_data %>% 
+      filter(Species == "CO2" & Temp_diff <= 10) %>% 
+      ggplot(aes(x = Incubation, y = Q10, color = Incubation))+
+      geom_jitter(width = 0.2, )+
+      scale_y_log10()+
+      labs(title = "CO2 - all data, any 10C interval only")+
+      # ylim(0,20))
+      NULL
+    
+  
+}
+
+compute_co2_temp_range = function(Q10_data){
+  
+  # stats ----
+  co2_aov_temp = 
+    Q10_data %>% 
+    #filter(!is.na(Q10)) %>% 
+    filter(Species == "CO2" & !is.na(Temp_range)) %>% 
+    filter(!Temp_range %in% c("< 0", "0_5")) %>% # because no lab data for < 0
+    group_by(Temp_range) %>% 
+    do(fit_aov(.))
+  
+  co2_aov_all = 
+    Q10_data %>% 
+    # filter(!is.na(Q10)) %>% 
+    filter(Species == "CO2" & !is.na(Temp_range)) %>% 
+    do(fit_aov(.))
+  
+  co2_lme_all = 
+    Q10_data %>% 
+    filter(!is.na(Q10)) %>% 
+    filter(Species == "CO2" & !is.na(Temp_range)) %$%
+    nlme::lme(Q10 ~ Incubation, random = ~1|Temp_range) %>% anova(.)
+  
+  #
+  # graphs ----
+  
+  Q10_CO2_data = 
+    Q10_data %>% 
+    filter(!is.na(Q10)) %>% 
+    filter(Species == "CO2" & !is.na(Temp_range))
+  
+  (resp_q10_temp <- 
+      Q10_CO2_data %>% 
+      ggplot(aes(x = Temp_range, y = Q10, color = Incubation))+
+      #      geom_jitter(width = 0.2, )+
+      geom_point(position = position_dodge(width = 0.4))+
+      labs(title = "CO2")+
+      ylim(0,20))
+  
+  (resp_q10_temp_jitter <- 
+      Q10_CO2_data %>% 
+      filter(Temp_range %in% c("5_15", "15_25", "> 25")) %>% 
+      ggplot(aes(x = Incubation, y = Q10, color = Incubation))+
+      geom_jitter(width = 0.2, size = 1)+
+      facet_wrap(~Temp_range, strip.position = "bottom")+
+      labs(title = "CO2",
+           subtitle = "only > 5 C included")+
+      ylim(0,20))
+  
+  
+  nonsnow = 
+    Q10_CO2_data %>% 
+    filter(Species == "CO2" & ClimateTypes != "snow") %>%
+    filter(Q10 < 300) %>% 
+    ggplot(aes(x = Incubation, y = Q10, color = Incubation, group = Incubation))+
+    geom_jitter(width = 0.2, size = 1)+
+    facet_wrap(~ClimateTypes, ncol = 4)
+  
+  snow = 
+    Q10_CO2_data %>% 
+    filter(Species == "CO2" & ClimateTypes == "snow") %>%
+    ggplot(aes(x = Incubation, y = Q10, color = Incubation, group = Incubation))+
+    geom_jitter(width = 0.2, size = 1)+
+    facet_wrap(~ClimateTypes, ncol = 4)+
+    scale_y_log10()
+  
+  library(patchwork)
+  
+  
+  nonsnow + snow + 
+    plot_layout(widths = c(4, 1),
+                guides = "collect") &
+    theme(legend.position = "top") &
+    labs(x = "")
+  
+  
+  
+}
+
 
 
 compute_stats_q10 <- function(Q10_data){
