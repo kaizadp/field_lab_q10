@@ -461,7 +461,7 @@ clean_lat_lon = function(combined_data){
 }
 
 clean_temp_range2 <- function(combined_data){
-  
+  #defunct, don't use
   temp_ranges <- 
     combined_data %>% 
     dplyr::select(Temp_range) %>% 
