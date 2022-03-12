@@ -207,7 +207,8 @@ calculate_sidb_q10_r10 <- function(sidb_timeseries_clean, sidb_vars){
     drop_na() %>% 
     mutate(Temp_range = str_remove(Temp_range, "q10_"),
            Source = "SIDb",
-           Incubation = "lab") %>% 
+           Incubation = "lab",
+           Species = "CO2") %>% 
     left_join(sidb_latlon) %>% 
     rename(StudyName = citationKey)
   
@@ -548,13 +549,14 @@ clean_temp_range <- function(combined_data){
 }
 
 
-combine_all_q10_studies = function(combined_data_cleaned, srdb_q10, sidb_q10_clean){
-  bind_rows(combined_data_cleaned, srdb_q10, sidb_q10_clean) %>% 
+combine_all_q10_studies = function(combined_data, srdb_q10, sidb_q10_clean){
+  bind_rows(combined_data, srdb_q10, sidb_q10_clean) %>% 
     mutate_all(na_if,"") %>% 
     filter(is.na(Duplicate_record)) %>% 
     mutate(Manipulation = tolower(Manipulation),
            Manipulation_level = tolower(Manipulation_level)) %>%
-    filter(Manipulation %in% c("control", "none") | Manipulation_level %in% c("none", "control")) %>% 
+    filter(Manipulation_level %in% c("none", "control", NA)) %>% 
+    filter(Manipulation %in% c("control", "none", NA)) %>% 
     mutate(Species = factor(Species, levels = c("CO2", "N2O", "CH4"))) %>% 
     dplyr::select(Species, 
                   starts_with("Temp"),
