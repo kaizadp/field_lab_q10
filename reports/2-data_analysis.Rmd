@@ -14,21 +14,47 @@ knitr::opts_chunk$set(echo = FALSE,
 
 ---
 
-## Study sites
+## EXPLORATION
 
-```{r}
-readd(Q10_map)
+### Study sites
+
+```{r, fig.height=7}
+readd(Q10_map)$gg_facet
 ```
 
-How many datapoints?
+```{r, fig.height=4, fig.width=8}
+readd(Q10_map)$gg_species
+```
+
+
+### How many datapoints?
+
+Datapoints: 
+
 ```{r}
 readd(study_summary)$datapoints %>% knitr::kable()
 ```
 
-How many studies?
+Studies: 
+
 ```{r}
 readd(study_summary)$study_counts %>% knitr::kable()
 ```
+
+
+### Studies by Climate
+
+```{r, fig.height=7, fig.width=4.5}
+readd(gg_mat_map)
+```
+
+
+### Incubation Temperature Ranges
+
+```{r}
+readd(gg_temp_ranges)
+```
+
 
 ```{r, eval=FALSE}
 readd(Q10_data) %>% 
@@ -51,84 +77,91 @@ readd(Q10_data) %>%
 
 ---
 
-## Field vs. lab 
+## Analysis - CO2
 
-### Stats
+### All studies, all temperatures
 
-CO2 - by temperature
-```{r}
-readd(Q10_stats)$co2_aov_temp
-```
+We included all datapoints collected, irrespective of incubation temperature range. (0-10 C, 0-15 C, 0-20 C, 10-20 C, 5-15 C, etc.)
 
-paired (field AND lab) results were not available for < 0 C and 0-5 C.
-
-
-CO2 - across all temperatures
-
-- ANOVA
-```{r}
-readd(Q10_stats)$co2_aov_all
-```
-
-- LME
-```{r}
-readd(Q10_stats)$co2_lme_all
-```
-
-N2O - across all temperatures
-```{r}
-readd(Q10_stats)$n2o_aov_all
-```
-
-CH4 - across all temperatures
-```{r}
-readd(Q10_stats)$ch4_aov_all
+```{r, fig.height=4, fig.width=4}
+readd(co2_all)$gg_raincloud_all
+readd(co2_all)$aov_all
 ```
 
 
-### Graphs
+We then subset the data to include only incubations with temperature ranges of 10 C. (0-10 C, 10-20 C, 5-15 C, 15-25 C, etc.)
 
-```{r}
-readd(Q10_graphs)
+```{r, fig.height=4, fig.width=4}
+readd(co2_all)$gg_raincloud_tenC
+readd(co2_all)$aov_tenC
+
 ```
 
 
-### Respiration: autotrophic/heterotrophic
+### Subsetting by temperature range
 
-Most field studies include auto + heterotrophic respiration
+We then subset the data to include only incubations with specific temperature ranges: < 5 C, 5-15 C, 15-25 C, > 25C. These ranges were chosen because these ranges had the highest frequency of data, and this would also avoid issues pertaining to frozen soils (if we were tp choose 0-10 C).
 
-Some SRDB studies (field) were heterotrophic only
 
-```{r}
-readd(Q10_rh_only)$rh_summary
+```{r, fig.height=4, fig.width=7}
+readd(co2_temp_range)$resp_q10_temp_raincloud
+readd(co2_temp_range)$co2_aov_temp
+```
+
+### Grouping by biome
+
+```{r, fig.height=3, fig.width=9}
+readd(co2_biome)
 ```
 
 
-```{r}
-readd(Q10_rh_only)$rh_jitter_plot
+### Bootstrapping the data
+
+The data were highly skewed toward the field measurements, because most came from the highly curated SRDB. To do a more balanced analysis, we did bootstrapping by randomly sampling 1000 times, 10 samples each. 
+
+```{r, fig.height=4, fig.width=7}
+readd(co2_bootstrapping)$gg_boot_raincloud
+readd(co2_bootstrapping)$gg_boot_density
+readd(co2_bootstrapping)$boot_aov
 ```
 
-running ANOVA on 5-15 C heterotrophic respiration only
-```{r}
+### Combining non-bootstrap and bootstrap plots
+
+```{r, fig.height=7, fig.width=7}
+library(patchwork)
+
+non_boot = readd(co2_temp_range)$resp_q10_temp_raincloud
+boot = readd(co2_bootstrapping)$gg_boot_raincloud
+
+non_boot / boot
+
+```
+
+
+
+
+### Heterotrophic respiration
+
+The field measurements reported above included both autotrophic and heterotrophic respiration, whereas the lab measurements refer only to heterotrophic. We subset field measurements that were heterotrophic respiration only, and compared that with lab.
+
+The heterotrophic field measurements were available for temperate and snow biomes only.
+
+```{r, fig.height=4, fig.width=4}
+readd(Q10_rh_only)$rh_raincloud_plot
+readd(Q10_rh_only)$rh_raincloud_biomes
 readd(Q10_rh_only)$rh_aov
+readd(Q10_rh_only)$rh_summary
+
 ```
 
+---
 
-## Fitting Q10 functions
+## Analysis - CH4
 
-<details>
-  <summary>Click to open table</summary>
-  
-```{r}
-readd(q10_calculated) %>% knitr::kable()
+```{r, fig.height=4, fig.width=4}
+readd(ch4_all)$gg_ch4_raincloud
+readd(ch4_all)$ch4_aov
 ```
-
-</details>
-
-```{r}
-readd(gg_q10_calculated)
-```
-
 
 
 
