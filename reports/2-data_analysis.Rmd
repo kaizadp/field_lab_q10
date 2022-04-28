@@ -104,7 +104,17 @@ We included all datapoints collected, irrespective of incubation temperature ran
 
 ```{r, fig.height=4, fig.width=4}
 readd(co2_all)$gg_raincloud_all
+readd(co2_all)$gg_temp_scatter
 readd(co2_all)$aov_all
+```
+
+
+```{r}
+a = readd(co2_all)$gg_raincloud_all
+b = readd(co2_all)$gg_temp_scatter
+
+a + b
+
 ```
 
 

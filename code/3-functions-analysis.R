@@ -245,6 +245,30 @@ gg_raincloud_all =
   theme(legend.position = "none")+
   NULL
 
+# by incubation temperature
+Q10_data2 = 
+  Q10_data %>% 
+  separate(Temp_range_rounded, sep = "_", into = c("min", "max")) %>% 
+  mutate(min = as.numeric(min),
+         max = as.numeric(max)) %>% 
+  filter(!is.na(min) & !is.na(max)) %>% 
+  mutate(temp_mean = (min + max)/2)
+
+gg_temp_scatter = 
+  Q10_data2 %>% 
+  filter(Species == "CO2") %>% 
+  filter(Temp_diff <= 10) %>% 
+  ggplot(aes(x = min, y = Q10, color = Incubation))+
+  # geom_violin(aes(group_by(temp_mean)))
+  geom_point(position = position_dodge(width = 1.5),
+             size = 2)+
+  geom_smooth(method = "loess", se = FALSE)+
+  scale_color_manual(values = pal_incubation)+
+  labs(x = "Minimum incubation temperature, °C")+
+  #  ylim(0, 50)+
+  #  scale_y_log10()+
+  theme(legend.position = c(0.7, 0.8))+
+  NULL
 
   # all data - only temperature ranges <= 10 C ----
  aov_tenC = 
@@ -291,6 +315,7 @@ gg_raincloud_all =
  list(aov_all = aov_all,
       gg_jitter_all = gg_jitter_all,
       gg_raincloud_all = gg_raincloud_all,
+      gg_temp_scatter = gg_temp_scatter,
       aov_tenC = aov_tenC,
       gg_jitter_tenC = gg_jitter_tenC,
       gg_raincloud_tenC = gg_raincloud_tenC
