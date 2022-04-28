@@ -166,6 +166,35 @@ plot_mat_map = function(Q10_data){
 
 # analysis ----------------------------------------------------------------
 
+co2_all_summaries = function(Q10_data){
+  
+  summary_overall = 
+    Q10_data %>% 
+    group_by(Species, Incubation) %>% 
+    dplyr::summarise(mean = mean(Q10, na.rm = TRUE),
+                     median = median(Q10, na.rm = TRUE),
+                     perc_75 = quantile(Q10, 0.75, na.rm = TRUE),
+                     perc_99 = quantile(Q10, 0.99, na.rm = TRUE))
+  
+  summary_biome = 
+    Q10_data %>% 
+    group_by(Species, Incubation, ClimateTypes) %>% 
+    dplyr::summarise(mean = mean(Q10, na.rm = TRUE),
+                     median = median(Q10, na.rm = TRUE))
+  
+  summary_temp = 
+    Q10_data %>% 
+    group_by(Species, Incubation, Temp_range) %>% 
+    dplyr::summarise(mean = mean(Q10, na.rm = TRUE),
+                     median = median(Q10, na.rm = TRUE))
+
+  
+  list(summary_overall = summary_overall,
+       summary_biome = summary_biome,
+       summary_temp = summary_temp)
+}
+
+
 compute_co2_all = function(Q10_data){
   ## comparing field vs. lab for all CO2 data, irrespective of incubation temperatures 
   

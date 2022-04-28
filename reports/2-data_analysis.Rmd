@@ -79,6 +79,25 @@ readd(Q10_data) %>%
 
 ## Analysis - CO2
 
+### Summary tables
+
+```{r}
+loadd(summary_tables)$summary_overall %>% knitr::kable()
+```
+
+```{r}
+loadd(summary_tables)$summary_biome %>% knitr::kable()
+
+```
+
+```{r}
+loadd(summary_tables)$summary_temp %>% knitr::kable()
+
+```
+
+
+
+
 ### All studies, all temperatures
 
 We included all datapoints collected, irrespective of incubation temperature range. (0-10 C, 0-15 C, 0-20 C, 10-20 C, 5-15 C, etc.)

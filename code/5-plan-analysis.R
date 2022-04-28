@@ -10,7 +10,7 @@ pal_incubation = soilpalettes::soil_palette("redox2", 3)
 
 analysis_plan = drake_plan(
   # import processed Q10 data ----
-  Q10 = read.csv("data/processed/Q10_data.csv", na.strings = ""),
+  Q10 = read.csv("data/processed/Q10_data.csv", na.strings = "") %>% filter(!is.na(Q10)),
   sample_metadata = read.csv("data/processed/Q10_sample_metadata.csv", na.strings = ""),
   Q10_data = left_join(Q10, 
                        sample_metadata %>% dplyr::select(
@@ -23,7 +23,11 @@ analysis_plan = drake_plan(
   gg_temp_ranges = plot_temperature_ranges(Q10_data),
   gg_mat_map = plot_mat_map(Q10_data),
   
+  #
+  #summary tables ----
+  summary_tables = co2_all_summaries(Q10_data),
   
+  #
   # analysis - CO2 ----
   co2_all = compute_co2_all(Q10_data),
   co2_temp_range = compute_co2_temp_range(Q10_data),
