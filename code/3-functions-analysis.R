@@ -510,7 +510,30 @@ compute_co2_biome = function(Q10_data){
     theme(legend.position = "none") &
     labs(x = "")
   
-  list(combined = combined)
+  #
+  # graphs 2 ----
+  gg_biome_raincloud = 
+    Q10_CO2_data %>% 
+    filter(Species == "CO2" & !is.na(ClimateTypes)) %>%
+    #filter(Q10 < 300) %>% 
+    ggplot(aes(x = ClimateTypes, y = Q10, fill = Incubation, color = Incubation, 
+               group = interaction(ClimateTypes, Incubation)))+
+    ggdist::stat_halfeye(aes(fill = Incubation), 
+                         size = 1, alpha = 0.8, 
+                         position = position_nudge(x = 0.2), width = 0.5,
+                         show.legend = FALSE)+
+    geom_jitter(aes(color = Incubation, shape = Incubation), 
+                size = 2, stroke = 1,
+                position = position_dodge(width = 0.2))+
+    scale_fill_manual(values = pal_incubation)+
+    scale_color_manual(values = pal_incubation)+
+    scale_shape_manual(values = c(16, 1))+
+    scale_y_log10()+
+    labs(x = "")+
+    NULL
+  
+  list(combined = combined,
+       gg_biome_raincloud = gg_biome_raincloud)
 }
 
 

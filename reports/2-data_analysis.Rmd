@@ -140,8 +140,14 @@ readd(co2_temp_range)$co2_aov_temp
 ### Grouping by biome
 
 ```{r, fig.height=3, fig.width=9}
-readd(co2_biome)
+readd(co2_biome$combined)
 ```
+
+
+```{r, fig.height=3, fig.width=9}
+readd(co2_biome$gg_biome_raincloud)
+```
+
 
 
 ### Bootstrapping the data
