@@ -323,6 +323,62 @@ gg_temp_scatter =
   
 }
 
+compute_co2_extreme = function(Q10_data){
+  
+  # high values ----
+  high_values_co2_30 = 
+    Q10_data %>% 
+    filter(Q10 > 30 & Species == "CO2")
+  
+  high_values_co2_30 %>% 
+    ggplot(aes(x = Incubation, y = Q10, color = Temp_range_rounded))+
+    geom_jitter(width = 0.3, size = 3)+
+    facet_wrap(~ClimateTypes)+
+    ylim(0, 350)+
+    labs(x = "",
+         color = "incubation temp,  C",
+         title = "CO2, high Q10 values only (> 30)",
+         subtitle = "color = incubation temp,  C")+
+    NULL
+  
+  
+  high_values_co2_10 = 
+    Q10_data %>% 
+    filter(Q10 > 10 & Species == "CO2")
+  
+  
+  high_values_co2_10 %>% 
+    ggplot(aes(x = Incubation, y = Q10, color = Temp_range_rounded))+
+    geom_jitter(width = 0.3, size = 3)+
+    facet_wrap(~ClimateTypes)+
+    ylim(0, 350)+
+    labs(x = "",
+         color = "incubation temp,  C",
+         title = "CO2, high Q10 values only (> 30)",
+         subtitle = "color = incubation temp,  C")+
+    NULL
+  
+  
+  high_values_co2_20 = 
+    Q10_data %>% 
+    filter(Q10 > 20 & Species == "CO2")
+  
+  
+  high_values_co2_20 %>% 
+    ggplot(aes(x = Incubation, y = Q10, color = Temp_range_rounded))+
+    geom_jitter(width = 0.3, size = 3)+
+    facet_wrap(~ClimateTypes)+
+    ylim(0, 350)+
+    labs(x = "",
+         color = "incubation temp,  C",
+         title = "CO2, high Q10 values only (> 30)",
+         subtitle = "color = incubation temp,  C")+
+    NULL
+  
+  #
+}
+
+
 compute_co2_temp_range = function(Q10_data){
   
   Q10_CO2_data = 
