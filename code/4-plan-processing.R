@@ -85,7 +85,7 @@ processing_plan = drake_plan(
 
 make(processing_plan, lock_cache = FALSE)
 
-loadloadd(N_data_from_papers, CH4_data_from_papers, combined_data, combined_data_cleaned)
+loadd(N_data_from_papers, CH4_data_from_papers, combined_data, combined_data_cleaned)
 loadd(srdb_q10, sidb_q10_clean)
 loadd(all_data)
 loadd(all_data_study_numbers, processed_data, study_metadata)
