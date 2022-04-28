@@ -152,6 +152,14 @@ compute_co2_all = function(Q10_data){
   ## comparing field vs. lab for all CO2 data, irrespective of incubation temperatures 
   
   # all data - all temperatures ----
+
+all_summary = 
+  Q10_data %>% 
+  filter(Species == "CO2") %>% 
+  group_by(Incubation) %>% 
+  dplyr::summarise(mean = mean(Q10, na.rm = TRUE),
+                   median = median(Q10, na.rm = TRUE))
+  
 aov_all = 
     Q10_data %>% 
     filter(Species == "CO2") %>% 
@@ -338,6 +346,13 @@ compute_co2_biome = function(Q10_data){
     do(fit_aov(.)) %>% 
     mutate(p_value = round(p_value,5))
   
+  
+  Q10_data %>% 
+    filter(!Temp_range %in% c("< 0", "0_5")) %>% # because no lab data for < 0
+    group_by(ClimateTypes, Incubation) %>% 
+    dplyr::summarise(mean = mean(Q10)) %>% 
+    pivot_wider(names_from = Incubation, values_from = mean)
+  
   # graphs ----
   nonsnow = 
     Q10_CO2_data %>% 
@@ -425,6 +440,14 @@ compute_co2_bootstrapping = function(Q10_data){
   
   ## wilcoxon?
   
+  bootstrap_summary = 
+    bootstrap_long %>% 
+    group_by(Species, Incubation, Temp_range) %>% 
+    dplyr::summarise(median = median(Q10),
+                     mean = mean(Q10))
+  
+  
+  
   # graphs ----
   gg_boot_jitter = 
     bootstrap_long %>% 
@@ -463,7 +486,7 @@ compute_co2_bootstrapping = function(Q10_data){
     theme(legend.position = "none")
   
   
-  
+  #
   # old code from JJ ----
   
  ##  # Bootstrap
