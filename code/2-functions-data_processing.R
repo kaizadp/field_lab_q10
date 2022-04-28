@@ -69,7 +69,8 @@ clean_srdb_dataset <- function(){
            Incubation = "field",
            SRDB_study_ID = paste0("SRDB-", Study_number),
            StudyName = paste0("SRDB-", Study_number)) %>% 
-    rename(SRDB_record_number = Record_number) %>% 
+    rename(SRDB_record_number = Record_number,
+           SRDB_study_number = Study_number) %>% 
     #left_join(studies_subset) %>% 
     force()
   
@@ -339,8 +340,8 @@ create_study_matrix = function(combined_data_cleaned){
 #
 # PART 4: cleaning --------------------------------------------------------
 
-clean_lat_lon = function(combined_data){
-  combined_data %>% 
+clean_lat_lon = function(all_data){
+  all_data %>% 
     #dplyr::select(Latitude, Longitude) %>% 
     
     # first, clean up ----
@@ -498,10 +499,10 @@ clean_temp_range2 <- function(combined_data){
                                  levels = c("< 0", "0_5", "5_15", "15_25", "> 25")))
 }
 
-clean_temp_range <- function(combined_data){
+clean_temp_range <- function(all_data){
   # new version
   temp_ranges <- 
-    combined_data %>% 
+    all_data %>% 
     dplyr::select(Temp_range) %>% 
     distinct() %>% 
     mutate(Temp_range2 = Temp_range) %>% 
@@ -531,7 +532,7 @@ clean_temp_range <- function(combined_data){
   
   # 
   #x = 
-    combined_data %>% 
+  all_data %>% 
     left_join(temp_ranges) %>% 
     #   mutate(Temp_range_new = if_else(is.na(Temp_range),
     #                                   case_when(Temp_mean < 0 ~ "< 0",
@@ -565,7 +566,7 @@ combine_all_q10_studies = function(combined_data, srdb_q10, sidb_q10_clean){
                   Sample, Incubation, Latitude, Longitude, Soil_drainage,
                   Source, StudyName, DOI,
                   starts_with("notes"), Respiration_type,
-                  SRDB_record_number) %>% 
+                  SRDB_record_number, SRDB_study_number) %>% 
     mutate(Q10 = as.numeric(Q10),
            Q10 = round(Q10, 2))
 }
