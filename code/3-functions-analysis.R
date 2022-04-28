@@ -126,6 +126,23 @@ make_map_all_studies <- function(Q10_data){
 
 plot_mat_map = function(Q10_data){
   
+  KoeppenGeigerASCII = readxl::read_xlsx("data/geographic_databases/KoeppenGeigerASCII.xlsx")
+  # KG climate zone map of all the globe
+  map_climate_regions_all = 
+    KoeppenGeigerASCII %>% 
+    mutate(ClimateTypes = case_when(grepl("A", ClimateTypes) ~ "equatorial",
+                                    grepl("B", ClimateTypes) ~ "arid",
+                                    grepl("C", ClimateTypes) ~ "temperate",
+                                    grepl("D", ClimateTypes) ~ "snow",
+                                    grepl("E", ClimateTypes) ~ "polar")) %>% 
+    reorder_biome_levels() %>% 
+    ggplot(aes(x = Longitude, y = Latitude, color = ClimateTypes))+
+    geom_point()+
+    scale_color_viridis_d(option = "turbo", direction = -1, na.translate = F)+
+    theme_kp()
+  
+  
+  # plot MAT/MAP distribution
   Q10_data %>% 
     filter(!is.na(Species)) %>% 
     ggplot(aes(x = MAT, y = MAP/10))+
