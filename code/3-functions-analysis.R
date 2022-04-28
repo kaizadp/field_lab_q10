@@ -128,14 +128,15 @@ plot_mat_map = function(Q10_data){
   
   Q10_data %>% 
     filter(!is.na(Species)) %>% 
-    ggplot(aes(x = MAT, y = MAP))+
+    ggplot(aes(x = MAT, y = MAP/10))+
     geom_point(aes(color = ClimateTypes), size = 1)+
     labs(x = "
          Mean annual temperature (C)",
-         y = "Mean annual precipitation (mm)
+         y = "Mean annual precipitation (cm)
          ")+
     facet_wrap(~Species, ncol = 1)+
-    scale_color_manual(values = pal_biome, na.translate = F)+
+  #  scale_color_manual(values = pal_biome, na.translate = F)+
+    scale_color_viridis_d(option = "turbo", direction = -1, na.translate = F)+
     theme_kp()+
     theme(legend.position = c(0.2, 0.85),
           #legend.text = element_text(size = 10),
