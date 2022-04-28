@@ -15,7 +15,7 @@ clean_srdb_dataset <- function(){
     srdb_v5_data %>% 
     dplyr::select(Record_number, Study_number, Entry_date, Duplicate_record, 
                   Latitude, Longitude, Elevation, Biome, Ecosystem_type, 
-                  Manipulation, Manipulation_level, Meas_method) %>% 
+                  Manipulation, Manipulation_level, Meas_method, Soil_drainage) %>% 
     filter(Manipulation == "None"|Manipulation_level %in% c("None", "NONE", "none")) %>% 
     left_join(srdb_v5_rh_list)
   
@@ -553,6 +553,7 @@ combine_all_q10_studies = function(combined_data, srdb_q10, sidb_q10_clean){
   bind_rows(combined_data, srdb_q10, sidb_q10_clean) %>% 
     mutate_all(na_if,"") %>% 
     filter(is.na(Duplicate_record)) %>% 
+    filter(Incubation %in% c("lab", "field")) %>% 
     mutate(Manipulation = tolower(Manipulation),
            Manipulation_level = tolower(Manipulation_level)) %>%
     filter(Manipulation_level %in% c("none", "control", NA)) %>% 
@@ -561,7 +562,7 @@ combine_all_q10_studies = function(combined_data, srdb_q10, sidb_q10_clean){
     dplyr::select(Species, 
                   starts_with("Temp"),
                   starts_with("Q10"),
-                  Sample, Incubation, Latitude, Longitude,
+                  Sample, Incubation, Latitude, Longitude, Soil_drainage,
                   Source, StudyName, DOI,
                   starts_with("notes"), Respiration_type,
                   SRDB_record_number) %>% 
@@ -619,7 +620,7 @@ subset_combined_dataset = function(dat){
   sample_metadata = 
     dat %>% 
     dplyr::select(Q10_record_number, Q10_study_ID, 
-                  Latitude, Longitude, 
+                  Latitude, Longitude, Soil_drainage,
                   SRDB_record_number, Source, StudyName, DOI) %>% 
     mutate(Q10_study_ID = as.numeric(Q10_study_ID),
            Q10_record_number = as.numeric(Q10_record_number)) %>% 
@@ -656,7 +657,6 @@ assign_climate_biome = function(dat){
                                       grepl("E", ClimateTypes) ~ "polar")) %>% 
     dplyr::select(-Latitude2, -Longitude2)
     
-  
   
 }
 
