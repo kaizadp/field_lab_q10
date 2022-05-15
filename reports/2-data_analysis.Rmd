@@ -16,185 +16,231 @@ knitr::opts_chunk$set(echo = FALSE,
 
 ## EXPLORATION
 
-### Study sites
+### 1. Study sites
 
-```{r, fig.height=7}
+```{r, fig.height=7, eval=FALSE}
 readd(Q10_map)$gg_facet
 ```
 
-```{r, fig.height=4, fig.width=8}
+```{r map_studies, fig.height=4, fig.width=8}
 readd(Q10_map)$gg_species
 ```
 
 
-### How many datapoints?
+### 2. Studies by Climate
+
+#### 2.1. Climate regions
+```{r map_biomes, fig.height=5, fig.width=8}
+readd(gg_mat_map)$map_climate_regions_all
+```
+
+#### 2.2. MAT-MAP spread of data
+```{r studies_biomes, fig.height=4.5, fig.width=5}
+readd(gg_mat_map)$gg_data_mat_map
+```
+
+
+### 3. How many datapoints?
 
 Datapoints: 
 
 ```{r}
-readd(study_summary)$datapoints %>% knitr::kable()
+readd(study_summary)$datapoints_co2 %>% knitr::kable()
 ```
 
+total datapoints:
+```{r}
+readd(study_summary)$total_datapoints %>% knitr::kable()
+```
+  
 Studies: 
 
 ```{r}
 readd(study_summary)$study_counts %>% knitr::kable()
 ```
 
-
-### Studies by Climate
-
-```{r, fig.height=7, fig.width=4.5}
-readd(gg_mat_map)
+total studies:
+```{r}
+readd(study_summary)$total_studies %>% knitr::kable()
 ```
 
 
-### Incubation Temperature Ranges
+### 4. Incubation Temperature Ranges
 
-```{r}
+#### 4.1. summary of incubation temperatures
+```{r temp_ranges_seg, fig.height=7, fig.width=7.5}
 readd(gg_temp_ranges)
 ```
 
-
-```{r, eval=FALSE}
-readd(Q10_data) %>% 
-  group_by(Incubation, Ecosystem_type) %>% 
-  dplyr::summarise(n = n()) %>% 
-  pivot_wider(names_from = "Incubation", values_from = "n") %>% 
-  arrange(Ecosystem_type) %>% 
-  knitr::kable()
+#### 4.2. Q10 vs. incubation temperatures
+```{r temp_ranges_q10, fig.height=5, fig.width=12}
+readd(gg_temp_ranges_q10)
 ```
 
-```{r, eval=FALSE}
-readd(Q10_data) %>% 
-  group_by(Incubation, Biome) %>% 
-  dplyr::summarise(n = n())%>% 
-  pivot_wider(names_from = "Incubation", values_from = "n") %>% 
-  arrange(Biome) %>% 
-  knitr::kable()
+#### 4.3. incubation temperature ranges
+```{r temp_ranges_box, fig.height=4, fig.width=12}
+readd(gg_temp_ranges_field_lab)
 ```
 
 
 ---
 
-## Analysis - CO2
+---
 
-### Summary tables
+## Analysis
 
-```{r}
-loadd(summary_tables)$summary_overall %>% knitr::kable()
-```
+### 1. Summary tables
 
-```{r}
-loadd(summary_tables)$summary_biome %>% knitr::kable()
-
-```
+#### 1.1. Overall summary
 
 ```{r}
-loadd(summary_tables)$summary_temp %>% knitr::kable()
+readd(summary_tables)$summary_overall %>% 
+  mutate(across(where(is.numeric), round, 2)) %>% 
+  knitr::kable()
+```
+
+#### 1.2. By biome
+
+```{r}
+readd(summary_tables)$summary_biome %>% 
+  mutate(across(where(is.numeric), round, 2)) %>% 
+  knitr::kable()
+
+```
+
+#### 1.3. By incubation temperature
+
+```{r}
+readd(summary_tables)$summary_temp %>% 
+  mutate(across(where(is.numeric), round, 2)) %>% 
+  knitr::kable()
 
 ```
 
 
 
 
-### All studies, all temperatures
+### 2. CO2: All studies, all temperatures
 
 We included all datapoints collected, irrespective of incubation temperature range. (0-10 C, 0-15 C, 0-20 C, 10-20 C, 5-15 C, etc.)
 
-```{r, fig.height=4, fig.width=4}
-readd(co2_all)$gg_raincloud_all
-readd(co2_all)$gg_temp_scatter
+**ANOVA**
+```{r}
 readd(co2_all)$aov_all
 ```
 
 
-```{r}
+```{r co2_all_data, fig.height=4, fig.width=9}
+library(patchwork)
+
 a = readd(co2_all)$gg_raincloud_all
 b = readd(co2_all)$gg_temp_scatter
 
-a + b
+a + b +
+  plot_annotation(tag_levels = "A")
 
 ```
 
 
-We then subset the data to include only incubations with temperature ranges of 10 C. (0-10 C, 10-20 C, 5-15 C, 15-25 C, etc.)
+### 3. CO2: Temp ranges of 10 C only
 
-```{r, fig.height=4, fig.width=4}
+We then subset the data to include only incubations with temperature ranges of 10 C.  
+(0-10 C, 10-20 C, 5-15 C, 15-25 C, etc.)
+
+```{r co2_10C, fig.height=4, fig.width=4}
 readd(co2_all)$gg_raincloud_tenC
 readd(co2_all)$aov_tenC
 
 ```
 
 
-### Subsetting by temperature range
+### 4. Grouping by biome
+
+```{r co2_biome, fig.height=4, fig.width=8}
+readd(co2_biome)$gg_biome_raincloud
+```
+
+
+### 5. Subsetting by temperature range
 
 We then subset the data to include only incubations with specific temperature ranges: < 5 C, 5-15 C, 15-25 C, > 25C. These ranges were chosen because these ranges had the highest frequency of data, and this would also avoid issues pertaining to frozen soils (if we were tp choose 0-10 C).
 
 
-```{r, fig.height=4, fig.width=7}
+```{r co2_temp_range, fig.height=4, fig.width=7}
 readd(co2_temp_range)$resp_q10_temp_raincloud
+```
+
+**ANOVA**
+```{r, fig.height=4, fig.width=7}
 readd(co2_temp_range)$co2_aov_temp
 ```
 
-### Grouping by biome
-
-```{r, fig.height=3, fig.width=9}
-readd(co2_biome$combined)
-```
 
 
-```{r, fig.height=3, fig.width=9}
-readd(co2_biome$gg_biome_raincloud)
-```
-
-
-
-### Bootstrapping the data
+#### 5.1. Bootstrapping the data
 
 The data were highly skewed toward the field measurements, because most came from the highly curated SRDB. To do a more balanced analysis, we did bootstrapping by randomly sampling 1000 times, 10 samples each. 
 
-```{r, fig.height=4, fig.width=7}
+```{r co2_bootstrapping, fig.height=3.5, fig.width=7}
 readd(co2_bootstrapping)$gg_boot_raincloud
 readd(co2_bootstrapping)$gg_boot_density
+```
+
+**ANOVA on bootstrapped data**
+```{r}
 readd(co2_bootstrapping)$boot_aov
 ```
 
-### Combining non-bootstrap and bootstrap plots
 
-```{r, fig.height=7, fig.width=7}
+#### 5.2 Combining non-bootstrap and bootstrap plots
+
+```{r co2_temp_bootst, fig.height=7, fig.width=7}
 library(patchwork)
 
 non_boot = readd(co2_temp_range)$resp_q10_temp_raincloud
 boot = readd(co2_bootstrapping)$gg_boot_raincloud
 
-non_boot / boot
+non_boot / boot +
+  plot_annotation(tag_levels = "A")
 
 ```
 
 
 
 
-### Heterotrophic respiration
+### 6. Heterotrophic respiration
 
 The field measurements reported above included both autotrophic and heterotrophic respiration, whereas the lab measurements refer only to heterotrophic. We subset field measurements that were heterotrophic respiration only, and compared that with lab.
 
 The heterotrophic field measurements were available for temperate and snow biomes only.
 
-```{r, fig.height=4, fig.width=4}
-readd(Q10_rh_only)$rh_raincloud_plot
-readd(Q10_rh_only)$rh_raincloud_biomes
-readd(Q10_rh_only)$rh_aov
-readd(Q10_rh_only)$rh_summary
+```{r co2_rh, fig.height=5, fig.width=6}
+readd(Q10_rh_only)$means
+readd(Q10_rh_only)$gg_q10_rh
 
 ```
 
+- How did field Rh vs. lab Rh compare?
+```{r}
+readd(Q10_rh_only)$aov_rh_lab
+```
+
+- How did field Rh vs. field Ra compare?
+```{r}
+readd(Q10_rh_only)$aov_rh_ra_field
+```
+
+
 ---
 
-## Analysis - CH4
+### 7. Analysis - CH4
 
-```{r, fig.height=4, fig.width=4}
+```{r ch4_all, fig.height=4, fig.width=4}
 readd(ch4_all)$gg_ch4_raincloud
+```
+
+**ANOVA**
+```{r}
 readd(ch4_all)$ch4_aov
 ```
 
