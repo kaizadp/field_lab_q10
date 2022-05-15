@@ -228,28 +228,7 @@ x = read_sheet("1kECUzSJYklneco7Jd8uE_q9okybO7QDtShv3nlG26sA", sheet = "Summary 
 
 
 
-Q10_data2 = 
-  Q10_data %>% 
-  separate(Temp_range_rounded, sep = "_", into = c("min", "max")) %>% 
-  mutate(min = as.numeric(min),
-         max = as.numeric(max)) %>% 
-  filter(!is.na(min) & !is.na(max)) %>% 
-  mutate(temp_mean = (min + max)/2)
 
-
-Q10_data2 %>% 
-  filter(Species == "CO2") %>% 
-  filter(Temp_diff <= 10) %>% 
-  ggplot(aes(x = temp_mean, y = Q10, color = Incubation))+
-  # geom_violin(aes(group_by(temp_mean)))
-  geom_point(position = position_dodge(width = 1),
-             size = 2)+
-  scale_color_manual(values = pal_incubation)+
-  labs(x = "Mean incubation temperature, °C")+
-  #  ylim(0, 50)+
-  #  scale_y_log10()+
-  theme(legend.position = c(0.7, 0.8))+
-  NULL
 
 
 

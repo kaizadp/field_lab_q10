@@ -15,7 +15,7 @@ clean_srdb_dataset <- function(){
     srdb_v5_data %>% 
     dplyr::select(Record_number, Study_number, Entry_date, Duplicate_record, 
                   Latitude, Longitude, Elevation, Biome, Ecosystem_type, 
-                  Manipulation, Manipulation_level, Meas_method, Soil_drainage) %>% 
+                  Manipulation, Manipulation_level, Meas_method, Soil_drainage, RC_annual) %>% 
     filter(Manipulation == "None"|Manipulation_level %in% c("None", "NONE", "none")) %>% 
     left_join(srdb_v5_rh_list)
   
@@ -563,7 +563,7 @@ combine_all_q10_studies = function(combined_data, srdb_q10, sidb_q10_clean){
     dplyr::select(Species, 
                   starts_with("Temp"),
                   starts_with("Q10"),
-                  Sample, Incubation, Latitude, Longitude, Soil_drainage,
+                  Sample, Incubation, Latitude, Longitude, Soil_drainage, RC_annual,
                   Source, StudyName, DOI,
                   starts_with("notes"), Respiration_type,
                   SRDB_record_number, SRDB_study_number) %>% 
@@ -621,7 +621,7 @@ subset_combined_dataset = function(dat){
   sample_metadata = 
     dat %>% 
     dplyr::select(Q10_record_number, Q10_study_ID, 
-                  Latitude, Longitude, Soil_drainage,
+                  Latitude, Longitude, Soil_drainage, RC_annual,
                   SRDB_record_number, Source, StudyName, DOI) %>% 
     mutate(Q10_study_ID = as.numeric(Q10_study_ID),
            Q10_record_number = as.numeric(Q10_record_number)) %>% 
