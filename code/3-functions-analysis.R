@@ -246,7 +246,9 @@ plot_mat_map = function(Q10_data){
          x = "",
          y = "")+
     theme_kp()+
-    theme(axis.text = element_blank())+
+    theme(axis.text = element_blank(),
+          panel.grid = element_blank(),
+          axis.ticks = element_blank())+
     NULL
   
   
@@ -324,77 +326,82 @@ compute_co2_all = function(Q10_data){
   
   # all data - all temperatures ----
 
-all_summary = 
-  Q10_data %>% 
-  filter(Species == "CO2") %>% 
-  group_by(Incubation) %>% 
-  dplyr::summarise(mean = mean(Q10, na.rm = TRUE),
-                   median = median(Q10, na.rm = TRUE))
-  
-aov_all = 
+  Q10_CO2_data = 
     Q10_data %>% 
-    filter(Species == "CO2") %>% 
+    filter(Species == "CO2")
+  
+  all_summary = 
+    Q10_CO2_data %>% 
+    group_by(Incubation) %>% 
+    dplyr::summarise(mean = mean(Q10, na.rm = TRUE),
+                     median = median(Q10, na.rm = TRUE))
+  
+  aov_all = 
+    Q10_CO2_data %>% 
     do(fit_aov(.))
   
-gg_jitter_all <- 
-  Q10_data %>% 
-  filter(Species == "CO2") %>% 
-  ggplot(aes(x = Incubation, y = Q10, color = Incubation))+
-  geom_jitter(width = 0.2)+
-  scale_y_log10()+
-  scale_color_manual(values = pal_incubation)+
-  labs(title = "CO2 - all data, all temperatures",
-       x = "")+
-  # ylim(0,20))
-  NULL
-
-
-gg_raincloud_all = 
-  Q10_data %>% 
-  filter(Species == "CO2") %>% 
-  ggplot(aes(x = Incubation, y = Q10, color = Incubation))+
-  ggdist::stat_halfeye(aes(fill = Incubation), 
-                       size = 1, alpha = 0.5,
-                       position = position_nudge(x = 0.2), width = 0.5, 
-                       #slab_color = "black"
-  )+
-  geom_jitter(aes(color = Incubation), width = 0.1, )+
-  geom_text(aes(x = 1.5, y = 200), label = "*", color = "black", size = 10)+
-  #ylim(30, 300)+
-  scale_y_log10()+
-  scale_color_manual(values = pal_incubation)+
-  scale_fill_manual(values = pal_incubation)+
-  labs(#title = "CO2 - all temperatures",
-       x = "",
-       y = expression(bold("Q"[10] * " for CO"[2])))+
-  theme(legend.position = "none")+
-  NULL
-
-# by incubation temperature
-Q10_data2 = 
-  Q10_data %>% 
-  separate(Temp_range_rounded, sep = "_", into = c("min", "max")) %>% 
-  mutate(min = as.numeric(min),
-         max = as.numeric(max)) %>% 
-  filter(!is.na(min) & !is.na(max)) %>% 
-  mutate(temp_mean = (min + max)/2)
-
-gg_temp_scatter = 
-  Q10_data2 %>% 
-  filter(Species == "CO2") %>% 
-  filter(Temp_diff <= 10) %>% 
-  ggplot(aes(x = min, y = Q10, color = Incubation))+
-  # geom_violin(aes(group_by(temp_mean)))
-  geom_point(position = position_dodge(width = 1.5),
-             size = 2)+
-  geom_smooth(method = "loess", se = FALSE)+
-  scale_color_manual(values = pal_incubation)+
-  labs(x = "Min. incubation temperature, °C",
-       y = expression(bold("Q"[10] * " for CO"[2])))+
-  #  ylim(0, 50)+
-  #  scale_y_log10()+
-  theme(legend.position = c(0.7, 0.8))+
-  NULL
+  gg_jitter_all <- 
+    Q10_CO2_data %>% 
+    ggplot(aes(x = Incubation, y = Q10, color = Incubation))+
+    geom_jitter(width = 0.2)+
+    scale_y_log10()+
+    scale_color_manual(values = pal_incubation)+
+    labs(title = "CO2 - all data, all temperatures",
+         x = "")+
+    # ylim(0,20))
+    NULL
+  
+  co2_sample_size = 
+    Q10_CO2_data %>% 
+    group_by(Incubation) %>% 
+    dplyr::summarise(n = n())
+  
+  gg_raincloud_all = 
+    Q10_CO2_data %>% 
+    ggplot(aes(x = Incubation, y = Q10, color = Incubation))+
+    ggdist::stat_halfeye(aes(fill = Incubation), 
+                         size = 1, alpha = 0.5,
+                         position = position_nudge(x = 0.2), width = 0.5, 
+                         #slab_color = "black"
+    )+
+    geom_jitter(aes(color = Incubation), width = 0.1, )+
+    geom_text(aes(x = 1.5, y = 200), label = "*", color = "black", size = 10)+
+    geom_text(data = co2_sample_size, aes(y = 1000, label = paste("n = ", n)), color = "black")+
+    #ylim(30, 300)+
+    scale_y_log10()+
+    scale_color_manual(values = pal_incubation)+
+    scale_fill_manual(values = pal_incubation)+
+    labs(#title = "CO2 - all temperatures",
+      x = "",
+      y = expression(bold("Q"[10] * " for CO"[2])))+
+    theme(legend.position = "none")+
+    NULL
+  
+  # by incubation temperature
+  Q10_data2 = 
+    Q10_data %>% 
+    separate(Temp_range_rounded, sep = "_", into = c("min", "max")) %>% 
+    mutate(min = as.numeric(min),
+           max = as.numeric(max)) %>% 
+    filter(!is.na(min) & !is.na(max)) %>% 
+    mutate(temp_mean = (min + max)/2)
+  
+  gg_temp_scatter = 
+    Q10_data2 %>% 
+    filter(Species == "CO2") %>% 
+    filter(Temp_diff <= 10) %>% 
+    ggplot(aes(x = min, y = Q10, color = Incubation))+
+    # geom_violin(aes(group_by(temp_mean)))
+    geom_point(position = position_dodge(width = 1.5),
+               size = 2)+
+    geom_smooth(method = "loess", se = FALSE)+
+    scale_color_manual(values = pal_incubation)+
+    labs(x = "Min. incubation temperature, °C",
+         y = expression(bold("Q"[10] * " for CO"[2])))+
+    #  ylim(0, 50)+
+    #  scale_y_log10()+
+    theme(legend.position = c(0.7, 0.8))+
+    NULL
 
   # all data - only temperature ranges <= 10 C ----
  aov_tenC = 
@@ -553,6 +560,14 @@ compute_co2_temp_range = function(Q10_data){
       #    ylim(0,20)+
       NULL)
   
+  co2_temp_sample_size =
+    Q10_CO2_data %>% 
+    filter(Temp_range %in% c("5_15", "15_25", "> 25")) %>% 
+    group_by(Temp_range, Incubation) %>% 
+    dplyr::summarise(n = n()) %>% 
+    recode_temp_levels() 
+  
+  
   (resp_q10_temp_raincloud <- 
       Q10_CO2_data %>% 
       filter(Temp_range %in% c("5_15", "15_25", "> 25")) %>% 
@@ -563,6 +578,7 @@ compute_co2_temp_range = function(Q10_data){
                            position = position_nudge(x = 0.2), width = 0.5)+
       geom_jitter(aes(color = Incubation), width = 0.1, )+
       geom_text(aes(x = 1.5, y = 18), label = "*", color = "black", size = 10)+
+      geom_text(data = co2_temp_sample_size, aes(y = 22, label = paste("n =", n)), color = "black")+
       facet_wrap(~Temp_range #, strip.position = "bottom"
       )+
       labs(#title = expression("CO"[2] * " Q"[10] * " values by incubation temperature"),
@@ -573,7 +589,7 @@ compute_co2_temp_range = function(Q10_data){
       scale_fill_manual(values = pal_incubation)+
       theme(legend.position = "none",
             panel.grid = element_blank())+
-      ylim(0,20)+
+    #  ylim(0,30)+
       NULL)
   
   list(co2_aov_temp = co2_aov_temp,
@@ -927,7 +943,8 @@ rh_analysis = function(Q10_data){
     filter(!is.na(Rh_group)) %>% 
     filter(Q10 <= 10)
 
-  means = Q10_data_rh %>% group_by(Rh_group) %>% dplyr::summarise(mean = mean(Q10))
+  means = Q10_data_rh %>% group_by(Rh_group) %>% dplyr::summarise(mean = mean(Q10),
+                                                                  n = n())
   
   aov_rh_lab = 
     Q10_data_rh %>% filter(grepl("Rh", Rh_group)) %$% aov(Q10 ~ Rh_group) %>% summary()
@@ -1147,6 +1164,11 @@ compute_ch4 = function(Q10_data){
     theme(legend.position = "none")+
     NULL
   
+  ch4_sample_size = 
+    Q10_CH4_data %>% 
+    group_by(Incubation) %>% 
+    dplyr::summarise(n = n())
+  
   gg_ch4_raincloud = 
     Q10_CH4_data %>% 
     ggplot(aes(x = Incubation, y = Q10, color = Incubation))+
@@ -1154,6 +1176,7 @@ compute_ch4 = function(Q10_data){
                          size = 1, alpha = 0.5,
                          position = position_nudge(x = 0.2), width = 0.5)+
     geom_jitter(aes(color = Incubation), width = 0.1, )+
+    geom_text(data = ch4_sample_size, aes(y = 95, label = paste("n =", n)), color = "black")+
     labs(#title = "CH4",
          x = "",
          y = expression(bold("Q"[10] * " for CH"[4])))+
