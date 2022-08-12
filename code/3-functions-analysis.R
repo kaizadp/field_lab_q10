@@ -212,7 +212,9 @@ make_map_all_studies <- function(Q10_data){
     labs(color = "",
          x = "",
          y = "")+
-    scale_color_manual(values = soilpalettes::soil_palette("rendoll", 2))+
+    scale_color_manual(values = soilpalettes::soil_palette("rendoll", 2),
+                       breaks = c("CO2", "CH4"),
+                       labels = c(expression("CO"[2]), expression("CH"[4])))+
     #theme_void()+
     theme_kp()+
     theme(axis.text = element_blank(),
