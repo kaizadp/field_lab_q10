@@ -14,7 +14,7 @@ analysis_plan = drake_plan(
   sample_metadata = read.csv("data/processed/Q10_sample_metadata.csv", na.strings = ""),
   Q10_data = left_join(Q10, 
                        sample_metadata %>% dplyr::select(
-                         Q10_record_number, Latitude, Longitude, MAT, MAP, ClimateTypes, Soil_drainage, RC_annual)) %>% 
+                         Q10_record_number, Latitude, Longitude, MAT, MAP, ClimateTypes, Soil_drainage, RC_annual, Ecosystem_type, Meas_method)) %>% 
     reorder_species_levels(.) %>% reorder_temp_levels(.) %>% reorder_biome_levels(.),
   # exploration ----
   
@@ -34,6 +34,7 @@ analysis_plan = drake_plan(
   co2_all = compute_co2_all(Q10_data),
   co2_temp_range = compute_co2_temp_range(Q10_data),
   co2_biome = compute_co2_biome(Q10_data),
+  co2_ecosystem = compute_co2_ecosystem(Q10_data),
   
   co2_bootstrapping = compute_co2_bootstrapping(Q10_data),
   Q10_rh_only = rh_analysis(Q10_data),

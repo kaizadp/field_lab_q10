@@ -290,6 +290,8 @@ co2_all_summaries = function(Q10_data){
     group_by(Species, Incubation) %>% 
     dplyr::summarise(mean = mean(Q10, na.rm = TRUE),
                      median = median(Q10, na.rm = TRUE),
+                     perc_01 = quantile(Q10, 0.01, na.rm = TRUE),
+                     perc_25 = quantile(Q10, 0.25, na.rm = TRUE),
                      perc_75 = quantile(Q10, 0.75, na.rm = TRUE),
                      perc_99 = quantile(Q10, 0.99, na.rm = TRUE),
                      min = min(Q10, na.rm = TRUE),
@@ -391,7 +393,7 @@ compute_co2_all = function(Q10_data){
   gg_temp_scatter = 
     Q10_data2 %>% 
     filter(Species == "CO2") %>% 
-    filter(Temp_diff <= 10) %>% 
+   # filter(Temp_diff <= 10) %>% 
     ggplot(aes(x = min, y = Q10, color = Incubation))+
     # geom_violin(aes(group_by(temp_mean)))
     geom_point(position = position_dodge(width = 1.5),
@@ -688,6 +690,7 @@ compute_co2_biome = function(Q10_data){
   list(#combined = combined,
        gg_biome_raincloud = gg_biome_raincloud)
 }
+
 
 
 compute_co2_bootstrapping = function(Q10_data){
@@ -1110,14 +1113,15 @@ make_graphs_q10 <- function(Q10_data){
 compute_study_summary = function(Q10_data){
   datapoints_co2 = 
     Q10_data %>% 
-    filter(!is.na(Q10) & Species == "CO2") %>% 
+    filter(!is.na(Q10) #& Species == "CO2"
+           ) %>% 
     group_by(Species, Incubation, ClimateTypes) %>% 
     dplyr::summarise(n = n()) %>% 
     pivot_wider(names_from = "Incubation", values_from = "n")
   
   study_counts_co2 = 
     Q10_data %>% 
-    filter(Species == "CO2") %>% 
+  #  filter(Species == "CO2") %>% 
     distinct(Q10_study_ID, Species, Incubation, ClimateTypes) %>% 
     group_by(Species, Incubation, ClimateTypes) %>% 
     dplyr::summarise(n = n()) %>% 
