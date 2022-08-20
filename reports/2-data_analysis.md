@@ -31,6 +31,12 @@ Datapoints:
 | CO2     | snow         |  2568 | 161 |
 | CO2     | polar        |   120 | 113 |
 | CO2     | NA           |    67 | 141 |
+| CH4     | arid         |     2 |  12 |
+| CH4     | temperate    |    11 |  42 |
+| CH4     | snow         |    44 |  56 |
+| CH4     | polar        |     2 |  13 |
+| CH4     | NA           |     2 |   8 |
+| CH4     | equatorial   |    NA |   1 |
 
 total datapoints:
 
@@ -49,6 +55,12 @@ Studies:
 | CO2     | snow         |   235 |  29 |
 | CO2     | polar        |    29 |  19 |
 | CO2     | NA           |    11 |  24 |
+| CH4     | arid         |     2 |   1 |
+| CH4     | temperate    |     9 |   6 |
+| CH4     | snow         |    11 |   8 |
+| CH4     | polar        |     2 |   3 |
+| CH4     | NA           |     2 |   3 |
+| CH4     | equatorial   |    NA |   1 |
 
 total studies:
 
@@ -85,12 +97,16 @@ total studies:
 |:--------|:--------|-------:|-------:|
 | CO2     | mean    |   3.05 |   4.19 |
 | CO2     | median  |   2.66 |   2.35 |
+| CO2     | perc_01 |   1.13 |   1.00 |
+| CO2     | perc_25 |   2.03 |   1.90 |
 | CO2     | perc_75 |   3.40 |   3.00 |
 | CO2     | perc_99 |  10.54 |  49.93 |
 | CO2     | min     |   0.56 |   0.50 |
 | CO2     | max     | 131.63 | 344.00 |
 | CH4     | mean    |   6.14 |   5.51 |
 | CH4     | median  |   4.10 |   3.10 |
+| CH4     | perc_01 |   0.92 |   1.05 |
+| CH4     | perc_25 |   2.41 |   1.73 |
 | CH4     | perc_75 |   5.31 |   5.75 |
 | CH4     | perc_99 |  56.88 |  34.69 |
 | CH4     | min     |   0.80 |  -2.10 |
@@ -160,6 +176,32 @@ ranges of 10 C.
 ### 4. Grouping by biome
 
 ![](2-data_analysis_files/figure-gfm/co2_biome-1.png)<!-- -->
+
+#### 5. Grouping by Ecosystem type
+
+![](2-data_analysis_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
+
+| Ecosystem_type | Incubation |      mean |    n |
+|:---------------|:-----------|----------:|-----:|
+| Agriculture    | field      |  2.720392 |  255 |
+| Agriculture    | lab        |  2.469565 |   23 |
+| Bare           | field      |  1.320000 |    3 |
+| Cultivated     | lab        |  2.732333 |   60 |
+| Desert         | field      |  1.537805 |   41 |
+| Desert         | lab        | 22.417647 |   17 |
+| Forest         | field      |  3.194554 | 3619 |
+| Forest         | lab        |  2.580937 |  491 |
+| Grassland      | field      |  2.555854 |  632 |
+| Grassland      | lab        |  2.523393 |  112 |
+| Peatland       | lab        |  1.550000 |    3 |
+| Savanna        | field      |  2.022941 |   17 |
+| Shrubland      | field      |  2.941828 |  186 |
+| Tundra         | field      | 12.250000 |    2 |
+| Tundra         | lab        | 18.529818 |   55 |
+| Wetland        | field      |  2.655882 |  102 |
+| Wetland        | lab        |  7.639444 |   72 |
+| NA             | field      |  2.250000 |    2 |
+| NA             | lab        |  2.821486 |  175 |
 
 ### 5. Subsetting by temperature range
 
@@ -260,7 +302,7 @@ snow biomes only.
 Session Info
 </summary>
 
-Date run: 2022-08-12
+Date run: 2022-08-20
 
     #> R version 4.2.1 (2022-06-23)
     #> Platform: x86_64-apple-darwin17.0 (64-bit)
@@ -277,30 +319,46 @@ Date run: 2022-08-12
     #> [1] stats     graphics  grDevices utils     datasets  methods   base     
     #> 
     #> other attached packages:
-    #>  [1] patchwork_1.1.1         data.table_1.14.2       sidb_1.0.0              sf_1.0-7                rnaturalearthdata_0.1.0
-    #>  [6] rnaturalearth_0.1.0     nlme_3.1-157            drake_7.13.3            forcats_0.5.1           stringr_1.4.0          
-    #> [11] dplyr_1.0.9             purrr_0.3.4             readr_2.1.2             tidyr_1.2.0             tibble_3.1.8           
-    #> [16] ggplot2_3.3.6           tidyverse_1.3.2        
+    #>  [1] patchwork_1.1.1         googlesheets4_1.0.0     data.table_1.14.2      
+    #>  [4] sidb_1.0.0              sf_1.0-7                rnaturalearthdata_0.1.0
+    #>  [7] rnaturalearth_0.1.0     nlme_3.1-157            drake_7.13.3           
+    #> [10] forcats_0.5.1           stringr_1.4.0           dplyr_1.0.9            
+    #> [13] purrr_0.3.4             readr_2.1.2             tidyr_1.2.0            
+    #> [16] tibble_3.1.8            ggplot2_3.3.6           tidyverse_1.3.2        
     #> 
     #> loaded via a namespace (and not attached):
-    #>  [1] fs_1.5.2             lubridate_1.8.0      filelock_1.0.2       progress_1.2.2       httr_1.4.3          
-    #>  [6] tools_4.2.1          backports_1.4.1      utf8_1.2.2           R6_2.5.1             KernSmooth_2.23-20  
-    #> [11] mgcv_1.8-40          ggdist_3.2.0         DBI_1.1.3            colorspace_2.0-3     withr_2.5.0         
-    #> [16] sp_1.5-0             tidyselect_1.1.2     prettyunits_1.1.1    compiler_4.2.1       FME_1.3.6.2         
-    #> [21] cli_3.3.0            rvest_1.0.2          xml2_1.3.3           labeling_0.4.2       scales_1.2.0        
-    #> [26] classInt_0.4-7       proxy_0.4-27         digest_0.6.29        minqa_1.2.4          txtq_0.2.4          
-    #> [31] rmarkdown_2.14       pkgconfig_2.0.3      htmltools_0.5.3      highr_0.9            dbplyr_2.2.1        
-    #> [36] fastmap_1.1.0        rlang_1.0.4          readxl_1.4.0         rstudioapi_0.13      farver_2.1.1        
-    #> [41] generics_0.1.3       jsonlite_1.8.0       distributional_0.3.0 googlesheets4_1.0.0  magrittr_2.0.3      
-    #> [46] s2_1.1.0             Matrix_1.4-1         Rcpp_1.0.9           munsell_0.5.0        fansi_1.0.3         
-    #> [51] lifecycle_1.0.1      yaml_2.3.5           stringi_1.7.8        MASS_7.3-57          storr_1.2.5         
-    #> [56] rootSolve_1.8.2.3    grid_4.2.1           parallel_4.2.1       crayon_1.5.1         lattice_0.20-45     
-    #> [61] splines_4.2.1        haven_2.5.0          hms_1.1.1            knitr_1.39           pillar_1.8.0        
-    #> [66] igraph_1.3.4         PNWColors_0.1.0      base64url_1.4        soilpalettes_0.1.0   wk_0.6.0            
-    #> [71] reprex_2.0.1         glue_1.6.2           evaluate_0.15        modelr_0.1.8         deSolve_1.33        
-    #> [76] vctrs_0.4.1          tzdb_0.3.0           cellranger_1.1.0     gtable_0.3.0         assertthat_0.2.1    
-    #> [81] xfun_0.31            broom_1.0.0          e1071_1.7-11         coda_0.19-4          viridisLite_0.4.0   
-    #> [86] class_7.3-20         googledrive_2.0.0    gargle_1.2.0         minpack.lm_1.2-2     units_0.8-0         
-    #> [91] ellipsis_0.3.2
+    #>  [1] googledrive_2.0.0    minqa_1.2.4          colorspace_2.0-3    
+    #>  [4] ellipsis_0.3.2       class_7.3-20         fs_1.5.2            
+    #>  [7] rstudioapi_0.13      proxy_0.4-27         farver_2.1.1        
+    #> [10] soilpalettes_0.1.0   bit64_4.0.5          fansi_1.0.3         
+    #> [13] lubridate_1.8.0      xml2_1.3.3           splines_4.2.1       
+    #> [16] rootSolve_1.8.2.3    knitr_1.39           jsonlite_1.8.0      
+    #> [19] broom_1.0.0          dbplyr_2.2.1         ggdist_3.2.0        
+    #> [22] compiler_4.2.1       httr_1.4.3           backports_1.4.1     
+    #> [25] Matrix_1.4-1         assertthat_0.2.1     fastmap_1.1.0       
+    #> [28] gargle_1.2.0         cli_3.3.0            s2_1.1.0            
+    #> [31] htmltools_0.5.3      prettyunits_1.1.1    tools_4.2.1         
+    #> [34] igraph_1.3.4         coda_0.19-4          gtable_0.3.0        
+    #> [37] glue_1.6.2           wk_0.6.0             rappdirs_0.3.3      
+    #> [40] Rcpp_1.0.9           cellranger_1.1.0     vctrs_0.4.1         
+    #> [43] xfun_0.31            rvest_1.0.2          lifecycle_1.0.1     
+    #> [46] MASS_7.3-57          scales_1.2.0         vroom_1.5.7         
+    #> [49] hms_1.1.1            parallel_4.2.1       yaml_2.3.5          
+    #> [52] curl_4.3.2           stringi_1.7.8        highr_0.9           
+    #> [55] e1071_1.7-11         PNWColors_0.1.0      measurements_1.4.0  
+    #> [58] filelock_1.0.2       FME_1.3.6.2          storr_1.2.5         
+    #> [61] rlang_1.0.4          pkgconfig_2.0.3      distributional_0.3.0
+    #> [64] evaluate_0.15        lattice_0.20-45      labeling_0.4.2      
+    #> [67] bit_4.0.4            tidyselect_1.1.2     deSolve_1.33        
+    #> [70] magrittr_2.0.3       R6_2.5.1             generics_0.1.3      
+    #> [73] base64url_1.4        txtq_0.2.4           DBI_1.1.3           
+    #> [76] mgcv_1.8-40          pillar_1.8.0         haven_2.5.0         
+    #> [79] withr_2.5.0          units_0.8-0          sp_1.5-0            
+    #> [82] modelr_0.1.8         crayon_1.5.1         KernSmooth_2.23-20  
+    #> [85] utf8_1.2.2           tzdb_0.3.0           rmarkdown_2.14      
+    #> [88] progress_1.2.2       grid_4.2.1           readxl_1.4.0        
+    #> [91] minpack.lm_1.2-2     reprex_2.0.1         digest_0.6.29       
+    #> [94] classInt_0.4-7       openssl_2.0.2        munsell_0.5.0       
+    #> [97] viridisLite_0.4.0    askpass_1.1
 
 </details>

@@ -118,8 +118,6 @@ readd(summary_tables)$summary_temp %>%
 ```
 
 
-
-
 ### 2. CO2: All studies, all temperatures
 
 We included all datapoints collected, irrespective of incubation temperature range. (0-10 C, 0-15 C, 0-20 C, 10-20 C, 5-15 C, etc.)
@@ -159,6 +157,17 @@ readd(co2_all)$aov_tenC
 ```{r co2_biome, fig.height=4, fig.width=8}
 readd(co2_biome)$gg_biome_raincloud
 ```
+
+#### 5. Grouping by Ecosystem type
+
+```{r, fig.height=4, fig.width=8}
+readd(co2_ecosystem)$gg_ecosystem_raincloud
+
+readd(co2_ecosystem)$co2_ecosystem_summary %>% knitr::kable()
+
+
+```
+
 
 
 ### 5. Subsetting by temperature range

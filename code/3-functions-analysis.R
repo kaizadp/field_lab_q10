@@ -691,6 +691,69 @@ compute_co2_biome = function(Q10_data){
        gg_biome_raincloud = gg_biome_raincloud)
 }
 
+compute_co2_ecosystem = function(Q10_data){
+  library(patchwork)
+  
+  Q10_CO2_data = 
+    Q10_data %>% 
+    filter(!is.na(Q10)) %>% 
+    filter(Species == "CO2")
+  
+  # stats ----
+  
+  CO2_ecosystem_pairs = 
+    Q10_CO2_data %>% 
+    filter(!is.na(Ecosystem_type)) %>% 
+    distinct(Ecosystem_type, Incubation) %>% 
+    group_by(Ecosystem_type) %>% 
+    dplyr::summarise(n = n()) %>% 
+    filter(n == 2)
+  
+  co2_aov_ecosystem = 
+    Q10_CO2_data %>% 
+    right_join(CO2_ecosystem_pairs) %>% 
+    group_by(Ecosystem_type) %>% 
+    do(fit_aov(.)) %>% 
+    mutate(p_value = round(p_value,5),
+           asterisk = case_when(p_value <= 0.05 ~ "*"))
+  
+  
+  co2_ecosystem_summary = 
+    Q10_CO2_data %>% 
+    group_by(Ecosystem_type, Incubation) %>% 
+    dplyr::summarise(mean = mean(Q10),
+                     n = n())
+  
+  #
+  # graphs ----
+  gg_ecosystem_raincloud = 
+    Q10_CO2_data %>% 
+    right_join(CO2_ecosystem_pairs) %>% 
+    #filter(Q10 < 300) %>% 
+    ggplot(aes(x = Ecosystem_type, y = Q10, fill = Incubation, color = Incubation, 
+               group = interaction(Ecosystem_type, Incubation)))+
+    ggdist::stat_halfeye(aes(fill = Incubation), 
+                         size = 1, alpha = 0.8, 
+                         position = position_nudge(x = 0.2), width = 0.5,
+                         show.legend = FALSE)+
+    geom_jitter(aes(color = Incubation, shape = Incubation), 
+                size = 2, stroke = 1,
+                position = position_dodge(width = 0.2))+
+    scale_fill_manual(values = pal_incubation)+
+    scale_color_manual(values = pal_incubation)+
+    scale_shape_manual(values = c(16, 1))+
+    geom_text(data = co2_aov_ecosystem %>% mutate(Incubation = "lab"), 
+              aes(x = Ecosystem_type, y = 500, label = asterisk),
+              color = "black", size = 10)+
+    scale_y_log10()+
+    labs(x = "",
+         y = expression(bold("Q"[10])))+
+    theme(legend.position = c(0.1, 0.85))+
+    NULL
+  
+  list(co2_ecosystem_summary = co2_ecosystem_summary,
+    gg_ecosystem_raincloud = gg_ecosystem_raincloud)
+}
 
 
 compute_co2_bootstrapping = function(Q10_data){
