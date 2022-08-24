@@ -782,20 +782,20 @@ compute_co2_measurement = function(Q10_data){
            asterisk = case_when(p_value <= 0.05 ~ "*"))
   
   
-  co2_ecosystem_summary = 
+  co2_measurement_summary = 
     Q10_CO2_data %>% 
-    group_by(Ecosystem_type, Incubation) %>% 
+    group_by(Meas_method) %>% 
     dplyr::summarise(mean = mean(Q10),
                      n = n())
   
   #
   # graphs ----
-  gg_ecosystem_raincloud = 
+  gg_measurement_raincloud = 
     Q10_CO2_data %>% 
-    right_join(CO2_ecosystem_pairs) %>% 
+    right_join(CO2_measurement_pairs) %>% 
     #filter(Q10 < 300) %>% 
-    ggplot(aes(x = Ecosystem_type, y = Q10, fill = Incubation, color = Incubation, 
-               group = interaction(Ecosystem_type, Incubation)))+
+    ggplot(aes(x = Meas_method, y = Q10, fill = Incubation, color = Incubation, 
+               group = interaction(Meas_method, Incubation)))+
     ggdist::stat_halfeye(aes(fill = Incubation), 
                          size = 1, alpha = 0.8, 
                          position = position_nudge(x = 0.2), width = 0.5,
@@ -806,8 +806,8 @@ compute_co2_measurement = function(Q10_data){
     scale_fill_manual(values = pal_incubation)+
     scale_color_manual(values = pal_incubation)+
     scale_shape_manual(values = c(16, 1))+
-    geom_text(data = co2_aov_ecosystem %>% mutate(Incubation = "lab"), 
-              aes(x = Ecosystem_type, y = 500, label = asterisk),
+    geom_text(data = co2_aov_measurement %>% mutate(Incubation = "lab"), 
+              aes(x = Meas_method, y = 500, label = asterisk),
               color = "black", size = 10)+
     scale_y_log10()+
     labs(x = "",
@@ -815,8 +815,8 @@ compute_co2_measurement = function(Q10_data){
     theme(legend.position = c(0.1, 0.85))+
     NULL
   
-  list(co2_ecosystem_summary = co2_ecosystem_summary,
-       gg_ecosystem_raincloud = gg_ecosystem_raincloud)
+  list(co2_measurement_summary = co2_measurement_summary,
+       gg_measurement_raincloud = gg_measurement_raincloud)
 }
 
 

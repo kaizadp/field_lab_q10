@@ -35,6 +35,7 @@ analysis_plan = drake_plan(
   co2_temp_range = compute_co2_temp_range(Q10_data),
   co2_biome = compute_co2_biome(Q10_data),
   co2_ecosystem = compute_co2_ecosystem(Q10_data),
+  co2_measurement = compute_co2_measurement(Q10_data),
   
   co2_bootstrapping = compute_co2_bootstrapping(Q10_data),
   Q10_rh_only = rh_analysis(Q10_data),

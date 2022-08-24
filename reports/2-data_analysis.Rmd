@@ -169,6 +169,15 @@ readd(co2_ecosystem)$co2_ecosystem_summary %>% knitr::kable()
 ```
 
 
+#### 5. Grouping by Measurement type
+```{r, fig.height=4, fig.width=8}
+readd(co2_measurement)$gg_measurement_raincloud
+
+readd(co2_measurement)$co2_measurement_summary %>% knitr::kable()
+
+```
+
+
 
 ### 5. Subsetting by temperature range
 
