@@ -246,6 +246,8 @@ readd(Q10_rh_only)$aov_rh_lab
 - How did field Rh vs. field Ra compare?
 ```{r}
 readd(Q10_rh_only)$aov_rh_ra_field
+readd(Q10_rh_only)$rh_summary
+
 ```
 
 

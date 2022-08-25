@@ -202,28 +202,24 @@ ranges of 10 C.
 | NA             | field      |  2.250000 |    2 |
 | NA             | lab        |  2.821486 |  175 |
 
-#### 5. Grouping by Ecosystem type
+#### 5. Grouping by Measurement type
 
 ![](2-data_analysis_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
 
-| Meas_method              | Incubation |     mean |    n |
-|:-------------------------|:-----------|---------:|-----:|
-| Alkali absorption        | field      | 2.506006 |  348 |
-| Alkali absorption        | lab        | 3.827094 |  234 |
-| BaPS                     | lab        | 5.350000 |    4 |
-| Gas chromatography       | field      | 2.519280 |  361 |
-| Gas chromatography       | lab        | 2.841552 |  232 |
-| Gradient                 | field      | 2.404545 |   33 |
-| IRGA                     | field      | 3.149966 | 4101 |
-| IRGA                     | lab        | 5.730942 |  393 |
-| IRMS                     | lab        | 2.000000 |    1 |
-| oxygen microcompensation | lab        | 1.915000 |    2 |
-| respirometer             | lab        | 3.000000 |    1 |
-| TDLAS                    | lab        | 2.386250 |    8 |
-| unknown                  | lab        | 2.759318 |   88 |
-| Unknown                  | field      | 2.508000 |   15 |
-| NA                       | field      | 2.040000 |    1 |
-| NA                       | lab        | 2.686591 |   44 |
+| Meas_method              |     mean |    n |
+|:-------------------------|---------:|-----:|
+| Alkali absorption        | 3.037165 |  582 |
+| BaPS                     | 5.350000 |    4 |
+| Gas chromatography       | 2.645363 |  593 |
+| Gradient                 | 2.404545 |   33 |
+| IRGA                     | 3.375672 | 4494 |
+| IRMS                     | 2.000000 |    1 |
+| oxygen microcompensation | 1.915000 |    2 |
+| respirometer             | 3.000000 |    1 |
+| TDLAS                    | 2.386250 |    8 |
+| unknown                  | 2.759318 |   88 |
+| Unknown                  | 2.508000 |   15 |
+| NA                       | 2.672222 |   45 |
 
 ### 5. Subsetting by temperature range
 
@@ -282,7 +278,7 @@ snow biomes only.
     #>   <chr>               <dbl> <int>
     #> 1 Field: Ra-dominated  3.13   167
     #> 2 Field: Rh-dominated  2.70   581
-    #> 3 Lab: Rh only         2.68  1109
+    #> 3 Lab: Rh only         2.58   989
 
 ![](2-data_analysis_files/figure-gfm/co2_rh-1.png)<!-- -->
 
@@ -290,9 +286,11 @@ snow biomes only.
 
 <!-- -->
 
-    #>               Df Sum Sq Mean Sq F value Pr(>F)
-    #> Rh_group       1    0.1  0.1314   0.084  0.772
-    #> Residuals   1688 2650.0  1.5699
+    #>               Df Sum Sq Mean Sq F value Pr(>F)  
+    #> Rh_group       1    5.2   5.184   4.251 0.0394 *
+    #> Residuals   1568 1912.0   1.219                 
+    #> ---
+    #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 -   How did field Rh vs. field Ra compare?
 
@@ -303,6 +301,19 @@ snow biomes only.
     #> Residuals   746  712.3   0.955                     
     #> ---
     #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    #> # A tibble: 9 × 5
+    #> # Groups:   Species [1]
+    #>   Species name    `Field: Ra-dominated` `Field: Rh-dominated` `Lab: Rh only`
+    #>   <fct>   <chr>                   <dbl>                 <dbl>          <dbl>
+    #> 1 CO2     n                      167                   581            989   
+    #> 2 CO2     mean                     3.13                  2.70           2.58
+    #> 3 CO2     median                   3.06                  2.56           2.33
+    #> 4 CO2     perc_01                  1.17                  1.3            1   
+    #> 5 CO2     perc_25                  2.66                  2              1.9 
+    #> 6 CO2     perc_75                  3.53                  3.22           2.94
+    #> 7 CO2     perc_99                  5.42                  5.39           7.30
+    #> 8 CO2     min                      1.04                  1.02           0.5 
+    #> 9 CO2     max                      6.92                  7.12          10
 
 ------------------------------------------------------------------------
 
@@ -341,28 +352,32 @@ Date run: 2022-08-24
     #> [1] stats     graphics  grDevices utils     datasets  methods   base     
     #> 
     #> other attached packages:
-    #>  [1] patchwork_1.1.1         googlesheets4_1.0.0     data.table_1.14.2       sidb_1.0.0              sf_1.0-7               
-    #>  [6] rnaturalearthdata_0.1.0 rnaturalearth_0.1.0     nlme_3.1-157            drake_7.13.3            forcats_0.5.1          
-    #> [11] stringr_1.4.0           dplyr_1.0.9             purrr_0.3.4             readr_2.1.2             tidyr_1.2.0            
-    #> [16] tibble_3.1.8            ggplot2_3.3.6           tidyverse_1.3.2        
+    #>  [1] patchwork_1.1.1         googlesheets4_1.0.0     data.table_1.14.2       sidb_1.0.0             
+    #>  [5] sf_1.0-7                rnaturalearthdata_0.1.0 rnaturalearth_0.1.0     nlme_3.1-157           
+    #>  [9] drake_7.13.3            forcats_0.5.1           stringr_1.4.0           dplyr_1.0.9            
+    #> [13] purrr_0.3.4             readr_2.1.2             tidyr_1.2.0             tibble_3.1.8           
+    #> [17] ggplot2_3.3.6           tidyverse_1.3.2        
     #> 
     #> loaded via a namespace (and not attached):
-    #>  [1] googledrive_2.0.0    minqa_1.2.4          colorspace_2.0-3     ellipsis_0.3.2       class_7.3-20         fs_1.5.2            
-    #>  [7] rstudioapi_0.13      proxy_0.4-27         farver_2.1.1         soilpalettes_0.1.0   bit64_4.0.5          fansi_1.0.3         
-    #> [13] lubridate_1.8.0      xml2_1.3.3           splines_4.2.1        rootSolve_1.8.2.3    knitr_1.39           jsonlite_1.8.0      
-    #> [19] broom_1.0.0          dbplyr_2.2.1         ggdist_3.2.0         compiler_4.2.1       httr_1.4.3           backports_1.4.1     
-    #> [25] Matrix_1.4-1         assertthat_0.2.1     fastmap_1.1.0        gargle_1.2.0         cli_3.3.0            s2_1.1.0            
-    #> [31] htmltools_0.5.3      prettyunits_1.1.1    tools_4.2.1          igraph_1.3.4         coda_0.19-4          gtable_0.3.0        
-    #> [37] glue_1.6.2           wk_0.6.0             rappdirs_0.3.3       Rcpp_1.0.9           cellranger_1.1.0     vctrs_0.4.1         
-    #> [43] xfun_0.31            rvest_1.0.2          lifecycle_1.0.1      MASS_7.3-57          scales_1.2.0         vroom_1.5.7         
-    #> [49] hms_1.1.1            parallel_4.2.1       yaml_2.3.5           curl_4.3.2           stringi_1.7.8        highr_0.9           
-    #> [55] e1071_1.7-11         PNWColors_0.1.0      measurements_1.4.0   filelock_1.0.2       FME_1.3.6.2          storr_1.2.5         
-    #> [61] rlang_1.0.4          pkgconfig_2.0.3      distributional_0.3.0 evaluate_0.15        lattice_0.20-45      labeling_0.4.2      
-    #> [67] bit_4.0.4            tidyselect_1.1.2     deSolve_1.33         magrittr_2.0.3       R6_2.5.1             generics_0.1.3      
-    #> [73] base64url_1.4        txtq_0.2.4           DBI_1.1.3            pillar_1.8.0         haven_2.5.0          withr_2.5.0         
-    #> [79] mgcv_1.8-40          units_0.8-0          sp_1.5-0             modelr_0.1.8         crayon_1.5.1         KernSmooth_2.23-20  
-    #> [85] utf8_1.2.2           tzdb_0.3.0           rmarkdown_2.14       progress_1.2.2       grid_4.2.1           readxl_1.4.0        
-    #> [91] minpack.lm_1.2-2     reprex_2.0.1         digest_0.6.29        classInt_0.4-7       openssl_2.0.2        munsell_0.5.0       
-    #> [97] viridisLite_0.4.0    askpass_1.1
+    #>  [1] googledrive_2.0.0    minqa_1.2.4          colorspace_2.0-3     ellipsis_0.3.2       class_7.3-20        
+    #>  [6] fs_1.5.2             rstudioapi_0.13      proxy_0.4-27         farver_2.1.1         soilpalettes_0.1.0  
+    #> [11] bit64_4.0.5          fansi_1.0.3          lubridate_1.8.0      xml2_1.3.3           splines_4.2.1       
+    #> [16] rootSolve_1.8.2.3    knitr_1.39           jsonlite_1.8.0       broom_1.0.0          dbplyr_2.2.1        
+    #> [21] ggdist_3.2.0         compiler_4.2.1       httr_1.4.3           backports_1.4.1      Matrix_1.4-1        
+    #> [26] assertthat_0.2.1     fastmap_1.1.0        gargle_1.2.0         cli_3.3.0            s2_1.1.0            
+    #> [31] htmltools_0.5.3      prettyunits_1.1.1    tools_4.2.1          igraph_1.3.4         coda_0.19-4         
+    #> [36] gtable_0.3.0         glue_1.6.2           maps_3.4.0           wk_0.6.0             rappdirs_0.3.3      
+    #> [41] Rcpp_1.0.9           cellranger_1.1.0     vctrs_0.4.1          xfun_0.31            rvest_1.0.2         
+    #> [46] lifecycle_1.0.1      MASS_7.3-57          scales_1.2.0         vroom_1.5.7          hms_1.1.1           
+    #> [51] parallel_4.2.1       yaml_2.3.5           curl_4.3.2           stringi_1.7.8        highr_0.9           
+    #> [56] e1071_1.7-11         PNWColors_0.1.0      measurements_1.4.0   filelock_1.0.2       FME_1.3.6.2         
+    #> [61] storr_1.2.5          rlang_1.0.4          pkgconfig_2.0.3      distributional_0.3.0 evaluate_0.15       
+    #> [66] lattice_0.20-45      labeling_0.4.2       bit_4.0.4            tidyselect_1.1.2     deSolve_1.33        
+    #> [71] magrittr_2.0.3       R6_2.5.1             generics_0.1.3       base64url_1.4        txtq_0.2.4          
+    #> [76] DBI_1.1.3            pillar_1.8.0         haven_2.5.0          withr_2.5.0          mgcv_1.8-40         
+    #> [81] units_0.8-0          sp_1.5-0             modelr_0.1.8         crayon_1.5.1         KernSmooth_2.23-20  
+    #> [86] utf8_1.2.2           tzdb_0.3.0           rmarkdown_2.14       progress_1.2.2       grid_4.2.1          
+    #> [91] readxl_1.4.0         minpack.lm_1.2-2     reprex_2.0.1         digest_0.6.29        classInt_0.4-7      
+    #> [96] openssl_2.0.2        munsell_0.5.0        viridisLite_0.4.0    askpass_1.1
 
 </details>

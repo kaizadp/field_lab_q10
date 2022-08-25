@@ -200,14 +200,40 @@ make_map_all_studies <- function(Q10_data){
     NULL
   
   
+ # gg_species = 
+ #   world %>% 
+ #   ggplot()+
+ #   geom_sf(color = NA, alpha = 0.7)+
+ #   geom_point(data = Q10_map_data,
+ #              aes(x = Longitude, y = Latitude, 
+ #                  color = Species#, shape = Incubation
+ #                  ), 
+ #              alpha = 0.7, size = 3)+
+ #   labs(color = "",
+ #        x = "",
+ #        y = "")+
+ #   scale_color_manual(values = soilpalettes::soil_palette("rendoll", 2),
+ #                      breaks = c("CO2", "CH4"),
+ #                      labels = c(expression("CO"[2]), expression("CH"[4])))+
+ #   #theme_void()+
+ #   theme_kp()+
+ #   theme(axis.text = element_blank(),
+ #         #legend.position = c(0.15, 0.6)
+ #         )+
+ #   #facet_wrap(~Species, ncol = 1)+
+ #   guides(colour = guide_legend(nrow = 1))+
+ #   NULL
+  
+  gg_world <- map_data("world")
   gg_species = 
-    world %>% 
-    ggplot()+
-    geom_sf(color = NA, alpha = 0.7)+
+    ggplot() +
+    geom_map(
+      data = gg_world, map = gg_world,
+      aes(x = long, y = lat, map_id = region), alpha = 0.3) +
     geom_point(data = Q10_map_data,
                aes(x = Longitude, y = Latitude, 
                    color = Species#, shape = Incubation
-                   ), 
+               ), 
                alpha = 0.7, size = 3)+
     labs(color = "",
          x = "",
@@ -217,12 +243,14 @@ make_map_all_studies <- function(Q10_data){
                        labels = c(expression("CO"[2]), expression("CH"[4])))+
     #theme_void()+
     theme_kp()+
-    theme(axis.text = element_blank(),
-          #legend.position = c(0.15, 0.6)
-          )+
+    theme(#axis.text = element_blank(),
+      #legend.position = c(0.15, 0.6)
+    )+
     #facet_wrap(~Species, ncol = 1)+
     guides(colour = guide_legend(nrow = 1))+
     NULL
+  
+  
   
   list(gg_facet = gg_facet,
        gg_species = gg_species)
