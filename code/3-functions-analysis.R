@@ -1068,6 +1068,7 @@ rh_analysis = function(Q10_data){
   
   Q10_data_rh = 
     Q10_data %>% 
+    filter(Species == "CO2") %>% 
     mutate(Rh_group = cut(RC_annual, c(-0.1, 0.5, 1.0), labels = c("Field: Rh-dominated", "Field: Ra-dominated")),
            Rh_group = as.character(Rh_group),
            Rh_group = case_when(!is.na(Rh_group) ~ Rh_group,
@@ -1094,8 +1095,24 @@ rh_analysis = function(Q10_data){
     labs(x = expression(bold("Q"[10])))+
     theme(legend.position = c(0.8, 0.8))+
     NULL
+  
+  rh_summary = 
+    Q10_data_rh %>% 
+    group_by(Species, Rh_group) %>% 
+    dplyr::summarise(n = n(),
+                     mean = mean(Q10, na.rm = TRUE),
+                     median = median(Q10, na.rm = TRUE),
+                     perc_01 = quantile(Q10, 0.01, na.rm = TRUE),
+                     perc_25 = quantile(Q10, 0.25, na.rm = TRUE),
+                     perc_75 = quantile(Q10, 0.75, na.rm = TRUE),
+                     perc_99 = quantile(Q10, 0.99, na.rm = TRUE),
+                     min = min(Q10, na.rm = TRUE),
+                     max = max(Q10, na.rm = TRUE)) %>% 
+    pivot_longer(-c(Species, Rh_group)) %>% 
+    pivot_wider(names_from = "Rh_group", values_from = "value")
     
   list(means = means,
+       rh_summary = rh_summary,
        aov_rh_lab = aov_rh_lab,
        aov_rh_ra_field = aov_rh_ra_field,
        gg_q10_rh = gg_q10_rh)
