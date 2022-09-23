@@ -1,3 +1,14 @@
+# FIELD VS. LAB GHG Q10
+# PATEL ET AL. 2022
+# 
+# This script contains the {drake} plan to analyze the processed Q10 data.
+# Output is in the corresponding Rmd/md files.
+# 
+# kfp 2022
+# 
+# ############################# #
+
+
 source("code/0-packages.R")
 source("code/3-functions-analysis.R")
 # source("code/4-functions-q10_fitting.R")
