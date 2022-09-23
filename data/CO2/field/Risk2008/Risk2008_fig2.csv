@@ -1,9 +1,0 @@
-﻿incubation,depth_cm,Q10,forest,latitude,longitude,temp_range,Meas_method
-field,0,5.4,intact forest,45.7531,-61.9558,10_20,IRGA
-field,0,3.3,clearcut,45.7531,-61.9558,10_20,IRGA
-field,35,5,intact forest,45.7531,-61.9558,10_20,IRGA
-field,35,12.8,clearcut,45.7531,-61.9558,10_20,IRGA
-lab,0,1.2,intact forest,45.7531,-61.9558,10_20,IRGA
-lab,0,2,clearcut,45.7531,-61.9558,10_20,IRGA
-lab,35,1.7,intact forest,45.7531,-61.9558,10_20,IRGA
-lab,35,4,clearcut,45.7531,-61.9558,10_20,IRGA

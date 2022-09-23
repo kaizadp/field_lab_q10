@@ -1,9 +1,0 @@
-﻿Incubation,Depth_cm,Q10,Ecosystem_type,Manipulation,Latitude,Longitude,Temp_range,Meas_method,Source
-field,0,5.4,Forest,None,45.7531,-61.9558,10_20,IRGA,Risk2008
-field,0,3.3,Forest,Clearcut,45.7531,-61.9558,10_20,IRGA,Risk2008
-field,35,5,Forest,None,45.7531,-61.9558,10_20,IRGA,Risk2008
-field,35,12.8,Forest,Clearcut,45.7531,-61.9558,10_20,IRGA,Risk2008
-lab,0,1.2,Forest,None,45.7531,-61.9558,10_20,IRGA,Risk2008
-lab,0,2,Forest,Clearcut,45.7531,-61.9558,10_20,IRGA,Risk2008
-lab,35,1.7,Forest,None,45.7531,-61.9558,10_20,IRGA,Risk2008
-lab,35,4,Forest,Clearcut,45.7531,-61.9558,10_20,IRGA,Risk2008
