@@ -12,6 +12,11 @@ knitr::opts_chunk$set(echo = FALSE,
                       )
 ```
 
+Initial data exploration of the Q10 data.
+
+Run this file after running `code/4-plan-processing.R`.
+
+
 ---
 
 ## SRDB data
@@ -46,9 +51,6 @@ srdb_q10_n =
   srdb_q10 %>%
   group_by(temp_range) %>% 
   dplyr::summarise(n = n()) %>% 
-#  mutate(range2 = temp_range) %>% 
-#  separate(range2, sep = "_", into = c("min", "max")) %>% 
-#  mutate(temp_range = fct_reorder(temp_range, min)) %>% 
   force()
 
 srdb_q10_n %>% knitr::kable()
@@ -72,11 +74,6 @@ srdb_q10 %>%
   coord_flip()+
   NULL
 ```
-
-
-
-
-
 
 
 ---

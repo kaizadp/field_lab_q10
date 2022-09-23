@@ -7,16 +7,17 @@
 # kfp 2022
 # 
 # ############################# #
- 
-source("code/0-packages.R")
-source("code/1-googlesheets.R")
-source("code/2-functions-data_processing.R")
 
 
 # SET PATHS ---------------------------------------------------------------
 GSHEETS_LOCAL_PATH_CH4 = "data/2-data_from_papers-GoogleDrive/CH4_data.csv"
 GSHEETS_LOCAL_PATH_CO2 = "data/2-data_from_papers-GoogleDrive/CO2_data.csv"
 
+#
+# SOURCE SCRIPTS ----------------------------------------------------------
+source("code/0-packages.R")
+source("code/1-googlesheets.R")
+source("code/2-functions-data_processing.R")
 
 #
 # PROCESSING PLAN ---------------------------------------------------------
@@ -24,29 +25,14 @@ processing_plan = drake_plan(
   # I. STUDIES FROM PAPERS ---- 
   # GoogleSheets: save locally as csv
   # this is now done outside drake, to avoid fuck ups
-  #  gsheets_data_N %>% write.csv(GSHEETS_LOCAL_PATH_N, row.names = FALSE, na = ""),
-  #  gsheets_data_CH4 %>% write.csv(GSHEETS_LOCAL_PATH_CH4, row.names = FALSE, na = ""),
-  
+
   # Process data from papers
-  # N_data_from_papers = import_N_data_from_papers(GSHEETS_LOCAL_PATH_N),
   CH4_data_from_papers = import_CH4_data_from_papers(GSHEETS_LOCAL_PATH_CH4) %>% mutate_all(as.character),
   CO2_data_from_papers = import_CO2_data_from_papers(GSHEETS_LOCAL_PATH_CO2) %>% mutate_all(as.character),
   
-  # export these data
-  ## perhaps delete this later (?)
-  ## write.csv(N_data_from_papers, "data/3-data_from_papers-cleaned/N_data.csv", row.names = FALSE, na = ""),
-  ## write.csv(CH4_data_from_papers, "data/3-data_from_papers-cleaned/CH4_data.csv", row.names = FALSE, na = ""),
-  
   # combine the data
-  combined_data = bind_rows(#N_data_from_papers, 
-                            CH4_data_from_papers, CO2_data_from_papers) %>% 
+  combined_data = bind_rows(CH4_data_from_papers, CO2_data_from_papers) %>% 
     filter(Species %in% c("CO2", "CH4")),
-  
-  # fix the latitude-longitude
-  # combined_data_cleaned = 
-  #   combined_data %>% 
-  #   clean_lat_lon(.) %>% 
-  #   clean_temp_range(.),
   
   #
   # II. SRDB ----
@@ -65,15 +51,12 @@ processing_plan = drake_plan(
   # convert the two lists into dataframes
   # vars needs data.table::rbindlist because it is a different format 
   
-  # sidb_vars_clean2 <- clean_sidb_data(sidb_vars, sidb_timeseries)$sidb_vars_clean,
   sidb_timeseries_clean = clean_sidb_data(sidb_vars, sidb_timeseries)$sidb_timeseries_clean2,
   sidb_q10_calculated = calculate_sidb_q10_r10(sidb_timeseries_clean, sidb_vars)$sidb_q10_calculated,
   sidb_q10_clean = calculate_sidb_q10_r10(sidb_timeseries_clean, sidb_vars)$sidb_q10_clean %>% mutate_all(as.character), 
-  #%>% clean_temp_range(.),
-  
+
   #
   # IV. COMBINE ----
-  #all_data = bind_rows(combined_data_cleaned, srdb_q10, sidb_q10_clean),
   all_data = combine_all_q10_studies(combined_data, srdb_q10, sidb_q10_clean),
   all_data_clean = all_data %>% clean_lat_lon(.) %>% clean_temp_range(.),
   all_data_study_numbers = assign_study_numbers(all_data_clean),
@@ -81,8 +64,7 @@ processing_plan = drake_plan(
   processed_data_q10 = subset_combined_dataset(all_data_study_numbers)$data_Q10,
   study_metadata = subset_combined_dataset(all_data_study_numbers)$study_data,
   sample_metadata = subset_combined_dataset(all_data_study_numbers)$sample_metadata,
-  #study_citations = ...
-  
+
   sample_metadata_climate_biome = assign_climate_biome(sample_metadata),
   
   processed_data_q10 %>% write.csv("data/processed/Q10_data.csv", row.names = F, na = ""),
@@ -90,10 +72,6 @@ processing_plan = drake_plan(
   sample_metadata_climate_biome %>% write.csv("data/processed/Q10_sample_metadata.csv", row.names = F, na = "")
   )
 
-
+#
+# MAKE/RUN THE PLAN -------------------------------------------------------
 make(processing_plan, lock_cache = FALSE)
-
-loadd(N_data_from_papers, CH4_data_from_papers, combined_data, combined_data_cleaned)
-loadd(srdb_q10, sidb_q10_clean)
-loadd(all_data)
-loadd(all_data_study_numbers, processed_data, study_metadata)
