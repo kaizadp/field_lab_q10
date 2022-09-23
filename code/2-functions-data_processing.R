@@ -226,40 +226,6 @@ calculate_sidb_q10_r10 <- function(sidb_timeseries_clean, sidb_vars){
 
 #
 # PART 3: Data from papers ------------------------------------------------
-import_N_data_from_papers = function(filePaths_N){
-  #field_data_N <-
-  read_csv(GSHEETS_LOCAL_PATH_N, col_types = cols(#moisture = col_double(),
-    Latitude = col_character(),
-    Longitude = col_character(),
-    Sample = col_character()
-    #moisture = col_character()
-  )) %>%
-    # bind_rows() %>% 
-    # rename(Species = N_species) %>% 
-    mutate(
-      # clean up f-ing latitude/longitude
-      Latitude = str_replace(Latitude, " N", "N"),
-      Latitude = str_replace(Latitude, " S", "S"),
-      Longitude = str_replace(Longitude, " E", "E"),
-      Longitude = str_replace(Longitude, " W", "W"),
-      
-      Latitude = str_replace(Latitude, " N", "N"),
-      Latitude = str_replace(Latitude, " S", "S"),
-      Longitude = str_replace(Longitude, " E", "E"),
-      Longitude = str_replace(Longitude, " W", "W"),
-      
-      Latitude  = str_replace(Latitude, "′′", '"'),
-      Longitude  = str_replace(Longitude, "′′", '"'),
-      
-      Latitude  = str_replace(Latitude, "″", '"'),
-      Longitude  = str_replace(Longitude, "″", '"'),
-      
-      Latitude  = str_replace(Latitude, "′", "'"),
-      Longitude  = str_replace(Longitude, "′", "'")
-    )
-  
-}
-
 import_CH4_data_from_papers = function(filePaths_CH4){
   #field_data_CH4 <-
   read_csv(filePaths_CH4, col_types = cols(Temp_range = col_character(),
