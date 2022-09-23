@@ -31,5 +31,5 @@ Our results here suggest the need for more concerted efforts to document and sta
 
 ---
 
-This repository contains data and R scripts for processing and analyzing the data used in this manuscript.
+This repository contains data and R scripts for processing and analyzing the data used in this manuscript.  
 -kfp 2022
