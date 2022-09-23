@@ -1,7 +1,0 @@
-﻿Year,Sample,Temp_range,moisture,moisture_units,Q10,N_species,Latitude,Longitude,Manipulation,Ecosystem_type,Biome,Source,Incubation,notes
-2018,summer,1_35,,,2.2,N2,24.45,118.1,,,subtropical,Tan2020,lab,"surface sediment, 100% saturated?"
-2017,winter,1_35,,,2,N2,24.45,118.1,,,subtropical,Tan2020,lab,
-2018,summer,1_35,,,2.9,N2O,24.45,118.1,,,subtropical,Tan2020,lab,
-2017,winter,1_35,,,3.1,N2O,24.45,118.1,,,subtropical,Tan2020,lab,
-2018,summer,1_35,,,2.3,DN,24.45,118.1,,,subtropical,Tan2020,lab,
-2017,winter,1_35,,,2.2,DN,24.45,118.1,,,subtropical,Tan2020,lab,

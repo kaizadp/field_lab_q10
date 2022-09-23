@@ -1,4 +1,0 @@
-﻿Year,Sample,Temp_range,moisture,moisture_units,Q10,Species,Latitude,Longitude,Manipulation,Ecosystem_type,Biome,Source,Incubation,notes,StudyName,DOI
-,spruce,5_15,,,1.44,CH4,,,,,,ButterbachBahl2002,,,ButterbachBahl2002,https://doi.org/10.1023/A:1015856617553
-,spruce,5_15,,,1.33,CH4,,,limed,,,ButterbachBahl2002,,,ButterbachBahl2002,https://doi.org/10.1023/A:1015856617553
-,beech,5_15,,,1.48,CH4,,,,,,ButterbachBahl2002,,,ButterbachBahl2002,https://doi.org/10.1023/A:1015856617553
