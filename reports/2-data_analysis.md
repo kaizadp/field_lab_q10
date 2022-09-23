@@ -335,14 +335,13 @@ snow biomes only.
 Session Info
 </summary>
 
-Date run: 2022-08-24
+Date run: 2022-09-22
 
     #> R version 4.2.1 (2022-06-23)
     #> Platform: x86_64-apple-darwin17.0 (64-bit)
-    #> Running under: macOS Catalina 10.15.7
+    #> Running under: macOS Monterey 12.5.1
     #> 
     #> Matrix products: default
-    #> BLAS:   /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
     #> LAPACK: /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRlapack.dylib
     #> 
     #> locale:
@@ -352,32 +351,35 @@ Date run: 2022-08-24
     #> [1] stats     graphics  grDevices utils     datasets  methods   base     
     #> 
     #> other attached packages:
-    #>  [1] patchwork_1.1.1         googlesheets4_1.0.0     data.table_1.14.2       sidb_1.0.0             
-    #>  [5] sf_1.0-7                rnaturalearthdata_0.1.0 rnaturalearth_0.1.0     nlme_3.1-157           
-    #>  [9] drake_7.13.3            forcats_0.5.1           stringr_1.4.0           dplyr_1.0.9            
-    #> [13] purrr_0.3.4             readr_2.1.2             tidyr_1.2.0             tibble_3.1.8           
-    #> [17] ggplot2_3.3.6           tidyverse_1.3.2        
+    #>  [1] patchwork_1.1.2         googlesheets4_1.0.1     data.table_1.14.2       sidb_1.0.0              sf_1.0-8               
+    #>  [6] rnaturalearthdata_0.1.0 rnaturalearth_0.1.0     nlme_3.1-157            drake_7.13.4            forcats_0.5.2          
+    #> [11] stringr_1.4.1           dplyr_1.0.9             purrr_0.3.4             readr_2.1.2             tidyr_1.2.0            
+    #> [16] tibble_3.1.8            ggplot2_3.3.6           tidyverse_1.3.2        
     #> 
     #> loaded via a namespace (and not attached):
-    #>  [1] googledrive_2.0.0    minqa_1.2.4          colorspace_2.0-3     ellipsis_0.3.2       class_7.3-20        
-    #>  [6] fs_1.5.2             rstudioapi_0.13      proxy_0.4-27         farver_2.1.1         soilpalettes_0.1.0  
-    #> [11] bit64_4.0.5          fansi_1.0.3          lubridate_1.8.0      xml2_1.3.3           splines_4.2.1       
-    #> [16] rootSolve_1.8.2.3    knitr_1.39           jsonlite_1.8.0       broom_1.0.0          dbplyr_2.2.1        
-    #> [21] ggdist_3.2.0         compiler_4.2.1       httr_1.4.3           backports_1.4.1      Matrix_1.4-1        
-    #> [26] assertthat_0.2.1     fastmap_1.1.0        gargle_1.2.0         cli_3.3.0            s2_1.1.0            
-    #> [31] htmltools_0.5.3      prettyunits_1.1.1    tools_4.2.1          igraph_1.3.4         coda_0.19-4         
-    #> [36] gtable_0.3.0         glue_1.6.2           maps_3.4.0           wk_0.6.0             rappdirs_0.3.3      
-    #> [41] Rcpp_1.0.9           cellranger_1.1.0     vctrs_0.4.1          xfun_0.31            rvest_1.0.2         
-    #> [46] lifecycle_1.0.1      MASS_7.3-57          scales_1.2.0         vroom_1.5.7          hms_1.1.1           
-    #> [51] parallel_4.2.1       yaml_2.3.5           curl_4.3.2           stringi_1.7.8        highr_0.9           
-    #> [56] e1071_1.7-11         PNWColors_0.1.0      measurements_1.4.0   filelock_1.0.2       FME_1.3.6.2         
-    #> [61] storr_1.2.5          rlang_1.0.4          pkgconfig_2.0.3      distributional_0.3.0 evaluate_0.15       
-    #> [66] lattice_0.20-45      labeling_0.4.2       bit_4.0.4            tidyselect_1.1.2     deSolve_1.33        
-    #> [71] magrittr_2.0.3       R6_2.5.1             generics_0.1.3       base64url_1.4        txtq_0.2.4          
-    #> [76] DBI_1.1.3            pillar_1.8.0         haven_2.5.0          withr_2.5.0          mgcv_1.8-40         
-    #> [81] units_0.8-0          sp_1.5-0             modelr_0.1.8         crayon_1.5.1         KernSmooth_2.23-20  
-    #> [86] utf8_1.2.2           tzdb_0.3.0           rmarkdown_2.14       progress_1.2.2       grid_4.2.1          
-    #> [91] readxl_1.4.0         minpack.lm_1.2-2     reprex_2.0.1         digest_0.6.29        classInt_0.4-7      
-    #> [96] openssl_2.0.2        munsell_0.5.0        viridisLite_0.4.0    askpass_1.1
+    #>   [1] readxl_1.4.1         backports_1.4.1      igraph_1.3.4         splines_4.2.1        sp_1.5-0            
+    #>   [6] storr_1.2.5          usethis_2.1.6        digest_0.6.29        htmltools_0.5.3      fansi_1.0.3         
+    #>  [11] magrittr_2.0.3       memoise_2.0.1        base64url_1.4        tzdb_0.3.0           remotes_2.4.2       
+    #>  [16] modelr_0.1.9         vroom_1.5.7          askpass_1.1          prettyunits_1.1.1    colorspace_2.0-3    
+    #>  [21] rvest_1.0.3          rappdirs_0.3.3       ggdist_3.2.0         haven_2.5.1          xfun_0.32           
+    #>  [26] callr_3.7.2          crayon_1.5.1         jsonlite_1.8.0       glue_1.6.2           FME_1.3.6.2         
+    #>  [31] gtable_0.3.0         gargle_1.2.0         distributional_0.3.1 pkgbuild_1.3.1       maps_3.4.0          
+    #>  [36] scales_1.2.1         DBI_1.1.3            miniUI_0.1.1.1       Rcpp_1.0.9           viridisLite_0.4.1   
+    #>  [41] xtable_1.8-4         progress_1.2.2       units_0.8-0          bit_4.0.4            proxy_0.4-27        
+    #>  [46] txtq_0.2.4           deSolve_1.33         profvis_0.3.7        htmlwidgets_1.5.4    httr_1.4.4          
+    #>  [51] ellipsis_0.3.2       urlchecker_1.0.1     pkgconfig_2.0.3      farver_2.1.1         dbplyr_2.2.1        
+    #>  [56] utf8_1.2.2           tidyselect_1.1.2     labeling_0.4.2       rlang_1.0.5          later_1.3.0         
+    #>  [61] munsell_0.5.0        cellranger_1.1.0     tools_4.2.1          cachem_1.0.6         cli_3.3.0           
+    #>  [66] generics_0.1.3       measurements_1.4.0   devtools_2.4.4       broom_1.0.0          evaluate_0.16       
+    #>  [71] fastmap_1.1.0        yaml_2.3.5           processx_3.7.0       knitr_1.40           bit64_4.0.5         
+    #>  [76] fs_1.5.2             rootSolve_1.8.2.3    mime_0.12            xml2_1.3.3           compiler_4.2.1      
+    #>  [81] rstudioapi_0.14      filelock_1.0.2       curl_4.3.2           e1071_1.7-11         reprex_2.0.2        
+    #>  [86] stringi_1.7.8        highr_0.9            ps_1.7.1             lattice_0.20-45      Matrix_1.4-1        
+    #>  [91] classInt_0.4-7       vctrs_0.4.1          pillar_1.8.1         lifecycle_1.0.1      PNWColors_0.1.0     
+    #>  [96] soilpalettes_0.1.0   httpuv_1.6.5         R6_2.5.1             promises_1.2.0.1     KernSmooth_2.23-20  
+    #> [101] sessioninfo_1.2.2    MASS_7.3-57          assertthat_0.2.1     pkgload_1.3.0        openssl_2.0.2       
+    #> [106] rprojroot_2.0.3      minpack.lm_1.2-2     withr_2.5.0          mgcv_1.8-40          parallel_4.2.1      
+    #> [111] hms_1.1.2            grid_4.2.1           coda_0.19-4          class_7.3-20         minqa_1.2.4         
+    #> [116] rmarkdown_2.16       googledrive_2.0.0    shiny_1.7.2          lubridate_1.8.0
 
 </details>

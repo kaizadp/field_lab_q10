@@ -10,6 +10,8 @@ knitr::opts_chunk$set(echo = FALSE,
                       message = FALSE,
                       comment = "#>"
                       )
+
+source("code/0-packages.R")
 ```
 
 Initial data exploration of the Q10 data.
@@ -24,7 +26,8 @@ Run this file after running `code/4-plan-processing.R`.
 examining the different variables/levels in the dataset
 
 ```{r}
-loadd(srdb_q10, srdb_r10)
+loadd(srdb_q10)
+srdb_q10 = srdb_q10 %>% mutate(Q10 = as.numeric(Q10))
 ```
 
 **Biome**
@@ -49,7 +52,7 @@ number of observations per temperature range
 ```{r}
 srdb_q10_n = 
   srdb_q10 %>%
-  group_by(temp_range) %>% 
+  group_by(Temp_range) %>% 
   dplyr::summarise(n = n()) %>% 
   force()
 
@@ -59,7 +62,7 @@ srdb_q10_n %>% knitr::kable()
 ```{r}
 srdb_q10_n %>% 
   ggplot()+
-  geom_point(aes(y = temp_range, x = n))
+  geom_point(aes(y = Temp_range, x = n))
 ```
 
 
@@ -67,9 +70,8 @@ Q10 values by temperature range
 
 ```{r}
 srdb_q10 %>% 
-  ggplot(aes(x = temp_range, y = Q10))+
+  ggplot(aes(x = Temp_range, y = Q10))+
   geom_point()+
-  #facet_wrap(~Biome)+
   theme(axis.text.x = element_text(angle = 90))+
   coord_flip()+
   NULL
