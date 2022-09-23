@@ -1,3 +1,10 @@
+# FIELD VS. LAB GHG Q10
+# PATEL ET AL. 2022
+# 
+# This script contains functions used for data exploration of the compiled Q10 data
+# kfp 2022
+# 
+# ############################# #
 
 Q10_data = read.csv("data/processed/Q10_data.csv", na.strings = "") %>% 
   reorder_temp_levels(.) %>% 

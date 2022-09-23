@@ -1,3 +1,13 @@
+# FIELD VS. LAB GHG Q10
+# PATEL ET AL. 2022
+# 
+# This script contains the {drake} plan to import, process, combine, and clean 
+# the Q10 data from the different sources
+# 
+# kfp 2022
+# 
+# ############################# #
+ 
 source("code/0-packages.R")
 source("code/1-googlesheets.R")
 source("code/2-functions-data_processing.R")

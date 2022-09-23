@@ -1,3 +1,14 @@
+# FIELD VS. LAB GHG Q10
+# PATEL ET AL. 2022
+# 
+# This script contains functions to process and clean data
+# from SRDB, SIDb, and data from papers.
+# kfp 2022
+# 
+# ############################# #
+
+
+
 SRDB_FILE_PATH_DATA = "data/CO2/SRDB_V5_1827/data/srdb-data-V5.csv"
 SRDB_FILE_PATH_EQ = "data/CO2/SRDB_V5_1827/data/srdb-equations-V5.csv"
 SRDB_FILE_PATH_STUDIES = "data/CO2/SRDB_V5_1827/data/srdb-studies-V5.csv"

@@ -1,5 +1,11 @@
-## Comparing field vs. lab Q10
-## download data from google drive
+# FIELD VS. LAB GHG Q10
+# PATEL ET AL. 2022
+# 
+# This script contains functions needed to download data from Google Sheets
+# and clean the data for further processing and analysis.
+# kfp 2022
+# 
+# ############################# #
 
 source("code/0-packages.R")
 library(googlesheets4)

@@ -1,3 +1,13 @@
+# FIELD VS. LAB GHG Q10
+# PATEL ET AL. 2022
+# 
+# This script contains packages needed to run the functions
+# and custom ggplot theme.
+# Source this in the subsequent scripts to load packages
+# kfp 2022
+# 
+# ############################# #
+
 library(tidyverse)
 library(drake)
 library(nlme) # for LME
