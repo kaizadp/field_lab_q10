@@ -2,6 +2,8 @@
 
 Kaizad F. Patel, Ben Bond-Lamberty, Jinshi Jian, Kendalynn A. Morris, Sophia A. McKever, Cooper G. Norris, Jianqiu Zheng, Vanessa L. Bailey
 
+Article published in *Environmental Research Letters* (https://doi.org/10.1088/1748-9326/ac9aca)
+
 ---
 
 A large literature exists on mechanisms driving soil production of the greenhouse gases CO2 and CH4. 
@@ -32,4 +34,7 @@ Our results here suggest the need for more concerted efforts to document and sta
 ---
 
 This repository contains data and R scripts for processing and analyzing the data used in this manuscript.  
+Published paper: https://doi.org/10.1088/1748-9326/ac9aca  
+Archived data: https://data.ess-dive.lbl.gov/view/doi:10.15485/1889750  
+
 -kfp 2022
